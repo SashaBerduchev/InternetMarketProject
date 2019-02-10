@@ -56,10 +56,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Windows\City.xaml.cs">
+    <Compile Include="Windows\Spravochniki\City.xaml.cs">
       <DependentUpon>City.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\CityData.xaml.cs">
+    <Compile Include="Windows\Spravochniki\CityData.xaml.cs">
       <DependentUpon>CityData.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\ClientData\GraphicsCard.xaml.cs">
@@ -71,22 +71,22 @@
     <Compile Include="Windows\ClientData\OpenCPU.xaml.cs">
       <DependentUpon>OpenCPU.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\Country.xaml.cs">
+    <Compile Include="Windows\Spravochniki\Country.xaml.cs">
       <DependentUpon>Country.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\CountrysData.xaml.cs">
+    <Compile Include="Windows\Spravochniki\CountrysData.xaml.cs">
       <DependentUpon>CountrysData.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\Oblast.xaml.cs">
+    <Compile Include="Windows\Spravochniki\Oblast.xaml.cs">
       <DependentUpon>Oblast.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\OblastData.xaml.cs">
+    <Compile Include="Windows\Spravochniki\OblastData.xaml.cs">
       <DependentUpon>OblastData.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\OrganizationAdd.xaml.cs">
+    <Compile Include="Windows\Spravochniki\OrganizationAdd.xaml.cs">
       <DependentUpon>OrganizationAdd.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\OrganizationData.xaml.cs">
+    <Compile Include="Windows\Spravochniki\OrganizationData.xaml.cs">
       <DependentUpon>OrganizationData.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
@@ -102,11 +102,11 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Windows\City.xaml">
+    <Page Include="Windows\Spravochniki\City.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\CityData.xaml">
+    <Page Include="Windows\Spravochniki\CityData.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -122,19 +122,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\Country.xaml">
+    <Page Include="Windows\Spravochniki\Country.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\CountrysData.xaml">
+    <Page Include="Windows\Spravochniki\CountrysData.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\Oblast.xaml">
+    <Page Include="Windows\Spravochniki\Oblast.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\OblastData.xaml">
+    <Page Include="Windows\Spravochniki\OblastData.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -150,15 +150,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\openTivis.xaml">
+    <Page Include="Windows\Spravochniki\openTivis.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\OrganizationAdd.xaml">
+    <Page Include="Windows\Spravochniki\OrganizationAdd.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\OrganizationData.xaml">
+    <Page Include="Windows\Spravochniki\OrganizationData.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -173,7 +173,7 @@
     <Compile Include="Windows\ClientData\OpenTablets.xaml.cs">
       <DependentUpon>OpenTablets.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\openTivis.xaml.cs">
+    <Compile Include="Windows\Spravochniki\openTivis.xaml.cs">
       <DependentUpon>openTivis.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">

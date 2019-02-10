@@ -36,6 +36,8 @@
         <TextBox Name="vram" Grid.Column="4" Grid.Row="0" Margin="20"/>
         <TextBox Name="voltage" Grid.Column="5" Grid.Row="0" Margin="20"/>
         <TextBox Name="pointtext" Grid.Column="2" Grid.Row="1" Margin="20" Grid.ColumnSpan="3"/>
+        <Button Name="btnPhoto" Grid.Column="0" Grid.Row="1" Margin="20" Content="Фото" Click="BtnPhoto_Click"/>
+        <Button Name="btnFile" Grid.Column="1" Grid.Row="1" Margin="20" Content="Файл" Click="BtnFile_Click" />
         <Button Name="btnSet" Grid.Column="1" Grid.Row="2" Margin="30" Grid.ColumnSpan="3" Click="BtnSet_Click"/>
     </Grid>
 </Window>

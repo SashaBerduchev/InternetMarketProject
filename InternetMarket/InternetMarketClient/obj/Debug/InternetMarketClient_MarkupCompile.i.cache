@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\Progects\C-SHARP\InternetMarketProject\InternetMarket\InternetMarketClient\App.xaml
-16-1525742767
+16-505362557
 
-25-2126496894
+251204725726
 14-1605096400
-MainWindow.xaml;Windows\City.xaml;Windows\CityData.xaml;Windows\ClientData\GraphicsCard.xaml;Windows\ClientData\Laptop.xaml;Windows\ClientData\OpenCPU.xaml;Windows\Country.xaml;Windows\CountrysData.xaml;Windows\Oblast.xaml;Windows\OblastData.xaml;Windows\ClientData\OpenComputers.xaml;Windows\ClientData\OpenPhones.xaml;Windows\ClientData\OpenTablets.xaml;Windows\openTivis.xaml;Windows\OrganizationAdd.xaml;Windows\OrganizationData.xaml;
+MainWindow.xaml;Windows\Spravochniki\City.xaml;Windows\Spravochniki\CityData.xaml;Windows\ClientData\GraphicsCard.xaml;Windows\ClientData\Laptop.xaml;Windows\ClientData\OpenCPU.xaml;Windows\Spravochniki\Country.xaml;Windows\Spravochniki\CountrysData.xaml;Windows\Spravochniki\Oblast.xaml;Windows\Spravochniki\OblastData.xaml;Windows\ClientData\OpenComputers.xaml;Windows\ClientData\OpenPhones.xaml;Windows\ClientData\OpenTablets.xaml;Windows\Spravochniki\openTivis.xaml;Windows\Spravochniki\OrganizationAdd.xaml;Windows\Spravochniki\OrganizationData.xaml;
 
-False
+True
 

@@ -42,5 +42,7 @@ namespace InternetMarket
         List<string> LoadComputers();
         [OperationContract]
         List<string> LoadCPU();
+        [OperationContract]
+        List<string> LoadGPU();
     };
 }

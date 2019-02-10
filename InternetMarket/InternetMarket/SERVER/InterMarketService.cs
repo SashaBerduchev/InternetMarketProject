@@ -251,6 +251,16 @@ namespace InternetMarket
             cpulist = cpu.AsParallel().Select(x => x.Name + " " + x.Architecture + " " + x.Chastota + " " + x.Cores + " " + x.GPU + " " + x.KESHL1 + " " + x.KESHL2 + " " + x.KESHL3 + " " + x.RAM + " " + x.TDP).ToList();
             return cpulist;
         }
+
+        public List<string> LoadGPU()
+        {
+            List<string> listgpu;
+            List<GraphicsCard> graphics;
+            InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
+            graphics = internetMarketDateEntities.GraphicsCardSet.ToList();
+            listgpu = graphics.AsParallel().Select(x => x.Name + " " + x.Herts + " " + x.Voltage + " " + x.VRAM + " " + x.GraphicsCore + " " + x.Cores).ToList();
+            return listgpu;
+        }
     }
 
 }

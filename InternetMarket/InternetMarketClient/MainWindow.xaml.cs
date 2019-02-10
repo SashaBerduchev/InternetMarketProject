@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
@@ -53,19 +54,35 @@ namespace InternetMarketClient
 
         private void LoadBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (combobox.SelectedItem.ToString() == "Phones")
+            try
             {
-                listbox.ItemsSource = contract.LoadPhones();
+                if (combobox.SelectedItem.ToString() == "Phones")
+                {
+                    ServicePointManager.DefaultConnectionLimit = 999999999;
+                    listbox.ItemsSource = contract.LoadPhones();
+                }
+                else if (combobox.SelectedItem.ToString() == "Computers")
+                {
+                    ServicePointManager.DefaultConnectionLimit = 999999999;
+                    listbox.ItemsSource = contract.LoadComputers();
+                }
+                else if (combobox.SelectedItem.ToString() == "CPU")
+                {
+                    ServicePointManager.DefaultConnectionLimit = 999999999;
+                    listbox.ItemsSource = contract.LoadCPU();
+                }
+                else if (combobox.SelectedItem.ToString() == "Graphics")
+                {
+                    ServicePointManager.DefaultConnectionLimit = 999999999;
+                    listbox.ItemsSource = contract.LoadGPU();
+                }
             }
-            else  if(combobox.SelectedItem.ToString() == "Computers")
+            catch(Exception exp)
             {
-                listbox.ItemsSource = contract.LoadComputers();
+                MessageBox.Show(exp.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-            else if(combobox.SelectedItem.ToString() == "CPU")
-            {
-                listbox.ItemsSource = contract.LoadCPU();
-            }
-            
+
+
         }
 
         private void OpenBtnTivi_Click(object sender, RoutedEventArgs e)
