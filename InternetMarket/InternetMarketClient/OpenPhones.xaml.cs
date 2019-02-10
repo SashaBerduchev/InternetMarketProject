@@ -1,0 +1,34 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
+
+namespace InternetMarketClient
+{
+    /// <summary>
+    /// Логика взаимодействия для OpenPhones.xaml
+    /// </summary>
+    public partial class OpenPhones : Window
+    {
+        IContract contract;
+        public OpenPhones()
+        {
+            InitializeComponent();
+        }
+
+        private void btnset_Click(object sender, RoutedEventArgs e)
+        {
+
+
+        }
+    }
+}

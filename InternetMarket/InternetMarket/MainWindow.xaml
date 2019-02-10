@@ -1,0 +1,63 @@
+﻿<Window x:Class="InternetMarket.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InternetMarket"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="650" Width="1100">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Button Name="btnPrint" Grid.Column="4" Margin="30" Content="Печать" Click="BtnPrint_Click"/>
+        <ComboBox Name="combobox" Grid.Column="1" Grid.Row="0" Margin="35" />
+        <DataGrid Name="DataGrid" Grid.Column="0" Grid.Row="1" Grid.RowSpan="4" Grid.ColumnSpan="6"  />
+        <Button Name="LoadBtn" Grid.Column="0" Grid.Row="5" Margin="30" Content="Load" Click="LoadBtn_Click"/>
+        <Button Name="OpenBtn" Grid.Column="1" Grid.Row="5" Margin="30" Content="OpenPhone" Click="OpenBtn_Click"/>
+        <Button Name="OpenBtnTivi" Grid.Column="2" Grid.Row="5" Margin="30" Content="OpenTivi" Click="OpenBtnTivi_Click"/>
+        <Button Name="OpenBtnComputers" Grid.Column="3" Grid.Row="5" Margin="30" Content="OpenComp" Click="OpenBtnComputers_Click"/>
+        <Button Name="OpenBtnTablets" Grid.Column="4" Grid.Row="5" Margin="30" Content="OpenTablets" Click="OpenBtnTablets_Click" />
+        <Button Name="OpenBtnCPU" Grid.Column="2" Grid.Row="6" Margin="30" Content="CPU" Click="OpenBtnCPU_Click"  />
+        <Button Name="OpenBtnGraphics" Grid.Column="3" Grid.Row="6" Margin="30" Content="GraphicsCarg" Click="OpenBtnGraphics_Click"  />
+        <Button Name="OpenBtnlaptop" Grid.Column="4" Grid.Row="6" Margin="30" Content="Laptop" Click="OpenBtnlaptop_Click"  />
+        <Button Name="Print" Grid.Column="5" Grid.Row="6" Margin="30" Content="Сохранить" Click="Print_Click" />
+        <Menu Height="25" VerticalAlignment="Top" Grid.ColumnSpan="2" Margin="0,0,165,0">
+            <MenuItem Header="Directory">
+                <MenuItem Header="Organisation" Click="MenuItem_Click_10" />
+                <MenuItem Header="Profecion"/>
+                <MenuItem Header="Workers" Click="MenuItem_Click" ></MenuItem>
+                <MenuItem Header="Contragents" Click="MenuItem_Click_7" />
+                <MenuItem Header="Country" Click="MenuItem_Click_1" />
+                <MenuItem Header="City" Click="MenuItem_Click_2" />
+                <MenuItem Header="Oblast" Click="MenuItem_Click_3" />
+                <MenuItem Header="Region" Click="MenuItem_Click_4" />
+                <MenuItem Header="Streett" Click="MenuItem_Click_5"   />
+                <Separator />
+                <MenuItem Header="Documents" Click="MenuItem_Click_8"/>
+                <MenuItem Header="Sklad" Click="MenuItem_Click_11" />
+
+                <MenuItem Header="Exit" ></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Document" >
+                <MenuItem Header="Счет на оплату покупателю" Height="26" Click="MenuItem_Click_6" />
+                <MenuItem Header="Заках покупателя" Click="MenuItem_Click_9"/>
+            </MenuItem>
+            <MenuItem Header="View" ></MenuItem>
+        </Menu>
+    </Grid>
+</Window>

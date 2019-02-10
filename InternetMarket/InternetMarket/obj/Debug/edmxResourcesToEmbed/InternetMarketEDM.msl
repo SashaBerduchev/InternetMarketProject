@@ -1,0 +1,267 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="InternetMarketDateModelStoreContainer" CdmEntityContainer="InternetMarketDateEntities">
+    <EntitySetMapping Name="ComputersSet">
+      <EntityTypeMapping TypeName="IsTypeOf(InternetMarketDateModel.ComputersSet)">
+        <MappingFragment StoreEntitySet="ComputersSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Firm" ColumnName="Firm" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="Processor" ColumnName="Processor" />
+          <ScalarProperty Name="RAM" ColumnName="RAM" />
+          <ScalarProperty Name="VRAM" ColumnName="VRAM" />
+          <ScalarProperty Name="Graphics" ColumnName="Graphics" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PhonesSet">
+      <EntityTypeMapping TypeName="IsTypeOf(InternetMarketDateModel.PhonesSet)">
+        <MappingFragment StoreEntitySet="PhonesSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Firm" ColumnName="Firm" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="Processor" ColumnName="Processor" />
+          <ScalarProperty Name="RAM" ColumnName="RAM" />
+          <ScalarProperty Name="Battery" ColumnName="Battery" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="PDF" ColumnName="PDF" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TivisetSet">
+      <EntityTypeMapping TypeName="IsTypeOf(InternetMarketDateModel.TivisetSet)">
+        <MappingFragment StoreEntitySet="TivisetSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Firm" ColumnName="Firm" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="PDF" ColumnName="PDF" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserSet">
+      <EntityTypeMapping TypeName="IsTypeOf(InternetMarketDateModel.UserSet)">
+        <MappingFragment StoreEntitySet="UserSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DirectorSet">
+      <EntityTypeMapping TypeName="IsTypeOf(InternetMarketDateModel.Director)">
+        <MappingFragment StoreEntitySet="DirectorSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Oblast" ColumnName="Oblast" />
+          <ScalarProperty Name="Region" ColumnName="Region" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CountrySet">
+      <EntityTypeMapping TypeName="IsTypeOf(InternetMarketDateModel.Country)">
+        <MappingFragment StoreEntitySet="CountrySet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="NameCountry" ColumnName="NameCountry" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OblastDataSetSet">
+      <EntityTypeMapping TypeName="IsTypeOf(InternetMarketDateModel.OblastDataSet)">
+        <MappingFragment StoreEntitySet="OblastDataSetSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RegionDataSet">
+      <EntityTypeMapping TypeName="IsTypeOf(InternetMarketDateModel.RegionData)">
+        <MappingFragment StoreEntitySet="RegionDataSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Oblast" ColumnName="Oblast" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CityDataSet">
+      <EntityTypeMapping TypeName="IsTypeOf(InternetMarketDateModel.CityData)">
+        <MappingFragment StoreEntitySet="CityDataSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrganizationSetSet">
+      <EntityTypeMapping TypeName="IsTypeOf(InternetMarketDateModel.OrganizationSet)">
+        <MappingFragment StoreEntitySet="OrganizationSetSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrganizationPositionSetSet">
+      <EntityTypeMapping TypeName="IsTypeOf(InternetMarketDateModel.OrganizationPositionSet)">
+        <MappingFragment StoreEntitySet="OrganizationPositionSetSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CodeKP" ColumnName="CodeKP" />
+          <ScalarProperty Name="Organization" ColumnName="Organization" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CkladSetSet">
+      <EntityTypeMapping TypeName="IsTypeOf(InternetMarketDateModel.CkladSet)">
+        <MappingFragment StoreEntitySet="CkladSetSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Organisation" ColumnName="Organisation" />
+          <ScalarProperty Name="Oblast" ColumnName="Oblast" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Street" ColumnName="Street" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StreetSetSet">
+      <EntityTypeMapping TypeName="IsTypeOf(InternetMarketDateModel.StreetSet)">
+        <MappingFragment StoreEntitySet="StreetSetSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Region" ColumnName="Region" />
+          <ScalarProperty Name="NameStreen" ColumnName="NameStreen" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KassaSetSet">
+      <EntityTypeMapping TypeName="IsTypeOf(InternetMarketDateModel.KassaSet)">
+        <MappingFragment StoreEntitySet="KassaSetSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Bank" ColumnName="Bank" />
+          <ScalarProperty Name="Organization" ColumnName="Organization" />
+          <ScalarProperty Name="Valuta" ColumnName="Valuta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BankSetSet">
+      <EntityTypeMapping TypeName="IsTypeOf(InternetMarketDateModel.BankSet)">
+        <MappingFragment StoreEntitySet="BankSetSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="NameBank" ColumnName="NameBank" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Region" ColumnName="Region" />
+          <ScalarProperty Name="Street" ColumnName="Street" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TabletSetSet">
+      <EntityTypeMapping TypeName="IsTypeOf(InternetMarketDateModel.TabletSet)">
+        <MappingFragment StoreEntitySet="TabletSetSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="Processor" ColumnName="Processor" />
+          <ScalarProperty Name="RAM" ColumnName="RAM" />
+          <ScalarProperty Name="GPU" ColumnName="GPU" />
+          <ScalarProperty Name="Resolution" ColumnName="Resolution" />
+          <ScalarProperty Name="Battery" ColumnName="Battery" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DocForPainSet">
+      <EntityTypeMapping TypeName="IsTypeOf(InternetMarketDateModel.DocForPain)">
+        <MappingFragment StoreEntitySet="DocForPainSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Organization" ColumnName="Organization" />
+          <ScalarProperty Name="Contragent" ColumnName="Contragent" />
+          <ScalarProperty Name="DataLoad" ColumnName="DataLoad" />
+          <ScalarProperty Name="DataLoad1" ColumnName="DataLoad1" />
+          <ScalarProperty Name="Dataload2" ColumnName="Dataload2" />
+          <ScalarProperty Name="Dataload3" ColumnName="Dataload3" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CPUSet">
+      <EntityTypeMapping TypeName="IsTypeOf(InternetMarketDateModel.CPU)">
+        <MappingFragment StoreEntitySet="CPUSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Architecture" ColumnName="Architecture" />
+          <ScalarProperty Name="Cores" ColumnName="Cores" />
+          <ScalarProperty Name="Chastota" ColumnName="Chastota" />
+          <ScalarProperty Name="KESHL1" ColumnName="KESHL1" />
+          <ScalarProperty Name="KESHL2" ColumnName="KESHL2" />
+          <ScalarProperty Name="KESHL3" ColumnName="KESHL3" />
+          <ScalarProperty Name="GPU" ColumnName="GPU" />
+          <ScalarProperty Name="RAM" ColumnName="RAM" />
+          <ScalarProperty Name="TDP" ColumnName="TDP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GraphicsCardSet">
+      <EntityTypeMapping TypeName="IsTypeOf(InternetMarketDateModel.GraphicsCard)">
+        <MappingFragment StoreEntitySet="GraphicsCardSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="GraphicsCore" ColumnName="GraphicsCore" />
+          <ScalarProperty Name="Cores" ColumnName="Cores" />
+          <ScalarProperty Name="Herts" ColumnName="Herts" />
+          <ScalarProperty Name="VRAM" ColumnName="VRAM" />
+          <ScalarProperty Name="Voltage" ColumnName="Voltage" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="PDF" ColumnName="PDF" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LaptopsSet">
+      <EntityTypeMapping TypeName="IsTypeOf(InternetMarketDateModel.Laptops)">
+        <MappingFragment StoreEntitySet="LaptopsSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="Procc" ColumnName="Procc" />
+          <ScalarProperty Name="RAM" ColumnName="RAM" />
+          <ScalarProperty Name="VRAM" ColumnName="VRAM" />
+          <ScalarProperty Name="GPU" ColumnName="GPU" />
+          <ScalarProperty Name="SCREEN" ColumnName="SCREEN" />
+          <ScalarProperty Name="Resolution" ColumnName="Resolution" />
+          <ScalarProperty Name="Battery" ColumnName="Battery" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DogovorSet">
+      <EntityTypeMapping TypeName="IsTypeOf(InternetMarketDateModel.Dogovor)">
+        <MappingFragment StoreEntitySet="DogovorSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ZakazPokupatelyaSet">
+      <EntityTypeMapping TypeName="IsTypeOf(InternetMarketDateModel.ZakazPokupatelya)">
+        <MappingFragment StoreEntitySet="ZakazPokupatelyaSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Organization" ColumnName="Organization" />
+          <ScalarProperty Name="Contragent" ColumnName="Contragent" />
+          <ScalarProperty Name="Sklad" ColumnName="Sklad" />
+          <ScalarProperty Name="Ysluga" ColumnName="Ysluga" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

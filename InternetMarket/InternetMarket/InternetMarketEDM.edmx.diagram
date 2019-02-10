@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4979ccbb2e3e4893b127e6116e5934e8" Name="Diagram1" ZoomLevel="74">
+        <EntityTypeShape EntityType="InternetMarketDateModel.ComputersSet" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="InternetMarketDateModel.PhonesSet" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="InternetMarketDateModel.TivisetSet" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="InternetMarketDateModel.UserSet" Width="1.5" PointX="1" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="InternetMarketDateModel.Director" Width="1.5" PointX="3" PointY="4.625" />
+        <EntityTypeShape EntityType="InternetMarketDateModel.Country" Width="1.5" PointX="4.75" PointY="4.75" />
+        <EntityTypeShape EntityType="InternetMarketDateModel.OblastDataSet" Width="1.5" PointX="8.5" PointY="4.75" />
+        <EntityTypeShape EntityType="InternetMarketDateModel.RegionData" Width="1.5" PointX="10.5" PointY="4.75" />
+        <EntityTypeShape EntityType="InternetMarketDateModel.CityData" Width="1.5" PointX="6.625" PointY="4.875" />
+        <EntityTypeShape EntityType="InternetMarketDateModel.OrganizationPositionSet" Width="1.5" PointX="6" PointY="8.25" />
+        <EntityTypeShape EntityType="InternetMarketDateModel.OrganizationSet" Width="1.5" PointX="3.25" PointY="8.125" />
+        <EntityTypeShape EntityType="InternetMarketDateModel.CkladSet" Width="1.5" PointX="8.125" PointY="8.375" />
+        <EntityTypeShape EntityType="InternetMarketDateModel.StreetSet" Width="1.5" PointX="12.375" PointY="4.875" />
+        <EntityTypeShape EntityType="InternetMarketDateModel.KassaSet" Width="1.5" PointX="2.5" PointY="10.5" />
+        <EntityTypeShape EntityType="InternetMarketDateModel.BankSet" Width="1.5" PointX="5.375" PointY="11" />
+        <EntityTypeShape EntityType="InternetMarketDateModel.TabletSet" Width="1.5" PointX="6.5" PointY="0.75" />
+        <EntityTypeShape EntityType="InternetMarketDateModel.DocForPain" Width="1.5" PointX="2.125" PointY="13.75" />
+        <EntityTypeShape EntityType="InternetMarketDateModel.CPU" Width="1.5" PointX="8.375" PointY="0.875" />
+        <EntityTypeShape EntityType="InternetMarketDateModel.GraphicsCard" Width="1.5" PointX="10.125" PointY="0.875" />
+        <EntityTypeShape EntityType="InternetMarketDateModel.Laptops" Width="1.5" PointX="12.25" PointY="0.875" />
+        <EntityTypeShape EntityType="InternetMarketDateModel.Dogovor" Width="1.5" PointX="11.375" PointY="9.375" />
+        <EntityTypeShape EntityType="InternetMarketDateModel.ZakazPokupatelya" Width="1.5" PointX="5.5" PointY="14.375" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

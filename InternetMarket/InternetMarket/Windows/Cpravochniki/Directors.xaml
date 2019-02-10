@@ -1,0 +1,26 @@
+﻿<Window x:Class="InternetMarket.Directors"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InternetMarket"
+        mc:Ignorable="d"
+        Title="Directors" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBox Name="NameDat" Grid.Row="0" Margin="20"/>
+        <ComboBox Name="Country" Grid.Row="2" Margin="20" Text="Страна"/>
+        <ComboBox Name="City" Grid.Row="3" Margin="20" Text="Город"/>
+        <ComboBox Name="Oblast" Grid.Row="4" Margin="20" Text="Область"/>
+        <ComboBox Name="Region" Grid.Row="5" Margin="20" Text="Район"/>
+        <Button Name="Set" Grid.Row="6" Content="Set" Margin="10" Click="Set_Click"/>
+    </Grid>
+</Window>

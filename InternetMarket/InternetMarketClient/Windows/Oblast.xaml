@@ -1,0 +1,22 @@
+﻿<Window x:Class="InternetMarketClient.Windows.Oblast"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InternetMarketClient.Windows"
+        mc:Ignorable="d"
+        Title="Oblast" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <TextBox Name="oblastname" Grid.Row="0" Margin="20"/>
+        <ComboBox Name="countrycombo" Grid.Row="1" Margin="20"/>
+        <ComboBox Name="citycombo" Grid.Row="2" Margin="20"/>
+        <Button Name="btnSet" Grid.Row="3" Margin="20" Click="BtnSet_Click" />
+    </Grid>
+</Window>
