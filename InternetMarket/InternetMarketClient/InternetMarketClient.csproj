@@ -56,6 +56,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="LoginUser.xaml.cs">
+      <DependentUpon>LoginUser.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\Spravochniki\City.xaml.cs">
       <DependentUpon>City.xaml</DependentUpon>
     </Compile>
@@ -89,6 +92,10 @@
     <Compile Include="Windows\Spravochniki\OrganizationData.xaml.cs">
       <DependentUpon>OrganizationData.xaml</DependentUpon>
     </Compile>
+    <Page Include="LoginUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

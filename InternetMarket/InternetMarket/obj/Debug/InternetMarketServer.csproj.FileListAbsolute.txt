@@ -221,3 +221,5 @@ D:\Progects\C-SHARP\InternetMarketProject\InternetMarket\InternetMarket\obj\Debu
 D:\Progects\C-SHARP\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\InternetMarketServer.csproj.CopyComplete
 D:\Progects\C-SHARP\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\InternetMarket.exe
 D:\Progects\C-SHARP\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\InternetMarket.pdb
+D:\Progects\C-SHARP\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\LoginUserServer.g.cs
+D:\Progects\C-SHARP\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\LoginUserServer.baml

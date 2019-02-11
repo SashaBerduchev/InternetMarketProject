@@ -212,6 +212,9 @@
     <Compile Include="Windows\Documents\ZakazPokupatyaData.xaml.cs">
       <DependentUpon>ZakazPokupatyaData.xaml</DependentUpon>
     </Compile>
+    <Compile Include="LoginUserServer.xaml.cs">
+      <DependentUpon>LoginUserServer.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\Spravochniki\CitiData.xaml.cs">
       <DependentUpon>CitiData.xaml</DependentUpon>
     </Compile>
@@ -339,6 +342,10 @@
       <DependentUpon>InternetMarketEDM.tt</DependentUpon>
     </Compile>
     <Page Include="Windows\Documents\ZakazPokupatyaData.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LoginUserServer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

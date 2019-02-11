@@ -221,3 +221,5 @@ D:\Progects\C-SHARP\InternetMarketProject\InternetMarket\InternetMarket\obj\Rele
 D:\Progects\C-SHARP\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\InternetMarketServer.csproj.CopyComplete
 D:\Progects\C-SHARP\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\InternetMarket.exe
 D:\Progects\C-SHARP\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\InternetMarket.pdb
+D:\Progects\C-SHARP\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\LoginUserServer.g.cs
+D:\Progects\C-SHARP\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\LoginUserServer.baml

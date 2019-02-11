@@ -43,3 +43,5 @@ D:\Progects\C-SHARP\InternetMarketProject\InternetMarket\InternetMarketClient\ob
 D:\Progects\C-SHARP\InternetMarketProject\InternetMarket\InternetMarketClient\obj\Debug\Windows\Spravochniki\openTivis.baml
 D:\Progects\C-SHARP\InternetMarketProject\InternetMarket\InternetMarketClient\obj\Debug\Windows\Spravochniki\OrganizationAdd.baml
 D:\Progects\C-SHARP\InternetMarketProject\InternetMarket\InternetMarketClient\obj\Debug\Windows\Spravochniki\OrganizationData.baml
+D:\Progects\C-SHARP\InternetMarketProject\InternetMarket\InternetMarketClient\obj\Debug\LoginUser.g.cs
+D:\Progects\C-SHARP\InternetMarketProject\InternetMarket\InternetMarketClient\obj\Debug\LoginUser.baml

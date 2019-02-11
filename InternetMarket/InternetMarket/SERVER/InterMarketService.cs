@@ -261,6 +261,18 @@ namespace InternetMarket
             listgpu = graphics.AsParallel().Select(x => x.Name + " " + x.Herts + " " + x.Voltage + " " + x.VRAM + " " + x.GraphicsCore + " " + x.Cores).ToList();
             return listgpu;
         }
+
+        public void setLogin(string name, string password)
+        {
+            InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
+            UserSet user = new UserSet
+            {
+                Name = name,
+                Password = password
+            };
+            internetMarketDateEntities.UserSet.Add(user);
+            internetMarketDateEntities.SaveChanges();
+        }
     }
 
 }
