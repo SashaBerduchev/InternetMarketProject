@@ -31,7 +31,7 @@ namespace InternetMarketClient
             
             InitializeComponent();
 
-            Uri uri = new Uri("net.tcp://localhost:4000/IContract");
+            Uri uri = new Uri("net.tcp://localhost:4000/InternetMarketService");
             NetTcpBinding netTcpBinding = new NetTcpBinding();
             EndpointAddress endpoint = new EndpointAddress(uri);
             ChannelFactory<IContract> factory = new ChannelFactory<IContract>(netTcpBinding, endpoint);

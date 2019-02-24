@@ -1,0 +1,29 @@
+﻿Выполняется установка сборки 'D:\Progects\C-SHARP\InternetMarketProject\InternetMarket\InternetMarketService\bin\Release\InternetMarketService.exe'.
+Затронуты следующие параметры:
+   logtoconsole = 
+   logfile = D:\Progects\C-SHARP\InternetMarketProject\InternetMarket\InternetMarketService\bin\Release\InternetMarketService.InstallLog
+   assemblypath = D:\Progects\C-SHARP\InternetMarketProject\InternetMarket\InternetMarketService\bin\Release\InternetMarketService.exe
+Невозможно создать интерфейс типа программы установки InternetMarketService.ProjectInstaller.
+System.Reflection.TargetInvocationException: Адресат вызова создал исключение.
+Возникло внутреннее исключение System.ArgumentException со следующим сообщением об ошибке: Недопустимый тип запуска "System" для служб драйверов не для устройства. .
+Выполняется откат для сборки 'D:\Progects\C-SHARP\InternetMarketProject\InternetMarket\InternetMarketService\bin\Release\InternetMarketService.exe'.
+Затронуты следующие параметры:
+   logtoconsole = 
+   logfile = D:\Progects\C-SHARP\InternetMarketProject\InternetMarket\InternetMarketService\bin\Release\InternetMarketService.InstallLog
+   assemblypath = D:\Progects\C-SHARP\InternetMarketProject\InternetMarket\InternetMarketService\bin\Release\InternetMarketService.exe
+Невозможно создать интерфейс типа программы установки InternetMarketService.ProjectInstaller.
+System.Reflection.TargetInvocationException: Адресат вызова создал исключение.
+Возникло внутреннее исключение System.ArgumentException со следующим сообщением об ошибке: Недопустимый тип запуска "System" для служб драйверов не для устройства. .
+Выполняется установка сборки 'D:\Progects\C-SHARP\InternetMarketProject\InternetMarket\InternetMarketService\bin\Release\InternetMarketService.exe'.
+Затронуты следующие параметры:
+   logtoconsole = 
+   logfile = D:\Progects\C-SHARP\InternetMarketProject\InternetMarket\InternetMarketService\bin\Release\InternetMarketService.InstallLog
+   assemblypath = D:\Progects\C-SHARP\InternetMarketProject\InternetMarket\InternetMarketService\bin\Release\InternetMarketService.exe
+Устанавливается служба InternetMarketService...
+Служба InternetMarketService успешно установлена.
+Создается исходный EventLog InternetMarketService в журнале Application...
+Выполняется фиксация сборки 'D:\Progects\C-SHARP\InternetMarketProject\InternetMarket\InternetMarketService\bin\Release\InternetMarketService.exe'.
+Затронуты следующие параметры:
+   logtoconsole = 
+   logfile = D:\Progects\C-SHARP\InternetMarketProject\InternetMarket\InternetMarketService\bin\Release\InternetMarketService.InstallLog
+   assemblypath = D:\Progects\C-SHARP\InternetMarketProject\InternetMarket\InternetMarketService\bin\Release\InternetMarketService.exe

@@ -1,0 +1,13 @@
+﻿Выполняется установка сборки 'D:\Progects\C-SHARP\InternetMarketProject\InternetMarket\InternetMarketService\bin\Release\InternetMarket.exe'.
+Затронуты следующие параметры:
+   logtoconsole = 
+   logfile = D:\Progects\C-SHARP\InternetMarketProject\InternetMarket\InternetMarketService\bin\Release\InternetMarket.InstallLog
+   assemblypath = D:\Progects\C-SHARP\InternetMarketProject\InternetMarket\InternetMarketService\bin\Release\InternetMarket.exe
+Отсутствуют общие программы установки с атрибутом RunInstallerAttribute.Yes в сборке D:\Progects\C-SHARP\InternetMarketProject\InternetMarket\InternetMarketService\bin\Release\InternetMarket.exe.
+Выполняется фиксация сборки 'D:\Progects\C-SHARP\InternetMarketProject\InternetMarket\InternetMarketService\bin\Release\InternetMarket.exe'.
+Затронуты следующие параметры:
+   logtoconsole = 
+   logfile = D:\Progects\C-SHARP\InternetMarketProject\InternetMarket\InternetMarketService\bin\Release\InternetMarket.InstallLog
+   assemblypath = D:\Progects\C-SHARP\InternetMarketProject\InternetMarket\InternetMarketService\bin\Release\InternetMarket.exe
+Отсутствуют общие программы установки с атрибутом RunInstallerAttribute.Yes в сборке D:\Progects\C-SHARP\InternetMarketProject\InternetMarket\InternetMarketService\bin\Release\InternetMarket.exe.
+Удалите файл InstallState, поскольку отсутствуют программы установки.

@@ -1,0 +1,17 @@
+D:\Progects\C-SHARP\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Release\InternetMarketLibrery.dll.config
+D:\Progects\C-SHARP\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Release\InternetMarketLibrery.dll
+D:\Progects\C-SHARP\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Release\InternetMarketLibrery.pdb
+D:\Progects\C-SHARP\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Release\EntityFramework.dll
+D:\Progects\C-SHARP\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Release\EntityFramework.SqlServer.dll
+D:\Progects\C-SHARP\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Release\InternetMarket.exe
+D:\Progects\C-SHARP\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Release\InternetMarket.pdb
+D:\Progects\C-SHARP\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Release\InternetMarket.exe.config
+D:\Progects\C-SHARP\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Release\EntityFramework.xml
+D:\Progects\C-SHARP\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Release\EntityFramework.SqlServer.xml
+D:\Progects\C-SHARP\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Release\ru\EntityFramework.resources.dll
+D:\Progects\C-SHARP\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Release\ru\EntityFramework.SqlServer.resources.dll
+D:\Progects\C-SHARP\InternetMarketProject\InternetMarket\InternetMarketLibrery\obj\Release\InternetMarketLibrery.csprojAssemblyReference.cache
+D:\Progects\C-SHARP\InternetMarketProject\InternetMarket\InternetMarketLibrery\obj\Release\InternetMarketLibrery.csproj.CoreCompileInputs.cache
+D:\Progects\C-SHARP\InternetMarketProject\InternetMarket\InternetMarketLibrery\obj\Release\InternetMarketLibrery.csproj.CopyComplete
+D:\Progects\C-SHARP\InternetMarketProject\InternetMarket\InternetMarketLibrery\obj\Release\InternetMarketLibrery.dll
+D:\Progects\C-SHARP\InternetMarketProject\InternetMarket\InternetMarketLibrery\obj\Release\InternetMarketLibrery.pdb

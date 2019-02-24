@@ -1,0 +1,17 @@
+D:\Progects\C-SHARP\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Debug\InternetMarketLibrery.dll
+D:\Progects\C-SHARP\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Debug\InternetMarketLibrery.pdb
+D:\Progects\C-SHARP\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Debug\InternetMarket.exe
+D:\Progects\C-SHARP\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Debug\EntityFramework.dll
+D:\Progects\C-SHARP\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Debug\InternetMarket.pdb
+D:\Progects\C-SHARP\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Debug\InternetMarket.exe.config
+D:\Progects\C-SHARP\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Debug\EntityFramework.xml
+D:\Progects\C-SHARP\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Debug\ru\EntityFramework.resources.dll
+D:\Progects\C-SHARP\InternetMarketProject\InternetMarket\InternetMarketLibrery\obj\Debug\InternetMarketLibrery.csprojAssemblyReference.cache
+D:\Progects\C-SHARP\InternetMarketProject\InternetMarket\InternetMarketLibrery\obj\Debug\InternetMarketLibrery.csproj.CoreCompileInputs.cache
+D:\Progects\C-SHARP\InternetMarketProject\InternetMarket\InternetMarketLibrery\obj\Debug\InternetMarketLibrery.csproj.CopyComplete
+D:\Progects\C-SHARP\InternetMarketProject\InternetMarket\InternetMarketLibrery\obj\Debug\InternetMarketLibrery.dll
+D:\Progects\C-SHARP\InternetMarketProject\InternetMarket\InternetMarketLibrery\obj\Debug\InternetMarketLibrery.pdb
+D:\Progects\C-SHARP\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Debug\InternetMarketLibrery.dll.config
+D:\Progects\C-SHARP\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Debug\EntityFramework.SqlServer.dll
+D:\Progects\C-SHARP\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Debug\EntityFramework.SqlServer.xml
+D:\Progects\C-SHARP\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Debug\ru\EntityFramework.SqlServer.resources.dll

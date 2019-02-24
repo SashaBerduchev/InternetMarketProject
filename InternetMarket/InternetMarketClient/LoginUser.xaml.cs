@@ -24,7 +24,7 @@ namespace InternetMarketClient
         public LoginUser()
         {
             InitializeComponent();
-            Uri uri = new Uri("net.tcp://localhost:4000/IContract");
+            Uri uri = new Uri("net.tcp://localhost:4000/InternetMarketService");
             NetTcpBinding netTcpBinding = new NetTcpBinding();
             EndpointAddress endpoint = new EndpointAddress(uri);
             ChannelFactory<IContract> factory = new ChannelFactory<IContract>(netTcpBinding, endpoint);
@@ -33,9 +33,15 @@ namespace InternetMarketClient
 
         private void BtlLogin_Click(object sender, RoutedEventArgs e)
         {
-            contract.setLogin(Name.Text, Password.Password);
-            MainWindow main = new MainWindow();
-            main.Show();
-        }
+            try
+            {
+                contract.setLogin(Name.Text, Password.Password);
+                MainWindow main = new MainWindow();
+                main.Show();
+            }catch(Exception exp)
+            {
+                MessageBox.Show(exp.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+         }
     }
 }
