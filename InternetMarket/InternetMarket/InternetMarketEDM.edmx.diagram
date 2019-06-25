@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="4979ccbb2e3e4893b127e6116e5934e8" Name="Diagram1" ZoomLevel="74">
+      <Diagram DiagramId="4979ccbb2e3e4893b127e6116e5934e8" Name="Diagram1" ZoomLevel="23">
         <EntityTypeShape EntityType="InternetMarketDateModel.ComputersSet" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="InternetMarketDateModel.PhonesSet" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="InternetMarketDateModel.TivisetSet" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />

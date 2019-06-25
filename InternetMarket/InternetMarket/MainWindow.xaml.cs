@@ -107,15 +107,14 @@ namespace InternetMarket
 
                 Dispatcher.Invoke(() =>
                 {
-                    InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
-                    phones = internetMarketDateEntities.PhonesSet.ToList();
-                    DataGrid.ItemsSource = phones.Select(x => new { x.Firm, x.Model, x.Quantity, x.Cost, x.Processor, x.RAM, x.Battery, x.Photo,  x.PDF
-
-
-                    });
+                     InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
+                     phones = internetMarketDateEntities.PhonesSet.ToList();
+                     DataGrid.ItemsSource = phones.Select(x => new { x.Firm, x.Model, x.Quantity, x.Cost, x.Processor, x.RAM, x.Battery, x.Photo,  x.PDF
+                     });
                    
 
                 });
+                phones.Clear();
             }catch (Exception e)
             {
                 MessageBox.Show(e.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
@@ -165,8 +164,6 @@ namespace InternetMarket
         {
             try
             {
-
-
                 Dispatcher.Invoke(() =>
                 {
                     
@@ -175,6 +172,7 @@ namespace InternetMarket
                     DataGrid.ItemsSource = computers.Select(x => new { x.Firm, x.Model, x.Quantity, x.Processor, x.RAM, x.VRAM, x.Graphics });
 
                 });
+                computers.Clear();
             }catch(Exception e)
             {
                 MessageBox.Show(e.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
@@ -208,7 +206,6 @@ namespace InternetMarket
 
                 Dispatcher.Invoke(() =>
                 {
-                    
                     InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
                     graphics = internetMarketDateEntities.GraphicsCardSet.ToList();
                     DataGrid.ItemsSource = graphics.Select(x => new { x.Name, x.GraphicsCore, x.Herts, x.Cores, x.VRAM, x.Voltage });
