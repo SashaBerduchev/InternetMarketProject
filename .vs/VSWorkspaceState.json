@@ -2,10 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\InternetMarket",
-    "\\InternetMarket\\InternetMarket",
-    "\\InternetMarket\\InternetMarketLibrery",
-    "\\InternetMarket\\InternetMarketService"
+    "\\InternetMarket\\InternetMarket"
   ],
-  "SelectedNode": "\\InternetMarket\\InternetMarket\\InternetMarketEDM.edmx",
+  "SelectedNode": "\\InternetMarket\\InternetMarket.sln",
   "PreviewInSolutionExplorer": false
 }
