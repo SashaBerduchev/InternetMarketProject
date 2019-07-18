@@ -11,6 +11,8 @@ namespace InternetMarketClient
     interface IContract
     {
         [OperationContract]
+        List<string> GetUsers();
+        [OperationContract]
         void PhonesSet(string Firm, string Model, string Quantity, string Cost, string Processor, string RAM, string Battery, string textpoint);
         [OperationContract]
         void TiviSet(string Firm, string Model, string Quantity, string Cost, string textpoint);
