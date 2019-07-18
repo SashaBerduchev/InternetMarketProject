@@ -8,7 +8,14 @@ namespace InternetMarket
 {
     class InterMarketService : IContract
     {
-        
+        public List<string> GetUsers()
+        {
+            InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
+
+            List<string> users = internetMarketDateEntities.UserSet.Select(x => x.Name).ToList();
+            return users;
+            
+        }
         public List<string> LoadPhones()
         {
              List<PhonesSet> phones;
