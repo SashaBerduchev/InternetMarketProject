@@ -20,6 +20,7 @@ namespace InternetMarketClient
     /// </summary>
     public partial class LoginUser : Window
     {
+        //List<UsersSet> usery;
         IContract contract;
         public LoginUser()
         {
@@ -43,5 +44,10 @@ namespace InternetMarketClient
                 MessageBox.Show(exp.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
          }
+
+        private void User_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
