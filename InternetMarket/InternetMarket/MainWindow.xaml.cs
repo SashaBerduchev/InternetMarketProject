@@ -17,7 +17,7 @@ namespace InternetMarket
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : Window , IDisposable
     {
         IContract contract;
         public MainWindow()
@@ -345,7 +345,7 @@ namespace InternetMarket
 
         private void Print_Click(object sender, RoutedEventArgs e)
         {
-            if (combobox.SelectedItem == "Phones")
+            if (combobox.SelectedItem.ToString() == "Phones")
             {
                 using (FileStream fileStream = new FileStream("filetext.txt", FileMode.Append))
                 {
@@ -360,7 +360,7 @@ namespace InternetMarket
                 }
                 MessageBox.Show("Сохранено", "Предупреждение", MessageBoxButton.OK, MessageBoxImage.Information);
             }
-            else if(combobox.SelectedItem == "Computers")
+            else if(combobox.SelectedItem.ToString() == "Computers")
             {
                 using (FileStream fileStream = new FileStream("filetext.txt", FileMode.Append))
                 {
@@ -397,5 +397,17 @@ namespace InternetMarket
                 MessageBox.Show(exp.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
+
+        public void Dispose()
+        {
+            phones.Clear();
+            graphics.Clear();
+            computers.Clear();
+            phones = null;
+            graphics = null;
+            computers = null;
+        }
+
+     
     }
 }
