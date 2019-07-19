@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -19,9 +20,46 @@ namespace InternetMarket.Windows.LoginUser
     /// </summary>
     public partial class LoginUserServer : Window
     {
+        
         public LoginUserServer()
         {
             InitializeComponent();
+            string uriAddress = "net.tcp://localhost:4000/IContract";
+            //Uri addres = new Uri("net.tcp://localhost:4000/IContract");
+            Uri addres = new Uri(uriAddress);
+            NetTcpBinding binding = new NetTcpBinding();
+            binding.ListenBacklog = 2000;
+            binding.MaxConnections = 2000;
+            binding.TransferMode = TransferMode.Buffered;
+            binding.MaxReceivedMessageSize = 104857600;
+            Type type = typeof(IContract);
+            ServiceHost serviceHost = new ServiceHost(typeof(InterMarketService));
+            serviceHost.AddServiceEndpoint(type, binding, uriAddress);
+            serviceHost.Open();
+            //Костыль, если нету юзеров
+            try
+            {
+                InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
+                List<UserSet> userSet = internetMarketDateEntities.UserSet.ToList();
+                if(userSet.Count() < 0)
+                {
+                    UserSet user = new UserSet{
+                        Name = "Admin", Password = ""
+
+
+                  };
+                    internetMarketDateEntities.UserSet.Add(user);
+                    internetMarketDateEntities.SaveChanges();
+                    User.ItemsSource = internetMarketDateEntities.UserSet.Select(x => x.Name).ToList();
+
+                }
+
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show(e.ToString(), "Warning! Kuda vy edete", MessageBoxButton.OK);
+            }
+
         }
 
         private void BtlLogin_Click(object sender, RoutedEventArgs e)
@@ -29,7 +67,7 @@ namespace InternetMarket.Windows.LoginUser
             InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
             UserSet user = new UserSet
             {
-                Name = Name.Text,
+                Name = User.SelectedItem.ToString(),
                 Password = Password.Password
             };
             internetMarketDateEntities.UserSet.Add(user);

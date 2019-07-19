@@ -20,6 +20,7 @@ namespace InternetMarketClient
     /// </summary>
     public partial class LoginUser : Window
     {
+        //List<UsersSet> usery;
         IContract contract;
         public LoginUser()
         {
@@ -28,14 +29,17 @@ namespace InternetMarketClient
             NetTcpBinding netTcpBinding = new NetTcpBinding();
             EndpointAddress endpoint = new EndpointAddress(uri);
             ChannelFactory<IContract> factory = new ChannelFactory<IContract>(netTcpBinding, endpoint);
+            
             contract = factory.CreateChannel();
+            User.ItemsSource = contract.GetUsers();
+                
         }
 
         private void BtlLogin_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                contract.setLogin(Name.Text, Password.Password);
+                contract.setLogin(User.SelectedItem.ToString(), Password.Password);
                 MainWindow main = new MainWindow();
                 main.Show();
             }catch(Exception exp)
@@ -43,5 +47,7 @@ namespace InternetMarketClient
                 MessageBox.Show(exp.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
          }
+
+        
     }
 }
