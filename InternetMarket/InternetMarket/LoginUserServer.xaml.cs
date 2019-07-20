@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.ServiceModel;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -25,7 +26,7 @@ namespace InternetMarket.Windows.LoginUser
         public LoginUserServer()
         {
             InitializeComponent();
-            string uriAddress = "net.tcp://localhost:4000/IContract";
+            string uriAddress = "net.tcp://localhost:7000/IContract";
             //Uri addres = new Uri("net.tcp://localhost:4000/IContract");
             Uri addres = new Uri(uriAddress);
             NetTcpBinding binding = new NetTcpBinding();
@@ -42,12 +43,10 @@ namespace InternetMarket.Windows.LoginUser
             {
                 internetMarketDateEntities = new InternetMarketDateEntities();
                 List<string> userSet = internetMarketDateEntities.UserSet.Select(x=>x.Name).ToList();
-                if(userSet.Count() < 1)
+                if(userSet.Count < 1)
                 {
                     UserSet user = new UserSet{
                         Name = "Admin", Password = ""
-
-
                   };
                     internetMarketDateEntities.UserSet.Add(user);
                     internetMarketDateEntities.SaveChanges();
@@ -60,20 +59,25 @@ namespace InternetMarket.Windows.LoginUser
                 MessageBox.Show(e.ToString(), "Warning!", MessageBoxButton.OK);
             }
             //GetUser data
+            Thread thread = new Thread(GetUser);
+            
+
+            Trace.WriteLine(this);
+        }
+
+        private void GetUser()
+        {
             try
             {
                 if (internetMarketDateEntities != null) internetMarketDateEntities = null; //обнулить есл существует
                 internetMarketDateEntities = new InternetMarketDateEntities();
                 User.ItemsSource = internetMarketDateEntities.UserSet.Select(x => x.Name).ToList();
             }
-            catch(Exception exp)
+            catch (Exception exp)
             {
                 MessageBox.Show(exp.ToString(), "Warning", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-
-            Trace.WriteLine(this);
         }
-        
 
         private void BtlLogin_Click(object sender, RoutedEventArgs e)
         {
@@ -87,8 +91,9 @@ namespace InternetMarket.Windows.LoginUser
             internetMarketDateEntities.SaveChanges();
             MainWindow main = new MainWindow();
             main.Show();
-        }
-
+            this.Close();
+            Dispose();
+        } 
         public void Dispose()
         {
             if (internetMarketDateEntities != null)

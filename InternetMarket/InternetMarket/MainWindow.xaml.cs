@@ -4,6 +4,7 @@ using InternetMarket.Windows.Spravochniki;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.ServiceModel;
@@ -19,7 +20,7 @@ namespace InternetMarket
     /// </summary>
     public partial class MainWindow : Window , IDisposable
     {
-        IContract contract;
+        
         public MainWindow()
         {
             InitializeComponent();
@@ -38,6 +39,8 @@ namespace InternetMarket
             combobox.Items.Add("CPU");
             combobox.Items.Add("Graphics");
             combobox.Items.Add("Laptop");
+
+            Trace.WriteLine(this);
         }
 
         List<PhonesSet> phones;
@@ -57,41 +60,41 @@ namespace InternetMarket
 
         private void LoadBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (combobox.SelectedItem == "Phones")
+            if (combobox.SelectedItem.ToString() == "Phones")
             {
                 Thread thread = new Thread(GetPhones);
                 thread.Start();
 
             }
-            else if (combobox.SelectedItem == "Tivis")
+            else if (combobox.SelectedItem.ToString() == "Tivis")
             {
                 Thread thread = new Thread(GetTivis);
                 thread.Start();
             }
-            else if (combobox.SelectedItem == "Computers")
+            else if (combobox.SelectedItem.ToString() == "Computers")
             {
                 Thread thread = new Thread(GetComputers);
                 thread.Start();
             }
 
-            else if (combobox.SelectedItem == "Tablets")
+            else if (combobox.SelectedItem.ToString() == "Tablets")
             {
                 Thread thread = new Thread(GetTablets);
                 thread.Start();
             }
 
-            else if (combobox.SelectedItem == "CPU")
+            else if (combobox.SelectedItem.ToString() == "CPU")
             {
                 Thread thread = new Thread(GetCPUInform);
                 thread.Start();
             }
-            else if (combobox.SelectedItem == "Graphics")
+            else if (combobox.SelectedItem.ToString() == "Graphics")
             {
                 Thread thread = new Thread(GetGraphicsCardInform);
                 thread.Start();
             }
 
-            else if (combobox.SelectedItem == "Laptop")
+            else if (combobox.SelectedItem.ToString() == "Laptop")
             {
                 Thread thread = new Thread(GetLaptop);
                 thread.Start();

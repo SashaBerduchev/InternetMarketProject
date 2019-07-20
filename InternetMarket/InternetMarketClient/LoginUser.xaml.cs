@@ -15,7 +15,7 @@ namespace InternetMarketClient
         public LoginUser()
         {
             InitializeComponent();
-            Uri uri = new Uri("net.tcp://localhost:4000/IContract");
+            Uri uri = new Uri("net.tcp://localhost:7000/IContract");
             NetTcpBinding netTcpBinding = new NetTcpBinding();
             EndpointAddress endpoint = new EndpointAddress(uri);
             ChannelFactory<IContract> factory = new ChannelFactory<IContract>(netTcpBinding, endpoint);
