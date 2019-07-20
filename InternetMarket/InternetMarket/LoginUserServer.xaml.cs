@@ -41,7 +41,7 @@ namespace InternetMarket.Windows.LoginUser
             {
                 InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
                 List<UserSet> userSet = internetMarketDateEntities.UserSet.ToList();
-                if(userSet.Count() < 0)
+                if(userSet.Count() < 1)
                 {
                     UserSet user = new UserSet{
                         Name = "Admin", Password = ""
