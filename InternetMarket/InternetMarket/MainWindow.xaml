@@ -36,7 +36,7 @@
         <Button Name="OpenBtnGraphics" Grid.Column="3" Grid.Row="6" Margin="30" Content="GraphicsCarg" Click="OpenBtnGraphics_Click"  />
         <Button Name="OpenBtnlaptop" Grid.Column="4" Grid.Row="6" Margin="30" Content="Laptop" Click="OpenBtnlaptop_Click"  />
         <Button Name="Print" Grid.Column="5" Grid.Row="6" Margin="30" Content="Сохранить" Click="Print_Click" />
-        <Menu Height="25" VerticalAlignment="Top" Grid.ColumnSpan="2" Margin="0,0,106,0">
+        <Menu Height="25" VerticalAlignment="Top" Grid.ColumnSpan="2" Margin="0,0,165,0">
             <MenuItem Header="Directory">
                 <MenuItem Header="Organisation" Click="MenuItem_Click_10" />
                 <MenuItem Header="Profecion"/>
@@ -58,17 +58,6 @@
                 <MenuItem Header="Заках покупателя" Click="MenuItem_Click_9"/>
             </MenuItem>
             <MenuItem Header="View" ></MenuItem>
-            <MenuItem Header="Settings">
-                <MenuItem Header="Administration"/>
-            </MenuItem>
-                    <MenuItem>
-                <MenuItem>
-
-                </MenuItem>
-            </MenuItem>
-
-
         </Menu>
     </Grid>
-
 </Window>
