@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.ServiceModel;
 using System.Text;
@@ -25,13 +26,14 @@ namespace InternetMarketClient
         public LoginUser()
         {
             InitializeComponent();
-            Uri uri = new Uri("net.tcp://localhost:4000/InternetMarketService");
+            Uri uri = new Uri("net.tcp://localhost:4000/IContract");
             NetTcpBinding netTcpBinding = new NetTcpBinding();
             EndpointAddress endpoint = new EndpointAddress(uri);
             ChannelFactory<IContract> factory = new ChannelFactory<IContract>(netTcpBinding, endpoint);
             
             contract = factory.CreateChannel();
             User.ItemsSource = contract.GetUsers();
+            Trace.WriteLine(this);
                 
         }
 
