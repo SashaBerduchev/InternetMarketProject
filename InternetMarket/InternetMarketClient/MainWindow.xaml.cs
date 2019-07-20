@@ -31,12 +31,6 @@ namespace InternetMarketClient
             
             InitializeComponent();
 
-            Uri uri = new Uri("net.tcp://localhost:7000/IContract");
-            NetTcpBinding netTcpBinding = new NetTcpBinding();
-            EndpointAddress endpoint = new EndpointAddress(uri);
-            ChannelFactory<IContract> factory = new ChannelFactory<IContract>(netTcpBinding, endpoint);
-            contract = factory.CreateChannel();
-
             combobox.Items.Add("Phones");
             combobox.Items.Add("Tivis");
             combobox.Items.Add("Computers");

@@ -25,13 +25,6 @@ namespace InternetMarket
         {
             InitializeComponent();
 
-            Uri addres = new Uri("net.tcp://localhost:7000/IContract");
-            NetTcpBinding netTcpBinding = new NetTcpBinding();
-            Type type = typeof(IContract);
-            ServiceHost serviceHost = new ServiceHost(typeof(InterMarketService));
-            serviceHost.AddServiceEndpoint(type, netTcpBinding, addres);
-            serviceHost.Open();
-
             combobox.Items.Add("Phones");
             combobox.Items.Add("Tivis");
             combobox.Items.Add("Computers");

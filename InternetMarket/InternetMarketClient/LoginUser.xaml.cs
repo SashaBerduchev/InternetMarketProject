@@ -21,7 +21,13 @@ namespace InternetMarketClient
             ChannelFactory<IContract> factory = new ChannelFactory<IContract>(netTcpBinding, endpoint);
             
             contract = factory.CreateChannel();
-            User.ItemsSource = contract.GetUsers();
+            try
+            {
+                User.ItemsSource = contract.GetUsers();
+            } catch(Exception e)
+            {
+                MessageBox.Show(e.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
             Trace.WriteLine(this);
                 
         }
