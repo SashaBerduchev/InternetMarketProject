@@ -59,14 +59,7 @@ namespace InternetMarket.Windows.LoginUser
                 MessageBox.Show(e.ToString(), "Warning!", MessageBoxButton.OK);
             }
             //GetUser data
-            Thread thread = new Thread(GetUser);
             
-
-            Trace.WriteLine(this);
-        }
-
-        private void GetUser()
-        {
             try
             {
                 if (internetMarketDateEntities != null) internetMarketDateEntities = null; //обнулить есл существует
@@ -77,6 +70,8 @@ namespace InternetMarket.Windows.LoginUser
             {
                 MessageBox.Show(exp.ToString(), "Warning", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+
+            Trace.WriteLine(this);
         }
 
         private void BtlLogin_Click(object sender, RoutedEventArgs e)
