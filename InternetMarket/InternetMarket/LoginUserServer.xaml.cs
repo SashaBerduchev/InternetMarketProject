@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.ServiceModel;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -18,13 +20,13 @@ namespace InternetMarket.Windows.LoginUser
     /// <summary>
     /// Логика взаимодействия для LoginUserServer.xaml
     /// </summary>
-    public partial class LoginUserServer : Window
+    public partial class LoginUserServer : Window, IDisposable
     {
-        
+        private InternetMarketDateEntities internetMarketDateEntities;
         public LoginUserServer()
         {
             InitializeComponent();
-            string uriAddress = "net.tcp://localhost:4000/IContract";
+            string uriAddress = "net.tcp://localhost:7000/IContract";
             //Uri addres = new Uri("net.tcp://localhost:4000/IContract");
             Uri addres = new Uri(uriAddress);
             NetTcpBinding binding = new NetTcpBinding();
@@ -39,27 +41,37 @@ namespace InternetMarket.Windows.LoginUser
             //Костыль, если нету юзеров
             try
             {
-                InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
-                List<UserSet> userSet = internetMarketDateEntities.UserSet.ToList();
-                if(userSet.Count() < 1)
+                internetMarketDateEntities = new InternetMarketDateEntities();
+                List<string> userSet = internetMarketDateEntities.UserSet.Select(x=>x.Name).ToList();
+                if(userSet.Count < 1)
                 {
                     UserSet user = new UserSet{
                         Name = "Admin", Password = ""
-
-
                   };
                     internetMarketDateEntities.UserSet.Add(user);
                     internetMarketDateEntities.SaveChanges();
-                    User.ItemsSource = internetMarketDateEntities.UserSet.Select(x => x.Name).ToList();
 
                 }
 
             }
             catch(Exception e)
             {
-                MessageBox.Show(e.ToString(), "Warning! Kuda vy edete", MessageBoxButton.OK);
+                MessageBox.Show(e.ToString(), "Warning!", MessageBoxButton.OK);
+            }
+            //GetUser data
+            
+            try
+            {
+                if (internetMarketDateEntities != null) internetMarketDateEntities = null; //обнулить есл существует
+                internetMarketDateEntities = new InternetMarketDateEntities();
+                User.ItemsSource = internetMarketDateEntities.UserSet.Select(x => x.Name).ToList();
+            }
+            catch (Exception exp)
+            {
+                MessageBox.Show(exp.ToString(), "Warning", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
+            Trace.WriteLine(this);
         }
 
         private void BtlLogin_Click(object sender, RoutedEventArgs e)
@@ -74,6 +86,16 @@ namespace InternetMarket.Windows.LoginUser
             internetMarketDateEntities.SaveChanges();
             MainWindow main = new MainWindow();
             main.Show();
+            this.Close();
+            Dispose();
+        } 
+        public void Dispose()
+        {
+            if (internetMarketDateEntities != null)
+            {
+                internetMarketDateEntities.Dispose();
+                internetMarketDateEntities = null;
+            }
         }
     }
 }
