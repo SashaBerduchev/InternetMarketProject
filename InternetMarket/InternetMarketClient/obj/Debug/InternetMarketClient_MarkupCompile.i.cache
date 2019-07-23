@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Progects\C-SHARP\InternetMarketProject\InternetMarket\InternetMarketClient\obj\Debug\
+E:\BerdychevRedlineProject\InternetMarket\InternetMarketClient\obj\Debug\
 InternetMarketClient
 none
 false
 DEBUG;TRACE
-D:\Progects\C-SHARP\InternetMarketProject\InternetMarket\InternetMarketClient\App.xaml
-17-674218291
+E:\BerdychevRedlineProject\InternetMarket\InternetMarketClient\App.xaml
+192003479476
 
-261699157090
+281481512472
 14-1605096400
-LoginUser.xaml;MainWindow.xaml;Windows\Spravochniki\City.xaml;Windows\Spravochniki\CityData.xaml;Windows\ClientData\GraphicsCard.xaml;Windows\ClientData\Laptop.xaml;Windows\ClientData\OpenCPU.xaml;Windows\Spravochniki\Country.xaml;Windows\Spravochniki\CountrysData.xaml;Windows\Spravochniki\Oblast.xaml;Windows\Spravochniki\OblastData.xaml;Windows\ClientData\OpenComputers.xaml;Windows\ClientData\OpenPhones.xaml;Windows\ClientData\OpenTablets.xaml;Windows\Spravochniki\openTivis.xaml;Windows\Spravochniki\OrganizationAdd.xaml;Windows\Spravochniki\OrganizationData.xaml;
+LoginUser.xaml;MainWindow.xaml;Windows\Users\AddUserWindowClient.xaml;Windows\Administration\AdministrationWindow.xaml;Windows\Spravochniki\City.xaml;Windows\Spravochniki\CityData.xaml;Windows\ClientData\GraphicsCard.xaml;Windows\ClientData\Laptop.xaml;Windows\ClientData\OpenCPU.xaml;Windows\Spravochniki\Country.xaml;Windows\Spravochniki\CountrysData.xaml;Windows\Spravochniki\Oblast.xaml;Windows\Spravochniki\OblastData.xaml;Windows\ClientData\OpenComputers.xaml;Windows\ClientData\OpenPhones.xaml;Windows\ClientData\OpenTablets.xaml;Windows\Spravochniki\openTivis.xaml;Windows\Spravochniki\OrganizationAdd.xaml;Windows\Spravochniki\OrganizationData.xaml;
 
-False
+True
 

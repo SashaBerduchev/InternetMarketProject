@@ -209,6 +209,9 @@
     <Compile Include="TabletSet.cs">
       <DependentUpon>InternetMarketEDM.tt</DependentUpon>
     </Compile>
+    <Compile Include="Windows\Administration\AdministrationWindow.xaml.cs">
+      <DependentUpon>AdministrationWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\Documents\ZakazPokupatyaData.xaml.cs">
       <DependentUpon>ZakazPokupatyaData.xaml</DependentUpon>
     </Compile>
@@ -335,12 +338,19 @@
     <Compile Include="UserSet.cs">
       <DependentUpon>InternetMarketEDM.tt</DependentUpon>
     </Compile>
+    <Compile Include="Windows\Users\AddUserWindowServer.xaml.cs">
+      <DependentUpon>AddUserWindowServer.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\ZakazPokupatelyaDoc.xaml.cs">
       <DependentUpon>ZakazPokupatelyaDoc.xaml</DependentUpon>
     </Compile>
     <Compile Include="ZakazPokupatelya.cs">
       <DependentUpon>InternetMarketEDM.tt</DependentUpon>
     </Compile>
+    <Page Include="Windows\Administration\AdministrationWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\Documents\ZakazPokupatyaData.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -470,6 +480,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\TiviWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Users\AddUserWindowServer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

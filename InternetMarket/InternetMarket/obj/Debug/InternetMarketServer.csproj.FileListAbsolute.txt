@@ -898,3 +898,6 @@ E:\BerdychevRedlineProject\InternetMarket\InternetMarket\obj\Debug\InternetMarke
 E:\BerdychevRedlineProject\InternetMarket\InternetMarket\obj\Debug\InternetMarketServer.csproj.CopyComplete
 E:\BerdychevRedlineProject\InternetMarket\InternetMarket\obj\Debug\InternetMarket.exe
 E:\BerdychevRedlineProject\InternetMarket\InternetMarket\obj\Debug\InternetMarket.pdb
+E:\BerdychevRedlineProject\InternetMarket\InternetMarket\obj\Debug\Windows\Administration\AdministrationWindow.g.cs
+E:\BerdychevRedlineProject\InternetMarket\InternetMarket\obj\Debug\Windows\Administration\AdministrationWindow.baml
+E:\BerdychevRedlineProject\InternetMarket\InternetMarket\obj\Debug\Windows\Users\AddUserWindowServer.g.cs
