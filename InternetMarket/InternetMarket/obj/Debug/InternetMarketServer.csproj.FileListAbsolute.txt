@@ -901,3 +901,4 @@ E:\BerdychevRedlineProject\InternetMarket\InternetMarket\obj\Debug\InternetMarke
 E:\BerdychevRedlineProject\InternetMarket\InternetMarket\obj\Debug\Windows\Administration\AdministrationWindow.g.cs
 E:\BerdychevRedlineProject\InternetMarket\InternetMarket\obj\Debug\Windows\Administration\AdministrationWindow.baml
 E:\BerdychevRedlineProject\InternetMarket\InternetMarket\obj\Debug\Windows\Users\AddUserWindowServer.g.cs
+E:\BerdychevRedlineProject\InternetMarket\InternetMarket\obj\Debug\Windows\Users\AddUserWindowServer.baml

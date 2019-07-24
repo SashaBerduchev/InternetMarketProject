@@ -23,5 +23,10 @@ namespace InternetMarket.Windows.Users
         {
             InitializeComponent();
         }
+
+        private void TextUser_Click(object sender, RoutedEventArgs e)
+        {
+            //твой код
+        }
     }
 }

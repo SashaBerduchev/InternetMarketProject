@@ -23,5 +23,10 @@ namespace InternetMarketClient.Windows.Administration
         {
             InitializeComponent();
         }
+
+        private void TextUser_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

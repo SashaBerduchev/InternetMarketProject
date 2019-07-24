@@ -11,6 +11,6 @@
         <TextBox Name="User" HorizontalAlignment="Left" Height="23" Margin="127,37,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="143"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,95,0,0" TextWrapping="Wrap" Text="Пароль" VerticalAlignment="Top"/>
         <PasswordBox Name="Password" HorizontalAlignment="Left" Height="23" Margin="127,94,0,0" VerticalAlignment="Top" Width="143"/>
-        <Button Name="TextUser" Content="Добавить" HorizontalAlignment="Left" Margin="90,187,0,0" VerticalAlignment="Top" Width="133" Height="30" Click="TextUser_Click"/>
+        <Button Name="TextUser" Content="Добавить" HorizontalAlignment="Left" Margin="90,187,0,0" VerticalAlignment="Top" Width="133" Height="30" Click="TextUser_Click" />
     </Grid>
 </Window>
