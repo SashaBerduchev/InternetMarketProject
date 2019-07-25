@@ -1,4 +1,5 @@
 ﻿using InternetMarket.Windows;
+using InternetMarket.Windows.Administration;
 using InternetMarket.Windows.Documents;
 using InternetMarket.Windows.Spravochniki;
 using System;
@@ -196,39 +197,39 @@ namespace InternetMarket
 
         public void GetGraphicsCardInform()
         {
-            try
+            try//1
             {
 
 
-                Dispatcher.Invoke(() =>
+                Dispatcher.Invoke(() =>//2
                 {
-                    InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
-                    graphics = internetMarketDateEntities.GraphicsCardSet.ToList();
-                    DataGrid.ItemsSource = graphics.Select(x => new { x.Name, x.GraphicsCore, x.Herts, x.Cores, x.VRAM, x.Voltage });
+                    InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();//3
+                    graphics = internetMarketDateEntities.GraphicsCardSet.ToList();//4
+                    DataGrid.ItemsSource = graphics.Select(x => new { x.Name, x.GraphicsCore, x.Herts, x.Cores, x.VRAM, x.Voltage });//
 
-                });
+                });//5
             }catch(Exception e)
             {
-                MessageBox.Show(e.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(e.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);//6
             }
         }
 
 
         public void GetLaptop()
         {
-            try
+            try//1
             {
 
-                Dispatcher.Invoke(() =>
+                Dispatcher.Invoke(() =>//2
                 {
-                    List<Laptops> laptops;
-                    InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
-                    laptops = internetMarketDateEntities.LaptopsSet.ToList();
-                    DataGrid.ItemsSource = laptops.Select(x => new { x.Name, x.Model, x.Procc, x.RAM, x.VRAM, x.GPU, x.SCREEN, x.Resolution, x.Battery });
+                    List<Laptops> laptops;//3
+                    InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();//4
+                    laptops = internetMarketDateEntities.LaptopsSet.ToList();//5
+                    DataGrid.ItemsSource = laptops.Select(x => new { x.Name, x.Model, x.Procc, x.RAM, x.VRAM, x.GPU, x.SCREEN, x.Resolution, x.Battery });//6
                 });
             }catch(Exception e)
             {
-                MessageBox.Show(e.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(e.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);//7
             }
         }
 
@@ -341,35 +342,35 @@ namespace InternetMarket
 
         private void Print_Click(object sender, RoutedEventArgs e)
         {
-            if (combobox.SelectedItem.ToString() == "Phones")
+            if (combobox.SelectedItem.ToString() == "Phones")//1
             {
-                using (FileStream fileStream = new FileStream("filetext.txt", FileMode.Append))
+                using (FileStream fileStream = new FileStream("filetext.txt", FileMode.Append))//2
                 {
-                    for (int i = 0; i < phones.Count; i++)
+                    for (int i = 0; i < phones.Count; i++)//3
                     {
 
-                        byte[] array = System.Text.Encoding.Default.GetBytes(phones[i].ToString());
+                        byte[] array = System.Text.Encoding.Default.GetBytes(phones[i].ToString());//1
 
-                        fileStream.Write(array, 0, array.Length);
+                        fileStream.Write(array, 0, array.Length);//2
                     }
 
                 }
                 MessageBox.Show("Сохранено", "Предупреждение", MessageBoxButton.OK, MessageBoxImage.Information);
             }
-            else if(combobox.SelectedItem.ToString() == "Computers")
+            else if(combobox.SelectedItem.ToString() == "Computers")//1
             {
-                using (FileStream fileStream = new FileStream("filetext.txt", FileMode.Append))
+                using (FileStream fileStream = new FileStream("filetext.txt", FileMode.Append))//2
                 {
-                    for (int i = 0; i < computers.Count; i++)
+                    for (int i = 0; i < computers.Count; i++)//3
                     {
 
-                        byte[] array = System.Text.Encoding.Default.GetBytes(computers[i].ToString());
+                        byte[] array = System.Text.Encoding.Default.GetBytes(computers[i].ToString());//4
 
-                        fileStream.Write(array, 0, array.Length);
+                        fileStream.Write(array, 0, array.Length);//5
                     }
 
                 }
-                MessageBox.Show("Сохранено", "Предупреждение", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Сохранено", "Предупреждение", MessageBoxButton.OK, MessageBoxImage.Information);//6
             }
         }
 
@@ -377,33 +378,37 @@ namespace InternetMarket
         {
             try
             {
-                FileStream file = new FileStream("Information.txt", FileMode.Append);
-                string savestr;
-                savestr = DataGrid.SelectedItem.ToString();
-                for (int i = 0; i < savestr.Length; i++)
+                FileStream file = new FileStream("Information.txt", FileMode.Append); //1
+                string savestr; //2
+                savestr = DataGrid.SelectedItem.ToString();//3
+                for (int i = 0; i < savestr.Length; i++)//4
                 {
-                    byte[] array = Encoding.Default.GetBytes(savestr.ToString());
-                    file.Write(array, 0, array.Length);
+                    byte[] array = Encoding.Default.GetBytes(savestr.ToString());//1
+                    file.Write(array, 0, array.Length);//2
                 }
-                file.Close();
-                MessageBox.Show("Готово", "Предупреждение", MessageBoxButton.OK, MessageBoxImage.Information);
+                file.Close();//5
+                MessageBox.Show("Готово", "Предупреждение", MessageBoxButton.OK, MessageBoxImage.Information);//6
             }
             catch (Exception exp)
             {
-                MessageBox.Show(exp.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(exp.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);//7
             }
         }
 
         public void Dispose()
         {
-            phones.Clear();
-            graphics.Clear();
-            computers.Clear();
-            phones = null;
-            graphics = null;
-            computers = null;
+            phones.Clear();//1
+            graphics.Clear();//2
+            computers.Clear();//3
+            phones = null;//4
+            graphics = null;//5
+            computers = null;//6
         }
 
-     
+        private void MenuItem_ClickAdministration(object sender, RoutedEventArgs e)
+        {
+            AdministrationWindow administrationWindow = new AdministrationWindow();
+            administrationWindow.Show();
+        }
     }
 }

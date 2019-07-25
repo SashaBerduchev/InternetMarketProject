@@ -186,3 +186,7 @@ E:\BerdychevRedlineProject\InternetMarket\InternetMarketClient\obj\Debug\Interne
 E:\BerdychevRedlineProject\InternetMarket\InternetMarketClient\obj\Debug\InternetMarketClient.csproj.CoreCompileInputs.cache
 E:\BerdychevRedlineProject\InternetMarket\InternetMarketClient\obj\Debug\InternetMarketClient.exe
 E:\BerdychevRedlineProject\InternetMarket\InternetMarketClient\obj\Debug\InternetMarketClient.pdb
+E:\BerdychevRedlineProject\InternetMarket\InternetMarketClient\obj\Debug\Windows\Administration\AdministrationWindow.g.cs
+E:\BerdychevRedlineProject\InternetMarket\InternetMarketClient\obj\Debug\Windows\Administration\AdministrationWindow.baml
+E:\BerdychevRedlineProject\InternetMarket\InternetMarketClient\obj\Debug\Windows\Users\AddUserWindowClient.g.cs
+E:\BerdychevRedlineProject\InternetMarket\InternetMarketClient\obj\Debug\Windows\Users\AddUserWindowClient.baml
