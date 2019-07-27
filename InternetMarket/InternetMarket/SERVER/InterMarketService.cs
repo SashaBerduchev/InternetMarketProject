@@ -8,6 +8,21 @@ namespace InternetMarket
 {
     class InterMarketService : IContract
     {
+
+        public void setUserLogin(string login, string pass)
+        {
+            //  UkrzaliznutsaDBEntities ukrzaliznutsaDBEntities = new UkrzaliznutsaDBEntities();//1
+            InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
+            UserSet users = new UserSet//2
+            {
+                Name = login,//3
+                Password = pass//4
+            };
+            internetMarketDateEntities.UserSet.Add(users);
+            internetMarketDateEntities.SaveChanges();
+         //  ukrzaliznutsaDBEntities.UsersSet.Add(users);//5
+          //  ukrzaliznutsaDBEntities.SaveChanges();//6
+        }
         public List<string> GetUsers()
         {
             InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();

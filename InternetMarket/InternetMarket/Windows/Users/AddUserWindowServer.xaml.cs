@@ -19,6 +19,7 @@ namespace InternetMarket.Windows.Users
     /// </summary>
     public partial class AddUserWindowServer : Window
     {
+        IContract contract;
         public AddUserWindowServer()
         {
             InitializeComponent();
@@ -26,7 +27,8 @@ namespace InternetMarket.Windows.Users
 
         private void TextUser_Click(object sender, RoutedEventArgs e)
         {
-            //твой код
+            contract.setUserLogin(User.Text, Password.Password);
+            this.Close();
         }
     }
 }

@@ -902,10 +902,6 @@ E:\BerdychevRedlineProject\InternetMarket\InternetMarket\obj\Debug\Windows\Admin
 E:\BerdychevRedlineProject\InternetMarket\InternetMarket\obj\Debug\Windows\Administration\AdministrationWindow.baml
 E:\BerdychevRedlineProject\InternetMarket\InternetMarket\obj\Debug\Windows\Users\AddUserWindowServer.g.cs
 E:\BerdychevRedlineProject\InternetMarket\InternetMarket\obj\Debug\Windows\Users\AddUserWindowServer.baml
-D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\bin\Debug\EntityFramework.SqlServerCompact.dll
-D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\bin\Debug\System.Data.SqlServerCe.dll
-D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\bin\Debug\EntityFramework.SqlServerCompact.xml
-D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\Administration\AdministrationWindow.g.cs
-D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\Users\AddUserWindowServer.g.cs
-D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\Administration\AdministrationWindow.baml
-D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\Users\AddUserWindowServer.baml
+E:\BerdychevRedlineProject\InternetMarket\InternetMarket\bin\Debug\EntityFramework.SqlServerCompact.dll
+E:\BerdychevRedlineProject\InternetMarket\InternetMarket\bin\Debug\System.Data.SqlServerCe.dll
+E:\BerdychevRedlineProject\InternetMarket\InternetMarket\bin\Debug\EntityFramework.SqlServerCompact.xml
