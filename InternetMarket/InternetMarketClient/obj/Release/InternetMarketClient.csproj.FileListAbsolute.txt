@@ -139,3 +139,7 @@ F:\InternetMarketProject\InternetMarket\InternetMarketClient\obj\Release\Interne
 F:\InternetMarketProject\InternetMarket\InternetMarketClient\obj\Release\InternetMarketClient.csproj.CoreCompileInputs.cache
 F:\InternetMarketProject\InternetMarket\InternetMarketClient\obj\Release\InternetMarketClient.exe
 F:\InternetMarketProject\InternetMarket\InternetMarketClient\obj\Release\InternetMarketClient.pdb
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketClient\obj\Release\Windows\Users\AddUserWindowClient.g.cs
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketClient\obj\Release\Windows\Administration\AdministrationWindow.g.cs
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketClient\obj\Release\Windows\Users\AddUserWindowClient.baml
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketClient\obj\Release\Windows\Administration\AdministrationWindow.baml

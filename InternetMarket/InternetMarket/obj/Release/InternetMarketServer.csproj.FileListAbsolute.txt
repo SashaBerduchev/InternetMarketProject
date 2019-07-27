@@ -673,3 +673,10 @@ F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\InternetMarke
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\InternetMarketServer.csproj.CopyComplete
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\InternetMarket.exe
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\InternetMarket.pdb
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\bin\Release\EntityFramework.SqlServerCompact.dll
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\bin\Release\System.Data.SqlServerCe.dll
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\bin\Release\EntityFramework.SqlServerCompact.xml
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\Administration\AdministrationWindow.g.cs
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\Users\AddUserWindowServer.g.cs
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\Administration\AdministrationWindow.baml
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\Users\AddUserWindowServer.baml

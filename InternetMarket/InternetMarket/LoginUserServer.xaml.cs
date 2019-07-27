@@ -76,19 +76,53 @@ namespace InternetMarket.Windows.LoginUser
 
         private void BtlLogin_Click(object sender, RoutedEventArgs e)
         {
-            InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
-            UserSet user = new UserSet
+            internetMarketDateEntities = new InternetMarketDateEntities();
+            List<string> pass = internetMarketDateEntities.UserSet.Where(x=>x.Name.Contains(User.SelectedItem.ToString())).Select(p=>p.Password).ToList();
+            if (pass.Contains(Password.Password))
             {
-                Name = User.SelectedItem.ToString(),
-                Password = Password.Password
-            };
-            internetMarketDateEntities.UserSet.Add(user);
-            internetMarketDateEntities.SaveChanges();
-            MainWindow main = new MainWindow();
-            main.Show();
-            this.Close();
+                UserSet user = new UserSet
+                {
+                    Name = User.SelectedItem.ToString(),
+                    Password = Password.Password
+                };
+                internetMarketDateEntities.UserSet.Add(user);
+                internetMarketDateEntities.SaveChanges();
+                new MainWindow().Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Неверный пароль", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
             Dispose();
-        } 
+        }
+
+        private void Password_KeyDown(object sender, KeyEventArgs e)
+        {
+           if(e.Key == Key.Enter)
+            {
+                internetMarketDateEntities = new InternetMarketDateEntities();
+                List<string> pass = internetMarketDateEntities.UserSet.Where(x => x.Name.Contains(User.SelectedItem.ToString())).Select(p => p.Password).ToList();
+                if (pass.Contains(Password.Password))
+                {
+                    UserSet user = new UserSet
+                    {
+                        Name = User.SelectedItem.ToString(),
+                        Password = Password.Password
+                    };
+                    internetMarketDateEntities.UserSet.Add(user);
+                    internetMarketDateEntities.SaveChanges();
+                    new MainWindow().Show();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Неверный пароль", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
+                Dispose();
+            }
+        }
+
         public void Dispose()
         {
             if (internetMarketDateEntities != null)
