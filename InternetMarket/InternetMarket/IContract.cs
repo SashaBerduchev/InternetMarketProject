@@ -49,6 +49,6 @@ namespace InternetMarket
         [OperationContract]
         void setLogin(string name, string password);
         [OperationContract]
-        void setUserLogin(string login, string pass);
+        bool setUserLogin(string login, string pass);
     };
 }
