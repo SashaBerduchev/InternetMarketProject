@@ -19,6 +19,7 @@ namespace InternetMarketClient.Windows.Administration
     /// </summary>
     public partial class AddUserWindowClient : Window
     {
+        IContract contract;
         public AddUserWindowClient()
         {
             InitializeComponent();
@@ -26,7 +27,16 @@ namespace InternetMarketClient.Windows.Administration
 
         private void TextUser_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                contract.setUserLogin(User.Text, Password.Password);
+                this.Close();
 
+            }
+            catch(Exception exce)
+            {
+                MessageBox.Show(exce.ToString(),"warning", MessageBoxButton.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
