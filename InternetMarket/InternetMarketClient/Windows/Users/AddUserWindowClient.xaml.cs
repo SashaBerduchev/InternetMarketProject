@@ -35,7 +35,7 @@ namespace InternetMarketClient.Windows.Administration
             }
             catch(Exception exce)
             {
-                MessageBox.Show(exce.ToString(),"warning", MessageBoxButton.OK, MessageBoxIcon.Error);
+              //  MessageBox.Show(exce.ToString(),"warning", MessageBoxButton.OK, MessageBoxIcon.Error);
             }
         }
     }
