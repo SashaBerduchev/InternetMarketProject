@@ -1,15 +1,20 @@
-﻿using System;
+﻿using InternetMarket;
+using System;
+using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using System.ServiceModel;
 using System.Windows;
+using System.Windows.Input;
 
 namespace InternetMarketClient
 {
     /// <summary>
     /// Логика взаимодействия для LoginUser.xaml
     /// </summary>
-    public partial class LoginUser : Window
+    public partial class LoginUser : Window, IDisposable
     {
+        private InternetMarketDateEntities internetMarketDateEntities;
         //List<UsersSet> usery;
         IContract contract;
         public LoginUser()
@@ -32,19 +37,66 @@ namespace InternetMarketClient
                 
         }
 
+       
+
         private void BtlLogin_Click(object sender, RoutedEventArgs e)
         {
-            try
+            internetMarketDateEntities = new InternetMarketDateEntities();
+            List<string> pass = internetMarketDateEntities.UserSet.Where(x => x.Name.Contains(User.SelectedItem.ToString())).Select(p => p.Password).ToList();
+            if (pass.Contains(Password.Password))
             {
-                contract.setLogin(User.SelectedItem.ToString(), Password.Password);
-                MainWindow main = new MainWindow();
-                main.Show();
-            }catch(Exception exp)
-            {
-                MessageBox.Show(exp.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                UserSet user = new UserSet
+                {
+                    Name = User.SelectedItem.ToString(),
+                    Password = Password.Password
+                };
+                internetMarketDateEntities.UserSet.Add(user);
+                internetMarketDateEntities.SaveChanges();
+                new MainWindow().Show();
+                this.Close();
             }
-         }
+            else
+            {
+                MessageBox.Show("Неверный пароль", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+            Dispose();
+        }
 
-        
+        private void Password_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                internetMarketDateEntities = new InternetMarketDateEntities();
+                List<string> pass = internetMarketDateEntities.UserSet.Where(x => x.Name.Contains(User.SelectedItem.ToString())).Select(p => p.Password).ToList();
+                if (pass.Contains(Password.Password))
+                {
+                    UserSet user = new UserSet
+                    {
+                        Name = User.SelectedItem.ToString(),
+                        Password = Password.Password
+                    };
+                    internetMarketDateEntities.UserSet.Add(user);
+                    internetMarketDateEntities.SaveChanges();
+                    new MainWindow().Show();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Неверный пароль", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
+                Dispose();
+            }
+        }
+
+        public void Dispose()
+        {
+            if (internetMarketDateEntities != null)
+            {
+                internetMarketDateEntities.Dispose();
+                internetMarketDateEntities = null;
+            }
+        }
+
+
     }
 }
