@@ -912,3 +912,10 @@ E:\BerdychevRedlineProject\InternetMarket\InternetMarket\obj\Release\InternetMar
 E:\BerdychevRedlineProject\InternetMarket\InternetMarket\obj\Release\InternetMarketServer.csproj.CopyComplete
 E:\BerdychevRedlineProject\InternetMarket\InternetMarket\obj\Release\InternetMarket.exe
 E:\BerdychevRedlineProject\InternetMarket\InternetMarket\obj\Release\InternetMarket.pdb
+F:\InternetMarketProject\InternetMarket\InternetMarket\bin\Release\EntityFramework.SqlServerCompact.dll
+F:\InternetMarketProject\InternetMarket\InternetMarket\bin\Release\System.Data.SqlServerCe.dll
+F:\InternetMarketProject\InternetMarket\InternetMarket\bin\Release\EntityFramework.SqlServerCompact.xml
+F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\Administration\AdministrationWindow.g.cs
+F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\Users\AddUserWindowServer.g.cs
+F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\Administration\AdministrationWindow.baml
+F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\Users\AddUserWindowServer.baml

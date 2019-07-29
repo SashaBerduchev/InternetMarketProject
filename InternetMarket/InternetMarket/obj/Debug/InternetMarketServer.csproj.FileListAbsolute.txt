@@ -912,3 +912,10 @@ D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Win
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\Users\AddUserWindowServer.g.cs
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\Administration\AdministrationWindow.baml
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\Users\AddUserWindowServer.baml
+F:\InternetMarketProject\InternetMarket\InternetMarket\bin\Debug\EntityFramework.SqlServerCompact.dll
+F:\InternetMarketProject\InternetMarket\InternetMarket\bin\Debug\System.Data.SqlServerCe.dll
+F:\InternetMarketProject\InternetMarket\InternetMarket\bin\Debug\EntityFramework.SqlServerCompact.xml
+F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\Administration\AdministrationWindow.g.cs
+F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\Users\AddUserWindowServer.g.cs
+F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\Administration\AdministrationWindow.baml
+F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\Users\AddUserWindowServer.baml

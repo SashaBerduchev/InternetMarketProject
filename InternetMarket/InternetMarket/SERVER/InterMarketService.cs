@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace InternetMarket
 {
     class InterMarketService : IContract
     {
 
-        public bool setUserLogin(string login, string pass)
+        public bool SetUserLogin(string login, string pass)
         {
             InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
             List<string> passstr = internetMarketDateEntities.UserSet.Where(x => x.Name.Contains(login)).Select(p => p.Password).ToList();
@@ -31,11 +32,17 @@ namespace InternetMarket
         }
         public List<string> GetUsers()
         {
-            InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
+            List<string> users = new List<string>();
+            try
+            {
+                InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
 
-            List<string> users = internetMarketDateEntities.UserSet.Select(x => x.Name).ToList();
+                users = internetMarketDateEntities.UserSet.Select(x => x.Name).ToList();
+            }catch(Exception exp)
+            {
+                MessageBox.Show(exp.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
             return users;
-            
         }
         public List<string> LoadPhones()
         {

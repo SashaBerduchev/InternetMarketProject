@@ -29,7 +29,7 @@ namespace InternetMarketClient.Windows.Administration
         {
             try
             {
-                contract.setUserLogin(User.Text, Password.Password);
+                contract.SetUserLogin(User.Text, Password.Password);
                 this.Close();
 
             }
