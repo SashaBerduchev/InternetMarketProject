@@ -1,7 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using System.ServiceModel;
 using System.Windows;
+using System.Windows.Input;
 
 namespace InternetMarketClient
 {
@@ -10,6 +13,7 @@ namespace InternetMarketClient
     /// </summary>
     public partial class LoginUser : Window
     {
+        
         //List<UsersSet> usery;
         IContract contract;
         public LoginUser()
@@ -32,19 +36,35 @@ namespace InternetMarketClient
                 
         }
 
+       
+
         private void BtlLogin_Click(object sender, RoutedEventArgs e)
         {
-            try
+           if(contract.SetUserLogin(User.SelectedItem.ToString(), Password.Password))
             {
-                contract.setLogin(User.SelectedItem.ToString(), Password.Password);
-                MainWindow main = new MainWindow();
-                main.Show();
-            }catch(Exception exp)
-            {
-                MessageBox.Show(exp.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                new MainWindow().Show();
+                this.Close();
             }
-         }
+            else{
+                MessageBox.Show("Неверный пароль", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+        }
 
-        
+        private void Password_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                if (contract.SetUserLogin(User.SelectedItem.ToString(), Password.Password))
+                {
+                    new MainWindow().Show();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Неверный пароль", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
+                
+            }
+        }
     }
 }

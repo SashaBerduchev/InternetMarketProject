@@ -194,3 +194,17 @@ D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketClient\obj\Deb
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketClient\obj\Debug\Windows\Administration\AdministrationWindow.g.cs
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketClient\obj\Debug\Windows\Users\AddUserWindowClient.baml
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketClient\obj\Debug\Windows\Administration\AdministrationWindow.baml
+F:\InternetMarketProject\InternetMarket\InternetMarketClient\bin\Debug\EntityFramework.dll
+F:\InternetMarketProject\InternetMarket\InternetMarketClient\bin\Debug\EntityFramework.SqlServer.dll
+F:\InternetMarketProject\InternetMarket\InternetMarketClient\bin\Debug\InternetMarket.exe
+F:\InternetMarketProject\InternetMarket\InternetMarketClient\bin\Debug\InternetMarket.pdb
+F:\InternetMarketProject\InternetMarket\InternetMarketClient\bin\Debug\InternetMarket.exe.config
+F:\InternetMarketProject\InternetMarket\InternetMarketClient\bin\Debug\EntityFramework.xml
+F:\InternetMarketProject\InternetMarket\InternetMarketClient\bin\Debug\EntityFramework.SqlServer.xml
+F:\InternetMarketProject\InternetMarket\InternetMarketClient\bin\Debug\ru\EntityFramework.resources.dll
+F:\InternetMarketProject\InternetMarket\InternetMarketClient\bin\Debug\ru\EntityFramework.SqlServer.resources.dll
+F:\InternetMarketProject\InternetMarket\InternetMarketClient\obj\Debug\Windows\Users\AddUserWindowClient.g.cs
+F:\InternetMarketProject\InternetMarket\InternetMarketClient\obj\Debug\Windows\Administration\AdministrationWindow.g.cs
+F:\InternetMarketProject\InternetMarket\InternetMarketClient\obj\Debug\Windows\Users\AddUserWindowClient.baml
+F:\InternetMarketProject\InternetMarket\InternetMarketClient\obj\Debug\Windows\Administration\AdministrationWindow.baml
+F:\InternetMarketProject\InternetMarket\InternetMarketClient\obj\Debug\InternetMarketClient.csproj.CopyComplete

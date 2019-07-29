@@ -9,6 +9,7 @@ namespace InternetMarketLibrery
 {
     public class InternetMarket : IContract
     {
+
         public List<string> LoadPhones()
         {
             List<PhonesSet> phones;
@@ -262,16 +263,9 @@ namespace InternetMarketLibrery
             return listgpu;
         }
 
-        public void setLogin(string name, string password)
+        bool IContract.SetUserLogin(string name, string password)
         {
-            InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
-            UserSet user = new UserSet
-            {
-                Name = name,
-                Password = password
-            };
-            internetMarketDateEntities.UserSet.Add(user);
-            internetMarketDateEntities.SaveChanges();
+            throw new NotImplementedException();
         }
     }
 }
