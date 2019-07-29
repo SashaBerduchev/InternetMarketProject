@@ -49,3 +49,8 @@ F:\InternetMarketProject\InternetMarket\InternetMarketLibrery\obj\Release\Intern
 F:\InternetMarketProject\InternetMarket\InternetMarketLibrery\obj\Release\InternetMarketLibrery.csproj.CopyComplete
 F:\InternetMarketProject\InternetMarket\InternetMarketLibrery\obj\Release\InternetMarketLibrery.dll
 F:\InternetMarketProject\InternetMarket\InternetMarketLibrery\obj\Release\InternetMarketLibrery.pdb
+F:\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Release\EntityFramework.SqlServerCompact.dll
+F:\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Release\System.Data.SqlServerCe.dll
+F:\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Release\System.Runtime.CompilerServices.Unsafe.dll
+F:\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Release\EntityFramework.SqlServerCompact.xml
+F:\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Release\System.Runtime.CompilerServices.Unsafe.xml

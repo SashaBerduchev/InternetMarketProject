@@ -204,3 +204,17 @@ E:\BerdychevRedlineProject\InternetMarket\InternetMarketClient\bin\Release\Entit
 E:\BerdychevRedlineProject\InternetMarket\InternetMarketClient\bin\Release\ru\EntityFramework.resources.dll
 E:\BerdychevRedlineProject\InternetMarket\InternetMarketClient\bin\Release\ru\EntityFramework.SqlServer.resources.dll
 E:\BerdychevRedlineProject\InternetMarket\InternetMarketClient\obj\Release\InternetMarketClient.csproj.CopyComplete
+F:\InternetMarketProject\InternetMarket\InternetMarketClient\bin\Release\EntityFramework.dll
+F:\InternetMarketProject\InternetMarket\InternetMarketClient\bin\Release\EntityFramework.SqlServer.dll
+F:\InternetMarketProject\InternetMarket\InternetMarketClient\bin\Release\InternetMarket.exe
+F:\InternetMarketProject\InternetMarket\InternetMarketClient\bin\Release\InternetMarket.pdb
+F:\InternetMarketProject\InternetMarket\InternetMarketClient\bin\Release\InternetMarket.exe.config
+F:\InternetMarketProject\InternetMarket\InternetMarketClient\bin\Release\EntityFramework.xml
+F:\InternetMarketProject\InternetMarket\InternetMarketClient\bin\Release\EntityFramework.SqlServer.xml
+F:\InternetMarketProject\InternetMarket\InternetMarketClient\bin\Release\ru\EntityFramework.resources.dll
+F:\InternetMarketProject\InternetMarket\InternetMarketClient\bin\Release\ru\EntityFramework.SqlServer.resources.dll
+F:\InternetMarketProject\InternetMarket\InternetMarketClient\obj\Release\Windows\Users\AddUserWindowClient.g.cs
+F:\InternetMarketProject\InternetMarket\InternetMarketClient\obj\Release\Windows\Administration\AdministrationWindow.g.cs
+F:\InternetMarketProject\InternetMarket\InternetMarketClient\obj\Release\Windows\Users\AddUserWindowClient.baml
+F:\InternetMarketProject\InternetMarket\InternetMarketClient\obj\Release\Windows\Administration\AdministrationWindow.baml
+F:\InternetMarketProject\InternetMarket\InternetMarketClient\obj\Release\InternetMarketClient.csproj.CopyComplete
