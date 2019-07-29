@@ -48,5 +48,7 @@ namespace InternetMarket
         List<string> LoadGPU();
         [OperationContract]
         void setLogin(string name, string password);
+        [OperationContract]
+        bool setUserLogin(string login, string pass);
     };
 }

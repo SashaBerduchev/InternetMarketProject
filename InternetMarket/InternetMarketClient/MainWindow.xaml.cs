@@ -1,4 +1,5 @@
 ﻿using InternetMarketClient.Windows;
+using InternetMarketClient.Windows.Administration;
 using InternetMarketClient.Windows.ClientData;
 using System;
 using System.Collections.Generic;
@@ -169,5 +170,13 @@ namespace InternetMarketClient
                 MessageBox.Show(exp.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
+
+        private void MenuItem_ClickAdministration(object sender, RoutedEventArgs e)
+        {
+            AdministrationWindow administrationWindow = new AdministrationWindow();
+            administrationWindow.Show();
+        }
+
+      
     }
 }

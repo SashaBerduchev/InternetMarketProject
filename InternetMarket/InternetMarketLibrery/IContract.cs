@@ -45,6 +45,6 @@ namespace InternetMarketLibrery
         [OperationContract]
         List<string> LoadGPU();
         [OperationContract]
-        void setLogin(string name, string password);
+        bool setLogin(string name, string password);
     }
 }

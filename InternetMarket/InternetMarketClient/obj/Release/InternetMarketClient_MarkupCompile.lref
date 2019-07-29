@@ -2,6 +2,8 @@
 
 FE:\BerdychevRedlineProject\InternetMarket\InternetMarketClient\LoginUser.xaml;;
 FE:\BerdychevRedlineProject\InternetMarket\InternetMarketClient\MainWindow.xaml;;
+FE:\BerdychevRedlineProject\InternetMarket\InternetMarketClient\Windows\Users\AddUserWindowClient.xaml;;
+FE:\BerdychevRedlineProject\InternetMarket\InternetMarketClient\Windows\Administration\AdministrationWindow.xaml;;
 FE:\BerdychevRedlineProject\InternetMarket\InternetMarketClient\Windows\Spravochniki\City.xaml;;
 FE:\BerdychevRedlineProject\InternetMarket\InternetMarketClient\Windows\Spravochniki\CityData.xaml;;
 FE:\BerdychevRedlineProject\InternetMarket\InternetMarketClient\Windows\ClientData\GraphicsCard.xaml;;

@@ -66,3 +66,8 @@ E:\BerdychevRedlineProject\InternetMarket\InternetMarketLibrery\obj\Debug\Intern
 E:\BerdychevRedlineProject\InternetMarket\InternetMarketLibrery\obj\Debug\InternetMarketLibrery.csproj.CopyComplete
 E:\BerdychevRedlineProject\InternetMarket\InternetMarketLibrery\obj\Debug\InternetMarketLibrery.dll
 E:\BerdychevRedlineProject\InternetMarket\InternetMarketLibrery\obj\Debug\InternetMarketLibrery.pdb
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Debug\System.Data.SqlServerCe.dll
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Debug\EntityFramework.SqlServerCompact.dll
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Debug\EntityFramework.SqlServerCompact.xml

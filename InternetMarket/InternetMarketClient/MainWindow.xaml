@@ -55,6 +55,9 @@
                 <MenuItem Header="Счет на оплату покупателю" Height="26"  />
                 <MenuItem Header="Заках покупателя" />
             </MenuItem>
+            <MenuItem Header="Settings" >
+                <MenuItem Header="Administration"  Click="MenuItem_ClickAdministration"/>
+            </MenuItem>
         </Menu>
     </Grid>
 </Window>
