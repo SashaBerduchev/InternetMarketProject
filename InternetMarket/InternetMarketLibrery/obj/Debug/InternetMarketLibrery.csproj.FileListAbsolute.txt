@@ -71,3 +71,8 @@ D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\De
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Debug\EntityFramework.SqlServerCompact.dll
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Debug\EntityFramework.SqlServerCompact.xml
+F:\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Debug\EntityFramework.SqlServerCompact.dll
+F:\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Debug\System.Data.SqlServerCe.dll
+F:\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+F:\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Debug\EntityFramework.SqlServerCompact.xml
+F:\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml

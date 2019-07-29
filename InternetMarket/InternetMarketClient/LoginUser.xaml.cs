@@ -1,5 +1,4 @@
-﻿using InternetMarket;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -12,9 +11,9 @@ namespace InternetMarketClient
     /// <summary>
     /// Логика взаимодействия для LoginUser.xaml
     /// </summary>
-    public partial class LoginUser : Window, IDisposable
+    public partial class LoginUser : Window
     {
-        private InternetMarketDateEntities internetMarketDateEntities;
+        
         //List<UsersSet> usery;
         IContract contract;
         public LoginUser()
@@ -41,42 +40,22 @@ namespace InternetMarketClient
 
         private void BtlLogin_Click(object sender, RoutedEventArgs e)
         {
-            internetMarketDateEntities = new InternetMarketDateEntities();
-            List<string> pass = internetMarketDateEntities.UserSet.Where(x => x.Name.Contains(User.SelectedItem.ToString())).Select(p => p.Password).ToList();
-            if (pass.Contains(Password.Password))
+           if(contract.SetUserLogin(User.SelectedItem.ToString(), Password.Password))
             {
-                UserSet user = new UserSet
-                {
-                    Name = User.SelectedItem.ToString(),
-                    Password = Password.Password
-                };
-                internetMarketDateEntities.UserSet.Add(user);
-                internetMarketDateEntities.SaveChanges();
                 new MainWindow().Show();
                 this.Close();
             }
-            else
-            {
+            else{
                 MessageBox.Show("Неверный пароль", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
-            Dispose();
         }
 
         private void Password_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
             {
-                internetMarketDateEntities = new InternetMarketDateEntities();
-                List<string> pass = internetMarketDateEntities.UserSet.Where(x => x.Name.Contains(User.SelectedItem.ToString())).Select(p => p.Password).ToList();
-                if (pass.Contains(Password.Password))
+                if (contract.SetUserLogin(User.SelectedItem.ToString(), Password.Password))
                 {
-                    UserSet user = new UserSet
-                    {
-                        Name = User.SelectedItem.ToString(),
-                        Password = Password.Password
-                    };
-                    internetMarketDateEntities.UserSet.Add(user);
-                    internetMarketDateEntities.SaveChanges();
                     new MainWindow().Show();
                     this.Close();
                 }
@@ -84,19 +63,8 @@ namespace InternetMarketClient
                 {
                     MessageBox.Show("Неверный пароль", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
                 }
-                Dispose();
+                
             }
         }
-
-        public void Dispose()
-        {
-            if (internetMarketDateEntities != null)
-            {
-                internetMarketDateEntities.Dispose();
-                internetMarketDateEntities = null;
-            }
-        }
-
-
     }
 }

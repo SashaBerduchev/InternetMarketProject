@@ -27,7 +27,7 @@ namespace InternetMarket.Windows.Users
 
         private void TextUser_Click(object sender, RoutedEventArgs e)
         {
-            contract.setUserLogin(User.Text, Password.Password);
+            contract.SetUserLogin(User.Text, Password.Password);
             this.Close();
         }
     }
