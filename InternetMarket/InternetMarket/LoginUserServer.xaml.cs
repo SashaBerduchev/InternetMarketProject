@@ -22,22 +22,22 @@ namespace InternetMarket.Windows.LoginUser
     /// </summary>
     public partial class LoginUserServer : Window, IDisposable
     {
-        private InternetMarketDateEntities internetMarketDateEntities;
-        public LoginUserServer()
+        private InternetMarketDateEntities internetMarketDateEntities;//1
+        public LoginUserServer()//2
         {
-            InitializeComponent();
-            string uriAddress = "net.tcp://localhost:7000/IContract";
+            InitializeComponent();//3
+            string uriAddress = "net.tcp://localhost:7000/IContract";//4
             //Uri addres = new Uri("net.tcp://localhost:4000/IContract");
-            Uri addres = new Uri(uriAddress);
-            NetTcpBinding binding = new NetTcpBinding();
-            binding.ListenBacklog = 2000;
-            binding.MaxConnections = 2000;
-            binding.TransferMode = TransferMode.Buffered;
-            binding.MaxReceivedMessageSize = 104857600;
-            Type type = typeof(IContract);
-            ServiceHost serviceHost = new ServiceHost(typeof(InterMarketService));
-            serviceHost.AddServiceEndpoint(type, binding, uriAddress);
-            serviceHost.Open();
+            Uri addres = new Uri(uriAddress);//5
+            NetTcpBinding binding = new NetTcpBinding();//6
+            binding.ListenBacklog = 2000;//7
+            binding.MaxConnections = 2000;//8
+            binding.TransferMode = TransferMode.Buffered;//9
+            binding.MaxReceivedMessageSize = 104857600;//10
+            Type type = typeof(IContract);//11
+            ServiceHost serviceHost = new ServiceHost(typeof(InterMarketService));//12
+            serviceHost.AddServiceEndpoint(type, binding, uriAddress);//13
+            serviceHost.Open();//14
             //Костыль, если нету юзеров
             try
             {
