@@ -14,7 +14,7 @@ namespace InternetMarket
         {
             InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
             List<string> passstr = internetMarketDateEntities.UserSet.Where(x => x.Name.Contains(login)).Select(p => p.Password).ToList();
-            if (passstr.Contains(login))
+            if (passstr.Contains(pass))
             {
                 UserSet users = new UserSet//2
                 {
