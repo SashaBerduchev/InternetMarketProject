@@ -1,6 +1,7 @@
 ﻿using InternetMarket.Windows;
 using InternetMarket.Windows.Administration;
 using InternetMarket.Windows.Documents;
+using InternetMarket.Windows.InternetMarketData;
 using InternetMarket.Windows.Spravochniki;
 using System;
 using System.Collections.Generic;
@@ -21,7 +22,11 @@ namespace InternetMarket
     /// </summary>
     public partial class MainWindow : Window , IDisposable
     {
-        
+        private InternetMarketDateEntities internetMarketDateEntities;
+        private List<PhonesSet> phones;
+        private List<ComputersSet> computers;
+        private List<GraphicsCard> graphics;
+        private List<CPU> cpus;
         public MainWindow()
         {
             InitializeComponent();
@@ -37,9 +42,6 @@ namespace InternetMarket
             Trace.WriteLine(this);
         }
 
-        List<PhonesSet> phones;
-        List<ComputersSet> computers;
-        List<GraphicsCard> graphics;
         private void OpenBtn_Click(object sender, RoutedEventArgs e)
         {
             OpenPhones openPhones = new OpenPhones();
@@ -94,17 +96,16 @@ namespace InternetMarket
                 thread.Start();
             }
 
-
         }
 
         public void GetPhones()
         {
+            Dispose();
             try
             {
-
                 Dispatcher.Invoke(() =>
                 {
-                     InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
+                     internetMarketDateEntities = new InternetMarketDateEntities();
                      phones = internetMarketDateEntities.PhonesSet.ToList();
                      DataGrid.ItemsSource = phones.Select(x => new { x.Firm, x.Model, x.Quantity, x.Cost, x.Processor, x.RAM, x.Battery, x.Photo,  x.PDF
                      });
@@ -184,7 +185,7 @@ namespace InternetMarket
 
                 Dispatcher.Invoke(() =>
                 {
-                    List<CPU> cpus;
+                    Dispose();
                     InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
                     cpus = internetMarketDateEntities.CPUSet.ToList();
                     DataGrid.ItemsSource = cpus.Select(x => new { x.Name, x.Architecture, x.Cores, x.Chastota, x.KESHL1, x.KESHL2, x.KESHL3, x.GPU, x.RAM, x.TDP });
@@ -203,7 +204,8 @@ namespace InternetMarket
 
                 Dispatcher.Invoke(() =>//2
                 {
-                    InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();//3
+                    Dispose();
+                    internetMarketDateEntities = new InternetMarketDateEntities();//3
                     graphics = internetMarketDateEntities.GraphicsCardSet.ToList();//4
                     DataGrid.ItemsSource = graphics.Select(x => new { x.Name, x.GraphicsCore, x.Herts, x.Cores, x.VRAM, x.Voltage });//
 
@@ -395,6 +397,28 @@ namespace InternetMarket
             }
         }
 
+
+        private void MenuItem_ClickAdministration(object sender, RoutedEventArgs e)
+        {
+            AdministrationWindow administrationWindow = new AdministrationWindow();
+            administrationWindow.Show();
+        }
+
+        private void OpenBtnPrinter_Click(object sender, RoutedEventArgs e)
+        {
+            new PrinterWindow().Show();
+        }
+
+        private void OpenBtnBoiler_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Dispose();
+        }
+
         public void Dispose()
         {
             phones.Clear();//1
@@ -403,12 +427,10 @@ namespace InternetMarket
             phones = null;//4
             graphics = null;//5
             computers = null;//6
-        }
-
-        private void MenuItem_ClickAdministration(object sender, RoutedEventArgs e)
-        {
-            AdministrationWindow administrationWindow = new AdministrationWindow();
-            administrationWindow.Show();
+            cpus.Clear();
+            cpus = null;
+            if (internetMarketDateEntities != null) internetMarketDateEntities.Dispose();
+            internetMarketDateEntities = null;
         }
     }
 }

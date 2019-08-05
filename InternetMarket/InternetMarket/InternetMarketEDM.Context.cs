@@ -47,5 +47,7 @@ namespace InternetMarket
         public virtual DbSet<Laptops> LaptopsSet { get; set; }
         public virtual DbSet<Dogovor> DogovorSet { get; set; }
         public virtual DbSet<ZakazPokupatelya> ZakazPokupatelyaSet { get; set; }
+        public virtual DbSet<Printers> PrintersSet { get; set; }
+        public virtual DbSet<Boilers> BoilersSet { get; set; }
     }
 }

@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 07/29/2019 13:38:00
--- Generated from EDMX file: F:\InternetMarketProject\InternetMarket\InternetMarket\InternetMarketEDM.edmx
+-- Date Created: 08/05/2019 21:46:29
+-- Generated from EDMX file: D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\InternetMarketEDM.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -333,6 +333,26 @@ CREATE TABLE [dbo].[ZakazPokupatelyaSet] (
 );
 GO
 
+-- Creating table 'PrintersSet'
+CREATE TABLE [dbo].[PrintersSet] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [Name] nvarchar(max)  NOT NULL,
+    [Colors] nvarchar(max)  NOT NULL,
+    [Speed] nvarchar(max)  NOT NULL,
+    [Cost] nvarchar(max)  NOT NULL
+);
+GO
+
+-- Creating table 'BoilersSet'
+CREATE TABLE [dbo].[BoilersSet] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [Volume] nvarchar(max)  NOT NULL,
+    [Power] nvarchar(max)  NOT NULL,
+    [Voltage] nvarchar(max)  NOT NULL,
+    [Cost] nvarchar(max)  NOT NULL
+);
+GO
+
 -- --------------------------------------------------
 -- Creating all PRIMARY KEY constraints
 -- --------------------------------------------------
@@ -466,6 +486,18 @@ GO
 -- Creating primary key on [Id] in table 'ZakazPokupatelyaSet'
 ALTER TABLE [dbo].[ZakazPokupatelyaSet]
 ADD CONSTRAINT [PK_ZakazPokupatelyaSet]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'PrintersSet'
+ALTER TABLE [dbo].[PrintersSet]
+ADD CONSTRAINT [PK_PrintersSet]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'BoilersSet'
+ALTER TABLE [dbo].[BoilersSet]
+ADD CONSTRAINT [PK_BoilersSet]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
