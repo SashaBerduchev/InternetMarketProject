@@ -919,3 +919,5 @@ F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\Admin
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\Users\AddUserWindowServer.g.cs
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\Administration\AdministrationWindow.baml
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\Users\AddUserWindowServer.baml
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\InternetMarketData\PrinterWindow.g.cs
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\InternetMarketData\PrinterWindow.baml

@@ -72,6 +72,8 @@
     <EntitySet Name="LaptopsSet" EntityType="InternetMarketDateModel.Laptops" />
     <EntitySet Name="DogovorSet" EntityType="InternetMarketDateModel.Dogovor" />
     <EntitySet Name="ZakazPokupatelyaSet" EntityType="InternetMarketDateModel.ZakazPokupatelya" />
+    <EntitySet Name="PrintersSet" EntityType="InternetMarketDateModel.Printers" />
+    <EntitySet Name="BoilersSet" EntityType="InternetMarketDateModel.Boilers" />
   </EntityContainer>
   <EntityType Name="Director">
     <Key>
@@ -263,5 +265,25 @@
     <Property Name="Sklad" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
     <Property Name="Ysluga" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
     <Property Name="Data" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Printers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" />
+    <Property Name="Colors" Type="String" Nullable="false" />
+    <Property Name="Speed" Type="String" Nullable="false" />
+    <Property Name="Cost" Type="String" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Boilers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Volume" Type="String" Nullable="false" />
+    <Property Name="Power" Type="String" Nullable="false" />
+    <Property Name="Voltage" Type="String" Nullable="false" />
+    <Property Name="Cost" Type="String" Nullable="false" />
   </EntityType>
 </Schema>

@@ -157,6 +157,9 @@
     <Compile Include="BankSet.cs">
       <DependentUpon>InternetMarketEDM.tt</DependentUpon>
     </Compile>
+    <Compile Include="Boilers.cs">
+      <DependentUpon>InternetMarketEDM.tt</DependentUpon>
+    </Compile>
     <Compile Include="CityData.cs">
       <DependentUpon>InternetMarketEDM.tt</DependentUpon>
     </Compile>
@@ -206,6 +209,9 @@
     <Compile Include="PartialClass\PartialCPUList.cs" />
     <Compile Include="PartialClass\Partiallaptop.cs" />
     <Compile Include="PartialClass\PartialDocument.cs" />
+    <Compile Include="Printers.cs">
+      <DependentUpon>InternetMarketEDM.tt</DependentUpon>
+    </Compile>
     <Compile Include="RegionData.cs">
       <DependentUpon>InternetMarketEDM.tt</DependentUpon>
     </Compile>
@@ -223,6 +229,9 @@
     </Compile>
     <Compile Include="LoginUserServer.xaml.cs">
       <DependentUpon>LoginUserServer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\InternetMarketData\PrinterWindow.xaml.cs">
+      <DependentUpon>PrinterWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\Spravochniki\CitiData.xaml.cs">
       <DependentUpon>CitiData.xaml</DependentUpon>
@@ -362,6 +371,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="LoginUserServer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\InternetMarketData\PrinterWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
