@@ -27,6 +27,7 @@ namespace InternetMarket
         private List<ComputersSet> computers;
         private List<GraphicsCard> graphics;
         private List<CPU> cpus;
+        private List<string> printers;
         public MainWindow()
         {
             InitializeComponent();
@@ -38,6 +39,7 @@ namespace InternetMarket
             combobox.Items.Add("CPU");
             combobox.Items.Add("Graphics");
             combobox.Items.Add("Laptop");
+            combobox.Items.Add("Printers");
 
             Trace.WriteLine(this);
         }
@@ -94,9 +96,14 @@ namespace InternetMarket
             {
                 Thread thread = new Thread(GetLaptop);
                 thread.Start();
+            }else if(combobox.SelectedItem.ToString() == "Printers")
+            {
+                Thread thread = new Thread(GetPrinters);
+                thread.Start();
             }
 
         }
+
 
         public void GetPhones()
         {
@@ -235,6 +242,14 @@ namespace InternetMarket
             }
         }
 
+        private void GetPrinters()
+        {
+            Dispose();
+            printers = new List<string>();
+            internetMarketDateEntities = new InternetMarketDateEntities();
+            printers = internetMarketDateEntities.PrintersSet.Select(x => x.Name + "" + x.Speed + "" + x.Colors + "" + x.Cost).ToList();
+            DataGrid.ItemsSource = printers;
+        }
 
 
 
@@ -421,14 +436,16 @@ namespace InternetMarket
 
         public void Dispose()
         {
-            phones.Clear();//1
-            graphics.Clear();//2
-            computers.Clear();//3
+            if(phones != null)phones.Clear();//1
+            if(graphics != null)graphics.Clear();//2
+            if(combobox != null)computers.Clear();//3
+            if (printers != null) printers.Clear();
             phones = null;//4
             graphics = null;//5
             computers = null;//6
             cpus.Clear();
             cpus = null;
+            printers = null;
             if (internetMarketDateEntities != null) internetMarketDateEntities.Dispose();
             internetMarketDateEntities = null;
         }
