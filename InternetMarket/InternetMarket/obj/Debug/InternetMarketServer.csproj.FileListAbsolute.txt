@@ -921,3 +921,5 @@ F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\Adminis
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\Users\AddUserWindowServer.baml
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\InternetMarketData\PrinterWindow.g.cs
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\InternetMarketData\PrinterWindow.baml
+F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\InternetMarketData\PrinterWindow.g.cs
+F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\InternetMarketData\PrinterWindow.baml
