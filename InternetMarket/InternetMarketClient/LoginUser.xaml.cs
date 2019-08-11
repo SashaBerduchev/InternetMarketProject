@@ -30,7 +30,7 @@ namespace InternetMarketClient
                 User.ItemsSource = contract.GetUsers();
             } catch(Exception e)
             {
-                MessageBox.Show(e.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Ошибка подкчения к севреру", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             Trace.WriteLine(this);
                 
@@ -40,19 +40,7 @@ namespace InternetMarketClient
 
         private void BtlLogin_Click(object sender, RoutedEventArgs e)
         {
-           if(contract.SetUserLogin(User.SelectedItem.ToString(), Password.Password))
-            {
-                new MainWindow().Show();
-                this.Close();
-            }
-            else{
-                MessageBox.Show("Неверный пароль", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
-            }
-        }
-
-        private void Password_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.Key == Key.Enter)
+            try
             {
                 if (contract.SetUserLogin(User.SelectedItem.ToString(), Password.Password))
                 {
@@ -63,7 +51,74 @@ namespace InternetMarketClient
                 {
                     MessageBox.Show("Неверный пароль", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
                 }
-                
+            }catch(NullReferenceException )
+            {
+                MessageBoxResult result = MessageBox.Show("Выберите пользователя", "Warning", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                if( result == MessageBoxResult.Yes)
+                {
+                    new LoginUser().Show();
+                    this.Close();
+                }
+                else if (result == MessageBoxResult.No)
+                {
+                    this.Close();
+                }
+            }catch(CommunicationException)
+            {
+                MessageBoxResult result = MessageBox.Show("Ошибка подключения к серверу", "Warning", MessageBoxButton.YesNo, MessageBoxImage.Error);
+                if (result == MessageBoxResult.Yes)
+                {
+                    new LoginUser().Show();
+                    this.Close();
+                }
+                else if (result == MessageBoxResult.No)
+                {
+                    this.Close();
+                }
+            }
+        }
+
+        private void Password_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                try
+                {
+                    if (contract.SetUserLogin(User.SelectedItem.ToString(), Password.Password))
+                    {
+                        new MainWindow().Show();
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Неверный пароль", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    }
+                }
+                catch (NullReferenceException)
+                {
+                    MessageBoxResult result = MessageBox.Show("Выберите пользователя", "Warning", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                    if (result == MessageBoxResult.Yes)
+                    {
+                        new LoginUser().Show();
+                        this.Close();
+                    }
+                    else if (result == MessageBoxResult.No)
+                    {
+                        this.Close();
+                    }
+                }catch (CommunicationException)
+                {
+                    MessageBoxResult result = MessageBox.Show("Ошибка подключения к серверу", "Warning", MessageBoxButton.YesNo, MessageBoxImage.Error);
+                    if (result == MessageBoxResult.Yes)
+                    {
+                        new LoginUser().Show();
+                        this.Close();
+                    }
+                    else if (result == MessageBoxResult.No)
+                    {
+                        this.Close();
+                    }
+                }
             }
         }
     }

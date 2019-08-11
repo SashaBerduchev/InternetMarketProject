@@ -19,5 +19,7 @@ namespace InternetMarket
         public string Power { get; set; }
         public string Voltage { get; set; }
         public string Cost { get; set; }
+        public string Name { get; set; }
+        public string Model { get; set; }
     }
 }

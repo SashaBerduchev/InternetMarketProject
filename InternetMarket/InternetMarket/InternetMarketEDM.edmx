@@ -25,6 +25,8 @@
           <Property Name="Power" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Voltage" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Cost" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Model" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
         <EntityType Name="CityDataSet">
           <Key>
@@ -580,6 +582,8 @@
           <Property Name="Power" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="Voltage" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="Cost" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Model" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -868,6 +872,8 @@
           <ScalarProperty Name="Power" ColumnName="Power" />
           <ScalarProperty Name="Voltage" ColumnName="Voltage" />
           <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

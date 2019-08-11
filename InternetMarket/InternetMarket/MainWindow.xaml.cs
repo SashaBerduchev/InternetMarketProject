@@ -58,6 +58,7 @@ namespace InternetMarket
 
         private void LoadBtn_Click(object sender, RoutedEventArgs e)
         {
+            Dispose();
             if (combobox.SelectedItem.ToString() == "Phones")
             {
                 Thread thread = new Thread(GetPhones);
@@ -244,11 +245,13 @@ namespace InternetMarket
 
         private void GetPrinters()
         {
-            Dispose();
-            printers = new List<string>();
-            internetMarketDateEntities = new InternetMarketDateEntities();
-            printers = internetMarketDateEntities.PrintersSet.Select(x => x.Name + "" + x.Speed + "" + x.Colors + "" + x.Cost).ToList();
-            DataGrid.ItemsSource = printers;
+            Dispatcher.Invoke(() =>
+            {
+                printers = new List<string>();
+                internetMarketDateEntities = new InternetMarketDateEntities();
+                printers = internetMarketDateEntities.PrintersSet.Select(x => x.Name + "" + x.Speed + "" + x.Colors + "" + x.Cost).ToList();
+                DataGrid.ItemsSource = printers;
+            });
         }
 
 
@@ -426,7 +429,7 @@ namespace InternetMarket
 
         private void OpenBtnBoiler_Click(object sender, RoutedEventArgs e)
         {
-
+            new BoilerWindow().Show();
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
@@ -438,16 +441,17 @@ namespace InternetMarket
         {
             if(phones != null)phones.Clear();//1
             if(graphics != null)graphics.Clear();//2
-            if(combobox != null)computers.Clear();//3
+            if(computers != null)computers.Clear();//3
             if (printers != null) printers.Clear();
+            if(cpus != null)cpus.Clear();
             phones = null;//4
             graphics = null;//5
             computers = null;//6
-            cpus.Clear();
             cpus = null;
             printers = null;
             if (internetMarketDateEntities != null) internetMarketDateEntities.Dispose();
             internetMarketDateEntities = null;
+            
         }
     }
 }

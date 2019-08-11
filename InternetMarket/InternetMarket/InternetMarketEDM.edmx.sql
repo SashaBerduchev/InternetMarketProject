@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 08/07/2019 11:14:26
--- Generated from EDMX file: F:\InternetMarketProject\InternetMarket\InternetMarket\InternetMarketEDM.edmx
+-- Date Created: 08/11/2019 12:32:07
+-- Generated from EDMX file: D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\InternetMarketEDM.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -22,11 +22,68 @@ GO
 -- Dropping existing tables
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[BankSetSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[BankSetSet];
+GO
+IF OBJECT_ID(N'[dbo].[BoilersSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[BoilersSet];
+GO
+IF OBJECT_ID(N'[dbo].[CityDataSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[CityDataSet];
+GO
+IF OBJECT_ID(N'[dbo].[CkladSetSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[CkladSetSet];
+GO
 IF OBJECT_ID(N'[dbo].[ComputersSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[ComputersSet];
 GO
+IF OBJECT_ID(N'[dbo].[CountrySet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[CountrySet];
+GO
+IF OBJECT_ID(N'[dbo].[CPUSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[CPUSet];
+GO
+IF OBJECT_ID(N'[dbo].[DirectorSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[DirectorSet];
+GO
+IF OBJECT_ID(N'[dbo].[DocForPainSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[DocForPainSet];
+GO
+IF OBJECT_ID(N'[dbo].[DogovorSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[DogovorSet];
+GO
+IF OBJECT_ID(N'[dbo].[GraphicsCardSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[GraphicsCardSet];
+GO
+IF OBJECT_ID(N'[dbo].[KassaSetSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[KassaSetSet];
+GO
+IF OBJECT_ID(N'[dbo].[LaptopsSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[LaptopsSet];
+GO
+IF OBJECT_ID(N'[dbo].[OblastDataSetSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[OblastDataSetSet];
+GO
+IF OBJECT_ID(N'[dbo].[OrganizationPositionSetSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[OrganizationPositionSetSet];
+GO
+IF OBJECT_ID(N'[dbo].[OrganizationSetSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[OrganizationSetSet];
+GO
 IF OBJECT_ID(N'[dbo].[PhonesSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[PhonesSet];
+GO
+IF OBJECT_ID(N'[dbo].[PrintersSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[PrintersSet];
+GO
+IF OBJECT_ID(N'[dbo].[RegionDataSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[RegionDataSet];
+GO
+IF OBJECT_ID(N'[dbo].[StreetSetSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[StreetSetSet];
+GO
+IF OBJECT_ID(N'[dbo].[TabletSetSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[TabletSetSet];
 GO
 IF OBJECT_ID(N'[dbo].[TivisetSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[TivisetSet];
@@ -34,65 +91,8 @@ GO
 IF OBJECT_ID(N'[dbo].[UserSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[UserSet];
 GO
-IF OBJECT_ID(N'[dbo].[DirectorSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[DirectorSet];
-GO
-IF OBJECT_ID(N'[dbo].[CountrySet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[CountrySet];
-GO
-IF OBJECT_ID(N'[dbo].[OblastDataSetSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[OblastDataSetSet];
-GO
-IF OBJECT_ID(N'[dbo].[RegionDataSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[RegionDataSet];
-GO
-IF OBJECT_ID(N'[dbo].[CityDataSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[CityDataSet];
-GO
-IF OBJECT_ID(N'[dbo].[OrganizationSetSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[OrganizationSetSet];
-GO
-IF OBJECT_ID(N'[dbo].[OrganizationPositionSetSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[OrganizationPositionSetSet];
-GO
-IF OBJECT_ID(N'[dbo].[CkladSetSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[CkladSetSet];
-GO
-IF OBJECT_ID(N'[dbo].[StreetSetSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[StreetSetSet];
-GO
-IF OBJECT_ID(N'[dbo].[KassaSetSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[KassaSetSet];
-GO
-IF OBJECT_ID(N'[dbo].[BankSetSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[BankSetSet];
-GO
-IF OBJECT_ID(N'[dbo].[TabletSetSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[TabletSetSet];
-GO
-IF OBJECT_ID(N'[dbo].[DocForPainSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[DocForPainSet];
-GO
-IF OBJECT_ID(N'[dbo].[CPUSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[CPUSet];
-GO
-IF OBJECT_ID(N'[dbo].[GraphicsCardSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[GraphicsCardSet];
-GO
-IF OBJECT_ID(N'[dbo].[LaptopsSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[LaptopsSet];
-GO
-IF OBJECT_ID(N'[dbo].[DogovorSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[DogovorSet];
-GO
 IF OBJECT_ID(N'[dbo].[ZakazPokupatelyaSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[ZakazPokupatelyaSet];
-GO
-IF OBJECT_ID(N'[dbo].[PrintersSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[PrintersSet];
-GO
-IF OBJECT_ID(N'[dbo].[BoilersSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[BoilersSet];
 GO
 
 -- --------------------------------------------------
@@ -355,7 +355,9 @@ CREATE TABLE [dbo].[BoilersSet] (
     [Volume] nvarchar(max)  NOT NULL,
     [Power] nvarchar(max)  NOT NULL,
     [Voltage] nvarchar(max)  NOT NULL,
-    [Cost] nvarchar(max)  NOT NULL
+    [Cost] nvarchar(max)  NOT NULL,
+    [Name] nvarchar(max)  NOT NULL,
+    [Model] nvarchar(max)  NOT NULL
 );
 GO
 

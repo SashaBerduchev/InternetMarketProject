@@ -923,3 +923,5 @@ D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Win
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\InternetMarketData\PrinterWindow.baml
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\InternetMarketData\PrinterWindow.g.cs
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\InternetMarketData\PrinterWindow.baml
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\InternetMarketData\BoilerWindow.g.cs
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\InternetMarketData\BoilerWindow.baml
