@@ -20,6 +20,8 @@
     <Property Name="Power" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Voltage" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Cost" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Model" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="CityDataSet">
     <Key>

@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.ServiceModel;
 using System.Text;
@@ -77,22 +79,48 @@ namespace InternetMarket.Windows.LoginUser
         private void BtlLogin_Click(object sender, RoutedEventArgs e)
         {
             internetMarketDateEntities = new InternetMarketDateEntities();
-            List<string> pass = internetMarketDateEntities.UserSet.Where(x=>x.Name.Contains(User.SelectedItem.ToString())).Select(p=>p.Password).ToList();
-            if (pass.Contains(Password.Password))
+            try
             {
-                UserSet user = new UserSet
+                List<string> pass = internetMarketDateEntities.UserSet.Where(x => x.Name.Contains(User.SelectedItem.ToString())).Select(p => p.Password).ToList();
+                if (pass.Contains(Password.Password))
                 {
-                    Name = User.SelectedItem.ToString(),
-                    Password = Password.Password
-                };
-                internetMarketDateEntities.UserSet.Add(user);
-                internetMarketDateEntities.SaveChanges();
-                new MainWindow().Show();
-                this.Close();
-            }
-            else
+                    UserSet user = new UserSet
+                    {
+                        Name = User.SelectedItem.ToString(),
+                        Password = Password.Password
+                    };
+                    internetMarketDateEntities.UserSet.Add(user);
+                    internetMarketDateEntities.SaveChanges();
+                    new MainWindow().Show();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Неверный пароль", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
+            }catch(NotSupportedException)
             {
-                MessageBox.Show("Неверный пароль", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBoxResult result = MessageBox.Show("Выберите пользователя", "Error", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                if(result == MessageBoxResult.No)
+                {
+                    this.Close();
+                }
+                
+            }
+            catch (NullReferenceException)
+            {
+                MessageBoxResult result = MessageBox.Show("Ведите пароль", "Warning", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                if (result == MessageBoxResult.No)
+                {
+                    this.Close();
+                }
+            }
+            catch(Exception){
+                MessageBoxResult result = MessageBox.Show("Не удалось войти в систему", "Warning", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                if (result == MessageBoxResult.No)
+                {
+                    this.Close();
+                }
             }
             Dispose();
         }
@@ -119,10 +147,14 @@ namespace InternetMarket.Windows.LoginUser
                 {
                     MessageBox.Show("Неверный пароль", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
                 }
-                Dispose();
+                
             }
         }
 
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Dispose();
+        }
         public void Dispose()
         {
             if (internetMarketDateEntities != null)

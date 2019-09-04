@@ -282,6 +282,8 @@
           <ScalarProperty Name="Power" ColumnName="Power" />
           <ScalarProperty Name="Voltage" ColumnName="Voltage" />
           <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

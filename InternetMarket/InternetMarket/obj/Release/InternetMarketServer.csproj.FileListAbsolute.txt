@@ -921,3 +921,5 @@ F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\Admin
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\Users\AddUserWindowServer.baml
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\InternetMarketData\PrinterWindow.g.cs
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\InternetMarketData\PrinterWindow.baml
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\InternetMarketData\BoilerWindow.g.cs
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\InternetMarketData\BoilerWindow.baml
