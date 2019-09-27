@@ -40,7 +40,6 @@ namespace InternetMarket
             combobox.Items.Add("Graphics");
             combobox.Items.Add("Laptop");
             combobox.Items.Add("Printers");
-
             Trace.WriteLine(this);
         }
 

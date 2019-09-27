@@ -925,3 +925,5 @@ F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\Interne
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\InternetMarketData\PrinterWindow.baml
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\InternetMarketData\BoilerWindow.g.cs
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\InternetMarketData\BoilerWindow.baml
+F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\InternetMarketData\BoilerWindow.g.cs
+F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\InternetMarketData\BoilerWindow.baml
