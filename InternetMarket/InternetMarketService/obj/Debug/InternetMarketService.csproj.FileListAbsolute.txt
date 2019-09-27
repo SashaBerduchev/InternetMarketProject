@@ -51,7 +51,6 @@ F:\InternetMarketProject\InternetMarket\InternetMarketService\bin\Debug\ru\Entit
 F:\InternetMarketProject\InternetMarket\InternetMarketService\obj\Debug\InternetMarketService.csprojAssemblyReference.cache
 F:\InternetMarketProject\InternetMarket\InternetMarketService\obj\Debug\InternetMarketService.ProjectInstaller.resources
 F:\InternetMarketProject\InternetMarket\InternetMarketService\obj\Debug\InternetMarketService.csproj.GenerateResource.cache
-F:\InternetMarketProject\InternetMarket\InternetMarketService\obj\Debug\InternetMarketService.csproj.CoreCompileInputs.cache
 F:\InternetMarketProject\InternetMarket\InternetMarketService\obj\Debug\InternetMarketService.csproj.CopyComplete
 F:\InternetMarketProject\InternetMarket\InternetMarketService\obj\Debug\InternetMarketService.exe
 F:\InternetMarketProject\InternetMarket\InternetMarketService\obj\Debug\InternetMarketService.pdb

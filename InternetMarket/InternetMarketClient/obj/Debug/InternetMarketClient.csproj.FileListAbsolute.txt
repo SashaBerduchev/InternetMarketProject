@@ -136,7 +136,6 @@ F:\InternetMarketProject\InternetMarket\InternetMarketClient\obj\Debug\Windows\S
 F:\InternetMarketProject\InternetMarket\InternetMarketClient\obj\Debug\InternetMarketClient.g.resources
 F:\InternetMarketProject\InternetMarket\InternetMarketClient\obj\Debug\InternetMarketClient.Properties.Resources.resources
 F:\InternetMarketProject\InternetMarket\InternetMarketClient\obj\Debug\InternetMarketClient.csproj.GenerateResource.cache
-F:\InternetMarketProject\InternetMarket\InternetMarketClient\obj\Debug\InternetMarketClient.csproj.CoreCompileInputs.cache
 F:\InternetMarketProject\InternetMarket\InternetMarketClient\obj\Debug\InternetMarketClient.exe
 F:\InternetMarketProject\InternetMarket\InternetMarketClient\obj\Debug\InternetMarketClient.pdb
 E:\BerdychevRedlineProject\InternetMarket\InternetMarketClient\bin\Debug\InternetMarketClient.exe.config

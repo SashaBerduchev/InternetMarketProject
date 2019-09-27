@@ -122,6 +122,7 @@ namespace InternetMarket
                 phones.Clear();
             }catch (Exception e)
             {
+                Trace.WriteLine(e.ToString());
                 MessageBox.Show(e.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
@@ -143,6 +144,7 @@ namespace InternetMarket
                 });
             }catch(Exception e)
             {
+                Trace.WriteLine(e.ToString());
                 MessageBox.Show(e.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
@@ -162,6 +164,7 @@ namespace InternetMarket
                 });
             }catch(Exception e)
             {
+                Trace.WriteLine(e.ToString());
                 MessageBox.Show(e.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
@@ -180,6 +183,7 @@ namespace InternetMarket
                 computers.Clear();
             }catch(Exception e)
             {
+                Trace.WriteLine(e.ToString());
                 MessageBox.Show(e.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
@@ -199,6 +203,7 @@ namespace InternetMarket
                 });
             }catch(Exception e)
             {
+                Trace.WriteLine(e.ToString());
                 MessageBox.Show(e.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
@@ -219,6 +224,7 @@ namespace InternetMarket
                 });//5
             }catch(Exception e)
             {
+                Trace.WriteLine(e.ToString());
                 MessageBox.Show(e.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);//6
             }
         }
@@ -238,6 +244,7 @@ namespace InternetMarket
                 });
             }catch(Exception e)
             {
+                Trace.WriteLine(e.ToString());
                 MessageBox.Show(e.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);//7
             }
         }

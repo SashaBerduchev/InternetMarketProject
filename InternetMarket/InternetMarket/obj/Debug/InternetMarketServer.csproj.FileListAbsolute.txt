@@ -669,7 +669,6 @@ F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\ZakazPo
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\InternetMarket.g.resources
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\InternetMarket.Properties.Resources.resources
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\InternetMarketServer.csproj.GenerateResource.cache
-F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\InternetMarketServer.csproj.CoreCompileInputs.cache
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\InternetMarketServer.csproj.CopyComplete
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\InternetMarket.exe
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\InternetMarket.pdb
