@@ -54,3 +54,8 @@ F:\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Release\System
 F:\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Release\System.Runtime.CompilerServices.Unsafe.dll
 F:\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Release\EntityFramework.SqlServerCompact.xml
 F:\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Release\System.Runtime.CompilerServices.Unsafe.xml
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Release\EntityFramework.SqlServerCompact.dll
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Release\System.Data.SqlServerCe.dll
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Release\System.Runtime.CompilerServices.Unsafe.dll
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Release\EntityFramework.SqlServerCompact.xml
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Release\System.Runtime.CompilerServices.Unsafe.xml
