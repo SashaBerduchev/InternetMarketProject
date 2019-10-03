@@ -37,6 +37,7 @@ namespace InternetMarket
             {
                 Thread thread = new Thread(PhonesInsert);
                 thread.Start();
+                Trace.WriteLine(thread);
             }
 
             OpenPhones openPhones = new OpenPhones();
@@ -92,9 +93,10 @@ namespace InternetMarket
                         Photo = photoload,
                         PDF = arrayread
                     };
+                    Trace.WriteLine(phonedat);
                     internetMarketDateEntities.PhonesSet.Add(phonedat);
+                    Trace.WriteLine(internetMarketDateEntities);
                     internetMarketDateEntities.SaveChanges();
-
                 }
             });
         }
