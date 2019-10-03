@@ -669,7 +669,6 @@ F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\Zakaz
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\InternetMarket.g.resources
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\InternetMarket.Properties.Resources.resources
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\InternetMarketServer.csproj.GenerateResource.cache
-F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\InternetMarketServer.csproj.CoreCompileInputs.cache
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\InternetMarketServer.csproj.CopyComplete
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\InternetMarket.exe
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\InternetMarket.pdb
@@ -923,3 +922,7 @@ D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\W
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\InternetMarketData\PrinterWindow.baml
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\InternetMarketData\BoilerWindow.g.cs
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\InternetMarketData\BoilerWindow.baml
+F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\InternetMarketData\BoilerWindow.g.cs
+F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\InternetMarketData\PrinterWindow.g.cs
+F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\InternetMarketData\BoilerWindow.baml
+F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\InternetMarketData\PrinterWindow.baml
