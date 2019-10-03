@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -23,6 +24,7 @@ namespace InternetMarket.Windows
         public Laptop()
         {
             InitializeComponent();
+            Trace.WriteLine(this);
         }
 
         private void BtnSet_Click(object sender, RoutedEventArgs e)
@@ -30,6 +32,7 @@ namespace InternetMarket.Windows
             for (int i = 0; i < Convert.ToInt32(pointertext.Text); i++)
             {
                 Thread thread = new Thread(SetLaptop);
+                Trace.WriteLine(thread);
                 thread.Start();
             }
         }
@@ -53,8 +56,17 @@ namespace InternetMarket.Windows
                         SCREEN = screenlaptom.Text,
                         Battery = baterrylaptom.Text
                     };
-                    internetMarketDateEntities.LaptopsSet.Add(laptopedat);
-                    internetMarketDateEntities.SaveChanges();
+                    try
+                    {
+                        Trace.WriteLine(laptopedat);
+                        internetMarketDateEntities.LaptopsSet.Add(laptopedat);
+                        Trace.WriteLine(internetMarketDateEntities);
+                        internetMarketDateEntities.SaveChanges();
+                    }catch (Exception exp)
+                    {
+                        Trace.WriteLine(exp.ToString());
+                        MessageBox.Show(exp.ToString(),"Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
                 }
             });
         }

@@ -1,6 +1,7 @@
 ﻿using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -25,6 +26,7 @@ namespace InternetMarket
         public OpenPhones()
         {
             InitializeComponent();
+            Trace.WriteLine(this);
         }
 
         byte[] photoload;
@@ -35,6 +37,7 @@ namespace InternetMarket
             {
                 Thread thread = new Thread(PhonesInsert);
                 thread.Start();
+                Trace.WriteLine(thread);
             }
 
             OpenPhones openPhones = new OpenPhones();
@@ -90,9 +93,10 @@ namespace InternetMarket
                         Photo = photoload,
                         PDF = arrayread
                     };
+                    Trace.WriteLine(phonedat);
                     internetMarketDateEntities.PhonesSet.Add(phonedat);
+                    Trace.WriteLine(internetMarketDateEntities);
                     internetMarketDateEntities.SaveChanges();
-
                 }
             });
         }

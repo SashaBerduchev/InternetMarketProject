@@ -40,17 +40,22 @@ namespace InternetMarket.Windows.LoginUser
             ServiceHost serviceHost = new ServiceHost(typeof(InterMarketService));//12
             serviceHost.AddServiceEndpoint(type, binding, uriAddress);//13
             serviceHost.Open();//14
+            Trace.WriteLine(serviceHost);
+            Trace.WriteLine(this);
             //Костыль, если нету юзеров
             try
             {
                 internetMarketDateEntities = new InternetMarketDateEntities();
+                Trace.WriteLine(internetMarketDateEntities.UserSet.Select(x => x.Name).ToList());
                 List<string> userSet = internetMarketDateEntities.UserSet.Select(x=>x.Name).ToList();
                 if(userSet.Count < 1)
                 {
                     UserSet user = new UserSet{
                         Name = "Admin", Password = ""
-                  };
+                    };
+                    Trace.WriteLine(user);
                     internetMarketDateEntities.UserSet.Add(user);
+                    Trace.WriteLine(internetMarketDateEntities);
                     internetMarketDateEntities.SaveChanges();
 
                 }
@@ -59,6 +64,7 @@ namespace InternetMarket.Windows.LoginUser
             catch(Exception e)
             {
                 MessageBox.Show(e.ToString(), "Warning!", MessageBoxButton.OK);
+                Trace.WriteLine(e.ToString());
             }
             //GetUser data
             
@@ -71,9 +77,8 @@ namespace InternetMarket.Windows.LoginUser
             catch (Exception exp)
             {
                 MessageBox.Show(exp.ToString(), "Warning", MessageBoxButton.OK, MessageBoxImage.Error);
+                Trace.WriteLine(exp.ToString());
             }
-
-            Trace.WriteLine(this);
         }
 
         private void BtlLogin_Click(object sender, RoutedEventArgs e)

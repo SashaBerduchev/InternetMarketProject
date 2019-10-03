@@ -45,7 +45,6 @@ F:\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Debug\EntityFr
 F:\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Debug\ru\EntityFramework.resources.dll
 F:\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Debug\ru\EntityFramework.SqlServer.resources.dll
 F:\InternetMarketProject\InternetMarket\InternetMarketLibrery\obj\Debug\InternetMarketLibrery.csprojAssemblyReference.cache
-F:\InternetMarketProject\InternetMarket\InternetMarketLibrery\obj\Debug\InternetMarketLibrery.csproj.CoreCompileInputs.cache
 F:\InternetMarketProject\InternetMarket\InternetMarketLibrery\obj\Debug\InternetMarketLibrery.csproj.CopyComplete
 F:\InternetMarketProject\InternetMarket\InternetMarketLibrery\obj\Debug\InternetMarketLibrery.dll
 F:\InternetMarketProject\InternetMarket\InternetMarketLibrery\obj\Debug\InternetMarketLibrery.pdb

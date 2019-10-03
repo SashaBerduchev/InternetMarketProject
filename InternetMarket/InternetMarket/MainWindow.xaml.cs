@@ -40,7 +40,6 @@ namespace InternetMarket
             combobox.Items.Add("Graphics");
             combobox.Items.Add("Laptop");
             combobox.Items.Add("Printers");
-
             Trace.WriteLine(this);
         }
 
@@ -58,49 +57,66 @@ namespace InternetMarket
 
         private void LoadBtn_Click(object sender, RoutedEventArgs e)
         {
-            Dispose();
-            if (combobox.SelectedItem.ToString() == "Phones")
+            try
             {
-                Thread thread = new Thread(GetPhones);
-                thread.Start();
+                Dispose();
+                if (combobox.SelectedItem.ToString() == "Phones")
+                {
+                    Thread thread = new Thread(GetPhones);
+                    thread.Start();
 
-            }
-            else if (combobox.SelectedItem.ToString() == "Tivis")
-            {
-                Thread thread = new Thread(GetTivis);
-                thread.Start();
-            }
-            else if (combobox.SelectedItem.ToString() == "Computers")
-            {
-                Thread thread = new Thread(GetComputers);
-                thread.Start();
-            }
+                }
+                else if (combobox.SelectedItem.ToString() == "Tivis")
+                {
+                    Thread thread = new Thread(GetTivis);
+                    thread.Start();
+                }
+                else if (combobox.SelectedItem.ToString() == "Computers")
+                {
+                    Thread thread = new Thread(GetComputers);
+                    thread.Start();
+                }
 
-            else if (combobox.SelectedItem.ToString() == "Tablets")
-            {
-                Thread thread = new Thread(GetTablets);
-                thread.Start();
-            }
+                else if (combobox.SelectedItem.ToString() == "Tablets")
+                {
+                    Thread thread = new Thread(GetTablets);
+                    thread.Start();
+                }
 
-            else if (combobox.SelectedItem.ToString() == "CPU")
-            {
-                Thread thread = new Thread(GetCPUInform);
-                thread.Start();
-            }
-            else if (combobox.SelectedItem.ToString() == "Graphics")
-            {
-                Thread thread = new Thread(GetGraphicsCardInform);
-                thread.Start();
-            }
+                else if (combobox.SelectedItem.ToString() == "CPU")
+                {
+                    Thread thread = new Thread(GetCPUInform);
+                    thread.Start();
+                }
+                else if (combobox.SelectedItem.ToString() == "Graphics")
+                {
+                    Thread thread = new Thread(GetGraphicsCardInform);
+                    thread.Start();
+                }
 
-            else if (combobox.SelectedItem.ToString() == "Laptop")
+                else if (combobox.SelectedItem.ToString() == "Laptop")
+                {
+                    Thread thread = new Thread(GetLaptop);
+                    thread.Start();
+                }
+                else if (combobox.SelectedItem.ToString() == "Printers")
+                {
+                    Thread thread = new Thread(GetPrinters);
+                    thread.Start();
+                }
+            }
+            catch (Exception exp)
             {
-                Thread thread = new Thread(GetLaptop);
-                thread.Start();
-            }else if(combobox.SelectedItem.ToString() == "Printers")
-            {
-                Thread thread = new Thread(GetPrinters);
-                thread.Start();
+                if(exp is NullReferenceException)
+                {
+                    MessageBox.Show("Выбирите нужный параметр загрузки", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    Trace.WriteLine(exp.ToString());
+                }
+                else
+                {
+                    MessageBox.Show(exp.ToString(), "NotIdentityError", MessageBoxButton.OK, MessageBoxImage.Error);
+                    Trace.WriteLine(exp.ToString());
+                }
             }
 
         }
@@ -113,16 +129,18 @@ namespace InternetMarket
             {
                 Dispatcher.Invoke(() =>
                 {
-                     internetMarketDateEntities = new InternetMarketDateEntities();
-                     phones = internetMarketDateEntities.PhonesSet.ToList();
-                     DataGrid.ItemsSource = phones.Select(x => new { x.Firm, x.Model, x.Quantity, x.Cost, x.Processor, x.RAM, x.Battery, x.Photo,  x.PDF
-                     });
+                    internetMarketDateEntities = new InternetMarketDateEntities();
+                    phones = internetMarketDateEntities.PhonesSet.ToList();
+                    Trace.WriteLine(phones);
+                    Trace.WriteLine(phones.Select(x => new { x.Firm, x.Model, x.Quantity, x.Cost, x.Processor, x.RAM, x.Battery, x.Photo, x.PDF }));
+                    DataGrid.ItemsSource = phones.Select(x => new { x.Firm, x.Model, x.Quantity, x.Cost, x.Processor, x.RAM, x.Battery, x.Photo,  x.PDF});
                    
 
                 });
                 phones.Clear();
             }catch (Exception e)
             {
+                Trace.WriteLine(e.ToString());
                 MessageBox.Show(e.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
@@ -139,11 +157,14 @@ namespace InternetMarket
                     List<TivisetSet> tivisets;
                     InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
                     tivisets = internetMarketDateEntities.TivisetSet.ToList();
+                    Trace.WriteLine(tivisets);
+                    Trace.WriteLine(tivisets.Select(x => new { x.Firm, x.Model, x.Quantity, x.Cost }));
                     DataGrid.ItemsSource = tivisets.Select(x => new { x.Firm, x.Model, x.Quantity, x.Cost });
 
                 });
             }catch(Exception e)
             {
+                Trace.WriteLine(e.ToString());
                 MessageBox.Show(e.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
@@ -158,11 +179,14 @@ namespace InternetMarket
                     List<TabletSet> tablets;
                     InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
                     tablets = internetMarketDateEntities.TabletSetSet.ToList();
+                    Trace.WriteLine(tablets);
+                    Trace.WriteLine(tablets.Select(x => new { x.Name, x.Model, x.Processor, x.RAM, x.GPU, x.Battery, x.Resolution }));
                     DataGrid.ItemsSource = tablets.Select(x => new { x.Name, x.Model, x.Processor, x.RAM, x.GPU, x.Battery, x.Resolution });
 
                 });
             }catch(Exception e)
             {
+                Trace.WriteLine(e.ToString());
                 MessageBox.Show(e.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
@@ -181,6 +205,7 @@ namespace InternetMarket
                 computers.Clear();
             }catch(Exception e)
             {
+                Trace.WriteLine(e.ToString());
                 MessageBox.Show(e.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
@@ -200,6 +225,7 @@ namespace InternetMarket
                 });
             }catch(Exception e)
             {
+                Trace.WriteLine(e.ToString());
                 MessageBox.Show(e.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
@@ -220,6 +246,7 @@ namespace InternetMarket
                 });//5
             }catch(Exception e)
             {
+                Trace.WriteLine(e.ToString());
                 MessageBox.Show(e.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);//6
             }
         }
@@ -239,6 +266,7 @@ namespace InternetMarket
                 });
             }catch(Exception e)
             {
+                Trace.WriteLine(e.ToString());
                 MessageBox.Show(e.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);//7
             }
         }

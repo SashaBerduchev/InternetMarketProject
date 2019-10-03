@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Threading;
 using System.Windows;
 
@@ -12,6 +13,7 @@ namespace InternetMarket
         public ComputerWindow()
         {
             InitializeComponent();
+            Trace.WriteLine(this);
         }
 
         private void btnset_Click(object sender, RoutedEventArgs e)
@@ -20,6 +22,7 @@ namespace InternetMarket
             for (int i = 0; i < Convert.ToInt32(textpoin.Text); i++)
             {
                 Thread threads = new Thread(CompSet);
+                Trace.WriteLine(threads);
                 threads.Start();
             }
 
@@ -55,7 +58,9 @@ namespace InternetMarket
                         RAM = ram,
                         VRAM = vram
                     };
+                    Trace.WriteLine(comp);
                     internetMarketDateEntities.ComputersSet.Add(comp);
+                    Trace.WriteLine(internetMarketDateEntities);
                     internetMarketDateEntities.SaveChanges();
                 }
             });

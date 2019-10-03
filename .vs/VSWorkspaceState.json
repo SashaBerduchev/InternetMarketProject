@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\InternetMarket",
-    "\\InternetMarket\\InternetMarket"
+    "\\InternetMarket\\InternetMarket",
+    "\\InternetMarket\\InternetMarketClient"
   ],
-  "SelectedNode": "\\InternetMarket\\InternetMarket.sln",
+  "SelectedNode": "\\InternetMarket\\InternetMarketClient\\LoginUser.xaml.cs",
   "PreviewInSolutionExplorer": false
 }
