@@ -40,6 +40,7 @@ namespace InternetMarket.Windows.LoginUser
             ServiceHost serviceHost = new ServiceHost(typeof(InterMarketService));//12
             serviceHost.AddServiceEndpoint(type, binding, uriAddress);//13
             serviceHost.Open();//14
+            Trace.WriteLine(this);
             //Костыль, если нету юзеров
             try
             {
@@ -72,8 +73,6 @@ namespace InternetMarket.Windows.LoginUser
             {
                 MessageBox.Show(exp.ToString(), "Warning", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-
-            Trace.WriteLine(this);
         }
 
         private void BtlLogin_Click(object sender, RoutedEventArgs e)
