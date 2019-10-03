@@ -112,10 +112,11 @@ namespace InternetMarket
             {
                 Dispatcher.Invoke(() =>
                 {
-                     internetMarketDateEntities = new InternetMarketDateEntities();
-                     phones = internetMarketDateEntities.PhonesSet.ToList();
-                     DataGrid.ItemsSource = phones.Select(x => new { x.Firm, x.Model, x.Quantity, x.Cost, x.Processor, x.RAM, x.Battery, x.Photo,  x.PDF
-                     });
+                    internetMarketDateEntities = new InternetMarketDateEntities();
+                    phones = internetMarketDateEntities.PhonesSet.ToList();
+                    Trace.WriteLine(phones);
+                    Trace.WriteLine(phones.Select(x => new { x.Firm, x.Model, x.Quantity, x.Cost, x.Processor, x.RAM, x.Battery, x.Photo, x.PDF }));
+                    DataGrid.ItemsSource = phones.Select(x => new { x.Firm, x.Model, x.Quantity, x.Cost, x.Processor, x.RAM, x.Battery, x.Photo,  x.PDF});
                    
 
                 });

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -23,6 +24,7 @@ namespace InternetMarket.Windows
         public OpenComputers()
         {
             InitializeComponent();
+            Trace.WriteLine(this);
         }
 
         private void btnSet_Click(object sender, RoutedEventArgs e)
