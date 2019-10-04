@@ -11,20 +11,21 @@ namespace InternetMarketClient
     /// <summary>
     /// Логика взаимодействия для LoginUser.xaml
     /// </summary>
-    public partial class LoginUser : Window
+    public partial class LoginUser : Window, IDisposable
     {
         
         //List<UsersSet> usery;
         IContract contract;
+        ChannelFactory<IContract> _factory;
         public LoginUser()
         {
             InitializeComponent();
             Uri uri = new Uri("net.tcp://localhost:7000/IContract");
             NetTcpBinding netTcpBinding = new NetTcpBinding();
             EndpointAddress endpoint = new EndpointAddress(uri);
-            ChannelFactory<IContract> factory = new ChannelFactory<IContract>(netTcpBinding, endpoint);
-            
-            contract = factory.CreateChannel();
+            _factory = new ChannelFactory<IContract>(netTcpBinding, endpoint);
+            Trace.WriteLine(this);
+            contract = _factory.CreateChannel();
             try
             {
                 User.ItemsSource = contract.GetUsers();
@@ -32,11 +33,9 @@ namespace InternetMarketClient
             {
                 MessageBox.Show("Ошибка подкчения к севреру", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-            Trace.WriteLine(this);
                 
         }
 
-       
 
         private void BtlLogin_Click(object sender, RoutedEventArgs e)
         {
@@ -120,6 +119,15 @@ namespace InternetMarketClient
                     }
                 }
             }
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Dispose();
+        }
+        public void Dispose()
+        {
+            _factory.Close();
         }
     }
 }

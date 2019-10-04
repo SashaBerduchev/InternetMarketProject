@@ -3,6 +3,7 @@ using InternetMarketClient.Windows.Administration;
 using InternetMarketClient.Windows.ClientData;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -31,6 +32,13 @@ namespace InternetMarketClient
         {
             
             InitializeComponent();
+            ServicePointManager.DefaultConnectionLimit = 999999999;
+            Uri uri = new Uri("net.tcp://localhost:7000/IContract");
+            NetTcpBinding netTcpBinding = new NetTcpBinding();
+            EndpointAddress endpoint = new EndpointAddress(uri);
+            ChannelFactory<IContract> factory = new ChannelFactory<IContract>(netTcpBinding, endpoint);
+            Trace.WriteLine(this);
+            contract = factory.CreateChannel();
 
             combobox.Items.Add("Phones");
             combobox.Items.Add("Tivis");
@@ -53,22 +61,18 @@ namespace InternetMarketClient
             {
                 if (combobox.SelectedItem.ToString() == "Phones")
                 {
-                    ServicePointManager.DefaultConnectionLimit = 999999999;
                     listbox.ItemsSource = contract.LoadPhones();
                 }
                 else if (combobox.SelectedItem.ToString() == "Computers")
                 {
-                    ServicePointManager.DefaultConnectionLimit = 999999999;
                     listbox.ItemsSource = contract.LoadComputers();
                 }
                 else if (combobox.SelectedItem.ToString() == "CPU")
                 {
-                    ServicePointManager.DefaultConnectionLimit = 999999999;
                     listbox.ItemsSource = contract.LoadCPU();
                 }
                 else if (combobox.SelectedItem.ToString() == "Graphics")
                 {
-                    ServicePointManager.DefaultConnectionLimit = 999999999;
                     listbox.ItemsSource = contract.LoadGPU();
                 }
             }

@@ -24,7 +24,8 @@ namespace InternetMarket.Windows.LoginUser
     /// </summary>
     public partial class LoginUserServer : Window, IDisposable
     {
-        private InternetMarketDateEntities internetMarketDateEntities;//1
+        private InternetMarketDateEntities internetMarketDateEntities;
+        private InterMarketService interMarketService;
         public LoginUserServer()//2
         {
             InitializeComponent();//3
@@ -79,6 +80,7 @@ namespace InternetMarket.Windows.LoginUser
                 MessageBox.Show(exp.ToString(), "Warning", MessageBoxButton.OK, MessageBoxImage.Error);
                 Trace.WriteLine(exp.ToString());
             }
+            interMarketService = new InterMarketService();
         }
 
         private void BtlLogin_Click(object sender, RoutedEventArgs e)
@@ -96,7 +98,7 @@ namespace InternetMarket.Windows.LoginUser
                     };
                     internetMarketDateEntities.UserSet.Add(user);
                     internetMarketDateEntities.SaveChanges();
-                    new MainWindow().Show();
+                    new MainWindow(this).Show();
                     this.Close();
                 }
                 else
@@ -145,7 +147,7 @@ namespace InternetMarket.Windows.LoginUser
                     };
                     internetMarketDateEntities.UserSet.Add(user);
                     internetMarketDateEntities.SaveChanges();
-                    new MainWindow().Show();
+                    new MainWindow(this).Show();
                     this.Close();
                 }
                 else
@@ -156,6 +158,10 @@ namespace InternetMarket.Windows.LoginUser
             }
         }
 
+        public void StopServer()
+        {
+            interMarketService.Dispose();
+        }
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             Dispose();
