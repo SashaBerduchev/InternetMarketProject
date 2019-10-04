@@ -32,7 +32,6 @@ D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketService\bin\De
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketService\obj\Debug\InternetMarketService.csprojAssemblyReference.cache
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketService\obj\Debug\InternetMarketService.ProjectInstaller.resources
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketService\obj\Debug\InternetMarketService.csproj.GenerateResource.cache
-D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketService\obj\Debug\InternetMarketService.csproj.CoreCompileInputs.cache
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketService\obj\Debug\InternetMarketService.csproj.CopyComplete
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketService\obj\Debug\InternetMarketService.exe
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketService\obj\Debug\InternetMarketService.pdb
