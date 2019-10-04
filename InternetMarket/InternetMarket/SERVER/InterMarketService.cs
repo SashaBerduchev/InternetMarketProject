@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,10 +15,17 @@ namespace InternetMarket
         private List<string> passstr;
         private List<string> cpulist;
         private List<CPU> cpu;
+
+        public InterMarketService()
+        {
+            internetMarketDateEntities = new InternetMarketDateEntities();
+
+            Trace.WriteLine(this);
+            Trace.WriteLine("Server INITIALIZE");
+        }
         public bool SetUserLogin(string login, string pass)
         {
-            Dispose();
-            internetMarketDateEntities = new InternetMarketDateEntities();
+            ClearContent();
             passstr = internetMarketDateEntities.UserSet.Where(x => x.Name.Contains(login)).Select(p => p.Password).ToList();
             if (passstr.Contains(pass))
             {
@@ -26,7 +34,10 @@ namespace InternetMarket
                     Name = login,//3
                     Password = pass//4
                 };
+                Trace.WriteLine(this);
+                Trace.WriteLine(users);
                 internetMarketDateEntities.UserSet.Add(users);
+                Trace.WriteLine(internetMarketDateEntities);
                 internetMarketDateEntities.SaveChanges();
                 return true;
             }
@@ -37,12 +48,10 @@ namespace InternetMarket
         }
         public List<string> GetUsers()
         {
-            Dispose();
+            ClearContent();
             users = new List<string>();
             try
             {
-                internetMarketDateEntities = new InternetMarketDateEntities();
-
                 users = internetMarketDateEntities.UserSet.Select(x => x.Name).ToList();
             }catch(Exception exp)
             {
@@ -62,8 +71,6 @@ namespace InternetMarket
         
         public void PhonesSet(string Firm, string Model, string Quantity, string Cost, string Processor, string RAM, string Battery, string texpoint)
         {
-
-            InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
 
             for (int i = 0; i < Convert.ToInt32(texpoint); i++)
             {
@@ -95,7 +102,7 @@ namespace InternetMarket
 
         public void TiviSet(string Firm, string Model, string Quantity, string Cost, string textpoint)
         {
-            Dispose();
+            ClearContent();
             internetMarketDateEntities = new InternetMarketDateEntities();
 
             for (int i = 0; i < Convert.ToInt32(textpoint); i++)
@@ -115,7 +122,7 @@ namespace InternetMarket
 
         public void ComputerSet(string Firm, string Model, string Quantity, string Cost, string Processor, string RAM, string VRAM, string Graphics, string textpoint)
         {
-            Dispose();
+            ClearContent();
             internetMarketDateEntities = new InternetMarketDateEntities();
 
             for (int i = 0; i < Convert.ToInt32(textpoint); i++)
@@ -138,7 +145,7 @@ namespace InternetMarket
 
         public void TabletsSet(string name, string model, string proc, string ram, string gpu, string resolution, string battery, string textpoint)
         {
-            Dispose();
+            ClearContent();
             internetMarketDateEntities = new InternetMarketDateEntities();
             for (int i=0; i<Convert.ToInt32(textpoint); i++)
             {
@@ -288,7 +295,7 @@ namespace InternetMarket
 
         public List<string> LoadCPU()
         {
-            Dispose();
+            ClearContent();
             InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
             cpu = internetMarketDateEntities.CPUSet.ToList();
             cpulist = cpu.AsParallel().Select(x => x.Name + " " + x.Architecture + " " + x.Chastota + " " + x.Cores + " " + x.GPU + " " + x.KESHL1 + " " + x.KESHL2 + " " + x.KESHL3 + " " + x.RAM + " " + x.TDP).ToList();
@@ -317,6 +324,17 @@ namespace InternetMarket
             internetMarketDateEntities.SaveChanges();
         }
 
+        private void ClearContent()
+        {
+            if (users != null) users.Clear();
+            users = null;
+            if (passstr != null) passstr.Clear();
+            passstr = null;
+            if (cpulist != null) cpulist.Clear();
+            if (cpu != null) cpu.Clear();
+            cpulist = null;
+            cpu = null;
+        }
         public void Dispose()
         {
             if (internetMarketDateEntities != null) internetMarketDateEntities.Dispose();
