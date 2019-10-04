@@ -15,7 +15,13 @@ namespace InternetMarket
         private List<string> passstr;
         private List<string> cpulist;
         private List<CPU> cpu;
-
+        private List<PhonesSet> phones;
+        private List<string> computerslist;
+        private List<Country> countries;
+        private List<CityData> cities;
+        private List<string> listgpu;
+        private List<GraphicsCard> graphics;
+        private List<ComputersSet> computers;
         public InterMarketService()
         {
             internetMarketDateEntities = new InternetMarketDateEntities();
@@ -61,8 +67,6 @@ namespace InternetMarket
         }
         public List<string> LoadPhones()
         {
-             List<PhonesSet> phones;
-            InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
             phones = internetMarketDateEntities.PhonesSet.ToList();
             List<string> listphones = phones.AsParallel().Select(x => x.Firm + " " + x.Model + " " + x.Processor + " " + x.Quantity + " " + x.RAM + " " + x.Cost).ToList();
             return listphones;
@@ -71,7 +75,6 @@ namespace InternetMarket
         
         public void PhonesSet(string Firm, string Model, string Quantity, string Cost, string Processor, string RAM, string Battery, string texpoint)
         {
-
             for (int i = 0; i < Convert.ToInt32(texpoint); i++)
             {
                 var phonedat = new PhonesSet
@@ -84,16 +87,15 @@ namespace InternetMarket
                     Quantity = Quantity,
                     RAM = RAM
                 };
+                Trace.WriteLine(phonedat);
                 internetMarketDateEntities.PhonesSet.Add(phonedat);
+                Trace.WriteLine(internetMarketDateEntities);
                 internetMarketDateEntities.SaveChanges();
             }
         }
 
         public List<string> LoadComputers()
         {
-            List<string> computerslist;
-            InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
-            List<ComputersSet> computers;
             computers = internetMarketDateEntities.ComputersSet.ToList();
             computerslist = computers.AsParallel().Select(x => x.Firm + " " + x.Model + " " + x.Processor + " " + x.Quantity + " " + x.RAM + " " + x.VRAM).ToList();
             return computerslist;
@@ -114,7 +116,9 @@ namespace InternetMarket
                     Model = Model,
                     Quantity = Quantity
                 };
+                Trace.WriteLine(dataset);
                 internetMarketDateEntities.TivisetSet.Add(dataset);
+                Trace.WriteLine(internetMarketDateEntities);
                 internetMarketDateEntities.SaveChanges();
             }
 
@@ -123,8 +127,7 @@ namespace InternetMarket
         public void ComputerSet(string Firm, string Model, string Quantity, string Cost, string Processor, string RAM, string VRAM, string Graphics, string textpoint)
         {
             ClearContent();
-            internetMarketDateEntities = new InternetMarketDateEntities();
-
+            
             for (int i = 0; i < Convert.ToInt32(textpoint); i++)
             {
                 var computers = new ComputersSet
@@ -138,7 +141,9 @@ namespace InternetMarket
                     Graphics = Graphics,
                     VRAM = VRAM
                 };
+                Trace.WriteLine(computers);
                 internetMarketDateEntities.ComputersSet.Add(computers);
+                Trace.WriteLine(internetMarketDateEntities);
                 internetMarketDateEntities.SaveChanges();
             }
         }
@@ -189,7 +194,6 @@ namespace InternetMarket
 
         public void City(string name, string countryname)
         {
-            InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
             var citydata = new CityData
             {
                 CountryName = countryname,
@@ -201,16 +205,12 @@ namespace InternetMarket
 
         public string[] GetCountry()
         {
-            List<Country> countries;
-            InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
             countries = internetMarketDateEntities.CountrySet.ToList();
             return countries.Select(x =>x.NameCountry ).ToArray();
         }
 
         public string[] GetCity()
         {
-            List<CityData> cities;
-            InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
             cities = internetMarketDateEntities.CityDataSet.ToList();
             return cities.AsParallel().Select(x => x.Name).ToArray();
         }
@@ -255,7 +255,6 @@ namespace InternetMarket
         {
             for (int i = 0; i< point; i++)
             {
-                InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
                 GraphicsCard graphics = new GraphicsCard
                 {
                     Name = name,
@@ -275,7 +274,6 @@ namespace InternetMarket
         {
             for (int i = 0; i < point; i++)
             {
-                InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
                 Laptops laptops = new Laptops
                 {
                     Name = name,
@@ -296,7 +294,6 @@ namespace InternetMarket
         public List<string> LoadCPU()
         {
             ClearContent();
-            InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
             cpu = internetMarketDateEntities.CPUSet.ToList();
             cpulist = cpu.AsParallel().Select(x => x.Name + " " + x.Architecture + " " + x.Chastota + " " + x.Cores + " " + x.GPU + " " + x.KESHL1 + " " + x.KESHL2 + " " + x.KESHL3 + " " + x.RAM + " " + x.TDP).ToList();
             return cpulist;
@@ -304,9 +301,6 @@ namespace InternetMarket
 
         public List<string> LoadGPU()
         {
-            List<string> listgpu;
-            List<GraphicsCard> graphics;
-            InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
             graphics = internetMarketDateEntities.GraphicsCardSet.ToList();
             listgpu = graphics.AsParallel().Select(x => x.Name + " " + x.Herts + " " + x.Voltage + " " + x.VRAM + " " + x.GraphicsCore + " " + x.Cores).ToList();
             return listgpu;
@@ -314,7 +308,6 @@ namespace InternetMarket
 
         public void setLogin(string name, string password)
         {
-            InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
             UserSet user = new UserSet
             {
                 Name = name,
