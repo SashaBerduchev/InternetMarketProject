@@ -89,7 +89,6 @@ D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketClient\obj\Deb
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketClient\obj\Debug\InternetMarketClient.g.resources
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketClient\obj\Debug\InternetMarketClient.Properties.Resources.resources
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketClient\obj\Debug\InternetMarketClient.csproj.GenerateResource.cache
-D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketClient\obj\Debug\InternetMarketClient.csproj.CoreCompileInputs.cache
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketClient\obj\Debug\InternetMarketClient.exe
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketClient\obj\Debug\InternetMarketClient.pdb
 F:\InternetMarketProject\InternetMarket\InternetMarketClient\bin\Debug\InternetMarketClient.exe.config

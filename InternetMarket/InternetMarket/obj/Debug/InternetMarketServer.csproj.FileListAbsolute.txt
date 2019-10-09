@@ -444,7 +444,6 @@ D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Win
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\InternetMarket.g.resources
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\InternetMarket.Properties.Resources.resources
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\InternetMarketServer.csproj.GenerateResource.cache
-D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\InternetMarketServer.csproj.CoreCompileInputs.cache
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\InternetMarketServer.csproj.CopyComplete
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\InternetMarket.exe
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\InternetMarket.pdb
