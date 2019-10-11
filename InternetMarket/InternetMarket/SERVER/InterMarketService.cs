@@ -12,12 +12,12 @@ namespace InternetMarket
     class InterMarketService : IContract , IDisposable
     {
         private PhoneServerData phoneServerData;
+        private TiviServerData tiviServer;
         private InternetMarketDateEntities internetMarketDateEntities;
         private List<string> users;
         private List<string> passstr;
         private List<string> cpulist;
         private List<CPU> cpu;
-        private List<PhonesSet> phones;
         private List<string> computerslist;
         private List<Country> countries;
         private List<CityData> cities;
@@ -28,6 +28,7 @@ namespace InternetMarket
         {
             internetMarketDateEntities = new InternetMarketDateEntities();
             phoneServerData = new PhoneServerData();
+            tiviServer = new TiviServerData();
             Trace.WriteLine(this);
             Trace.WriteLine("Server INITIALIZE");
         }
@@ -88,6 +89,10 @@ namespace InternetMarket
             return computerslist;
         }
 
+        public List<string> LoadTivis()
+        {
+            return tiviServer.GetTivis();
+        }
 
         public void TiviSet(string Firm, string Model, string Quantity, string Cost, string textpoint)
         {
@@ -96,17 +101,7 @@ namespace InternetMarket
 
             for (int i = 0; i < Convert.ToInt32(textpoint); i++)
             {
-                var dataset = new TivisetSet
-                {
-                    Cost = Cost,
-                    Firm = Firm,
-                    Model = Model,
-                    Quantity = Quantity
-                };
-                Trace.WriteLine(dataset);
-                internetMarketDateEntities.TivisetSet.Add(dataset);
-                Trace.WriteLine(internetMarketDateEntities);
-                internetMarketDateEntities.SaveChanges();
+                tiviServer.TiviSet(Firm, Model, Quantity, Cost);
             }
 
         }
@@ -327,6 +322,7 @@ namespace InternetMarket
             if (cpu != null) cpu.Clear();
             cpulist = null;
             cpu = null;
+            phoneServerData.Dispose();
         }
     }
 

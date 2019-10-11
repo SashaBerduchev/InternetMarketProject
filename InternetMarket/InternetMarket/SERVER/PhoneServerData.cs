@@ -8,7 +8,7 @@ using System.Windows;
 
 namespace InternetMarket.SERVER
 {
-    class PhoneServerData
+    class PhoneServerData : IDisposable
     {
         private List<PhonesSet> phones;
         private List<string> phonedata;
@@ -52,6 +52,13 @@ namespace InternetMarket.SERVER
             internetMarketDateEntities.PhonesSet.Add(phonedat);
             Trace.WriteLine(internetMarketDateEntities);
             internetMarketDateEntities.SaveChanges();
+        }
+
+
+        public void Dispose()
+        {
+            if(internetMarketDateEntities != null) internetMarketDateEntities.Dispose();
+            internetMarketDateEntities = null;
         }
     }
 }
