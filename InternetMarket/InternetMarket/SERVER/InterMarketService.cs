@@ -69,10 +69,6 @@ namespace InternetMarket
         }
         public List<string> LoadPhones()
         {
-            //phones = internetMarketDateEntities.PhonesSet.ToList();
-            //List<string> listphones = phones.AsParallel().Select(x => x.Firm + " " + x.Model + " " + x.Processor + " " + x.Quantity + " " + x.RAM + " " + x.Cost).ToList();
-            //return listphones;
-
             return phoneServerData.GetPhones();
         }
 
@@ -81,20 +77,7 @@ namespace InternetMarket
         {
             for (int i = 0; i < Convert.ToInt32(texpoint); i++)
             {
-                var phonedat = new PhonesSet
-                {
-                    Battery = Battery,
-                    Cost = Cost,
-                    Firm = Firm,
-                    Model = Model,
-                    Processor = Processor,
-                    Quantity = Quantity,
-                    RAM = RAM
-                };
-                Trace.WriteLine(phonedat);
-                internetMarketDateEntities.PhonesSet.Add(phonedat);
-                Trace.WriteLine(internetMarketDateEntities);
-                internetMarketDateEntities.SaveChanges();
+                phoneServerData.PhonesSet(Firm, Model, Quantity, Cost, Processor, RAM, Battery);
             }
         }
 

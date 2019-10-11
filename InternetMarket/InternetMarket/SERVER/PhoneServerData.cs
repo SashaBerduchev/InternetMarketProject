@@ -35,5 +35,23 @@ namespace InternetMarket.SERVER
             }
             return null;
         }
+
+        public void PhonesSet(string Firm, string Model, string Quantity, string Cost, string Processor, string RAM, string Battery)
+        {
+            var phonedat = new PhonesSet
+            {
+                Battery = Battery,
+                Cost = Cost,
+                Firm = Firm,
+                Model = Model,
+                Processor = Processor,
+                Quantity = Quantity,
+                RAM = RAM
+            };
+            Trace.WriteLine(phonedat);
+            internetMarketDateEntities.PhonesSet.Add(phonedat);
+            Trace.WriteLine(internetMarketDateEntities);
+            internetMarketDateEntities.SaveChanges();
+        }
     }
 }
