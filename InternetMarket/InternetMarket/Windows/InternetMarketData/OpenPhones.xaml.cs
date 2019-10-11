@@ -40,8 +40,7 @@ namespace InternetMarket
                 Trace.WriteLine(thread);
             }
 
-            OpenPhones openPhones = new OpenPhones();
-            openPhones.Close();
+            this.Close();
         }
 
         

@@ -30,8 +30,10 @@ namespace InternetMarket
         private List<CPU> cpus;
         private List<string> printers;
         private LoginUserServer loginUserServer;
+        private InterMarketService interMarketService;
         public MainWindow(LoginUserServer login)
         {
+            interMarketService = new InterMarketService();
             loginUserServer = login;
             InitializeComponent();
 
@@ -128,25 +130,11 @@ namespace InternetMarket
         public void GetPhones()
         {
             Dispose();
-            try
-            {
-                Dispatcher.Invoke(() =>
+            Dispatcher.Invoke(() =>
                 {
-                    internetMarketDateEntities = new InternetMarketDateEntities();
-                    phones = internetMarketDateEntities.PhonesSet.ToList();
-                    Trace.WriteLine(phones);
-                    Trace.WriteLine(phones.Select(x => new { x.Firm, x.Model, x.Quantity, x.Cost, x.Processor, x.RAM, x.Battery, x.Photo, x.PDF }));
-                    DataGrid.ItemsSource = phones.Select(x => new { x.Firm, x.Model, x.Quantity, x.Cost, x.Processor, x.RAM, x.Battery, x.Photo,  x.PDF});
-                   
-
-                });
-                phones.Clear();
-            }catch (Exception e)
-            {
-                Trace.WriteLine(e.ToString());
-                MessageBox.Show(e.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-
+                    DataGrid.ItemsSource = interMarketService.LoadPhones();
+                }
+            );
         }
 
         public void GetTivis()

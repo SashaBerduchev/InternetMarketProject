@@ -1,4 +1,5 @@
-﻿using System;
+﻿using InternetMarket.SERVER;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -10,6 +11,7 @@ namespace InternetMarket
 {
     class InterMarketService : IContract , IDisposable
     {
+        private PhoneServerData phoneServerData;
         private InternetMarketDateEntities internetMarketDateEntities;
         private List<string> users;
         private List<string> passstr;
@@ -25,7 +27,7 @@ namespace InternetMarket
         public InterMarketService()
         {
             internetMarketDateEntities = new InternetMarketDateEntities();
-
+            phoneServerData = new PhoneServerData();
             Trace.WriteLine(this);
             Trace.WriteLine("Server INITIALIZE");
         }
@@ -67,9 +69,11 @@ namespace InternetMarket
         }
         public List<string> LoadPhones()
         {
-            phones = internetMarketDateEntities.PhonesSet.ToList();
-            List<string> listphones = phones.AsParallel().Select(x => x.Firm + " " + x.Model + " " + x.Processor + " " + x.Quantity + " " + x.RAM + " " + x.Cost).ToList();
-            return listphones;
+            //phones = internetMarketDateEntities.PhonesSet.ToList();
+            //List<string> listphones = phones.AsParallel().Select(x => x.Firm + " " + x.Model + " " + x.Processor + " " + x.Quantity + " " + x.RAM + " " + x.Cost).ToList();
+            //return listphones;
+
+            return phoneServerData.GetPhones();
         }
 
         
