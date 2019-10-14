@@ -21,7 +21,7 @@ namespace InternetMarket
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window , IDisposable
+    public partial class MainWindow : Window, IDisposable
     {
         private InternetMarketDateEntities internetMarketDateEntities;
         private List<PhonesSet> phones;
@@ -30,8 +30,10 @@ namespace InternetMarket
         private List<CPU> cpus;
         private List<string> printers;
         private LoginUserServer loginUserServer;
+        private InterMarketService interMarketService;
         public MainWindow(LoginUserServer login)
         {
+            interMarketService = new InterMarketService();
             loginUserServer = login;
             InitializeComponent();
 
@@ -67,50 +69,58 @@ namespace InternetMarket
                 {
                     Thread thread = new Thread(GetPhones);
                     thread.Start();
+                    thread.IsBackground = true;
 
                 }
                 else if (combobox.SelectedItem.ToString() == "Tivis")
                 {
                     Thread thread = new Thread(GetTivis);
                     thread.Start();
+                    thread.IsBackground = true;
                 }
                 else if (combobox.SelectedItem.ToString() == "Computers")
                 {
                     Thread thread = new Thread(GetComputers);
                     thread.Start();
+                    thread.IsBackground = true;
                 }
 
                 else if (combobox.SelectedItem.ToString() == "Tablets")
                 {
                     Thread thread = new Thread(GetTablets);
                     thread.Start();
+                    thread.IsBackground = true;
                 }
 
                 else if (combobox.SelectedItem.ToString() == "CPU")
                 {
                     Thread thread = new Thread(GetCPUInform);
                     thread.Start();
+                    thread.IsBackground = true;
                 }
                 else if (combobox.SelectedItem.ToString() == "Graphics")
                 {
                     Thread thread = new Thread(GetGraphicsCardInform);
                     thread.Start();
+                    thread.IsBackground = true;
                 }
 
                 else if (combobox.SelectedItem.ToString() == "Laptop")
                 {
                     Thread thread = new Thread(GetLaptop);
                     thread.Start();
+                    thread.IsBackground = true;
                 }
                 else if (combobox.SelectedItem.ToString() == "Printers")
                 {
                     Thread thread = new Thread(GetPrinters);
                     thread.Start();
+                    thread.IsBackground = true;
                 }
             }
             catch (Exception exp)
             {
-                if(exp is NullReferenceException)
+                if (exp is NullReferenceException)
                 {
                     MessageBox.Show("Выбирите нужный параметр загрузки", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                     Trace.WriteLine(exp.ToString());
@@ -128,48 +138,16 @@ namespace InternetMarket
         public void GetPhones()
         {
             Dispose();
-            try
-            {
-                Dispatcher.Invoke(() =>
+            Dispatcher.Invoke(() =>
                 {
-                    internetMarketDateEntities = new InternetMarketDateEntities();
-                    phones = internetMarketDateEntities.PhonesSet.ToList();
-                    Trace.WriteLine(phones);
-                    Trace.WriteLine(phones.Select(x => new { x.Firm, x.Model, x.Quantity, x.Cost, x.Processor, x.RAM, x.Battery, x.Photo, x.PDF }));
-                    DataGrid.ItemsSource = phones.Select(x => new { x.Firm, x.Model, x.Quantity, x.Cost, x.Processor, x.RAM, x.Battery, x.Photo,  x.PDF});
-                   
-
-                });
-                phones.Clear();
-            }catch (Exception e)
-            {
-                Trace.WriteLine(e.ToString());
-                MessageBox.Show(e.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-
+                    DataGrid.ItemsSource = interMarketService.LoadPhones();
+                }
+            );
         }
 
         public void GetTivis()
         {
-            try
-            {
-
-
-                Dispatcher.Invoke(() =>
-                {
-                    List<TivisetSet> tivisets;
-                    InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
-                    tivisets = internetMarketDateEntities.TivisetSet.ToList();
-                    Trace.WriteLine(tivisets);
-                    Trace.WriteLine(tivisets.Select(x => new { x.Firm, x.Model, x.Quantity, x.Cost }));
-                    DataGrid.ItemsSource = tivisets.Select(x => new { x.Firm, x.Model, x.Quantity, x.Cost });
-
-                });
-            }catch(Exception e)
-            {
-                Trace.WriteLine(e.ToString());
-                MessageBox.Show(e.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
+            interMarketService.LoadTivis();
         }
         public void GetTablets()
         {
@@ -187,7 +165,8 @@ namespace InternetMarket
                     DataGrid.ItemsSource = tablets.Select(x => new { x.Name, x.Model, x.Processor, x.RAM, x.GPU, x.Battery, x.Resolution });
 
                 });
-            }catch(Exception e)
+            }
+            catch (Exception e)
             {
                 Trace.WriteLine(e.ToString());
                 MessageBox.Show(e.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
@@ -199,20 +178,21 @@ namespace InternetMarket
             {
                 Dispatcher.Invoke(() =>
                 {
-                    
+
                     InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
                     computers = internetMarketDateEntities.ComputersSet.ToList();
                     DataGrid.ItemsSource = computers.Select(x => new { x.Firm, x.Model, x.Quantity, x.Processor, x.RAM, x.VRAM, x.Graphics });
 
                 });
                 computers.Clear();
-            }catch(Exception e)
+            }
+            catch (Exception e)
             {
                 Trace.WriteLine(e.ToString());
                 MessageBox.Show(e.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
-        
+
         public void GetCPUInform()
         {
             try
@@ -226,7 +206,8 @@ namespace InternetMarket
                     cpus = internetMarketDateEntities.CPUSet.ToList();
                     DataGrid.ItemsSource = cpus.Select(x => new { x.Name, x.Architecture, x.Cores, x.Chastota, x.KESHL1, x.KESHL2, x.KESHL3, x.GPU, x.RAM, x.TDP });
                 });
-            }catch(Exception e)
+            }
+            catch (Exception e)
             {
                 Trace.WriteLine(e.ToString());
                 MessageBox.Show(e.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
@@ -247,7 +228,8 @@ namespace InternetMarket
                     DataGrid.ItemsSource = graphics.Select(x => new { x.Name, x.GraphicsCore, x.Herts, x.Cores, x.VRAM, x.Voltage });//
 
                 });//5
-            }catch(Exception e)
+            }
+            catch (Exception e)
             {
                 Trace.WriteLine(e.ToString());
                 MessageBox.Show(e.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);//6
@@ -267,7 +249,8 @@ namespace InternetMarket
                     laptops = internetMarketDateEntities.LaptopsSet.ToList();//5
                     DataGrid.ItemsSource = laptops.Select(x => new { x.Name, x.Model, x.Procc, x.RAM, x.VRAM, x.GPU, x.SCREEN, x.Resolution, x.Battery });//6
                 });
-            }catch(Exception e)
+            }
+            catch (Exception e)
             {
                 Trace.WriteLine(e.ToString());
                 MessageBox.Show(e.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);//7
@@ -382,7 +365,7 @@ namespace InternetMarket
         {
             OrganisationData organisationData = new OrganisationData();
             organisationData.Show();
-           
+
         }
 
         private void MenuItem_Click_11(object sender, RoutedEventArgs e)
@@ -408,7 +391,7 @@ namespace InternetMarket
                 }
                 MessageBox.Show("Сохранено", "Предупреждение", MessageBoxButton.OK, MessageBoxImage.Information);
             }
-            else if(combobox.SelectedItem.ToString() == "Computers")//1
+            else if (combobox.SelectedItem.ToString() == "Computers")//1
             {
                 using (FileStream fileStream = new FileStream("filetext.txt", FileMode.Append))//2
                 {
@@ -470,11 +453,11 @@ namespace InternetMarket
 
         public void Dispose()
         {
-            if(phones != null)phones.Clear();//1
-            if(graphics != null)graphics.Clear();//2
-            if(computers != null)computers.Clear();//3
+            if (phones != null) phones.Clear();//1
+            if (graphics != null) graphics.Clear();//2
+            if (computers != null) computers.Clear();//3
             if (printers != null) printers.Clear();
-            if(cpus != null)cpus.Clear();
+            if (cpus != null) cpus.Clear();
             phones = null;//4
             graphics = null;//5
             computers = null;//6
@@ -482,7 +465,7 @@ namespace InternetMarket
             printers = null;
             if (internetMarketDateEntities != null) internetMarketDateEntities.Dispose();
             internetMarketDateEntities = null;
-            
+
         }
 
         private void Window_Closed(object sender, EventArgs e)
