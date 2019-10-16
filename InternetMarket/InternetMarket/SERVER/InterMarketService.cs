@@ -13,6 +13,7 @@ namespace InternetMarket
     {
         private PhoneServerData phoneServerData;
         private TiviServerData tiviServer;
+        private UserServerData userServer;
         private InternetMarketDateEntities internetMarketDateEntities;
         private List<string> users;
         private List<string> passstr;
@@ -29,8 +30,14 @@ namespace InternetMarket
             internetMarketDateEntities = new InternetMarketDateEntities();
             phoneServerData = new PhoneServerData();
             tiviServer = new TiviServerData();
+            userServer = new UserServerData();
             Trace.WriteLine(this);
             Trace.WriteLine("Server INITIALIZE");
+        }
+
+        public void SetUserIfApsent()
+        {
+            userServer.SetUserIfApsent();
         }
         public bool SetUserLogin(string login, string pass)
         {

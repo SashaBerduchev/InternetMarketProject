@@ -250,6 +250,7 @@
     </Compile>
     <Compile Include="SERVER\PhoneServerData.cs" />
     <Compile Include="SERVER\TiviServerData.cs" />
+    <Compile Include="SERVER\UserServerData.cs" />
     <Compile Include="StreetSet.cs">
       <DependentUpon>InternetMarketEDM.tt</DependentUpon>
     </Compile>

@@ -40,32 +40,10 @@ namespace InternetMarket
             serviceHost.Open();//14
             Trace.WriteLine(serviceHost);
             Trace.WriteLine(this);
+
+            interMarketService = new InterMarketService();
             //Костыль, если нету юзеров
-            try
-            {
-                internetMarketDateEntities = new InternetMarketDateEntities();
-                Trace.WriteLine(internetMarketDateEntities.UserSet.Select(x => x.Name).ToList());
-                List<string> userSet = internetMarketDateEntities.UserSet.Select(x => x.Name).ToList();
-                if (userSet.Count < 1)
-                {
-                    UserSet user = new UserSet
-                    {
-                        Name = "Admin",
-                        Password = ""
-                    };
-                    Trace.WriteLine(user);
-                    internetMarketDateEntities.UserSet.Add(user);
-                    Trace.WriteLine(internetMarketDateEntities);
-                    internetMarketDateEntities.SaveChanges();
-
-                }
-
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.ToString(), "Warning!", MessageBoxButton.OK);
-                Trace.WriteLine(e.ToString());
-            }
+            interMarketService.SetUserIfApsent();
             //GetUser data
 
             try
@@ -79,7 +57,6 @@ namespace InternetMarket
                 MessageBox.Show("Нет подключентя к базе данных", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 Trace.WriteLine(exp.ToString());
             }
-            interMarketService = new InterMarketService();
         }
 
         private void BtlLogin_Click(object sender, RoutedEventArgs e)
