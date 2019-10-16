@@ -25,8 +25,6 @@ D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\De
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Debug\InternetMarket.exe.config
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Debug\EntityFramework.xml
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Debug\EntityFramework.SqlServer.xml
-D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Debug\ru\EntityFramework.resources.dll
-D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Debug\ru\EntityFramework.SqlServer.resources.dll
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketLibrery\obj\Debug\InternetMarketLibrery.csprojAssemblyReference.cache
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketLibrery\obj\Debug\InternetMarketLibrery.csproj.CopyComplete
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketLibrery\obj\Debug\InternetMarketLibrery.dll

@@ -89,7 +89,6 @@ D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketClient\obj\Rel
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketClient\obj\Release\InternetMarketClient.g.resources
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketClient\obj\Release\InternetMarketClient.Properties.Resources.resources
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketClient\obj\Release\InternetMarketClient.csproj.GenerateResource.cache
-D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketClient\obj\Release\InternetMarketClient.csproj.CoreCompileInputs.cache
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketClient\obj\Release\InternetMarketClient.exe
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketClient\obj\Release\InternetMarketClient.pdb
 F:\InternetMarketProject\InternetMarket\InternetMarketClient\bin\Release\InternetMarketClient.exe.config
@@ -214,12 +213,8 @@ F:\InternetMarketProject\InternetMarket\InternetMarketClient\obj\Release\Windows
 F:\InternetMarketProject\InternetMarket\InternetMarketClient\obj\Release\Windows\Administration\AdministrationWindow.baml
 F:\InternetMarketProject\InternetMarket\InternetMarketClient\obj\Release\InternetMarketClient.csproj.CopyComplete
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketClient\bin\Release\EntityFramework.dll
-D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketClient\bin\Release\EntityFramework.SqlServer.dll
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketClient\bin\Release\InternetMarket.exe
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketClient\bin\Release\InternetMarket.pdb
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketClient\bin\Release\InternetMarket.exe.config
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketClient\bin\Release\EntityFramework.xml
-D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketClient\bin\Release\EntityFramework.SqlServer.xml
-D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketClient\bin\Release\ru\EntityFramework.resources.dll
-D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketClient\bin\Release\ru\EntityFramework.SqlServer.resources.dll
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketClient\obj\Release\InternetMarketClient.csproj.CopyComplete

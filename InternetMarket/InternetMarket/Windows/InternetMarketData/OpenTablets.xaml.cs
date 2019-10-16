@@ -20,9 +20,11 @@ namespace InternetMarket.Windows
     /// </summary>
     public partial class OpenTablets : Window
     {
+        private InterMarketService interMarket;
         public OpenTablets()
         {
             InitializeComponent();
+            interMarket = new InterMarketService();
         }
 
         private void TabletSet_Click(object sender, RoutedEventArgs e)
@@ -42,19 +44,7 @@ namespace InternetMarket.Windows
                 InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
                 for (int i = 0; i < Convert.ToInt32(pointtext.Text); i++)
                 {
-                    
-                    TabletSet tabletSet = new TabletSet
-                    {
-                        Name = tabletname.Text,
-                        Model = tabletmodel.Text,
-                        Processor = tabletproc.Text,
-                        RAM = tabletRAM.Text,
-                        GPU = tabletGPU.Text,
-                        Battery = tabletbattery.Text,
-                        Resolution = tabletreolution.Text
-                    };
-                    internetMarketDateEntities.TabletSetSet.Add(tabletSet);
-                    internetMarketDateEntities.SaveChanges();
+                    interMarket.TabletsSet(tabletname.Text, tabletmodel.Text, tabletproc.Text, tabletRAM.Text, tabletGPU.Text, tabletreolution.Text, tabletbattery.Text, pointtext.Text);
                 }
             });
         }

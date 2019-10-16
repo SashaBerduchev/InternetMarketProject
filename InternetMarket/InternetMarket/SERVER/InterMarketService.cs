@@ -14,6 +14,7 @@ namespace InternetMarket
         private PhoneServerData phoneServerData;
         private TiviServerData tiviServer;
         private UserServerData userServer;
+        private TabletServer tabletServer;
         private InternetMarketDateEntities internetMarketDateEntities;
         private List<string> users;
         private List<string> cpulist;
@@ -30,6 +31,7 @@ namespace InternetMarket
             phoneServerData = new PhoneServerData();
             tiviServer = new TiviServerData();
             userServer = new UserServerData();
+            tabletServer = new TabletServer();
             Trace.WriteLine(this);
             Trace.WriteLine("Server INITIALIZE");
         }
@@ -124,18 +126,7 @@ namespace InternetMarket
             internetMarketDateEntities = new InternetMarketDateEntities();
             for (int i=0; i<Convert.ToInt32(textpoint); i++)
             {
-                var tabletsdata = new TabletSet
-                {
-                    Name = name,
-                    Model = model,
-                    Processor = proc,
-                    Battery = battery,
-                    GPU = gpu,
-                    RAM = ram,
-                    Resolution = resolution
-                };
-                internetMarketDateEntities.TabletSetSet.Add(tabletsdata);
-                internetMarketDateEntities.SaveChanges();
+                tabletServer.SetServer(name, model, proc, ram, gpu, resolution, battery);
             }
             
         }

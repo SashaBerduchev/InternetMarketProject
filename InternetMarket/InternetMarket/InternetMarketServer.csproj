@@ -249,6 +249,7 @@
       <DependentUpon>InternetMarketEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="SERVER\PhoneServerData.cs" />
+    <Compile Include="SERVER\TabletServer.cs" />
     <Compile Include="SERVER\TiviServerData.cs" />
     <Compile Include="SERVER\UserServerData.cs" />
     <Compile Include="StreetSet.cs">
@@ -573,6 +574,7 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>InternetMarketEDM.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include=".editorconfig" />
     <None Include="InternetMarketEDM.edmx.diagram">
       <DependentUpon>InternetMarketEDM.edmx</DependentUpon>
     </None>
