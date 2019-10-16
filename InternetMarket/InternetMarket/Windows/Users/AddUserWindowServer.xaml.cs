@@ -19,16 +19,22 @@ namespace InternetMarket.Windows.Users
     /// </summary>
     public partial class AddUserWindowServer : Window
     {
-        IContract contract;
+        InterMarketService marketService;
         public AddUserWindowServer()
         {
             InitializeComponent();
+            marketService = new InterMarketService();
         }
 
         private void TextUser_Click(object sender, RoutedEventArgs e)
         {
-            contract.SetUserLogin(User.Text, Password.Password);
+            marketService.SetUserLogin(User.Text, Password.Password);
             this.Close();
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            marketService.Dispose();
         }
     }
 }
