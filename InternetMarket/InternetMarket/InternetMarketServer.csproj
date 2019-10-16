@@ -217,6 +217,9 @@
     <Compile Include="Laptops.cs">
       <DependentUpon>InternetMarketEDM.tt</DependentUpon>
     </Compile>
+    <Compile Include="LoginUserWindow.xaml.cs">
+      <DependentUpon>LoginUserWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="OblastDataSet.cs">
       <DependentUpon>InternetMarketEDM.tt</DependentUpon>
@@ -258,9 +261,6 @@
     </Compile>
     <Compile Include="Windows\Documents\ZakazPokupatyaData.xaml.cs">
       <DependentUpon>ZakazPokupatyaData.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="LoginUserServer.xaml.cs">
-      <DependentUpon>LoginUserServer.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\InternetMarketData\BoilerWindow.xaml.cs">
       <DependentUpon>BoilerWindow.xaml</DependentUpon>
@@ -397,15 +397,15 @@
     <Compile Include="ZakazPokupatelya.cs">
       <DependentUpon>InternetMarketEDM.tt</DependentUpon>
     </Compile>
+    <Page Include="LoginUserWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\Administration\AdministrationWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\Documents\ZakazPokupatyaData.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="LoginUserServer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

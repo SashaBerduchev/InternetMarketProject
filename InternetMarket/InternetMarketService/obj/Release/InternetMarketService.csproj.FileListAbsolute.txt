@@ -47,10 +47,11 @@ F:\InternetMarketProject\InternetMarket\InternetMarketService\bin\Release\Intern
 F:\InternetMarketProject\InternetMarket\InternetMarketService\bin\Release\InternetMarket.pdb
 F:\InternetMarketProject\InternetMarket\InternetMarketService\bin\Release\InternetMarket.exe.config
 F:\InternetMarketProject\InternetMarket\InternetMarketService\bin\Release\EntityFramework.xml
-F:\InternetMarketProject\InternetMarket\InternetMarketService\bin\Release\ru\EntityFramework.resources.dll
 F:\InternetMarketProject\InternetMarket\InternetMarketService\obj\Release\InternetMarketService.csprojAssemblyReference.cache
 F:\InternetMarketProject\InternetMarket\InternetMarketService\obj\Release\InternetMarketService.ProjectInstaller.resources
 F:\InternetMarketProject\InternetMarket\InternetMarketService\obj\Release\InternetMarketService.csproj.GenerateResource.cache
 F:\InternetMarketProject\InternetMarket\InternetMarketService\obj\Release\InternetMarketService.csproj.CopyComplete
 F:\InternetMarketProject\InternetMarket\InternetMarketService\obj\Release\InternetMarketService.exe
 F:\InternetMarketProject\InternetMarket\InternetMarketService\obj\Release\InternetMarketService.pdb
+F:\InternetMarketProject\InternetMarket\InternetMarketService\bin\Release\EntityFramework.SqlServer.dll
+F:\InternetMarketProject\InternetMarket\InternetMarketService\bin\Release\EntityFramework.SqlServer.xml

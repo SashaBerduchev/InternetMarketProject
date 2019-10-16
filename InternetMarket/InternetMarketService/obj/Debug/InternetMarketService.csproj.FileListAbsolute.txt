@@ -46,7 +46,6 @@ F:\InternetMarketProject\InternetMarket\InternetMarketService\bin\Debug\Internet
 F:\InternetMarketProject\InternetMarket\InternetMarketService\bin\Debug\InternetMarket.pdb
 F:\InternetMarketProject\InternetMarket\InternetMarketService\bin\Debug\InternetMarket.exe.config
 F:\InternetMarketProject\InternetMarket\InternetMarketService\bin\Debug\EntityFramework.xml
-F:\InternetMarketProject\InternetMarket\InternetMarketService\bin\Debug\ru\EntityFramework.resources.dll
 F:\InternetMarketProject\InternetMarket\InternetMarketService\obj\Debug\InternetMarketService.csprojAssemblyReference.cache
 F:\InternetMarketProject\InternetMarket\InternetMarketService\obj\Debug\InternetMarketService.ProjectInstaller.resources
 F:\InternetMarketProject\InternetMarket\InternetMarketService\obj\Debug\InternetMarketService.csproj.GenerateResource.cache
@@ -72,3 +71,5 @@ E:\BerdychevRedlineProject\InternetMarket\InternetMarketService\obj\Debug\Intern
 E:\BerdychevRedlineProject\InternetMarket\InternetMarketService\obj\Debug\InternetMarketService.csproj.CopyComplete
 E:\BerdychevRedlineProject\InternetMarket\InternetMarketService\obj\Debug\InternetMarketService.exe
 E:\BerdychevRedlineProject\InternetMarket\InternetMarketService\obj\Debug\InternetMarketService.pdb
+F:\InternetMarketProject\InternetMarket\InternetMarketService\bin\Debug\EntityFramework.SqlServer.dll
+F:\InternetMarketProject\InternetMarket\InternetMarketService\bin\Debug\EntityFramework.SqlServer.xml

@@ -597,7 +597,6 @@ F:\InternetMarketProject\InternetMarket\InternetMarket\bin\Release\System.Runtim
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\InternetMarketServer.csprojAssemblyReference.cache
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\InternetMarket.exe.config
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\Documents\ZakazPokupatyaData.g.cs
-F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\LoginUserServer.g.cs
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\Spravochniki\CitiData.g.cs
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\Spravochniki\City.g.cs
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\InternetMarketData\ComputerWindow.g.cs
@@ -633,7 +632,6 @@ F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\InternetMarke
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\InternetMarket_MarkupCompile.cache
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\InternetMarket_MarkupCompile.lref
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\Documents\ZakazPokupatyaData.baml
-F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\LoginUserServer.baml
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\Spravochniki\CitiData.baml
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\Spravochniki\City.baml
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\InternetMarketData\ComputerWindow.baml
@@ -965,3 +963,5 @@ F:\InternetMarketProject\InternetMarket\InternetMarket\bin\Release\ru\Microsoft.
 F:\InternetMarketProject\InternetMarket\InternetMarket\bin\Release\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
 F:\InternetMarketProject\InternetMarket\InternetMarket\bin\Release\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
 F:\InternetMarketProject\InternetMarket\InternetMarket\bin\Release\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\LoginUserWindow.g.cs
+F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\LoginUserWindow.baml

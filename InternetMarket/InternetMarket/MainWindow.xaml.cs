@@ -2,7 +2,6 @@
 using InternetMarket.Windows.Administration;
 using InternetMarket.Windows.Documents;
 using InternetMarket.Windows.InternetMarketData;
-using InternetMarket.Windows.LoginUser;
 using InternetMarket.Windows.Spravochniki;
 using System;
 using System.Collections.Generic;
@@ -29,9 +28,9 @@ namespace InternetMarket
         private List<GraphicsCard> graphics;
         private List<CPU> cpus;
         private List<string> printers;
-        private LoginUserServer loginUserServer;
+        private LoginUserWindow loginUserServer;
         private InterMarketService interMarketService;
-        public MainWindow(LoginUserServer login)
+        public MainWindow(LoginUserWindow login)
         {
             interMarketService = new InterMarketService();
             loginUserServer = login;

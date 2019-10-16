@@ -596,7 +596,6 @@ F:\InternetMarketProject\InternetMarket\InternetMarket\bin\Debug\System.Runtime.
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\InternetMarketServer.csprojAssemblyReference.cache
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\InternetMarket.exe.config
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\Documents\ZakazPokupatyaData.g.cs
-F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\LoginUserServer.g.cs
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\Spravochniki\CitiData.g.cs
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\Spravochniki\City.g.cs
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\InternetMarketData\ComputerWindow.g.cs
@@ -632,7 +631,6 @@ F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\InternetMarket_
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\InternetMarket_MarkupCompile.cache
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\InternetMarket_MarkupCompile.lref
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\Documents\ZakazPokupatyaData.baml
-F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\LoginUserServer.baml
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\Spravochniki\CitiData.baml
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\Spravochniki\City.baml
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\InternetMarketData\ComputerWindow.baml
@@ -964,3 +962,5 @@ F:\InternetMarketProject\InternetMarket\InternetMarket\bin\Debug\ru\Microsoft.Co
 F:\InternetMarketProject\InternetMarket\InternetMarket\bin\Debug\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
 F:\InternetMarketProject\InternetMarket\InternetMarket\bin\Debug\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
 F:\InternetMarketProject\InternetMarket\InternetMarket\bin\Debug\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\LoginUserWindow.g.cs
+F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\LoginUserWindow.baml
