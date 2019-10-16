@@ -11,7 +11,6 @@ namespace InternetMarket.SERVER
     class PhoneServerData : IDisposable
     {
         private List<PhonesSet> phones;
-        private List<string> phonedata;
         private InternetMarketDateEntities internetMarketDateEntities;
         public PhoneServerData()
         {
@@ -59,6 +58,8 @@ namespace InternetMarket.SERVER
         {
             if(internetMarketDateEntities != null) internetMarketDateEntities.Dispose();
             internetMarketDateEntities = null;
+            phones.Clear();
+            phones = null;
         }
     }
 }

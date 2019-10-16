@@ -13,9 +13,9 @@ namespace InternetMarket
     {
         private PhoneServerData phoneServerData;
         private TiviServerData tiviServer;
+        private UserServerData userServer;
         private InternetMarketDateEntities internetMarketDateEntities;
         private List<string> users;
-        private List<string> passstr;
         private List<string> cpulist;
         private List<CPU> cpu;
         private List<string> computerslist;
@@ -29,31 +29,19 @@ namespace InternetMarket
             internetMarketDateEntities = new InternetMarketDateEntities();
             phoneServerData = new PhoneServerData();
             tiviServer = new TiviServerData();
+            userServer = new UserServerData();
             Trace.WriteLine(this);
             Trace.WriteLine("Server INITIALIZE");
+        }
+
+        public void SetUserIfApsent()
+        {
+            userServer.SetUserIfApsent();
         }
         public bool SetUserLogin(string login, string pass)
         {
             ClearContent();
-            passstr = internetMarketDateEntities.UserSet.Where(x => x.Name.Contains(login)).Select(p => p.Password).ToList();
-            if (passstr.Contains(pass))
-            {
-                UserSet users = new UserSet//2
-                {
-                    Name = login,//3
-                    Password = pass//4
-                };
-                Trace.WriteLine(this);
-                Trace.WriteLine(users);
-                internetMarketDateEntities.UserSet.Add(users);
-                Trace.WriteLine(internetMarketDateEntities);
-                internetMarketDateEntities.SaveChanges();
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return userServer.SetUser(login, pass);
         }
         public List<string> GetUsers()
         {
@@ -303,8 +291,6 @@ namespace InternetMarket
         {
             if (users != null) users.Clear();
             users = null;
-            if (passstr != null) passstr.Clear();
-            passstr = null;
             if (cpulist != null) cpulist.Clear();
             if (cpu != null) cpu.Clear();
             cpulist = null;
@@ -316,13 +302,12 @@ namespace InternetMarket
             internetMarketDateEntities = null;
             if (users != null) users.Clear();
             users = null;
-            if (passstr != null) passstr.Clear();
-            passstr = null;
             if (cpulist != null) cpulist.Clear();
             if (cpu != null) cpu.Clear();
             cpulist = null;
             cpu = null;
             phoneServerData.Dispose();
+            userServer.Dispose();
         }
     }
 

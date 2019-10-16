@@ -42,8 +42,6 @@ F:\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Release\Intern
 F:\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Release\InternetMarket.exe.config
 F:\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Release\EntityFramework.xml
 F:\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Release\EntityFramework.SqlServer.xml
-F:\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Release\ru\EntityFramework.resources.dll
-F:\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Release\ru\EntityFramework.SqlServer.resources.dll
 F:\InternetMarketProject\InternetMarket\InternetMarketLibrery\obj\Release\InternetMarketLibrery.csprojAssemblyReference.cache
 F:\InternetMarketProject\InternetMarket\InternetMarketLibrery\obj\Release\InternetMarketLibrery.csproj.CopyComplete
 F:\InternetMarketProject\InternetMarket\InternetMarketLibrery\obj\Release\InternetMarketLibrery.dll
