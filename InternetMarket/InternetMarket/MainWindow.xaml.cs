@@ -450,6 +450,13 @@ namespace InternetMarket
             Dispose();
         }
 
+        
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            loginUserServer.StopServer();
+        }
+
         public void Dispose()
         {
             if (phones != null) phones.Clear();//1
@@ -465,11 +472,6 @@ namespace InternetMarket
             if (internetMarketDateEntities != null) internetMarketDateEntities.Dispose();
             internetMarketDateEntities = null;
 
-        }
-
-        private void Window_Closed(object sender, EventArgs e)
-        {
-            loginUserServer.StopServer();
         }
     }
 }

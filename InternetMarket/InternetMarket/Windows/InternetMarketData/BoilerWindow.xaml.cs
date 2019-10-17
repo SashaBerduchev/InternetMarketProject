@@ -17,7 +17,7 @@ namespace InternetMarket.Windows.InternetMarketData
     /// <summary>
     /// Логика взаимодействия для BoilerWindow.xaml
     /// </summary>
-    public partial class BoilerWindow : Window, IDisposable
+    public partial class BoilerWindow : Window
     {
         InternetMarketDateEntities internetMarketDateEntities;
         public BoilerWindow()
@@ -45,11 +45,6 @@ namespace InternetMarket.Windows.InternetMarketData
             {
                 MessageBox.Show(exp.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-        }
-
-        public void Dispose()
-        {
-            throw new NotImplementedException();
         }
     }
 }
