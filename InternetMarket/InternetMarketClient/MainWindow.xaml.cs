@@ -47,6 +47,7 @@ namespace InternetMarketClient
             combobox.Items.Add("CPU");
             combobox.Items.Add("Graphics");
             combobox.Items.Add("Laptop");
+            combobox.Items.Add("Boilers");
         }
 
         private void OpenBtn_Click(object sender, RoutedEventArgs e)
@@ -74,6 +75,10 @@ namespace InternetMarketClient
                 else if (combobox.SelectedItem.ToString() == "Graphics")
                 {
                     listbox.ItemsSource = contract.LoadGPU();
+                }
+                else if (combobox.SelectedItem.ToString() == "Boilers")
+                {
+                    listbox.ItemsSource = contract.GetBoilersData();
                 }
             }
             catch(Exception exp)

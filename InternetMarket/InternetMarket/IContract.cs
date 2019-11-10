@@ -50,5 +50,9 @@ namespace InternetMarket
         bool SetUserLogin(string login, string pass);
         [OperationContract]
         void PhonesSet(string Firm, string Model, string Quantity, string Cost, string Processor, string RAM, string Battery, string texpoint, byte[] PDF, byte[] Photo);
+        [OperationContract]
+        List<string> GetBoilersData();
+        [OperationContract]
+        void SetBoiler(string Name, string Model, string Volume, string Voltage, string Power, string Cost);
     };
 }
