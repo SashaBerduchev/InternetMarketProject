@@ -142,7 +142,12 @@ namespace InternetMarket
 
         private void GetBoilers()
         {
-            DataGrid.ItemsSource = interMarketService.GetBoilersData();
+            List<string> boilers = new List<string>();
+            Dispatcher.Invoke(() =>
+            {
+                boilers = interMarketService.GetBoilersData();
+                DataGrid.ItemsSource = boilers;
+            });
         }
 
         public void GetPhones()
