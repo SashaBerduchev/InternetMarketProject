@@ -35,7 +35,7 @@ namespace InternetMarket.SERVER
             return null;
         }
 
-        public void PhonesSet(string Firm, string Model, string Quantity, string Cost, string Processor, string RAM, string Battery)
+        public void PhonesSet(string Firm, string Model, string Quantity, string Cost, string Processor, string RAM, string Battery, byte[] PDF, byte[] Photo)
         {
             var phonedat = new PhonesSet
             {
@@ -45,7 +45,9 @@ namespace InternetMarket.SERVER
                 Model = Model,
                 Processor = Processor,
                 Quantity = Quantity,
-                RAM = RAM
+                RAM = RAM,
+                PDF = PDF,
+                Photo = Photo
             };
             Trace.WriteLine(phonedat);
             internetMarketDateEntities.PhonesSet.Add(phonedat);
@@ -58,7 +60,7 @@ namespace InternetMarket.SERVER
         {
             if(internetMarketDateEntities != null) internetMarketDateEntities.Dispose();
             internetMarketDateEntities = null;
-            phones.Clear();
+            if(phones != null) phones.Clear();
             phones = null;
         }
     }

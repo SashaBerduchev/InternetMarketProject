@@ -64,11 +64,11 @@ namespace InternetMarket
         }
 
         
-        public void PhonesSet(string Firm, string Model, string Quantity, string Cost, string Processor, string RAM, string Battery, string texpoint)
+        public void PhonesSet(string Firm, string Model, string Quantity, string Cost, string Processor, string RAM, string Battery, string texpoint, byte[] PDF, byte[] Photo)
         {
             for (int i = 0; i < Convert.ToInt32(texpoint); i++)
             {
-                phoneServerData.PhonesSet(Firm, Model, Quantity, Cost, Processor, RAM, Battery);
+                phoneServerData.PhonesSet(Firm, Model, Quantity, Cost, Processor, RAM, Battery, PDF, Photo);
             }
         }
 

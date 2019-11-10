@@ -23,15 +23,17 @@ namespace InternetMarket
     /// </summary>
     public partial class OpenPhones : Window
     {
+        private byte[] photoload;
+        private byte[] arrayread;
         private InterMarketService interMarketService;
         public OpenPhones()
         {
             InitializeComponent();
+            interMarketService = new InterMarketService();
             Trace.WriteLine(this);
         }
 
-        byte[] photoload;
-        byte[] arrayread;
+        
         private void btnset_Click(object sender, RoutedEventArgs e)
         {
             for (int i = 0; i < Convert.ToInt32(textpointer.Text); i++)
@@ -76,12 +78,13 @@ namespace InternetMarket
                 string proc = procsettext.Text;
                 string ram = ramsettext.Text;
                 string battery = batterysettext.Text;
-
-                InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
+                byte[] PDF = arrayread;
+                byte[] photo = photoload;
+                //InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
 
                 for (int i = 0; i < Convert.ToInt32(textpointer.Text); i++)
                 {
-                    interMarketService.PhonesSet(firm, model, quantity, cost, proc, ram, battery, textpointer.Text);
+                    interMarketService.PhonesSet(firm, model, quantity, cost, proc, ram, battery, textpointer.Text, PDF, photo);
                 }
             });
         }

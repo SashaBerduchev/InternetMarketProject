@@ -13,8 +13,6 @@ namespace InternetMarket
         [OperationContract]
         List<string> GetUsers();
         [OperationContract]
-        void PhonesSet(string Firm, string Model, string Quantity, string Cost, string Processor, string RAM, string Battery, string textpoint);
-        [OperationContract]
         void TiviSet(string Firm, string Model, string Quantity, string Cost, string textpoint);
         [OperationContract]
         List<string> LoadPhones();
@@ -50,5 +48,7 @@ namespace InternetMarket
         void setLogin(string name, string password);
         [OperationContract]
         bool SetUserLogin(string login, string pass);
+        [OperationContract]
+        void PhonesSet(string Firm, string Model, string Quantity, string Cost, string Processor, string RAM, string Battery, string texpoint, byte[] PDF, byte[] Photo);
     };
 }
