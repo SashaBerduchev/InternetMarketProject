@@ -47,16 +47,12 @@ namespace InternetMarket
         }
         public List<string> GetUsers()
         {
-            ClearContent();
-            users = new List<string>();
-            try
+            List<string> users = userServer.GetUsers();
+            if(users != null)
             {
-                users = internetMarketDateEntities.UserSet.Select(x => x.Name).ToList();
-            }catch(Exception exp)
-            {
-                MessageBox.Show(exp.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return users;
             }
-            return users;
+            return null;
         }
         public List<string> LoadPhones()
         {

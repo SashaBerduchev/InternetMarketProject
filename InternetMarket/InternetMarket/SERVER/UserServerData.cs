@@ -12,8 +12,10 @@ namespace InternetMarket.SERVER
     {
         private InternetMarketDateEntities internetMarket;
         private List<string> passstr;
+        private List<string> users;
         public UserServerData()
         {
+            users = new List<string>();
             internetMarket = new InternetMarketDateEntities();
         }
         public void SetUserIfApsent()
@@ -76,11 +78,28 @@ namespace InternetMarket.SERVER
             return false;
         }
 
+        public List<string> GetUsers()
+        {
+            
+            try
+            {
+                users = internetMarket.UserSet.Select(x => x.Name).ToList();
+                return users;
+            }
+            catch (Exception exp)
+            {
+                MessageBox.Show(exp.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            return null;
+        }
         public void Dispose()
         {
+            users.Clear();
+            passstr.Clear();
             internetMarket.Dispose();
             internetMarket = null;
             passstr = null;
+            users = null;
         }
     }
 }
