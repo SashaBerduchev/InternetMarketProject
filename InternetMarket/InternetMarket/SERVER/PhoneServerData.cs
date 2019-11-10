@@ -19,13 +19,13 @@ namespace InternetMarket.SERVER
 
         public List<string> GetPhones()
         {
-            if(phones != null) phones.Clear();
+            if (phones != null) phones.Clear();
             try
             {
-                   phones = internetMarketDateEntities.PhonesSet.ToList();
-                   Trace.WriteLine(phones);
-                   Trace.WriteLine(phones.Select(x => new { x.Firm, x.Model, x.Quantity, x.Cost, x.Processor, x.RAM, x.Battery, x.Photo, x.PDF }));
-                   return phones.Select(x => x.Firm + " " + x.Model + " "+ x.Quantity + " " + x.Cost + " " + x.Processor + " " +x.RAM + " " +x.Battery + " " + x.Photo + " " + x.PDF ).ToList();
+                phones = internetMarketDateEntities.PhonesSet.ToList();
+                Trace.WriteLine(phones);
+                Trace.WriteLine(phones.Select(x => new { x.Firm, x.Model, x.Quantity, x.Cost, x.Processor, x.RAM, x.Battery, x.Photo, x.PDF }));
+                return phones.Select(x => x.Firm + " " + x.Model + " " + x.Quantity + " " + x.Cost + " " + x.Processor + " " + x.RAM + " " + x.Battery + " " + x.Photo + " " + x.PDF).ToList();
             }
             catch (Exception e)
             {
@@ -58,9 +58,9 @@ namespace InternetMarket.SERVER
 
         public void Dispose()
         {
-            if(internetMarketDateEntities != null) internetMarketDateEntities.Dispose();
+            if (internetMarketDateEntities != null) internetMarketDateEntities.Dispose();
             internetMarketDateEntities = null;
-            if(phones != null) phones.Clear();
+            if (phones != null) phones.Clear();
             phones = null;
         }
     }

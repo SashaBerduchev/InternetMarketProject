@@ -248,6 +248,7 @@
     <Compile Include="RegionData.cs">
       <DependentUpon>InternetMarketEDM.tt</DependentUpon>
     </Compile>
+    <Compile Include="SERVER\BoilerServerData.cs" />
     <Compile Include="SERVER\PhoneServerData.cs" />
     <Compile Include="SERVER\TabletServer.cs" />
     <Compile Include="SERVER\TiviServerData.cs" />
