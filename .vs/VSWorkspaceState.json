@@ -3,8 +3,8 @@
     "",
     "\\InternetMarket",
     "\\InternetMarket\\InternetMarket",
-    "\\InternetMarket\\InternetMarketClient"
+    "\\InternetMarket\\InternetMarketClient",
+    "\\InternetMarket\\InternetMarket\\SERVER"
   ],
-  "SelectedNode": "\\InternetMarket\\InternetMarketClient\\LoginUser.xaml.cs",
   "PreviewInSolutionExplorer": false
 }
