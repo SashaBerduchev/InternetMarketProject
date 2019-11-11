@@ -15,6 +15,7 @@ namespace InternetMarket
         private TiviServerData tiviServer;
         private UserServerData userServer;
         private TabletServer tabletServer;
+        private BoilerServerData boilerServer;
         private InternetMarketDateEntities internetMarketDateEntities;
         private List<string> users;
         private List<string> cpulist;
@@ -32,6 +33,7 @@ namespace InternetMarket
             tiviServer = new TiviServerData();
             userServer = new UserServerData();
             tabletServer = new TabletServer();
+            boilerServer = new BoilerServerData();
             Trace.WriteLine(this);
             Trace.WriteLine("Server INITIALIZE");
         }
@@ -60,11 +62,11 @@ namespace InternetMarket
         }
 
         
-        public void PhonesSet(string Firm, string Model, string Quantity, string Cost, string Processor, string RAM, string Battery, string texpoint)
+        public void PhonesSet(string Firm, string Model, string Quantity, string Cost, string Processor, string RAM, string Battery, string texpoint, byte[] PDF, byte[] Photo)
         {
             for (int i = 0; i < Convert.ToInt32(texpoint); i++)
             {
-                phoneServerData.PhonesSet(Firm, Model, Quantity, Cost, Processor, RAM, Battery);
+                phoneServerData.PhonesSet(Firm, Model, Quantity, Cost, Processor, RAM, Battery, PDF, Photo);
             }
         }
 
@@ -282,6 +284,16 @@ namespace InternetMarket
             if (cpu != null) cpu.Clear();
             cpulist = null;
             cpu = null;
+        }
+
+        public void SetBoiler(string Name, string Model, string Volume, string Voltage, string Power, string Cost)
+        {
+            boilerServer.BoilersSet(Name, Model, Volume, Voltage, Power, Cost);
+        }
+
+        public List<string> GetBoilersData()
+        {
+            return boilerServer.GetBoilers();
         }
         public void Dispose()
         {

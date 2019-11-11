@@ -44,6 +44,7 @@ namespace InternetMarket
             combobox.Items.Add("Graphics");
             combobox.Items.Add("Laptop");
             combobox.Items.Add("Printers");
+            combobox.Items.Add("Boilers");
             Trace.WriteLine(this);
         }
 
@@ -116,6 +117,12 @@ namespace InternetMarket
                     thread.Start();
                     thread.IsBackground = true;
                 }
+                else if (combobox.SelectedItem.ToString() == "Boilers")
+                {
+                    Thread thread = new Thread(GetBoilers);
+                    thread.Start();
+                    thread.IsBackground = true;
+                }
             }
             catch (Exception exp)
             {
@@ -133,10 +140,18 @@ namespace InternetMarket
 
         }
 
+        private void GetBoilers()
+        {
+            List<string> boilers = new List<string>();
+            Dispatcher.Invoke(() =>
+            {
+                boilers = interMarketService.GetBoilersData();
+                DataGrid.ItemsSource = boilers;
+            });
+        }
 
         public void GetPhones()
         {
-            Dispose();
             Dispatcher.Invoke(() =>
                 {
                     DataGrid.ItemsSource = interMarketService.LoadPhones();
@@ -375,35 +390,46 @@ namespace InternetMarket
 
         private void Print_Click(object sender, RoutedEventArgs e)
         {
-            if (combobox.SelectedItem.ToString() == "Phones")//1
+            try
             {
-                using (FileStream fileStream = new FileStream("filetext.txt", FileMode.Append))//2
+                if (combobox.SelectedItem.ToString() == "Phones")//1
                 {
-                    for (int i = 0; i < phones.Count; i++)//3
+                    using (FileStream fileStream = new FileStream("filetext.txt", FileMode.Append))//2
                     {
+                        for (int i = 0; i < phones.Count; i++)//3
+                        {
 
-                        byte[] array = System.Text.Encoding.Default.GetBytes(phones[i].ToString());//1
+                            byte[] array = System.Text.Encoding.Default.GetBytes(phones[i].ToString());//1
 
-                        fileStream.Write(array, 0, array.Length);//2
+                            fileStream.Write(array, 0, array.Length);//2
+                        }
+
                     }
-
+                    MessageBox.Show("Сохранено", "Предупреждение", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
-                MessageBox.Show("Сохранено", "Предупреждение", MessageBoxButton.OK, MessageBoxImage.Information);
-            }
-            else if (combobox.SelectedItem.ToString() == "Computers")//1
+                else if (combobox.SelectedItem.ToString() == "Computers")//1
+                {
+                    using (FileStream fileStream = new FileStream("filetext.txt", FileMode.Append))//2
+                    {
+                        for (int i = 0; i < computers.Count; i++)//3
+                        {
+
+                            byte[] array = System.Text.Encoding.Default.GetBytes(computers[i].ToString());//4
+
+                            fileStream.Write(array, 0, array.Length);//5
+                        }
+
+                    }
+                    MessageBox.Show("Сохранено", "Предупреждение", MessageBoxButton.OK, MessageBoxImage.Information);//6
+                }
+            }catch(NullReferenceException nullexp)
             {
-                using (FileStream fileStream = new FileStream("filetext.txt", FileMode.Append))//2
-                {
-                    for (int i = 0; i < computers.Count; i++)//3
-                    {
-
-                        byte[] array = System.Text.Encoding.Default.GetBytes(computers[i].ToString());//4
-
-                        fileStream.Write(array, 0, array.Length);//5
-                    }
-
-                }
-                MessageBox.Show("Сохранено", "Предупреждение", MessageBoxButton.OK, MessageBoxImage.Information);//6
+                MessageBox.Show("Выберите данные для сохранения", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                Trace.WriteLine(nullexp);
+            }catch(Exception exp)
+            {
+                MessageBox.Show(exp.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                Trace.WriteLine(exp);
             }
         }
 

@@ -4,7 +4,13 @@
     "\\InternetMarket",
     "\\InternetMarket\\InternetMarket",
     "\\InternetMarket\\InternetMarketClient",
-    "\\InternetMarket\\InternetMarket\\SERVER"
+    "\\InternetMarket\\InternetMarketClient\\Windows",
+    "\\InternetMarket\\InternetMarketClient\\Windows\\ClientData",
+    "\\InternetMarket\\InternetMarketLibrery",
+    "\\InternetMarket\\InternetMarket\\SERVER",
+    "\\InternetMarket\\InternetMarket\\Windows",
+    "\\InternetMarket\\InternetMarket\\Windows\\InternetMarketData"
   ],
+  "SelectedNode": "\\InternetMarket\\InternetMarketClient\\Windows\\ClientData\\OpenPhones.xaml.cs",
   "PreviewInSolutionExplorer": false
 }

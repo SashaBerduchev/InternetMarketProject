@@ -19,13 +19,13 @@ namespace InternetMarket.SERVER
 
         public List<string> GetPhones()
         {
-            if(phones != null) phones.Clear();
+            if (phones != null) phones.Clear();
             try
             {
-                   phones = internetMarketDateEntities.PhonesSet.ToList();
-                   Trace.WriteLine(phones);
-                   Trace.WriteLine(phones.Select(x => new { x.Firm, x.Model, x.Quantity, x.Cost, x.Processor, x.RAM, x.Battery, x.Photo, x.PDF }));
-                   return phones.Select(x => x.Firm + " " + x.Model + " "+ x.Quantity + " " + x.Cost + " " + x.Processor + " " +x.RAM + " " +x.Battery + " " + x.Photo + " " + x.PDF ).ToList();
+                phones = internetMarketDateEntities.PhonesSet.ToList();
+                Trace.WriteLine(phones);
+                Trace.WriteLine(phones.Select(x => new { x.Firm, x.Model, x.Quantity, x.Cost, x.Processor, x.RAM, x.Battery, x.Photo, x.PDF }));
+                return phones.Select(x => x.Firm + " " + x.Model + " " + x.Quantity + " " + x.Cost + " " + x.Processor + " " + x.RAM + " " + x.Battery + " " + x.Photo + " " + x.PDF).ToList();
             }
             catch (Exception e)
             {
@@ -35,7 +35,7 @@ namespace InternetMarket.SERVER
             return null;
         }
 
-        public void PhonesSet(string Firm, string Model, string Quantity, string Cost, string Processor, string RAM, string Battery)
+        public void PhonesSet(string Firm, string Model, string Quantity, string Cost, string Processor, string RAM, string Battery, byte[] PDF, byte[] Photo)
         {
             var phonedat = new PhonesSet
             {
@@ -45,7 +45,9 @@ namespace InternetMarket.SERVER
                 Model = Model,
                 Processor = Processor,
                 Quantity = Quantity,
-                RAM = RAM
+                RAM = RAM,
+                PDF = PDF,
+                Photo = Photo
             };
             Trace.WriteLine(phonedat);
             internetMarketDateEntities.PhonesSet.Add(phonedat);
@@ -56,9 +58,9 @@ namespace InternetMarket.SERVER
 
         public void Dispose()
         {
-            if(internetMarketDateEntities != null) internetMarketDateEntities.Dispose();
+            if (internetMarketDateEntities != null) internetMarketDateEntities.Dispose();
             internetMarketDateEntities = null;
-            phones.Clear();
+            if (phones != null) phones.Clear();
             phones = null;
         }
     }
