@@ -307,6 +307,7 @@ namespace InternetMarket
             cpu = null;
             phoneServerData.Dispose();
             userServer.Dispose();
+            Trace.WriteLine("SERVER DISPOSE");
         }
     }
 
