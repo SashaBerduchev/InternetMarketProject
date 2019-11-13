@@ -53,14 +53,20 @@ namespace InternetMarketClient
         {
             Dispatcher.Invoke(() =>
             {
-                string firm = firmsettext.Text;
-                string model = modelsettext.Text;
-                string quantity = quantitysettext.Text;
-                string cost = costsettext.Text;
-                string proc = procsettext.Text;
-                string ram = ramsettext.Text;
-                string battery = batterysettext.Text;
-                contract.PhonesSet(firm, model, quantity, cost, proc, ram, battery, textpoint.Text, pdffile, photo);
+                try
+                {
+                    string firm = firmsettext.Text;
+                    string model = modelsettext.Text;
+                    string quantity = quantitysettext.Text;
+                    string cost = costsettext.Text;
+                    string proc = procsettext.Text;
+                    string ram = ramsettext.Text;
+                    string battery = batterysettext.Text;
+                    contract.PhonesSet(firm, model, quantity, cost, proc, ram, battery, textpoint.Text, pdffile, photo);
+                }catch(Exception exp)
+                {
+                    MessageBox.Show(exp.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             });
            
         }
