@@ -61,9 +61,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BoilerServerData.cs" />
+    <Compile Include="ComputersData.cs" />
     <Compile Include="IContract.cs" />
     <Compile Include="InternetMarket.cs" />
+    <Compile Include="PhoneServerData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TabletServer.cs" />
+    <Compile Include="TiviServerData.cs" />
+    <Compile Include="UserServerData.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\InternetMarket\InternetMarketServer.csproj">
