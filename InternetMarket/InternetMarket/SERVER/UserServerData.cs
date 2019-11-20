@@ -94,9 +94,9 @@ namespace InternetMarket.SERVER
         }
         public void Dispose()
         {
-            users.Clear();
-            passstr.Clear();
-            internetMarket.Dispose();
+            if(users!=null)users.Clear();
+            if(passstr != null)passstr.Clear();
+            if(internetMarket !=null)internetMarket.Dispose();
             internetMarket = null;
             passstr = null;
             users = null;

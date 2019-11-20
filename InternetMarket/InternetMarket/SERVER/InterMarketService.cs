@@ -16,16 +16,15 @@ namespace InternetMarket
         private UserServerData userServer;
         private TabletServer tabletServer;
         private BoilerServerData boilerServer;
+        private ComputersData computers;
         private InternetMarketDateEntities internetMarketDateEntities;
         private List<string> users;
         private List<string> cpulist;
         private List<CPU> cpu;
-        private List<string> computerslist;
         private List<Country> countries;
         private List<CityData> cities;
         private List<string> listgpu;
         private List<GraphicsCard> graphics;
-        private List<ComputersSet> computers;
         public InterMarketService()
         {
             internetMarketDateEntities = new InternetMarketDateEntities();
@@ -34,6 +33,7 @@ namespace InternetMarket
             userServer = new UserServerData();
             tabletServer = new TabletServer();
             boilerServer = new BoilerServerData();
+            computers = new ComputersData();
             Trace.WriteLine(this);
             Trace.WriteLine("Server INITIALIZE");
         }
@@ -72,9 +72,7 @@ namespace InternetMarket
 
         public List<string> LoadComputers()
         {
-            computers = internetMarketDateEntities.ComputersSet.ToList();
-            computerslist = computers.AsParallel().Select(x => x.Firm + " " + x.Model + " " + x.Processor + " " + x.Quantity + " " + x.RAM + " " + x.VRAM).ToList();
-            return computerslist;
+            return computers.LoadComputers();
         }
 
         public List<string> LoadTivis()
@@ -100,21 +98,7 @@ namespace InternetMarket
             
             for (int i = 0; i < Convert.ToInt32(textpoint); i++)
             {
-                var computers = new ComputersSet
-                {
-                    Firm = Firm,
-                    Model = Model,
-                    Processor = Processor,
-                    Quantity = Quantity,
-                    Cost = Cost,
-                    RAM = RAM,
-                    Graphics = Graphics,
-                    VRAM = VRAM
-                };
-                Trace.WriteLine(computers);
-                internetMarketDateEntities.ComputersSet.Add(computers);
-                Trace.WriteLine(internetMarketDateEntities);
-                internetMarketDateEntities.SaveChanges();
+                computers.ComputerSet(Firm, Model, Quantity, Cost, Processor, RAM, VRAM, Graphics);
             }
         }
 
@@ -307,6 +291,7 @@ namespace InternetMarket
             cpu = null;
             phoneServerData.Dispose();
             userServer.Dispose();
+            computers.Dispose();
             Trace.WriteLine("SERVER DISPOSE");
         }
     }
