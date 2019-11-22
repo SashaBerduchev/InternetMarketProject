@@ -70,9 +70,9 @@ namespace InternetMarket
             }
         }
 
-        public void RemovePhones(int elem)
+        public void RemovePhones(int start, int stop)
         {
-            phoneServerData.Remove(elem);
+            phoneServerData.Remove(start, stop);
         }
         public List<string> LoadComputers()
         {
