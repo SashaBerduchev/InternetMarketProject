@@ -1,9 +1,8 @@
-﻿using System;
+﻿using InternetMarket.Loaders;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace InternetMarket.SERVER
@@ -53,8 +52,10 @@ namespace InternetMarket.SERVER
             internetMarketDateEntities.PhonesSet.Add(phonedat);
             Trace.WriteLine(internetMarketDateEntities);
             internetMarketDateEntities.SaveChanges();
+            
         }
 
+       
 
         public void Dispose()
         {

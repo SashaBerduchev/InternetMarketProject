@@ -38,6 +38,8 @@
         <Button Name="OpenBtnPrinter" Grid.Column="3" Grid.Row="2" Margin="35,20,25,40" Content="Printers" Click="OpenBtnPrinter_Click"  />
         <Button Name="OpenBtnBoiler" Grid.Column="4" Grid.Row="2" Margin="30,39,30,21" Content="Boilers" Click="OpenBtnBoiler_Click"  />
         <Button Name="Print" Grid.Column="4" Grid.Row="4" Margin="30,21,0,10" Content="Сохранить" Click="Print_Click" />
+        <TextBox Name="countDelete" Grid.Column="9" Grid.Row="5" Margin="30" />
+        <Button Name="Delete" Grid.Column="5" Grid.Row="6" Margin="30,21,0,10" Content="Удалить" Click="Delete_Click"/>
         <Menu Height="25" VerticalAlignment="Top" Grid.ColumnSpan="2" Margin="0,0,135,0">
             <MenuItem Header="Directory">
                 <MenuItem Header="Organisation" Click="MenuItem_Click_10" />

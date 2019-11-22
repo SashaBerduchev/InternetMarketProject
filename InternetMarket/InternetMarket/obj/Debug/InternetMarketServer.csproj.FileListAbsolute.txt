@@ -1277,3 +1277,5 @@ C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\Inter
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\InternetMarketServer.csproj.CopyComplete
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\InternetMarket.exe
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\InternetMarket.pdb
+F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Loaders\LoadingWindow.g.cs
+F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Loaders\LoadingWindow.baml

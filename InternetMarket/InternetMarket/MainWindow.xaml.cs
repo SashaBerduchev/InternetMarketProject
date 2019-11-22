@@ -499,5 +499,24 @@ namespace InternetMarket
             internetMarketDateEntities = null;
 
         }
+
+        private void Delete_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                if (combobox.SelectedItem.ToString() == "Phones")
+                {
+                    interMarketService.RemovePhones(Convert.ToInt32(countDelete.Text));
+                }
+            }catch (NullReferenceException nullexp)
+            {
+                Trace.WriteLine(nullexp.ToString());
+                MessageBox.Show("Выберите тип ", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            }catch(FormatException formatexp)
+            {
+                Trace.WriteLine(formatexp.ToString());
+                MessageBox.Show("Введите строку", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
     }
 }

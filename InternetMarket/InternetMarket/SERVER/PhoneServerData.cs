@@ -1,4 +1,5 @@
-﻿using System;
+﻿using InternetMarket.Loaders;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -22,9 +23,14 @@ namespace InternetMarket.SERVER
             if (phones != null) phones.Clear();
             try
             {
+                LoadingWindow loadingWindow = new LoadingWindow();
+                loadingWindow.valueMin = 0;
+                loadingWindow.Show();
                 phones = internetMarketDateEntities.PhonesSet.ToList();
+                loadingWindow.valueMax = phones.Count;
                 Trace.WriteLine(phones);
                 Trace.WriteLine(phones.Select(x => new { x.Firm, x.Model, x.Quantity, x.Cost, x.Processor, x.RAM, x.Battery, x.Photo, x.PDF }));
+                loadingWindow.Close();
                 return phones.Select(x => x.Firm + " " + x.Model + " " + x.Quantity + " " + x.Cost + " " + x.Processor + " " + x.RAM + " " + x.Battery + " " + x.Photo + " " + x.PDF).ToList();
             }
             catch (Exception e)
@@ -53,6 +59,26 @@ namespace InternetMarket.SERVER
             internetMarketDateEntities.PhonesSet.Add(phonedat);
             Trace.WriteLine(internetMarketDateEntities);
             internetMarketDateEntities.SaveChanges();
+        }
+
+        public void Remove(int elem)
+        {
+            try
+            {
+                Trace.WriteLine(phones[elem]);
+                internetMarketDateEntities.PhonesSet.Remove(phones[elem]);
+                internetMarketDateEntities.SaveChanges();
+            }
+            catch (NullReferenceException nullexp)
+            {
+                Trace.WriteLine(nullexp.ToString());
+                MessageBox.Show("Загрузите данные", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            catch (InvalidOperationException invalidoper)
+            {
+                Trace.WriteLine(invalidoper.ToString());
+                MessageBox.Show("Элемент уже удален", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
 
