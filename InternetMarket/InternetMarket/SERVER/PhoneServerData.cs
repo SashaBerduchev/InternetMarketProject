@@ -72,6 +72,7 @@ namespace InternetMarket.SERVER
                 {
                     Trace.WriteLine(phones[elem]);
                     internetMarketDateEntities.PhonesSet.Remove(phones[elem]);
+                    internetMarketDateEntities.SaveChanges();
                 }
                 catch (NullReferenceException nullexp)
                 {
@@ -84,8 +85,6 @@ namespace InternetMarket.SERVER
                     MessageBox.Show("Элемент уже удален", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
-
-            internetMarketDateEntities.SaveChanges();
 
         }
 
