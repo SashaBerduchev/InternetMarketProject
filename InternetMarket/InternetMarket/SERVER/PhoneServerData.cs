@@ -70,8 +70,8 @@ namespace InternetMarket.SERVER
             {
                 try
                 {
-                    Trace.WriteLine(phones[elem]);
-                    internetMarketDateEntities.PhonesSet.Remove(phones[elem]);
+                    Trace.WriteLine(phones[i]);
+                    internetMarketDateEntities.PhonesSet.Remove(phones[i]);
                     internetMarketDateEntities.SaveChanges();
                 }
                 catch (NullReferenceException nullexp)
