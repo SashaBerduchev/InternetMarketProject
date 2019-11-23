@@ -1,9 +1,8 @@
-﻿using System;
+﻿using InternetMarket.Loaders;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace InternetMarket.SERVER
@@ -12,6 +11,9 @@ namespace InternetMarket.SERVER
     {
         private List<PhonesSet> phones;
         private InternetMarketDateEntities internetMarketDateEntities;
+        private int start;
+        private int stop;
+        private int elem;
         public PhoneServerData()
         {
             internetMarketDateEntities = new InternetMarketDateEntities();
@@ -22,9 +24,14 @@ namespace InternetMarket.SERVER
             if (phones != null) phones.Clear();
             try
             {
+                LoadingWindow loadingWindow = new LoadingWindow();
+                loadingWindow.valueMin = 0;
+                loadingWindow.Show();
                 phones = internetMarketDateEntities.PhonesSet.ToList();
+                loadingWindow.valueMax = phones.Count;
                 Trace.WriteLine(phones);
                 Trace.WriteLine(phones.Select(x => new { x.Firm, x.Model, x.Quantity, x.Cost, x.Processor, x.RAM, x.Battery, x.Photo, x.PDF }));
+                loadingWindow.Close();
                 return phones.Select(x => x.Firm + " " + x.Model + " " + x.Quantity + " " + x.Cost + " " + x.Processor + " " + x.RAM + " " + x.Battery + " " + x.Photo + " " + x.PDF).ToList();
             }
             catch (Exception e)
@@ -53,6 +60,32 @@ namespace InternetMarket.SERVER
             internetMarketDateEntities.PhonesSet.Add(phonedat);
             Trace.WriteLine(internetMarketDateEntities);
             internetMarketDateEntities.SaveChanges();
+        }
+
+        public void Remove(int start, int stop)
+        {
+            this.start = start;
+            this.stop = stop;
+            for (int i = this.start; i < this.stop; i++)
+            {
+                try
+                {
+                    Trace.WriteLine(phones[i]);
+                    internetMarketDateEntities.PhonesSet.Remove(phones[i]);
+                    internetMarketDateEntities.SaveChanges();
+                }
+                catch (NullReferenceException nullexp)
+                {
+                    Trace.WriteLine(nullexp.ToString());
+                    MessageBox.Show("Загрузите данные", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+                catch (InvalidOperationException invalidoper)
+                {
+                    Trace.WriteLine(invalidoper.ToString());
+                    MessageBox.Show("Элемент уже удален", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+
         }
 
 

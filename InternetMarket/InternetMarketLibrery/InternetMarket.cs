@@ -1,116 +1,115 @@
 ﻿using InternetMarket;
+using InternetMarket.SERVER;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace InternetMarketLibrery
 {
     public class InternetMarket : IContract
     {
+        private PhoneServerData phoneServerData;
+        private TiviServerData tiviServer;
+        private UserServerData userServer;
+        private TabletServer tabletServer;
+        private BoilerServerData boilerServer;
+        private ComputersData computers;
+        private InternetMarketDateEntities internetMarketDateEntities;
+        private List<string> users;
+        private List<string> cpulist;
+        private List<CPU> cpu;
+        private List<Country> countries;
+        private List<CityData> cities;
+        private List<string> listgpu;
+        private List<GraphicsCard> graphics;
 
+        public InternetMarket()
+        {
+            internetMarketDateEntities = new InternetMarketDateEntities();
+            phoneServerData = new PhoneServerData();
+            tiviServer = new TiviServerData();
+            userServer = new UserServerData();
+            tabletServer = new TabletServer();
+            boilerServer = new BoilerServerData();
+            computers = new ComputersData();
+            Trace.WriteLine(this);
+            Trace.WriteLine("Service of server INITIALIZE");
+        }
+       
+
+
+        public void SetUserIfApsent()
+        {
+            userServer.SetUserIfApsent();
+        }
+        public bool SetUserLogin(string login, string pass)
+        {
+            ClearContent();
+            return userServer.SetUser(login, pass);
+        }
+        public List<string> GetUsers()
+        {
+            List<string> users = userServer.GetUsers();
+            if (users != null)
+            {
+                return users;
+            }
+            return null;
+        }
         public List<string> LoadPhones()
         {
-            List<PhonesSet> phones;
-            InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
-            phones = internetMarketDateEntities.PhonesSet.ToList();
-            List<string> listphones = phones.AsParallel().Select(x => x.Firm + " " + x.Model + " " + x.Processor + " " + x.Quantity + " " + x.RAM + " " + x.Cost).ToList();
-            return listphones;
+            return phoneServerData.GetPhones();
         }
 
 
-        public void PhonesSet(string Firm, string Model, string Quantity, string Cost, string Processor, string RAM, string Battery, string texpoint)
+        public void PhonesSet(string Firm, string Model, string Quantity, string Cost, string Processor, string RAM, string Battery, string texpoint, byte[] PDF, byte[] Photo)
         {
-
-            InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
-
             for (int i = 0; i < Convert.ToInt32(texpoint); i++)
             {
-                var phonedat = new PhonesSet
-                {
-                    Battery = Battery,
-                    Cost = Cost,
-                    Firm = Firm,
-                    Model = Model,
-                    Processor = Processor,
-                    Quantity = Quantity,
-                    RAM = RAM
-                };
-                internetMarketDateEntities.PhonesSet.Add(phonedat);
-                internetMarketDateEntities.SaveChanges();
+                phoneServerData.PhonesSet(Firm, Model, Quantity, Cost, Processor, RAM, Battery, PDF, Photo);
             }
         }
 
         public List<string> LoadComputers()
         {
-            List<string> computerslist;
-            InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
-            List<ComputersSet> computers;
-            computers = internetMarketDateEntities.ComputersSet.ToList();
-            computerslist = computers.AsParallel().Select(x => x.Firm + " " + x.Model + " " + x.Processor + " " + x.Quantity + " " + x.RAM + " " + x.VRAM).ToList();
-            return computerslist;
+            return computers.LoadComputers();
         }
 
+        public List<string> LoadTivis()
+        {
+            return tiviServer.GetTivis();
+        }
 
         public void TiviSet(string Firm, string Model, string Quantity, string Cost, string textpoint)
         {
-            InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
+            ClearContent();
+            internetMarketDateEntities = new InternetMarketDateEntities();
 
             for (int i = 0; i < Convert.ToInt32(textpoint); i++)
             {
-                var dataset = new TivisetSet
-                {
-                    Cost = Cost,
-                    Firm = Firm,
-                    Model = Model,
-                    Quantity = Quantity
-                };
-                internetMarketDateEntities.TivisetSet.Add(dataset);
-                internetMarketDateEntities.SaveChanges();
+                tiviServer.TiviSet(Firm, Model, Quantity, Cost);
             }
 
         }
 
         public void ComputerSet(string Firm, string Model, string Quantity, string Cost, string Processor, string RAM, string VRAM, string Graphics, string textpoint)
         {
-            InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
+            ClearContent();
 
             for (int i = 0; i < Convert.ToInt32(textpoint); i++)
             {
-                var computers = new ComputersSet
-                {
-                    Firm = Firm,
-                    Model = Model,
-                    Processor = Processor,
-                    Quantity = Quantity,
-                    Cost = Cost,
-                    RAM = RAM,
-                    Graphics = Graphics,
-                    VRAM = VRAM
-                };
-                internetMarketDateEntities.ComputersSet.Add(computers);
-                internetMarketDateEntities.SaveChanges();
+                computers.ComputerSet(Firm, Model, Quantity, Cost, Processor, RAM, VRAM, Graphics);
             }
         }
 
         public void TabletsSet(string name, string model, string proc, string ram, string gpu, string resolution, string battery, string textpoint)
         {
-            InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
+            ClearContent();
+            internetMarketDateEntities = new InternetMarketDateEntities();
             for (int i = 0; i < Convert.ToInt32(textpoint); i++)
             {
-                var tabletsdata = new TabletSet
-                {
-                    Name = name,
-                    Model = model,
-                    Processor = proc,
-                    Battery = battery,
-                    GPU = gpu,
-                    RAM = ram,
-                    Resolution = resolution
-                };
-                internetMarketDateEntities.TabletSetSet.Add(tabletsdata);
-                internetMarketDateEntities.SaveChanges();
+                tabletServer.SetServer(name, model, proc, ram, gpu, resolution, battery);
             }
 
         }
@@ -139,7 +138,6 @@ namespace InternetMarketLibrery
 
         public void City(string name, string countryname)
         {
-            InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
             var citydata = new CityData
             {
                 CountryName = countryname,
@@ -151,16 +149,12 @@ namespace InternetMarketLibrery
 
         public string[] GetCountry()
         {
-            List<Country> countries;
-            InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
             countries = internetMarketDateEntities.CountrySet.ToList();
             return countries.Select(x => x.NameCountry).ToArray();
         }
 
         public string[] GetCity()
         {
-            List<CityData> cities;
-            InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
             cities = internetMarketDateEntities.CityDataSet.ToList();
             return cities.AsParallel().Select(x => x.Name).ToArray();
         }
@@ -205,7 +199,6 @@ namespace InternetMarketLibrery
         {
             for (int i = 0; i < point; i++)
             {
-                InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
                 GraphicsCard graphics = new GraphicsCard
                 {
                     Name = name,
@@ -225,7 +218,6 @@ namespace InternetMarketLibrery
         {
             for (int i = 0; i < point; i++)
             {
-                InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
                 Laptops laptops = new Laptops
                 {
                     Name = name,
@@ -245,9 +237,7 @@ namespace InternetMarketLibrery
 
         public List<string> LoadCPU()
         {
-            List<string> cpulist;
-            List<CPU> cpu;
-            InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
+            ClearContent();
             cpu = internetMarketDateEntities.CPUSet.ToList();
             cpulist = cpu.AsParallel().Select(x => x.Name + " " + x.Architecture + " " + x.Chastota + " " + x.Cores + " " + x.GPU + " " + x.KESHL1 + " " + x.KESHL2 + " " + x.KESHL3 + " " + x.RAM + " " + x.TDP).ToList();
             return cpulist;
@@ -255,17 +245,55 @@ namespace InternetMarketLibrery
 
         public List<string> LoadGPU()
         {
-            List<string> listgpu;
-            List<GraphicsCard> graphics;
-            InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
             graphics = internetMarketDateEntities.GraphicsCardSet.ToList();
             listgpu = graphics.AsParallel().Select(x => x.Name + " " + x.Herts + " " + x.Voltage + " " + x.VRAM + " " + x.GraphicsCore + " " + x.Cores).ToList();
             return listgpu;
         }
 
-        bool IContract.SetUserLogin(string name, string password)
+        public void setLogin(string name, string password)
         {
-            throw new NotImplementedException();
+            UserSet user = new UserSet
+            {
+                Name = name,
+                Password = password
+            };
+            internetMarketDateEntities.UserSet.Add(user);
+            internetMarketDateEntities.SaveChanges();
+        }
+
+        private void ClearContent()
+        {
+            if (users != null) users.Clear();
+            users = null;
+            if (cpulist != null) cpulist.Clear();
+            if (cpu != null) cpu.Clear();
+            cpulist = null;
+            cpu = null;
+        }
+
+        public void SetBoiler(string Name, string Model, string Volume, string Voltage, string Power, string Cost)
+        {
+            boilerServer.BoilersSet(Name, Model, Volume, Voltage, Power, Cost);
+        }
+
+        public List<string> GetBoilersData()
+        {
+            return boilerServer.GetBoilers();
+        }
+        public void Dispose()
+        {
+            if (internetMarketDateEntities != null) internetMarketDateEntities.Dispose();
+            internetMarketDateEntities = null;
+            if (users != null) users.Clear();
+            users = null;
+            if (cpulist != null) cpulist.Clear();
+            if (cpu != null) cpu.Clear();
+            cpulist = null;
+            cpu = null;
+            phoneServerData.Dispose();
+            userServer.Dispose();
+            computers.Dispose();
+            Trace.WriteLine("SERVER DISPOSE");
         }
     }
 }
