@@ -26,7 +26,7 @@ namespace InternetMarket
         public LoginUserWindow()
         {
             InitializeComponent();
-            string uriAddress = "net.tcp://localhost:7000/IContract";//4
+            string uriAddress = "net.tcp://192.168.1.104:7000/IContract";//4
             //Uri addres = new Uri("net.tcp://localhost:4000/IContract");
             Uri addres = new Uri(uriAddress);//5
             NetTcpBinding binding = new NetTcpBinding();//6

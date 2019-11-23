@@ -20,7 +20,7 @@ namespace InternetMarketClient
         public LoginUser()
         {
             InitializeComponent();
-            Uri uri = new Uri("net.tcp://localhost:7000/IContract");
+            Uri uri = new Uri("net.tcp://192.168.1.104:7000/IContract");
             NetTcpBinding netTcpBinding = new NetTcpBinding();
             EndpointAddress endpoint = new EndpointAddress(uri);
             _factory = new ChannelFactory<IContract>(netTcpBinding, endpoint);
@@ -127,7 +127,19 @@ namespace InternetMarketClient
         }
         public void Dispose()
         {
-            _factory.Close();
+            if (_factory != null)
+                try
+                {
+                    _factory.Close();
+                }catch(Exception exp)
+                {
+                    Trace.WriteLine(exp.ToString());
+                    MessageBoxResult result = MessageBox.Show(exp.ToString(), "Error", MessageBoxButton.YesNo, MessageBoxImage.Error);
+                    if (result == MessageBoxResult.Yes)
+                    {
+                        new LoginUser().Show();
+                    }
+                }
         }
     }
 }
