@@ -64,7 +64,6 @@ namespace InternetMarket
         {
             try
             {
-                Dispose();
                 if (combobox.SelectedItem.ToString() == "Phones")
                 {
                     Thread thread = new Thread(GetPhones);
@@ -493,6 +492,8 @@ namespace InternetMarket
             computers = null;//6
             cpus = null;
             printers = null;
+            if (interMarketService != null) interMarketService.Dispose();
+            interMarketService = null;
             if (internetMarketDateEntities != null) internetMarketDateEntities.Dispose();
             internetMarketDateEntities = null;
 
@@ -531,6 +532,12 @@ namespace InternetMarket
                 {
                     Trace.WriteLine(formatexp.ToString());
                     MessageBox.Show("Введите строку", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+                catch (ArgumentOutOfRangeException argexp)
+                {
+                    Trace.WriteLine(argexp.ToString());
+                    MessageBox.Show("Колличемство эллементов менше заданого диапазона", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+
                 }
             });
         }
