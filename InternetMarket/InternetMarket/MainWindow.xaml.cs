@@ -193,9 +193,7 @@ namespace InternetMarket
                 Dispatcher.Invoke(() =>
                 {
 
-                    InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
-                    computers = internetMarketDateEntities.ComputersSet.ToList();
-                    DataGrid.ItemsSource = computers.Select(x => new { x.Firm, x.Model, x.Quantity, x.Processor, x.RAM, x.VRAM, x.Graphics });
+                    DataGrid.ItemsSource = interMarketService.LoadComputers();
 
                 });
                 computers.Clear();
@@ -517,6 +515,10 @@ namespace InternetMarket
                     if (combobox.SelectedItem.ToString() == "Phones")
                     {
                         interMarketService.RemovePhones(Convert.ToInt32(countStartDelete.Text), Convert.ToInt32(countFinishDelete.Text));
+                    }
+                    else if (combobox.SelectedItem.ToString() == "Computers")
+                    {
+                        interMarketService.RemoveComputers(Convert.ToInt32(countStartDelete.Text), Convert.ToInt32(countFinishDelete.Text));
                     }
                     MessageBox.Show("Удалено", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
                 }

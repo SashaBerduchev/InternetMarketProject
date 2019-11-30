@@ -106,6 +106,10 @@ namespace InternetMarket
             }
         }
 
+        public void RemoveComputers(int start, int stop)
+        {
+            computers.Remove(start, stop);
+        }
         public void TabletsSet(string name, string model, string proc, string ram, string gpu, string resolution, string battery, string textpoint)
         {
             ClearContent();
