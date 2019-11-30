@@ -20,17 +20,23 @@ namespace InternetMarket.SERVER
 
         public void TiviSet(string Firm, string Model, string Quantity, string Cost)
         {
-            var dataset = new TivisetSet
+            try
             {
-                Cost = Cost,
-                Firm = Firm,
-                Model = Model,
-                Quantity = Quantity
-            };
-            Trace.WriteLine(dataset);
-            internetMarket.TivisetSet.Add(dataset);
-            Trace.WriteLine(internetMarket);
-            internetMarket.SaveChanges();
+                var dataset = new TivisetSet
+                {
+                    Cost = Cost,
+                    Firm = Firm,
+                    Model = Model,
+                    Quantity = Quantity
+                };
+                Trace.WriteLine(dataset);
+                internetMarket.TivisetSet.Add(dataset);
+                Trace.WriteLine(internetMarket);
+                internetMarket.SaveChanges();
+            }catch(Exception exp)
+            {
+                Trace.WriteLine(exp.ToString());
+            }
         }
         public List<string> GetTivis()
         {
@@ -48,6 +54,29 @@ namespace InternetMarket.SERVER
                 MessageBox.Show(e.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             return null;
+        }
+
+        public void RemoveTivis(int start, int stop)
+        {
+            for (int i = start; i < stop; i++)
+            {
+                try
+                {
+                    Trace.WriteLine(tivis[i]);
+                    internetMarket.TivisetSet.Remove(tivis[i]);
+                    internetMarket.SaveChanges();
+                }
+                catch (NullReferenceException nullexp)
+                {
+                    Trace.WriteLine(nullexp.ToString());
+                    MessageBox.Show("Загрузите данные", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+                catch (InvalidOperationException invalidoper)
+                {
+                    Trace.WriteLine(invalidoper.ToString());
+                    MessageBox.Show("Элемент уже удален", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
         }
     }
 }

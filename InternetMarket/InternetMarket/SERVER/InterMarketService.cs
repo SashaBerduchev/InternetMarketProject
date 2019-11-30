@@ -101,6 +101,11 @@ namespace InternetMarket
 
         }
 
+        public void RemoveTivis(int start, int end)
+        {
+            tiviServer.RemoveTivis(start, end);
+        }
+
         public void ComputerSet(string Firm, string Model, string Quantity, string Cost, string Processor, string RAM, string VRAM, string Graphics, string textpoint)
         {
             ClearContent();

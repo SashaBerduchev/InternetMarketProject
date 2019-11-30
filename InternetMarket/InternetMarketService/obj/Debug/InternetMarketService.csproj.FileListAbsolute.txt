@@ -74,3 +74,8 @@ F:\InternetMarketProject\InternetMarket\InternetMarketService\bin\Debug\EntityFr
 F:\InternetMarketProject\InternetMarket\InternetMarketService\bin\Debug\EntityFramework.SqlServer.xml
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketService\bin\Debug\EntityFramework.SqlServer.dll
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketService\bin\Debug\EntityFramework.SqlServer.xml
+C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketService\obj\Debug\InternetMarketService.csprojAssemblyReference.cache
+C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketService\obj\Debug\InternetMarketService.ProjectInstaller.resources
+C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketService\obj\Debug\InternetMarketService.csproj.GenerateResource.cache
+C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketService\obj\Debug\InternetMarketService.exe
+C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketService\obj\Debug\InternetMarketService.pdb
