@@ -9,7 +9,7 @@ using System.Windows;
 namespace InternetMarket.SERVER
 {
 
-    class TiviServerData
+    class TiviServerData : IDisposable
     {
         private List<TivisetSet> tivis;
         private InternetMarketDateEntities internetMarket;
@@ -76,6 +76,29 @@ namespace InternetMarket.SERVER
                     Trace.WriteLine(invalidoper.ToString());
                     MessageBox.Show("Элемент уже удален", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
+            }
+        }
+
+        public void Disable()
+        {
+            if (tivis != null)
+            {
+                tivis.Clear();
+                tivis = null;
+            }
+        }
+        public void Dispose()
+        {
+            if(internetMarket!= null)
+            {
+                internetMarket.Dispose();
+                internetMarket = null;
+            }
+
+            if (tivis != null)
+            {
+                tivis.Clear();
+                tivis = null;
             }
         }
     }

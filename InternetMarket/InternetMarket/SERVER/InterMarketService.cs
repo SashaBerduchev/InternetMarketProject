@@ -64,7 +64,10 @@ namespace InternetMarket
             return phoneServerData.GetPhones();
         }
 
-        
+        public List<PhonesSet> GetPhonesCollection()
+        {
+            return phoneServerData.GetPhonesCollection();
+        }
         public void PhonesSet(string Firm, string Model, string Quantity, string Cost, string Processor, string RAM, string Battery, string texpoint, byte[] PDF, byte[] Photo)
         {
             for (int i = 0; i < Convert.ToInt32(texpoint); i++)
@@ -83,6 +86,10 @@ namespace InternetMarket
             return computersData.LoadComputers();
         }
 
+        public List<ComputersSet> GetCompCollection()
+        {
+            return computersData.GetCompCollections();
+        }
         public List<string> LoadTivis()
         {
             DisableData();
@@ -302,8 +309,10 @@ namespace InternetMarket
 
         private void DisableData()
         {
-            if(phoneServerData != null)phoneServerData.Dispose();
-            if (computersData != null)computersData.Dispose();
+            Trace.WriteLine("------->Disable<------");
+            if(phoneServerData != null)phoneServerData.Disable();
+            if (computersData != null)computersData.Disable();
+            if (tiviServer != null) tiviServer.Disable();
             
         }
         public void Dispose()

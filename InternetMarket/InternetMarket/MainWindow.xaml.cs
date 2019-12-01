@@ -23,8 +23,6 @@ namespace InternetMarket
     public partial class MainWindow : Window, IDisposable
     {
         private InternetMarketDateEntities internetMarketDateEntities;
-        private List<PhonesSet> phones;
-        private List<ComputersSet> computers;
         private List<GraphicsCard> graphics;
         private List<CPU> cpus;
         private List<string> printers;
@@ -195,7 +193,6 @@ namespace InternetMarket
                     DataGrid.ItemsSource = interMarketService.LoadComputers();
 
                 });
-                computers.Clear();
             }
             catch (Exception e)
             {
@@ -393,6 +390,7 @@ namespace InternetMarket
                 {
                     using (FileStream fileStream = new FileStream("filetext.txt", FileMode.Append))//2
                     {
+                        List<PhonesSet> phones = interMarketService.GetPhonesCollection();
                         for (int i = 0; i < phones.Count; i++)//3
                         {
 
@@ -408,6 +406,7 @@ namespace InternetMarket
                 {
                     using (FileStream fileStream = new FileStream("filetext.txt", FileMode.Append))//2
                     {
+                        List<ComputersSet> computers = interMarketService.GetCompCollection(); ;
                         for (int i = 0; i < computers.Count; i++)//3
                         {
 
@@ -482,14 +481,10 @@ namespace InternetMarket
 
         public void Dispose()
         {
-            if (phones != null) phones.Clear();//1
             if (graphics != null) graphics.Clear();//2
-            if (computers != null) computers.Clear();//3
             if (printers != null) printers.Clear();
             if (cpus != null) cpus.Clear();
-            phones = null;//4
             graphics = null;//5
-            computers = null;//6
             cpus = null;
             printers = null;
             if (interMarketService != null) interMarketService.Dispose();

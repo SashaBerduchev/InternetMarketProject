@@ -44,6 +44,10 @@ namespace InternetMarket.SERVER
             return computerslist;
         }
 
+        public List<ComputersSet> GetCompCollections()
+        {
+            return computers;
+        }
         public void Remove(int start, int stop)
         {
             for (int i = start; i < stop; i++)
@@ -68,6 +72,19 @@ namespace InternetMarket.SERVER
 
         }
 
+        public void Disable()
+        {
+            if(computers != null)
+            {
+                computers.Clear();
+                computers = null;
+            }
+            if (computerslist != null)
+            {
+                computerslist.Clear();
+                computerslist = null;
+            }
+        }
         public void Dispose()
         {
             if (computers != null) computers.Clear();

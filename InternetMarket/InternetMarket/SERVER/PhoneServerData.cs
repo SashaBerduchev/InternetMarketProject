@@ -88,7 +88,18 @@ namespace InternetMarket.SERVER
 
         }
 
-
+        public List<PhonesSet> GetPhonesCollection()
+        {
+            return phones;
+        }
+        public void Disable()
+        {
+            if (phones != null)
+            {
+                phones.Clear();
+                phones = null;
+            }
+        }
         public void Dispose()
         {
             if (internetMarketDateEntities != null) internetMarketDateEntities.Dispose();
