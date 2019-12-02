@@ -1,4 +1,5 @@
-﻿using System;
+﻿using InternetMarket.Loaders;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -42,10 +43,12 @@ namespace InternetMarket.SERVER
         {
             try
             {
-
+                LoadingWindow loadingWindow = new LoadingWindow();
+                loadingWindow.Show();
                 tivis = internetMarket.TivisetSet.ToList();
                 Trace.WriteLine(tivis);
                 Trace.WriteLine(tivis.Select(x => new { x.Firm, x.Model, x.Quantity, x.Cost }));
+                loadingWindow.Close();
                 return tivis.Select(x => x.Firm + " " + x.Model + " " + x.Quantity + " " + x.Cost).ToList();
             }
             catch (Exception e)

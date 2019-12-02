@@ -14,6 +14,6 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <ProgressBar x:Name="progress" Margin="15"/>
+        <TextBlock x:Name="textprogress" Margin="15"/>
     </Grid>
 </Window>

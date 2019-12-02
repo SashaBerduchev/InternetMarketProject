@@ -1,4 +1,5 @@
-﻿using System;
+﻿using InternetMarket.Loaders;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -39,9 +40,20 @@ namespace InternetMarket.SERVER
 
         public List<string> LoadComputers()
         {
-            computers = internetMarketDateEntities.ComputersSet.ToList();
-            computerslist = computers.AsParallel().Select(x => x.Firm + " " + x.Model + " " + x.Processor + " " + x.Quantity + " " + x.RAM + " " + x.VRAM).ToList();
-            return computerslist;
+            try
+            {
+                LoadingWindow loadingWindow = new LoadingWindow();
+                loadingWindow.Show();
+                computers = internetMarketDateEntities.ComputersSet.ToList();
+                computerslist = computers.AsParallel().Select(x => x.Firm + " " + x.Model + " " + x.Processor + " " + x.Quantity + " " + x.RAM + " " + x.VRAM).ToList();
+                loadingWindow.Close();
+                return computerslist;
+            }catch(Exception exp)
+            {
+                Trace.WriteLine(exp.ToString());
+                MessageBox.Show(exp.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            return null;
         }
 
         public List<ComputersSet> GetCompCollections()
