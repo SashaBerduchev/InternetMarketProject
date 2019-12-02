@@ -16,7 +16,7 @@ namespace InternetMarket
         private UserServerData userServer;
         private TabletServer tabletServer;
         private BoilerServerData boilerServer;
-        private ComputersData computers;
+        private ComputersData computersData;
         private InternetMarketDateEntities internetMarketDateEntities;
         private List<string> users;
         private List<string> cpulist;
@@ -33,7 +33,7 @@ namespace InternetMarket
             userServer = new UserServerData();
             tabletServer = new TabletServer();
             boilerServer = new BoilerServerData();
-            computers = new ComputersData();
+            computersData = new ComputersData();
             Trace.WriteLine(this);
             Trace.WriteLine("Server INITIALIZE");
         }
@@ -47,8 +47,11 @@ namespace InternetMarket
             ClearContent();
             return userServer.SetUser(login, pass);
         }
+
+
         public List<string> GetUsers()
         {
+            DisableData();
             List<string> users = userServer.GetUsers();
             if(users != null)
             {
@@ -61,7 +64,10 @@ namespace InternetMarket
             return phoneServerData.GetPhones();
         }
 
-        
+        public List<PhonesSet> GetPhonesCollection()
+        {
+            return phoneServerData.GetPhonesCollection();
+        }
         public void PhonesSet(string Firm, string Model, string Quantity, string Cost, string Processor, string RAM, string Battery, string texpoint, byte[] PDF, byte[] Photo)
         {
             for (int i = 0; i < Convert.ToInt32(texpoint); i++)
@@ -76,11 +82,17 @@ namespace InternetMarket
         }
         public List<string> LoadComputers()
         {
-            return computers.LoadComputers();
+            DisableData();
+            return computersData.LoadComputers();
         }
 
+        public List<ComputersSet> GetCompCollection()
+        {
+            return computersData.GetCompCollections();
+        }
         public List<string> LoadTivis()
         {
+            DisableData();
             return tiviServer.GetTivis();
         }
 
@@ -96,16 +108,25 @@ namespace InternetMarket
 
         }
 
+        public void RemoveTivis(int start, int end)
+        {
+            tiviServer.RemoveTivis(start, end);
+        }
+
         public void ComputerSet(string Firm, string Model, string Quantity, string Cost, string Processor, string RAM, string VRAM, string Graphics, string textpoint)
         {
             ClearContent();
             
             for (int i = 0; i < Convert.ToInt32(textpoint); i++)
             {
-                computers.ComputerSet(Firm, Model, Quantity, Cost, Processor, RAM, VRAM, Graphics);
+                computersData.ComputerSet(Firm, Model, Quantity, Cost, Processor, RAM, VRAM, Graphics);
             }
         }
 
+        public void RemoveComputers(int start, int stop)
+        {
+            computersData.Remove(start, stop);
+        }
         public void TabletsSet(string name, string model, string proc, string ram, string gpu, string resolution, string battery, string textpoint)
         {
             ClearContent();
@@ -158,6 +179,7 @@ namespace InternetMarket
 
         public string[] GetCity()
         {
+            DisableData();
             cities = internetMarketDateEntities.CityDataSet.ToList();
             return cities.AsParallel().Select(x => x.Name).ToArray();
         }
@@ -248,6 +270,7 @@ namespace InternetMarket
 
         public List<string> LoadGPU()
         {
+            DisableData();
             graphics = internetMarketDateEntities.GraphicsCardSet.ToList();
             listgpu = graphics.AsParallel().Select(x => x.Name + " " + x.Herts + " " + x.Voltage + " " + x.VRAM + " " + x.GraphicsCore + " " + x.Cores).ToList();
             return listgpu;
@@ -283,6 +306,15 @@ namespace InternetMarket
         {
             return boilerServer.GetBoilers();
         }
+
+        private void DisableData()
+        {
+            Trace.WriteLine("------->Disable<------");
+            if(phoneServerData != null)phoneServerData.Disable();
+            if (computersData != null)computersData.Disable();
+            if (tiviServer != null) tiviServer.Disable();
+            
+        }
         public void Dispose()
         {
             if (internetMarketDateEntities != null) internetMarketDateEntities.Dispose();
@@ -295,7 +327,7 @@ namespace InternetMarket
             cpu = null;
             phoneServerData.Dispose();
             userServer.Dispose();
-            computers.Dispose();
+            computersData.Dispose();
             Trace.WriteLine("SERVER DISPOSE");
         }
     }

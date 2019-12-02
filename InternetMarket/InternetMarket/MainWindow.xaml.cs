@@ -23,8 +23,6 @@ namespace InternetMarket
     public partial class MainWindow : Window, IDisposable
     {
         private InternetMarketDateEntities internetMarketDateEntities;
-        private List<PhonesSet> phones;
-        private List<ComputersSet> computers;
         private List<GraphicsCard> graphics;
         private List<CPU> cpus;
         private List<string> printers;
@@ -64,7 +62,6 @@ namespace InternetMarket
         {
             try
             {
-                Dispose();
                 if (combobox.SelectedItem.ToString() == "Phones")
                 {
                     Thread thread = new Thread(GetPhones);
@@ -193,12 +190,9 @@ namespace InternetMarket
                 Dispatcher.Invoke(() =>
                 {
 
-                    InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
-                    computers = internetMarketDateEntities.ComputersSet.ToList();
-                    DataGrid.ItemsSource = computers.Select(x => new { x.Firm, x.Model, x.Quantity, x.Processor, x.RAM, x.VRAM, x.Graphics });
+                    DataGrid.ItemsSource = interMarketService.LoadComputers();
 
                 });
-                computers.Clear();
             }
             catch (Exception e)
             {
@@ -396,6 +390,7 @@ namespace InternetMarket
                 {
                     using (FileStream fileStream = new FileStream("filetext.txt", FileMode.Append))//2
                     {
+                        List<PhonesSet> phones = interMarketService.GetPhonesCollection();
                         for (int i = 0; i < phones.Count; i++)//3
                         {
 
@@ -411,6 +406,7 @@ namespace InternetMarket
                 {
                     using (FileStream fileStream = new FileStream("filetext.txt", FileMode.Append))//2
                     {
+                        List<ComputersSet> computers = interMarketService.GetCompCollection(); ;
                         for (int i = 0; i < computers.Count; i++)//3
                         {
 
@@ -485,16 +481,14 @@ namespace InternetMarket
 
         public void Dispose()
         {
-            if (phones != null) phones.Clear();//1
             if (graphics != null) graphics.Clear();//2
-            if (computers != null) computers.Clear();//3
             if (printers != null) printers.Clear();
             if (cpus != null) cpus.Clear();
-            phones = null;//4
             graphics = null;//5
-            computers = null;//6
             cpus = null;
             printers = null;
+            if (interMarketService != null) interMarketService.Dispose();
+            interMarketService = null;
             if (internetMarketDateEntities != null) internetMarketDateEntities.Dispose();
             internetMarketDateEntities = null;
 
@@ -518,6 +512,14 @@ namespace InternetMarket
                     {
                         interMarketService.RemovePhones(Convert.ToInt32(countStartDelete.Text), Convert.ToInt32(countFinishDelete.Text));
                     }
+                    else if (combobox.SelectedItem.ToString() == "Computers")
+                    {
+                        interMarketService.RemoveComputers(Convert.ToInt32(countStartDelete.Text), Convert.ToInt32(countFinishDelete.Text));
+                    }
+                    else if (combobox.SelectedItem.ToString() == "Tivis")
+                    {
+                        interMarketService.RemoveTivis(Convert.ToInt32(countStartDelete.Text), Convert.ToInt32(countFinishDelete.Text));
+                    }
                     MessageBox.Show("Удалено", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
                 catch (NullReferenceException nullexp)
@@ -529,6 +531,12 @@ namespace InternetMarket
                 {
                     Trace.WriteLine(formatexp.ToString());
                     MessageBox.Show("Введите строку", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+                catch (ArgumentOutOfRangeException argexp)
+                {
+                    Trace.WriteLine(argexp.ToString());
+                    MessageBox.Show("Колличемство эллементов менше заданого диапазона", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+
                 }
             });
         }

@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace InternetMarket.SERVER
 {
@@ -43,6 +44,47 @@ namespace InternetMarket.SERVER
             return computerslist;
         }
 
+        public List<ComputersSet> GetCompCollections()
+        {
+            return computers;
+        }
+        public void Remove(int start, int stop)
+        {
+            for (int i = start; i < stop; i++)
+            {
+                try
+                {
+                    Trace.WriteLine(computers[i]);
+                    internetMarketDateEntities.ComputersSet.Remove(computers[i]);
+                    internetMarketDateEntities.SaveChanges();
+                }
+                catch (NullReferenceException nullexp)
+                {
+                    Trace.WriteLine(nullexp.ToString());
+                    MessageBox.Show("Загрузите данные", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+                catch (InvalidOperationException invalidoper)
+                {
+                    Trace.WriteLine(invalidoper.ToString());
+                    MessageBox.Show("Элемент уже удален", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+
+        }
+
+        public void Disable()
+        {
+            if(computers != null)
+            {
+                computers.Clear();
+                computers = null;
+            }
+            if (computerslist != null)
+            {
+                computerslist.Clear();
+                computerslist = null;
+            }
+        }
         public void Dispose()
         {
             if (computers != null) computers.Clear();
