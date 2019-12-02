@@ -26,21 +26,9 @@ namespace InternetMarket
         public LoginUserWindow()
         {
             InitializeComponent();
-            string uriAddress = "net.tcp://192.168.1.104:7000/IContract";//4
-            //Uri addres = new Uri("net.tcp://localhost:4000/IContract");
-            Uri addres = new Uri(uriAddress);//5
-            NetTcpBinding binding = new NetTcpBinding();//6
-            binding.ListenBacklog = 2000;//7
-            binding.MaxConnections = 2000;//8
-            binding.TransferMode = TransferMode.Buffered;//9
-            binding.MaxReceivedMessageSize = 104857600;//10
-            Type type = typeof(IContract);//11
-            ServiceHost serviceHost = new ServiceHost(typeof(InterMarketService));//12
-            serviceHost.AddServiceEndpoint(type, binding, uriAddress);//13
-            serviceHost.Open();//14
-            Trace.WriteLine(serviceHost);
-            Trace.WriteLine(this);
+            StartConnection();
 
+            Trace.WriteLine(this);
             interMarketService = new InterMarketService();
             //Костыль, если нету юзеров
             interMarketService.SetUserIfApsent();
@@ -56,6 +44,35 @@ namespace InternetMarket
             {
                 MessageBox.Show("Нет подключентя к базе данных", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 Trace.WriteLine(exp.ToString());
+            }
+        }
+
+        private void StartConnection()
+        {
+            try
+            {
+                string uriAddress = "net.tcp://192.168.1.104:7000/IContract";//4
+                //Uri addres = new Uri("net.tcp://localhost:4000/IContract");
+                Uri addres = new Uri(uriAddress);//5
+                NetTcpBinding binding = new NetTcpBinding();//6
+                binding.ListenBacklog = 2000;//7
+                binding.MaxConnections = 2000;//8
+                binding.TransferMode = TransferMode.Buffered;//9
+                binding.MaxReceivedMessageSize = 104857600;//10
+                Type type = typeof(IContract);//11
+                ServiceHost serviceHost = new ServiceHost(typeof(InterMarketService));//12
+                serviceHost.AddServiceEndpoint(type, binding, uriAddress);//13
+                serviceHost.Open();//14
+                Trace.WriteLine(serviceHost);
+            }catch(Exception exp)
+            {
+                Trace.WriteLine(exp.ToString());
+                MessageBoxResult res = MessageBox.Show("Ошибка подключения к серверу, неверный ip, port, попробовать снова?", "Error", MessageBoxButton.YesNo, MessageBoxImage.Error);
+                if (res == MessageBoxResult.Yes)
+                {
+                    new LoginUserWindow().Show();
+                    this.Close();
+                }
             }
         }
 
