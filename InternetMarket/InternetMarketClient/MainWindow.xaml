@@ -24,17 +24,21 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <ComboBox Name="combobox" Grid.Column="1" Grid.Row="0" Margin="20,30,20,10" />
-        <Button Name="bnPrint" Grid.Column="3" Grid.Row="0" Margin="20" Content="Печать" Click="BnPrint_Click"/>
-        <ListBox Name="listbox" Grid.Column="0" Grid.Row="1" Grid.RowSpan="4" Grid.ColumnSpan="6" />
-        <Button Name="LoadBtn" Grid.Column="0" Grid.Row="5" Margin="20" Content="Load" Click="LoadBtn_Click" />
-        <Button Name="OpenBtn" Grid.Column="1" Grid.Row="5" Margin="20" Content="OpenPhone" Click="OpenBtn_Click" />
-        <Button Name="OpenBtnTivi" Grid.Column="2" Grid.Row="5" Margin="20" Content="OpenTivi" Click="OpenBtnTivi_Click" />
-        <Button Name="OpenBtnComputers" Grid.Column="3" Grid.Row="5" Margin="20" Content="OpenComp" Click="OpenBtnComputers_Click" />
-        <Button Name="OpenBtnTablets" Grid.Column="4" Grid.Row="5" Margin="20" Content="OpenTablets" Click="OpenBtnTablets_Click" />
-        <Button Name="OpenBtnCPU" Grid.Column="2" Grid.Row="6" Margin="20" Content="CPU" Click="OpenBtnCPU_Click"  />
-        <Button Name="OpenBtnGraphics" Grid.Column="3" Grid.Row="6" Margin="20" Content="GraphicsCarg" Click="OpenBtnGraphics_Click" />
-        <Button Name="OpenBtnlaptop" Grid.Column="4" Grid.Row="6" Margin="20" Content="Laptop" Click="OpenBtnlaptop_Click"   />
+        <Button Name="btnPrint" Grid.Column="4" Margin="30" Content="Печать" Click="BnPrint_Click"/>
+        <ComboBox Name="combobox" Grid.Column="2" Grid.Row="0" Margin="40,40,30,30" />
+        <ListBox Name="listbox" Grid.Column="0" Grid.Row="2" Grid.RowSpan="5" Grid.ColumnSpan="4" Margin="10,72,-10,15"  />
+        <Button Name="LoadBtn" Grid.Column="0" Margin="30,51,30,10" Content="Load" Click="LoadBtn_Click"/>
+        <Button Name="OpenBtn" Grid.Column="2" Grid.Row="1" Margin="30,33,30,28" Content="OpenPhone" Click="OpenBtn_Click"/>
+        <Button Name="OpenBtnTivi" Grid.Column="5" Grid.Row="1" Margin="15,33,45,28" Content="OpenTivi" Click="OpenBtnTivi_Click"/>
+        <Button Name="OpenBtnComputers" Grid.Column="3" Grid.Row="1" Margin="30,33,30,28" Content="OpenComp" Click="OpenBtnComputers_Click"/>
+        <Button Name="OpenBtnTablets" Grid.Column="4" Grid.Row="1" Margin="30,33,30,28" Content="OpenTablets" Click="OpenBtnTablets_Click" />
+        <Button Name="OpenBtnCPU" Grid.Column="1" Grid.Row="1" Margin="25,33,35,28" Content="CPU" Click="OpenBtnCPU_Click"  />
+        <Button Name="OpenBtnGraphics" Grid.Column="1" Grid.Row="2" Margin="35,20,25,40" Content="GraphicsCarg" Click="OpenBtnGraphics_Click"  />
+        <Button Name="OpenBtnlaptop" Grid.Column="2" Grid.Row="2" Margin="30,20,30,40" Content="Laptop" Click="OpenBtnlaptop_Click"  />
+        <Button Name="Print" Grid.Column="4" Grid.Row="4" Margin="30,21,0,10" Content="Сохранить" Click="BnPrint_Click" />
+        <TextBox Name="countStartDelete" Grid.Column="5" Grid.Row="5" Margin="30,30,104,30" />
+        <TextBox Name="countFinishDelete" Grid.Column="5" Grid.Row="5" Margin="116,30,19,30" />
+        <Button Name="DeleteBttn" Grid.Column="5" Grid.Row="6" Margin="30,21,0,10" Content="Удалить"/>
         <Menu Height="24" VerticalAlignment="Top" Grid.ColumnSpan="3" Margin="0,0,108,0">
             <MenuItem Header="Directory">
                 <MenuItem Header="Organisation" Click="MenuItem_Click"  />
