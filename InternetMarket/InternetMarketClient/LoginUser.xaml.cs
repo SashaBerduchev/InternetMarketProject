@@ -20,22 +20,31 @@ namespace InternetMarketClient
         public LoginUser()
         {
             InitializeComponent();
-            Uri uri = new Uri("net.tcp://192.168.1.104:7000/IContract");
+            StartConnetion();
+            Trace.WriteLine(this);    
+        }
+
+        private void StartConnetion()
+        {
+            //string uriAddress ("net.tcp://192.168.1.104:7000/IContract");
+            string uriAddress = "net.tcp://localhost:4000/IContract";
+            Uri uri = new Uri(uriAddress);
+
             NetTcpBinding netTcpBinding = new NetTcpBinding();
-            EndpointAddress endpoint = new EndpointAddress(uri);
+            EndpointAddress endpoint = new EndpointAddress(uriAddress);
             _factory = new ChannelFactory<IContract>(netTcpBinding, endpoint);
             Trace.WriteLine(this);
             contract = _factory.CreateChannel();
             try
             {
                 User.ItemsSource = contract.GetUsers();
-            } catch(Exception e)
+            }
+            catch (Exception e)
             {
+                Trace.WriteLine(e.ToString());
                 MessageBox.Show("Ошибка подкчения к севреру", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-                
         }
-
 
         private void BtlLogin_Click(object sender, RoutedEventArgs e)
         {

@@ -27,19 +27,20 @@ namespace InternetMarketClient
     /// </summary>
     public partial class MainWindow : Window
     {
-        IContract contract;
+        private IContract contract;
         public MainWindow()
         {
             
             InitializeComponent();
-            ServicePointManager.DefaultConnectionLimit = 999999999;
-            Uri uri = new Uri("net.tcp://localhost:7000/IContract");
-            NetTcpBinding netTcpBinding = new NetTcpBinding();
-            EndpointAddress endpoint = new EndpointAddress(uri);
-            ChannelFactory<IContract> factory = new ChannelFactory<IContract>(netTcpBinding, endpoint);
-            Trace.WriteLine(this);
-            contract = factory.CreateChannel();
+            //ServicePointManager.DefaultConnectionLimit = 999999999;
+            //Uri uri = new Uri("net.tcp://localhost:7000/IContract");
+            //NetTcpBinding netTcpBinding = new NetTcpBinding();
+            //EndpointAddress endpoint = new EndpointAddress(uri);
+            //ChannelFactory<IContract> factory = new ChannelFactory<IContract>(netTcpBinding, endpoint);
+            
+            //contract = factory.CreateChannel();
 
+            Trace.WriteLine(this);
             combobox.Items.Add("Phones");
             combobox.Items.Add("Tivis");
             combobox.Items.Add("Computers");

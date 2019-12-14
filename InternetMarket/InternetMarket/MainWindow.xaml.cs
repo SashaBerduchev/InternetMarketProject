@@ -164,17 +164,10 @@ namespace InternetMarket
         {
             try
             {
-
-
                 Dispatcher.Invoke(() =>
                 {
-                    List<TabletSet> tablets;
-                    InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
-                    tablets = internetMarketDateEntities.TabletSetSet.ToList();
-                    Trace.WriteLine(tablets);
-                    Trace.WriteLine(tablets.Select(x => new { x.Name, x.Model, x.Processor, x.RAM, x.GPU, x.Battery, x.Resolution }));
-                    DataGrid.ItemsSource = tablets.Select(x => new { x.Name, x.Model, x.Processor, x.RAM, x.GPU, x.Battery, x.Resolution });
 
+                    DataGrid.ItemsSource = interMarketService.LoadTablets();
                 });
             }
             catch (Exception e)

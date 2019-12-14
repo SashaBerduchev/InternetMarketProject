@@ -25,10 +25,8 @@ namespace InternetMarket.SERVER
             try
             {
                 LoadingWindow loadingWindow = new LoadingWindow();
-                loadingWindow.valueMin = 0;
                 loadingWindow.Show();
                 phones = internetMarketDateEntities.PhonesSet.ToList();
-                loadingWindow.valueMax = phones.Count;
                 Trace.WriteLine(phones);
                 Trace.WriteLine(phones.Select(x => new { x.Firm, x.Model, x.Quantity, x.Cost, x.Processor, x.RAM, x.Battery, x.Photo, x.PDF }));
                 loadingWindow.Close();

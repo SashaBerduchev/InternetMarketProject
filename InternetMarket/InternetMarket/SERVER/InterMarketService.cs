@@ -133,9 +133,14 @@ namespace InternetMarket
             internetMarketDateEntities = new InternetMarketDateEntities();
             for (int i=0; i<Convert.ToInt32(textpoint); i++)
             {
-                tabletServer.SetServer(name, model, proc, ram, gpu, resolution, battery);
-            }
-            
+                tabletServer.SetTablet(name, model, proc, ram, gpu, resolution, battery);
+            } 
+        }
+
+        public List<string> LoadTablets()
+        {
+            DisableData();
+            return tabletServer.LoadTablets();
         }
 
         public void OrganizationSet(string organization)
@@ -309,11 +314,11 @@ namespace InternetMarket
 
         private void DisableData()
         {
-            Trace.WriteLine("------->Disable<------");
             if(phoneServerData != null)phoneServerData.Disable();
             if (computersData != null)computersData.Disable();
             if (tiviServer != null) tiviServer.Disable();
-            
+            if (tabletServer != null) tabletServer.Disable();
+            Trace.WriteLine("------->Disable<------");
         }
         public void Dispose()
         {
@@ -328,6 +333,7 @@ namespace InternetMarket
             phoneServerData.Dispose();
             userServer.Dispose();
             computersData.Dispose();
+            tabletServer.Dispose();
             Trace.WriteLine("SERVER DISPOSE");
         }
     }
