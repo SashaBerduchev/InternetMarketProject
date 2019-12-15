@@ -25,6 +25,7 @@ namespace InternetMarket
         private List<CityData> cities;
         private List<string> listgpu;
         private List<GraphicsCard> graphics;
+        private CPUData CPU;
         public InterMarketService()
         {
             internetMarketDateEntities = new InternetMarketDateEntities();
@@ -34,6 +35,7 @@ namespace InternetMarket
             tabletServer = new TabletServer();
             boilerServer = new BoilerServerData();
             computersData = new ComputersData();
+            CPU = new CPUData();
             Trace.WriteLine(this);
             Trace.WriteLine("Server INITIALIZE");
         }
@@ -206,22 +208,7 @@ namespace InternetMarket
         {
             for (int i = 0; i < point; i++)
             {
-                InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
-                CPU cpudat = new CPU
-                {
-                    Name = Name,
-                    Architecture = Architecture,
-                    Chastota = Chastota,
-                    Cores = cores,
-                    GPU = gpu,
-                    KESHL1 = keshl1,
-                    KESHL2 = keshl2,
-                    KESHL3 = keshl3,
-                    RAM = ram,
-                    TDP = tdp
-                };
-                internetMarketDateEntities.CPUSet.Add(cpudat);
-                internetMarketDateEntities.SaveChanges();
+                CPU.SetCpu(Name, Architecture, Chastota, cores, keshl1, keshl2, keshl3, gpu, ram, tdp);
             }
         }
 

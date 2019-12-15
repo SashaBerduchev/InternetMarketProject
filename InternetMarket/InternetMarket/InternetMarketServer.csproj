@@ -253,6 +253,7 @@
     </Compile>
     <Compile Include="SERVER\BoilerServerData.cs" />
     <Compile Include="SERVER\ComputersData.cs" />
+    <Compile Include="SERVER\CPUData.cs" />
     <Compile Include="SERVER\PhoneServerData.cs" />
     <Compile Include="SERVER\TabletServer.cs" />
     <Compile Include="SERVER\TiviServerData.cs" />
@@ -268,6 +269,9 @@
     </Compile>
     <Compile Include="Windows\Documents\ZakazPokupatyaData.xaml.cs">
       <DependentUpon>ZakazPokupatyaData.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\InternetMarketData\AddCpuWindow.xaml.cs">
+      <DependentUpon>AddCpuWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\InternetMarketData\BoilerWindow.xaml.cs">
       <DependentUpon>BoilerWindow.xaml</DependentUpon>
@@ -302,9 +306,6 @@
     </Compile>
     <Compile Include="Director.cs">
       <DependentUpon>InternetMarketEDM.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Windows\InternetMarketData\CPUData.xaml.cs">
-      <DependentUpon>CPUData.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\DataSave.xaml.cs">
       <DependentUpon>DataSave.xaml</DependentUpon>
@@ -420,6 +421,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Windows\InternetMarketData\AddCpuWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\InternetMarketData\BoilerWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -453,10 +458,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\Spravochniki\CountrysData.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Windows\InternetMarketData\CPUData.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
