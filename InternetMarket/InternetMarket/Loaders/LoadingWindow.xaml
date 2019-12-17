@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:InternetMarket.Loaders"
         mc:Ignorable="d"
-        Title="LoadingWindow" Height="100" Width="300">
+        Title="LoadingWindow" Height="100" Width="300" Closed="Window_Closed">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
