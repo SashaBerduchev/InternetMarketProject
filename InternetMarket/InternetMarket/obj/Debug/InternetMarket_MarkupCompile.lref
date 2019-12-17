@@ -4,6 +4,7 @@ FF:\InternetMarketProject\InternetMarket\InternetMarket\Loaders\LoadingWindow.xa
 FF:\InternetMarketProject\InternetMarket\InternetMarket\LoginUserWindow.xaml;;
 FF:\InternetMarketProject\InternetMarket\InternetMarket\Windows\Administration\AdministrationWindow.xaml;;
 FF:\InternetMarketProject\InternetMarket\InternetMarket\Windows\Documents\ZakazPokupatyaData.xaml;;
+FF:\InternetMarketProject\InternetMarket\InternetMarket\Windows\InternetMarketData\AddCpuWindow.xaml;;
 FF:\InternetMarketProject\InternetMarket\InternetMarket\Windows\InternetMarketData\BoilerWindow.xaml;;
 FF:\InternetMarketProject\InternetMarket\InternetMarket\Windows\InternetMarketData\PrinterWindow.xaml;;
 FF:\InternetMarketProject\InternetMarket\InternetMarket\Windows\Spravochniki\CitiData.xaml;;
@@ -13,7 +14,6 @@ FF:\InternetMarketProject\InternetMarket\InternetMarket\Windows\Spravochniki\Con
 FF:\InternetMarketProject\InternetMarket\InternetMarket\Windows\Spravochniki\ContragentData.xaml;;
 FF:\InternetMarketProject\InternetMarket\InternetMarket\Windows\Spravochniki\Country.xaml;;
 FF:\InternetMarketProject\InternetMarket\InternetMarket\Windows\Spravochniki\CountrysData.xaml;;
-FF:\InternetMarketProject\InternetMarket\InternetMarket\Windows\InternetMarketData\CPUData.xaml;;
 FF:\InternetMarketProject\InternetMarket\InternetMarket\Windows\DataSave.xaml;;
 FF:\InternetMarketProject\InternetMarket\InternetMarket\Windows\Spravochniki\Directors.xaml;;
 FF:\InternetMarketProject\InternetMarket\InternetMarket\MainWindow.xaml;;

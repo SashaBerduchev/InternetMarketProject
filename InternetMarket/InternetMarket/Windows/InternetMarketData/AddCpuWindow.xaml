@@ -1,11 +1,11 @@
-﻿<Window x:Class="InternetMarket.Windows.CPUData"
+﻿<Window x:Class="InternetMarket.Windows.InternetMarketData.AddCpuWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:InternetMarket.Windows"
+        xmlns:local="clr-namespace:InternetMarket.Windows.InternetMarketData"
         mc:Ignorable="d"
-        Title="CPUData" Height="450" Width="800">
+        Title="AddCpuWindow" Height="450" Width="800" Closed="Window_Closed">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -32,6 +32,6 @@
         <TextBox Name="RAMtext" Grid.Column="2" Grid.Row="1" Margin="20"/>
         <TextBox Name="TDPtext" Grid.Column="3" Grid.Row="1" Margin="20"/>
         <TextBox Name="pointtext" Grid.Column="4" Grid.Row="1" Grid.ColumnSpan="2" Margin="20"/>
-        <Button Name="btnSet" Grid.Column="0" Grid.Row="2" Margin="20" Grid.ColumnSpan="5" Click="BtnSet_Click" />
+        <Button Name="btnSet" Grid.Column="0" Grid.Row="2" Margin="20" Grid.ColumnSpan="5" Click="btnSet_Click" />
     </Grid>
 </Window>

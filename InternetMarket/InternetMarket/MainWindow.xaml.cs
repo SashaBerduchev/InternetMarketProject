@@ -198,8 +198,6 @@ namespace InternetMarket
         {
             try
             {
-
-
                 Dispatcher.Invoke(() =>
                 {
                     Dispose();
@@ -217,10 +215,8 @@ namespace InternetMarket
 
         public void GetGraphicsCardInform()
         {
-            try//1
+            try
             {
-
-
                 Dispatcher.Invoke(() =>//2
                 {
                     Dispose();
@@ -334,7 +330,7 @@ namespace InternetMarket
 
         private void OpenBtnCPU_Click(object sender, RoutedEventArgs e)
         {
-            CPUData cpu = new CPUData();
+            AddCpuWindow cpu = new AddCpuWindow();
             cpu.Show();
         }
 
