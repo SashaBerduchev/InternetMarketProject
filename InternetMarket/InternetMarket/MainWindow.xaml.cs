@@ -24,7 +24,6 @@ namespace InternetMarket
     {
         private InternetMarketDateEntities internetMarketDateEntities;
         private List<GraphicsCard> graphics;
-        private List<CPU> cpus;
         private List<string> printers;
         private LoginUserWindow loginUserServer;
         private InterMarketService interMarketService;
@@ -200,10 +199,8 @@ namespace InternetMarket
             {
                 Dispatcher.Invoke(() =>
                 {
-                    Dispose();
-                    InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
-                    cpus = internetMarketDateEntities.CPUSet.ToList();
-                    DataGrid.ItemsSource = cpus.Select(x => new { x.Name, x.Architecture, x.Cores, x.Chastota, x.KESHL1, x.KESHL2, x.KESHL3, x.GPU, x.RAM, x.TDP });
+
+                    DataGrid.ItemsSource = interMarketService.LoadCPU();
                 });
             }
             catch (Exception e)
@@ -472,9 +469,7 @@ namespace InternetMarket
         {
             if (graphics != null) graphics.Clear();//2
             if (printers != null) printers.Clear();
-            if (cpus != null) cpus.Clear();
             graphics = null;//5
-            cpus = null;
             printers = null;
             if (interMarketService != null) interMarketService.Dispose();
             interMarketService = null;

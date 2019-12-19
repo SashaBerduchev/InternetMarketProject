@@ -42,12 +42,12 @@ namespace InternetMarket
         public virtual DbSet<BankSet> BankSetSet { get; set; }
         public virtual DbSet<TabletSet> TabletSetSet { get; set; }
         public virtual DbSet<DocForPain> DocForPainSet { get; set; }
-        public virtual DbSet<CPU> CPUSet { get; set; }
         public virtual DbSet<GraphicsCard> GraphicsCardSet { get; set; }
         public virtual DbSet<Laptops> LaptopsSet { get; set; }
         public virtual DbSet<Dogovor> DogovorSet { get; set; }
         public virtual DbSet<ZakazPokupatelya> ZakazPokupatelyaSet { get; set; }
         public virtual DbSet<Printers> PrintersSet { get; set; }
         public virtual DbSet<Boilers> BoilersSet { get; set; }
+        public virtual DbSet<CPUSet> CPUSet { get; set; }
     }
 }

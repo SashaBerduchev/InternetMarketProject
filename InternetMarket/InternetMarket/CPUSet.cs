@@ -12,7 +12,7 @@ namespace InternetMarket
     using System;
     using System.Collections.Generic;
     
-    public partial class CPU
+    public partial class CPUSet
     {
         public int Id { get; set; }
         public string Name { get; set; }

@@ -20,7 +20,7 @@ namespace InternetMarket
         private InternetMarketDateEntities internetMarketDateEntities;
         private List<string> users;
         private List<string> cpulist;
-        private List<CPU> cpu;
+        private List<CPUSet> cpu;
         private List<Country> countries;
         private List<CityData> cities;
         private List<string> listgpu;
@@ -254,10 +254,11 @@ namespace InternetMarket
 
         public List<string> LoadCPU()
         {
-            ClearContent();
-            cpu = internetMarketDateEntities.CPUSet.ToList();
-            cpulist = cpu.AsParallel().Select(x => x.Name + " " + x.Architecture + " " + x.Chastota + " " + x.Cores + " " + x.GPU + " " + x.KESHL1 + " " + x.KESHL2 + " " + x.KESHL3 + " " + x.RAM + " " + x.TDP).ToList();
-            return cpulist;
+
+            
+            //cpulist = cpu.AsParallel().Select(x => x.Name + " " + x.Architecture + " " + x.Chastota + " " + x.Cores + " " + x.GPU + " " + x.KESHL1 + " " + x.KESHL2 + " " + x.KESHL3 + " " + x.RAM + " " + x.TDP).ToList();
+            //return cpulist;
+            return CPU.GetCpu();
         }
 
         public List<string> LoadGPU()

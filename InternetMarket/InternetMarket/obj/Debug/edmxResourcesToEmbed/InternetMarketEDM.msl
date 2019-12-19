@@ -195,23 +195,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="CPUSet">
-      <EntityTypeMapping TypeName="IsTypeOf(InternetMarketDateModel.CPU)">
-        <MappingFragment StoreEntitySet="CPUSet">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="Architecture" ColumnName="Architecture" />
-          <ScalarProperty Name="Cores" ColumnName="Cores" />
-          <ScalarProperty Name="Chastota" ColumnName="Chastota" />
-          <ScalarProperty Name="KESHL1" ColumnName="KESHL1" />
-          <ScalarProperty Name="KESHL2" ColumnName="KESHL2" />
-          <ScalarProperty Name="KESHL3" ColumnName="KESHL3" />
-          <ScalarProperty Name="GPU" ColumnName="GPU" />
-          <ScalarProperty Name="RAM" ColumnName="RAM" />
-          <ScalarProperty Name="TDP" ColumnName="TDP" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="GraphicsCardSet">
       <EntityTypeMapping TypeName="IsTypeOf(InternetMarketDateModel.GraphicsCard)">
         <MappingFragment StoreEntitySet="GraphicsCardSet">
@@ -284,6 +267,23 @@
           <ScalarProperty Name="Cost" ColumnName="Cost" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Model" ColumnName="Model" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CPUSet">
+      <EntityTypeMapping TypeName="InternetMarketDateModel.CPUSet">
+        <MappingFragment StoreEntitySet="CPUSet">
+          <ScalarProperty Name="TDP" ColumnName="TDP" />
+          <ScalarProperty Name="RAM" ColumnName="RAM" />
+          <ScalarProperty Name="GPU" ColumnName="GPU" />
+          <ScalarProperty Name="KESHL3" ColumnName="KESHL3" />
+          <ScalarProperty Name="KESHL2" ColumnName="KESHL2" />
+          <ScalarProperty Name="KESHL1" ColumnName="KESHL1" />
+          <ScalarProperty Name="Chastota" ColumnName="Chastota" />
+          <ScalarProperty Name="Cores" ColumnName="Cores" />
+          <ScalarProperty Name="Architecture" ColumnName="Architecture" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

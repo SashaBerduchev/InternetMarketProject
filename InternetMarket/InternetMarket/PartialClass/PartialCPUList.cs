@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace InternetMarket
 {
-    public partial class CPU
+    public partial class CPUSet
     {
         public override string ToString()
         {

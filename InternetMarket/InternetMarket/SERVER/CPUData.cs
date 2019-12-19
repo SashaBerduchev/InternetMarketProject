@@ -1,11 +1,15 @@
-﻿using System;
+﻿using InternetMarket.Loaders;
+using System;
+using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using System.Windows;
 
 namespace InternetMarket.SERVER
 {
     class CPUData : IDisposable
     {
+        private List<CPUSet> cPUs;
         private InternetMarketDateEntities internetMarketDateEntities;
         public CPUData()
         {
@@ -16,7 +20,7 @@ namespace InternetMarket.SERVER
         {
             try
             {
-                CPU cpudata = new CPU
+                CPUSet cpudata = new CPUSet
                 {
                     Name = name,
                     Architecture = architecture,
@@ -40,8 +44,20 @@ namespace InternetMarket.SERVER
             }
 
         }
+
+        public List<string> GetCpu()
+        {
+            LoadingWindow loadingWindow = new LoadingWindow();
+            loadingWindow.Show();
+            InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
+            cPUs = internetMarketDateEntities.CPUSet.ToList();
+            loadingWindow.Close();
+            return cPUs.Select(x => x.Name + ' ' + x.Architecture + ' ' + x.Cores + ' ' + x.Chastota + ' ' + x.KESHL1 + ' ' + x.KESHL2 + ' ' + x.KESHL3 + ' ' + x.GPU + ' ' + x.RAM + ' ' + x.TDP).ToList(); ;
+        }
         public void Dispose()
         {
+            if (cPUs != null) cPUs.Clear();
+            cPUs = null;
             internetMarketDateEntities.Dispose();
         }
     }

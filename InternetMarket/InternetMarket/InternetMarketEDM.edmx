@@ -364,13 +364,13 @@
           <EntitySet Name="BankSetSet" EntityType="InternetMarketDateModel.BankSet" />
           <EntitySet Name="TabletSetSet" EntityType="InternetMarketDateModel.TabletSet" />
           <EntitySet Name="DocForPainSet" EntityType="InternetMarketDateModel.DocForPain" />
-          <EntitySet Name="CPUSet" EntityType="InternetMarketDateModel.CPU" />
           <EntitySet Name="GraphicsCardSet" EntityType="InternetMarketDateModel.GraphicsCard" />
           <EntitySet Name="LaptopsSet" EntityType="InternetMarketDateModel.Laptops" />
           <EntitySet Name="DogovorSet" EntityType="InternetMarketDateModel.Dogovor" />
           <EntitySet Name="ZakazPokupatelyaSet" EntityType="InternetMarketDateModel.ZakazPokupatelya" />
           <EntitySet Name="PrintersSet" EntityType="InternetMarketDateModel.Printers" />
           <EntitySet Name="BoilersSet" EntityType="InternetMarketDateModel.Boilers" />
+          <EntitySet Name="CPUSet" EntityType="InternetMarketDateModel.CPUSet" />
         </EntityContainer>
         <EntityType Name="Director">
           <Key>
@@ -500,22 +500,6 @@
           <Property Name="Dataload2" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="Dataload3" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
         </EntityType>
-        <EntityType Name="CPU">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="Architecture" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="Cores" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="Chastota" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="KESHL1" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="KESHL2" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="KESHL3" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="GPU" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="RAM" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="TDP" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
-        </EntityType>
         <EntityType Name="GraphicsCard">
           <Key>
             <PropertyRef Name="Id" />
@@ -584,6 +568,22 @@
           <Property Name="Cost" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="Model" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="CPUSet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Architecture" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Cores" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Chastota" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="KESHL1" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="KESHL2" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="KESHL3" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="GPU" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RAM" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TDP" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -785,23 +785,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="CPUSet">
-      <EntityTypeMapping TypeName="IsTypeOf(InternetMarketDateModel.CPU)">
-        <MappingFragment StoreEntitySet="CPUSet">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="Architecture" ColumnName="Architecture" />
-          <ScalarProperty Name="Cores" ColumnName="Cores" />
-          <ScalarProperty Name="Chastota" ColumnName="Chastota" />
-          <ScalarProperty Name="KESHL1" ColumnName="KESHL1" />
-          <ScalarProperty Name="KESHL2" ColumnName="KESHL2" />
-          <ScalarProperty Name="KESHL3" ColumnName="KESHL3" />
-          <ScalarProperty Name="GPU" ColumnName="GPU" />
-          <ScalarProperty Name="RAM" ColumnName="RAM" />
-          <ScalarProperty Name="TDP" ColumnName="TDP" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="GraphicsCardSet">
       <EntityTypeMapping TypeName="IsTypeOf(InternetMarketDateModel.GraphicsCard)">
         <MappingFragment StoreEntitySet="GraphicsCardSet">
@@ -877,6 +860,23 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+          <EntitySetMapping Name="CPUSet">
+            <EntityTypeMapping TypeName="InternetMarketDateModel.CPUSet">
+              <MappingFragment StoreEntitySet="CPUSet">
+                <ScalarProperty Name="TDP" ColumnName="TDP" />
+                <ScalarProperty Name="RAM" ColumnName="RAM" />
+                <ScalarProperty Name="GPU" ColumnName="GPU" />
+                <ScalarProperty Name="KESHL3" ColumnName="KESHL3" />
+                <ScalarProperty Name="KESHL2" ColumnName="KESHL2" />
+                <ScalarProperty Name="KESHL1" ColumnName="KESHL1" />
+                <ScalarProperty Name="Chastota" ColumnName="Chastota" />
+                <ScalarProperty Name="Cores" ColumnName="Cores" />
+                <ScalarProperty Name="Architecture" ColumnName="Architecture" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping></edmx:Mappings>
   </edmx:Runtime>

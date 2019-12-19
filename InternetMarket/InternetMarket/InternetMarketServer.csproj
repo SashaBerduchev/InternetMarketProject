@@ -199,7 +199,7 @@
     <Compile Include="ComputersSet.cs">
       <DependentUpon>InternetMarketEDM.tt</DependentUpon>
     </Compile>
-    <Compile Include="CPU.cs">
+    <Compile Include="CPUSet.cs">
       <DependentUpon>InternetMarketEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="DocForPain.cs">
@@ -236,13 +236,13 @@
     <Compile Include="PartialClass\LoadSklad.cs" />
     <Compile Include="PartialClass\ParsalRegion.cs" />
     <Compile Include="PartialClass\PartialCity.cs" />
+    <Compile Include="PartialClass\PartialCPUList.cs" />
     <Compile Include="PartialClass\PartialDirector.cs" />
     <Compile Include="PartialClass\PartialOblast.cs" />
     <Compile Include="PartialClass\PartialComputer.cs" />
     <Compile Include="PartialClass\PartialOrganisation.cs" />
     <Compile Include="PartialClass\PartialStreets.cs" />
     <Compile Include="PartialClass\PartialTablets.cs" />
-    <Compile Include="PartialClass\PartialCPUList.cs" />
     <Compile Include="PartialClass\Partiallaptop.cs" />
     <Compile Include="PartialClass\PartialDocument.cs" />
     <Compile Include="Printers.cs">
