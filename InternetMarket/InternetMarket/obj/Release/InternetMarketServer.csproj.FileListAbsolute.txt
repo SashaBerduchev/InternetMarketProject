@@ -599,7 +599,6 @@ F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\Sprav
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\Spravochniki\ContragentData.g.cs
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\Spravochniki\Country.g.cs
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\Spravochniki\CountrysData.g.cs
-F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\InternetMarketData\CPUData.g.cs
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\DataSave.g.cs
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\Spravochniki\Directors.g.cs
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\MainWindow.g.cs
@@ -634,7 +633,6 @@ F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\Sprav
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\Spravochniki\ContragentData.baml
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\Spravochniki\Country.baml
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\Spravochniki\CountrysData.baml
-F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\InternetMarketData\CPUData.baml
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\DataSave.baml
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\Spravochniki\Directors.baml
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\MainWindow.baml
@@ -1281,3 +1279,5 @@ F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Loaders\Loadi
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Loaders\LoadingWindow.baml
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Loaders\LoadingWindow.g.cs
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Loaders\LoadingWindow.baml
+F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\InternetMarketData\AddCpuWindow.g.cs
+F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\InternetMarketData\AddCpuWindow.baml

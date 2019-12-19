@@ -1,9 +1,8 @@
-﻿using System;
+﻿using InternetMarket.Loaders;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace InternetMarket.SERVER
@@ -39,10 +38,13 @@ namespace InternetMarket.SERVER
         {
             try
             {
+                LoadingWindow loadingWindow = new LoadingWindow();
+                loadingWindow.Show();
                 InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
                 tablets = internetMarketDateEntities.TabletSetSet.ToList();
                 Trace.WriteLine(tablets);
                 Trace.WriteLine(tablets.Select(x => new { x.Name, x.Model, x.Processor, x.RAM, x.GPU, x.Battery, x.Resolution }));
+                loadingWindow.Close();
                 return tablets.Select(x => x.Name +" "+ x.Model+ " " + x.Processor+ " "+ x.RAM+" "+ x.GPU+" "+ x.Battery+" "+ x.Resolution ).ToList();
             }catch(Exception exp)
             { 
