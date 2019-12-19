@@ -143,6 +143,7 @@ namespace InternetMarket
             {
                 boilers = interMarketService.GetBoilersData();
                 DataGrid.ItemsSource = boilers;
+                GetCount();
             });
         }
 
@@ -151,13 +152,18 @@ namespace InternetMarket
             Dispatcher.Invoke(() =>
                 {
                     DataGrid.ItemsSource = interMarketService.LoadPhones();
+                    GetCount();
                 }
             );
         }
 
         public void GetTivis()
         {
-            interMarketService.LoadTivis();
+            Dispatcher.Invoke(() =>
+            {
+                DataGrid.ItemsSource = interMarketService.LoadTivis();
+                GetCount();
+            });
         }
         public void GetTablets()
         {
@@ -165,8 +171,8 @@ namespace InternetMarket
             {
                 Dispatcher.Invoke(() =>
                 {
-
                     DataGrid.ItemsSource = interMarketService.LoadTablets();
+                    GetCount();
                 });
             }
             catch (Exception e)
@@ -181,9 +187,8 @@ namespace InternetMarket
             {
                 Dispatcher.Invoke(() =>
                 {
-
                     DataGrid.ItemsSource = interMarketService.LoadComputers();
-
+                    GetCount();
                 });
             }
             catch (Exception e)
@@ -199,8 +204,8 @@ namespace InternetMarket
             {
                 Dispatcher.Invoke(() =>
                 {
-
                     DataGrid.ItemsSource = interMarketService.LoadCPU();
+                    GetCount();
                 });
             }
             catch (Exception e)
@@ -220,7 +225,7 @@ namespace InternetMarket
                     internetMarketDateEntities = new InternetMarketDateEntities();//3
                     graphics = internetMarketDateEntities.GraphicsCardSet.ToList();//4
                     DataGrid.ItemsSource = graphics.Select(x => new { x.Name, x.GraphicsCore, x.Herts, x.Cores, x.VRAM, x.Voltage });//
-
+                    GetCount();
                 });//5
             }
             catch (Exception e)
@@ -242,6 +247,7 @@ namespace InternetMarket
                     InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();//4
                     laptops = internetMarketDateEntities.LaptopsSet.ToList();//5
                     DataGrid.ItemsSource = laptops.Select(x => new { x.Name, x.Model, x.Procc, x.RAM, x.VRAM, x.GPU, x.SCREEN, x.Resolution, x.Battery });//6
+                    GetCount();
                 });
             }
             catch (Exception e)
@@ -259,10 +265,14 @@ namespace InternetMarket
                 internetMarketDateEntities = new InternetMarketDateEntities();
                 printers = internetMarketDateEntities.PrintersSet.Select(x => x.Name + "" + x.Speed + "" + x.Colors + "" + x.Cost).ToList();
                 DataGrid.ItemsSource = printers;
+                GetCount();
             });
         }
 
-
+        private void GetCount()
+        {
+            countElem.Text = Convert.ToString(DataGrid.Items.Count);
+        }
 
         private void OpenBtnComputers_Click(object sender, RoutedEventArgs e)
         {
