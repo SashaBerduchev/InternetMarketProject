@@ -35,7 +35,7 @@ namespace InternetMarket
         [OperationContract]
         void CPUSet(string Name, string Architecture, string Chastota, string cores, string keshl1, string keshl2, string keshl3, string gpu, string ram, string tdp, int point);
         [OperationContract]
-        void GraphicsCardSet(string name, string cores, string GraphicsCore, string Herts, string vram, string voltage, int point);
+        void GraphicsCardSet(string name, string cores, string GraphicsCore, string Herts, string vram, string voltage, int point, byte[] photoread, byte[] arrayread);
         [OperationContract]
         void LaptopSet(string name, string model, string proc, string ram, string vram, string gpu, string screen, string resolution, string battery, int point);
         [OperationContract]

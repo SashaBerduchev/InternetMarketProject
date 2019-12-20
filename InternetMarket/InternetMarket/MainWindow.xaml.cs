@@ -23,7 +23,6 @@ namespace InternetMarket
     public partial class MainWindow : Window, IDisposable
     {
         private InternetMarketDateEntities internetMarketDateEntities;
-        private List<GraphicsCard> graphics;
         private List<string> printers;
         private LoginUserWindow loginUserServer;
         private InterMarketService interMarketService;
@@ -221,10 +220,7 @@ namespace InternetMarket
             {
                 Dispatcher.Invoke(() =>//2
                 {
-                    Dispose();
-                    internetMarketDateEntities = new InternetMarketDateEntities();//3
-                    graphics = internetMarketDateEntities.GraphicsCardSet.ToList();//4
-                    DataGrid.ItemsSource = graphics.Select(x => new { x.Name, x.GraphicsCore, x.Herts, x.Cores, x.VRAM, x.Voltage });//
+                    DataGrid.ItemsSource = interMarketService.LoadGPU();
                     GetCount();
                 });//5
             }
@@ -477,9 +473,7 @@ namespace InternetMarket
 
         public void Dispose()
         {
-            if (graphics != null) graphics.Clear();//2
             if (printers != null) printers.Clear();
-            graphics = null;//5
             printers = null;
             if (interMarketService != null) interMarketService.Dispose();
             interMarketService = null;

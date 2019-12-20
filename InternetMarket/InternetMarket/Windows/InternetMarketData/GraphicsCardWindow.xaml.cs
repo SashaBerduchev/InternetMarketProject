@@ -1,20 +1,10 @@
 ﻿using Microsoft.Win32;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
 using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace InternetMarket.Windows.InternetMarketData
 {
@@ -25,9 +15,11 @@ namespace InternetMarket.Windows.InternetMarketData
     {
         private byte[] photoload;
         private byte[] arrayread;
+        private InterMarketService interMarket;
         public GraphicsCardWindow()
         {
             InitializeComponent();
+            interMarket = new InterMarketService();
             Trace.WriteLine(this);
         }
 
@@ -89,20 +81,7 @@ namespace InternetMarket.Windows.InternetMarketData
 
                 for (int i = 0; i < Convert.ToInt32(pointtext.Text); i++)
                 {
-
-                    var gpudata = new GraphicsCard
-                    {
-                        Name = namegpu.Text,
-                        Cores = cores.Text,
-                        GraphicsCore = gpucores.Text,
-                        Herts = herts.Text,
-                        VRAM = vram.Text,
-                        Voltage = voltage.Text,
-                        Photo = photoload,
-                        PDF = arrayread
-                    };
-                    internetMarketDateEntities.GraphicsCardSet.Add(gpudata);
-                    internetMarketDateEntities.SaveChanges();
+                    interMarket.GraphicsCardSet(namegpu.Text, cores.Text, gpucores.Text, herts.Text, vram.Text, voltage.Text, Convert.ToInt32(pointtext.Text), photoload, arrayread);
                 }
             });
         }

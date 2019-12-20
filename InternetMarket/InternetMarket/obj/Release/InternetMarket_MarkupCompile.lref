@@ -6,6 +6,7 @@ FF:\InternetMarketProject\InternetMarket\InternetMarket\Windows\Administration\A
 FF:\InternetMarketProject\InternetMarket\InternetMarket\Windows\Documents\ZakazPokupatyaData.xaml;;
 FF:\InternetMarketProject\InternetMarket\InternetMarket\Windows\InternetMarketData\AddCpuWindow.xaml;;
 FF:\InternetMarketProject\InternetMarket\InternetMarket\Windows\InternetMarketData\BoilerWindow.xaml;;
+FF:\InternetMarketProject\InternetMarket\InternetMarket\Windows\InternetMarketData\GraphicsCardWindow.xaml;;
 FF:\InternetMarketProject\InternetMarket\InternetMarket\Windows\InternetMarketData\PrinterWindow.xaml;;
 FF:\InternetMarketProject\InternetMarket\InternetMarket\Windows\Spravochniki\CitiData.xaml;;
 FF:\InternetMarketProject\InternetMarket\InternetMarket\Windows\Spravochniki\City.xaml;;
@@ -17,7 +18,6 @@ FF:\InternetMarketProject\InternetMarket\InternetMarket\Windows\Spravochniki\Cou
 FF:\InternetMarketProject\InternetMarket\InternetMarket\Windows\DataSave.xaml;;
 FF:\InternetMarketProject\InternetMarket\InternetMarket\Windows\Spravochniki\Directors.xaml;;
 FF:\InternetMarketProject\InternetMarket\InternetMarket\MainWindow.xaml;;
-FF:\InternetMarketProject\InternetMarket\InternetMarket\Windows\InternetMarketData\GPUData.xaml;;
 FF:\InternetMarketProject\InternetMarket\InternetMarket\Windows\InternetMarketData\Laptop.xaml;;
 FF:\InternetMarketProject\InternetMarket\InternetMarket\Windows\Spravochniki\LoadDocument.xaml;;
 FF:\InternetMarketProject\InternetMarket\InternetMarket\Windows\Spravochniki\Oblast.xaml;;

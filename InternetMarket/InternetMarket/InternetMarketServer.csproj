@@ -254,6 +254,7 @@
     <Compile Include="SERVER\BoilerServerData.cs" />
     <Compile Include="SERVER\ComputersData.cs" />
     <Compile Include="SERVER\CPUData.cs" />
+    <Compile Include="SERVER\GPUData.cs" />
     <Compile Include="SERVER\PhoneServerData.cs" />
     <Compile Include="SERVER\TabletServer.cs" />
     <Compile Include="SERVER\TiviServerData.cs" />
@@ -332,9 +333,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>InternetMarketEDM.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Windows\InternetMarketData\GPUData.xaml.cs">
-      <DependentUpon>GPUData.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\InternetMarketData\Laptop.xaml.cs">
       <DependentUpon>Laptop.xaml</DependentUpon>
@@ -488,10 +486,6 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Windows\InternetMarketData\GPUData.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Windows\InternetMarketData\Laptop.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
