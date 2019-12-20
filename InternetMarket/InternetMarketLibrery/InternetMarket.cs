@@ -18,7 +18,7 @@ namespace InternetMarketLibrery
         private InternetMarketDateEntities internetMarketDateEntities;
         private List<string> users;
         private List<string> cpulist;
-        private List<CPU> cpu;
+        private List<CPUSet> cpu;
         private List<Country> countries;
         private List<CityData> cities;
         private List<string> listgpu;
@@ -177,7 +177,7 @@ namespace InternetMarketLibrery
             for (int i = 0; i < point; i++)
             {
                 InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
-                CPU cpudat = new CPU
+                CPUSet cpudat = new CPUSet
                 {
                     Name = Name,
                     Architecture = Architecture,

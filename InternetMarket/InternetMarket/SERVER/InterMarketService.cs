@@ -26,6 +26,7 @@ namespace InternetMarket
         private List<string> listgpu;
         private List<GraphicsCard> graphics;
         private CPUData CPU;
+        private GPUData graphicsCard;
         public InterMarketService()
         {
             internetMarketDateEntities = new InternetMarketDateEntities();
@@ -36,6 +37,7 @@ namespace InternetMarket
             boilerServer = new BoilerServerData();
             computersData = new ComputersData();
             CPU = new CPUData();
+            graphicsCard = new GPUData();
             Trace.WriteLine(this);
             Trace.WriteLine("Server INITIALIZE");
         }
@@ -212,21 +214,11 @@ namespace InternetMarket
             }
         }
 
-        public void GraphicsCardSet(string name, string cores, string GraphicsCore, string Herts, string vram, string voltage, int point)
+        public void GraphicsCardSet(string name, string cores, string GraphicsCore, string Herts, string vram, string voltage, int point, byte[] photoread, byte[] arrayread)
         {
             for (int i = 0; i< point; i++)
             {
-                GraphicsCard graphics = new GraphicsCard
-                {
-                    Name = name,
-                    Cores = cores,
-                    GraphicsCore = GraphicsCore,
-                    Herts = Herts,
-                    Voltage = voltage,
-                    VRAM = vram
-                };
-                internetMarketDateEntities.GraphicsCardSet.Add(graphics);
-                internetMarketDateEntities.SaveChanges();
+                graphicsCard.SetGpu(name, cores, GraphicsCore, Herts, vram, voltage, photoread, arrayread);
             }
         }
 
@@ -264,9 +256,8 @@ namespace InternetMarket
         public List<string> LoadGPU()
         {
             DisableData();
-            graphics = internetMarketDateEntities.GraphicsCardSet.ToList();
-            listgpu = graphics.AsParallel().Select(x => x.Name + " " + x.Herts + " " + x.Voltage + " " + x.VRAM + " " + x.GraphicsCore + " " + x.Cores).ToList();
-            return listgpu;
+
+            return graphicsCard.GetGraphics();
         }
 
         public void setLogin(string name, string password)

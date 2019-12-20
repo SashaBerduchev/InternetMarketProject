@@ -602,7 +602,6 @@ F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\Spravoc
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\DataSave.g.cs
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\Spravochniki\Directors.g.cs
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\MainWindow.g.cs
-F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\InternetMarketData\GPUData.g.cs
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\InternetMarketData\Laptop.g.cs
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\Spravochniki\LoadDocument.g.cs
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\Spravochniki\Oblast.g.cs
@@ -636,7 +635,6 @@ F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\Spravoc
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\DataSave.baml
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\Spravochniki\Directors.baml
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\MainWindow.baml
-F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\InternetMarketData\GPUData.baml
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\InternetMarketData\Laptop.baml
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\Spravochniki\LoadDocument.baml
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\Spravochniki\Oblast.baml
@@ -1281,3 +1279,5 @@ C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\Inter
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\InternetMarketData\AddCpuWindow.baml
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\InternetMarketData\AddCpuWindow.g.cs
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\InternetMarketData\AddCpuWindow.baml
+F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\InternetMarketData\GraphicsCardWindow.g.cs
+F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\InternetMarketData\GraphicsCardWindow.baml
