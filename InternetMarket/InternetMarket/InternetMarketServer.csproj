@@ -276,6 +276,9 @@
     <Compile Include="Windows\InternetMarketData\BoilerWindow.xaml.cs">
       <DependentUpon>BoilerWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\InternetMarketData\GraphicsCardWindow.xaml.cs">
+      <DependentUpon>GraphicsCardWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\InternetMarketData\PrinterWindow.xaml.cs">
       <DependentUpon>PrinterWindow.xaml</DependentUpon>
     </Compile>
@@ -426,6 +429,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\InternetMarketData\BoilerWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\InternetMarketData\GraphicsCardWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

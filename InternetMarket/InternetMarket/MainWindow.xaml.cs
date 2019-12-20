@@ -343,7 +343,7 @@ namespace InternetMarket
 
         private void OpenBtnGraphics_Click(object sender, RoutedEventArgs e)
         {
-            GPUData gpuData = new GPUData();
+            GraphicsCardWindow gpuData = new GraphicsCardWindow();
             gpuData.Show();
         }
 
