@@ -3,17 +3,19 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Windows;
 
 namespace InternetMarket.SERVER
 {
     class PhoneServerData : IDisposable
     {
-        private List<PhonesSet> phones;
+        private static List<PhonesSet> phones;
+        private static List<string> phonesdat;
         private InternetMarketDateEntities internetMarketDateEntities;
         private int start;
         private int stop;
-        private int elem;
         public PhoneServerData()
         {
             internetMarketDateEntities = new InternetMarketDateEntities();
@@ -24,13 +26,12 @@ namespace InternetMarket.SERVER
             if (phones != null) phones.Clear();
             try
             {
-                LoadingWindow loadingWindow = new LoadingWindow();
-                loadingWindow.Show();
-                phones = internetMarketDateEntities.PhonesSet.ToList();
-                Trace.WriteLine(phones);
-                Trace.WriteLine(phones.Select(x => new { x.Firm, x.Model, x.Quantity, x.Cost, x.Processor, x.RAM, x.Battery, x.Photo, x.PDF }));
-                loadingWindow.Close();
-                return phones.Select(x => x.Firm + " " + x.Model + " " + x.Quantity + " " + x.Cost + " " + x.Processor + " " + x.RAM + " " + x.Battery + " " + x.Photo + " " + x.PDF).ToList();
+                //LoadingWindow loadingWindow = new LoadingWindow();
+                //loadingWindow.Show();
+                PhonesLoading();
+                //Thread.Sleep(10000);
+                //loadingWindow.Close();
+                return phonesdat;
             }
             catch (Exception e)
             {
@@ -38,6 +39,21 @@ namespace InternetMarket.SERVER
                 MessageBox.Show(e.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             return null;
+        }
+
+        async void PhonesLoading()
+        {
+            Trace.WriteLine("TASK START!!");
+            await Task.Run(() => Phone());
+            Trace.WriteLine("TASK STOP!!");
+        }
+
+        private async void Phone()
+        {
+            phones = internetMarketDateEntities.PhonesSet.ToList();
+            Trace.WriteLine(phones);
+            Trace.WriteLine(phones.Select(x => new { x.Firm, x.Model, x.Quantity, x.Cost, x.Processor, x.RAM, x.Battery, x.Photo, x.PDF }));
+            phonesdat = phones.Select(x => x.Firm + " " + x.Model + " " + x.Quantity + " " + x.Cost + " " + x.Processor + " " + x.RAM + " " + x.Battery + " " + x.Photo + " " + x.PDF).ToList();
         }
 
         public void PhonesSet(string Firm, string Model, string Quantity, string Cost, string Processor, string RAM, string Battery, byte[] PDF, byte[] Photo)
@@ -100,6 +116,8 @@ namespace InternetMarket.SERVER
         }
         public void Dispose()
         {
+            if (phonesdat != null) phonesdat.Clear();
+            phonesdat = null;
             if (internetMarketDateEntities != null) internetMarketDateEntities.Dispose();
             internetMarketDateEntities = null;
             if (phones != null) phones.Clear();
