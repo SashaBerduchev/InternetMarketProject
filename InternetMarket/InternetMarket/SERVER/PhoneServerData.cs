@@ -12,7 +12,7 @@ namespace InternetMarket.SERVER
     class PhoneServerData : IDisposable
     {
         private static List<PhonesSet> phones;
-        private static List<string> phonesdat;
+        private static Task<List<string>> phonesdat;
         private InternetMarketDateEntities internetMarketDateEntities;
         private int start;
         private int stop;
@@ -21,14 +21,13 @@ namespace InternetMarket.SERVER
             internetMarketDateEntities = new InternetMarketDateEntities();
         }
 
-        public List<string> GetPhones()
+        public Task<List<string>> GetPhones()
         {
-            if (phones != null) phones.Clear();
             try
             {
                 //LoadingWindow loadingWindow = new LoadingWindow();
                 //loadingWindow.Show();
-                PhonesLoading();
+               phonesdat = Task.Run(() => PhonesLoading());
                 //Thread.Sleep(10000);
                 //loadingWindow.Close();
                 return phonesdat;
@@ -41,19 +40,21 @@ namespace InternetMarket.SERVER
             return null;
         }
 
-        async void PhonesLoading()
+        async Task<List<string>> PhonesLoading()
         {
+            List<string> phones;
             Trace.WriteLine("TASK START!!");
-            await Task.Run(() => Phone());
-            Trace.WriteLine("TASK STOP!!");
+            phones =  Phone();
+            return phones;
         }
 
-        private async void Phone()
+        private List<string> Phone()
         {
+            Trace.WriteLine("TASK RUn");
             phones = internetMarketDateEntities.PhonesSet.ToList();
-            Trace.WriteLine(phones);
             Trace.WriteLine(phones.Select(x => new { x.Firm, x.Model, x.Quantity, x.Cost, x.Processor, x.RAM, x.Battery, x.Photo, x.PDF }));
-            phonesdat = phones.Select(x => x.Firm + " " + x.Model + " " + x.Quantity + " " + x.Cost + " " + x.Processor + " " + x.RAM + " " + x.Battery + " " + x.Photo + " " + x.PDF).ToList();
+            Trace.WriteLine("TASK STOP!!");
+            return phones.Select(x => x.Firm+' '+ x.Model+' '+ x.Quantity + ' ' + x.Cost + ' ' + x.Processor + ' ' + x.RAM + ' ' + x.Battery + ' ' + x.Photo + ' ' + x.PDF ).ToList();
         }
 
         public void PhonesSet(string Firm, string Model, string Quantity, string Cost, string Processor, string RAM, string Battery, byte[] PDF, byte[] Photo)
@@ -116,7 +117,6 @@ namespace InternetMarket.SERVER
         }
         public void Dispose()
         {
-            if (phonesdat != null) phonesdat.Clear();
             phonesdat = null;
             if (internetMarketDateEntities != null) internetMarketDateEntities.Dispose();
             internetMarketDateEntities = null;

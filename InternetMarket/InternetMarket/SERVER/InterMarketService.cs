@@ -63,9 +63,9 @@ namespace InternetMarket
             }
             return null;
         }
-        public  List<string> LoadPhones()
+        public  Task<List<string>> LoadPhones()
         {
-            return phoneServerData.GetPhones();
+            return  phoneServerData.GetPhones();
         }
 
         public List<PhonesSet> GetPhonesCollection()
