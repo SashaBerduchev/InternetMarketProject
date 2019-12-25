@@ -47,7 +47,7 @@ namespace InternetMarket.SERVER
         {
             List<string> phones;
             Trace.WriteLine("TASK START!!");
-            phones =  Phone();
+            phones = Phone();
             return phones;
         }
 
@@ -57,7 +57,7 @@ namespace InternetMarket.SERVER
             phones = internetMarketDateEntities.PhonesSet.ToList();
             Trace.WriteLine(phones.Select(x => new { x.Firm, x.Model, x.Quantity, x.Cost, x.Processor, x.RAM, x.Battery, x.Photo, x.PDF }));
             Trace.WriteLine("TASK STOP!!");
-            return phones.Select(x => x.Firm+' '+ x.Model+' '+ x.Quantity + ' ' + x.Cost + ' ' + x.Processor + ' ' + x.RAM + ' ' + x.Battery + ' ' + x.Photo + ' ' + x.PDF ).ToList();
+            return phones.Select(x => x.Firm + ' ' + x.Model + ' ' + x.Quantity + ' ' + x.Cost + ' ' + x.Processor + ' ' + x.RAM + ' ' + x.Battery + ' ' + x.Photo + ' ' + x.PDF).ToList();
         }
 
         public void PhonesSet(string Firm, string Model, string Quantity, string Cost, string Processor, string RAM, string Battery, byte[] PDF, byte[] Photo)

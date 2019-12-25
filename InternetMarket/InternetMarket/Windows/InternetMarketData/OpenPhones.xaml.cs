@@ -71,20 +71,26 @@ namespace InternetMarket
         {
             Dispatcher.Invoke(() =>
             {
-                string firm = firmsettext.Text;
-                string model = modelsettext.Text;
-                string quantity = quantitysettext.Text;
-                string cost = costsettext.Text;
-                string proc = procsettext.Text;
-                string ram = ramsettext.Text;
-                string battery = batterysettext.Text;
-                byte[] PDF = arrayread;
-                byte[] photo = photoload;
-                //InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
-
-                for (int i = 0; i < Convert.ToInt32(textpointer.Text); i++)
+                try
                 {
-                    interMarketService.PhonesSet(firm, model, quantity, cost, proc, ram, battery, textpointer.Text, PDF, photo);
+                    string firm = firmsettext.Text;
+                    string model = modelsettext.Text;
+                    string quantity = quantitysettext.Text;
+                    string cost = costsettext.Text;
+                    string proc = procsettext.Text;
+                    string ram = ramsettext.Text;
+                    string battery = batterysettext.Text;
+                    byte[] PDF = arrayread;
+                    byte[] photo = photoload;
+                    //InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
+
+                    for (int i = 0; i < Convert.ToInt32(textpointer.Text); i++)
+                    {
+                        interMarketService.PhonesSet(firm, model, quantity, cost, proc, ram, battery, textpointer.Text, PDF, photo);
+                    }
+                }catch(Exception exp)
+                {
+                    Trace.WriteLine(exp.ToString());
                 }
             });
         }

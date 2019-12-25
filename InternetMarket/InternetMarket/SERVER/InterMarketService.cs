@@ -3,9 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
 
 namespace InternetMarket
 {
@@ -74,10 +72,16 @@ namespace InternetMarket
         }
         public void PhonesSet(string Firm, string Model, string Quantity, string Cost, string Processor, string RAM, string Battery, string texpoint, byte[] PDF, byte[] Photo)
         {
+            Task[] tasks = new Task[Convert.ToInt32(texpoint)];
             for (int i = 0; i < Convert.ToInt32(texpoint); i++)
             {
-                phoneServerData.PhonesSet(Firm, Model, Quantity, Cost, Processor, RAM, Battery, PDF, Photo);
+                Task task = new Task(() => phoneServerData.PhonesSet(Firm, Model, Quantity, Cost, Processor, RAM, Battery, PDF, Photo));
+                //phoneServerData.PhonesSet(Firm, Model, Quantity, Cost, Processor, RAM, Battery, PDF, Photo);
+                task.Start();
+                Trace.WriteLine(task + "start");
+                tasks[i] = task;
             }
+            Task.WaitAll(tasks);
         }
 
         public void RemovePhones(int start, int stop)
