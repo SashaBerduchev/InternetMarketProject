@@ -27,7 +27,10 @@ namespace InternetMarket.SERVER
             {
                 //LoadingWindow loadingWindow = new LoadingWindow();
                 //loadingWindow.Show();
-               phonesdat = Task.Run(() => PhonesLoading());
+                Task<Task<List<string>>> task = new Task<Task<List<string>>>(() => PhonesLoading());
+                task.Start();
+                task.Wait();
+                phonesdat = task.GetAwaiter().GetResult();
                 //Thread.Sleep(10000);
                 //loadingWindow.Close();
                 return phonesdat;
