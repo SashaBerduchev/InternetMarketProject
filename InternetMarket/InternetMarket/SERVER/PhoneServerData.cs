@@ -82,7 +82,7 @@ namespace InternetMarket.SERVER
             PhonesSetAllData();
         }
 
-        public async void PhonesSetAllData()
+        public void PhonesSetAllData()
         {
             Thread.Sleep(8000);
             internetMarketDateEntities.PhonesSet.AddRange(phoneses);
