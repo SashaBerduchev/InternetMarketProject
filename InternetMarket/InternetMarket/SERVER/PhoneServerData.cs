@@ -16,9 +16,11 @@ namespace InternetMarket.SERVER
         private InternetMarketDateEntities internetMarketDateEntities;
         private int start;
         private int stop;
+        private List<PhonesSet> phoneses;
         public PhoneServerData()
         {
             internetMarketDateEntities = new InternetMarketDateEntities();
+            phoneses = new List<PhonesSet>();
         }
 
         public Task<List<string>> GetPhones()
@@ -60,8 +62,9 @@ namespace InternetMarket.SERVER
             return phones.Select(x => x.Firm + ' ' + x.Model + ' ' + x.Quantity + ' ' + x.Cost + ' ' + x.Processor + ' ' + x.RAM + ' ' + x.Battery + ' ' + x.Photo + ' ' + x.PDF).ToList();
         }
 
-        public void PhonesSet(string Firm, string Model, string Quantity, string Cost, string Processor, string RAM, string Battery, byte[] PDF, byte[] Photo)
+        public async void PhonesSet(string Firm, string Model, string Quantity, string Cost, string Processor, string RAM, string Battery, byte[] PDF, byte[] Photo)
         {
+            
             var phonedat = new PhonesSet
             {
                 Battery = Battery,
@@ -74,10 +77,18 @@ namespace InternetMarket.SERVER
                 PDF = PDF,
                 Photo = Photo
             };
+            phoneses.Add(phonedat);
             Trace.WriteLine(phonedat);
-            internetMarketDateEntities.PhonesSet.Add(phonedat);
+            PhonesSetAllData();
+        }
+
+        public async void PhonesSetAllData()
+        {
+            Thread.Sleep(8000);
+            internetMarketDateEntities.PhonesSet.AddRange(phoneses);
             Trace.WriteLine(internetMarketDateEntities);
             internetMarketDateEntities.SaveChanges();
+            if (phoneses != null) phoneses.Clear();
         }
 
         public void Remove(int start, int stop)
