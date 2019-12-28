@@ -85,6 +85,7 @@ namespace InternetMarket
             }
             Task.WaitAll(tasks);
             //Task.Run(()=>phoneServerData.PhonesSetAllData());
+            phoneServerData.PhonesSetAllData();
         }
 
         private async void TaskPhoneSet(string firm, string model, string quantity, string cost, string processor, string rAM, string battery, byte[] pDF, byte[] photo)

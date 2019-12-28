@@ -79,7 +79,6 @@ namespace InternetMarket.SERVER
             };
             phoneses.Add(phonedat);
             Trace.WriteLine(phonedat);
-            PhonesSetAllData();
         }
 
         public void PhonesSetAllData()
