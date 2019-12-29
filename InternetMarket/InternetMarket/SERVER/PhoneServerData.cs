@@ -16,25 +16,26 @@ namespace InternetMarket.SERVER
         private InternetMarketDateEntities internetMarketDateEntities;
         private int start;
         private int stop;
+        private int _count;
         private List<PhonesSet> phoneses;
         public PhoneServerData()
         {
             internetMarketDateEntities = new InternetMarketDateEntities();
             phoneses = new List<PhonesSet>();
+
         }
 
         public Task<List<string>> GetPhones()
         {
             try
             {
-                //LoadingWindow loadingWindow = new LoadingWindow();
-                //loadingWindow.Show();
+                LoadingWindow loadingWindow = new LoadingWindow();
+                loadingWindow.Show();
                 Task<Task<List<string>>> task = new Task<Task<List<string>>>(() => PhonesLoading());
                 task.Start();
                 task.Wait();
-                phonesdat = task.GetAwaiter().GetResult();
-                //Thread.Sleep(10000);
-                //loadingWindow.Close();
+                phonesdat = task.GetAwaiter().GetResult();;
+                loadingWindow.Close();
                 return phonesdat;
             }
             catch (Exception e)
@@ -62,9 +63,9 @@ namespace InternetMarket.SERVER
             return phones.Select(x => x.Firm + ' ' + x.Model + ' ' + x.Quantity + ' ' + x.Cost + ' ' + x.Processor + ' ' + x.RAM + ' ' + x.Battery + ' ' + x.Photo + ' ' + x.PDF).ToList();
         }
 
-        public async void PhonesSet(string Firm, string Model, string Quantity, string Cost, string Processor, string RAM, string Battery, byte[] PDF, byte[] Photo)
+        public async void PhonesSet(string Firm, string Model, string Quantity, string Cost, string Processor, string RAM, string Battery, byte[] PDF, byte[] Photo, int count)
         {
-            
+            _count = count;   
             var phonedat = new PhonesSet
             {
                 Battery = Battery,
@@ -79,15 +80,25 @@ namespace InternetMarket.SERVER
             };
             phoneses.Add(phonedat);
             Trace.WriteLine(phonedat);
+
         }
 
+        
         public void PhonesSetAllData()
         {
-            Thread.Sleep(8000);
+            Thread.Sleep(1000);
+            if (Check() == false) return;
             internetMarketDateEntities.PhonesSet.AddRange(phoneses);
             Trace.WriteLine(internetMarketDateEntities);
             internetMarketDateEntities.SaveChanges();
             if (phoneses != null) phoneses.Clear();
+        }
+
+        private bool Check()
+        {
+            if (phoneses.Count >= _count)
+                return true;
+            return false;
         }
 
         public void Remove(int start, int stop)

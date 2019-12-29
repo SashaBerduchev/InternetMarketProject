@@ -77,8 +77,7 @@ namespace InternetMarket
             Task[] tasks = new Task[Convert.ToInt32(texpoint)];
             for (int i = 0; i < Convert.ToInt32(texpoint); i++)
             {
-                Task task = new Task(() => TaskPhoneSet(Firm, Model, Quantity, Cost, Processor, RAM, Battery, PDF, Photo));
-                //phoneServerData.PhonesSet(Firm, Model, Quantity, Cost, Processor, RAM, Battery, PDF, Photo);
+                Task task = new Task(() => TaskPhoneSet(Firm, Model, Quantity, Cost, Processor, RAM, Battery, PDF, Photo, Convert.ToInt32(texpoint)));
                 task.Start();
                 Trace.WriteLine(task + "start");
                 tasks[i] = task;
@@ -88,9 +87,9 @@ namespace InternetMarket
             phoneServerData.PhonesSetAllData();
         }
 
-        private async void TaskPhoneSet(string firm, string model, string quantity, string cost, string processor, string rAM, string battery, byte[] pDF, byte[] photo)
+        private async void TaskPhoneSet(string firm, string model, string quantity, string cost, string processor, string rAM, string battery, byte[] pDF, byte[] photo, int count)
         {
-              phoneServerData.PhonesSet(firm, model, quantity, cost, processor, rAM, battery, pDF, photo);
+              phoneServerData.PhonesSet(firm, model, quantity, cost, processor, rAM, battery, pDF, photo, count);
               Trace.WriteLine("PHONES SET");
         }
 
