@@ -15,7 +15,7 @@ namespace InternetMarket
         [OperationContract]
         void TiviSet(string Firm, string Model, string Quantity, string Cost, string textpoint);
         [OperationContract]
-        List<string> LoadPhones();
+        Task<List<string>> LoadPhones();
         [OperationContract]
         void ComputerSet(string Firm, string Model, string Quantity, string Cost, string Processor, string RAM, string VRAM, string Graphics, string textpoint);
         [OperationContract]

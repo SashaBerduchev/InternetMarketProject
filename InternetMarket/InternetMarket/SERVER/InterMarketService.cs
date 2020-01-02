@@ -3,9 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
-using System.Windows;
+using System.Windows.Threading;
 
 namespace InternetMarket
 {
@@ -63,9 +63,9 @@ namespace InternetMarket
             }
             return null;
         }
-        public List<string> LoadPhones()
+        public  Task<List<string>> LoadPhones()
         {
-            return phoneServerData.GetPhones();
+            return  phoneServerData.GetPhones();
         }
 
         public List<PhonesSet> GetPhonesCollection()
@@ -74,10 +74,23 @@ namespace InternetMarket
         }
         public void PhonesSet(string Firm, string Model, string Quantity, string Cost, string Processor, string RAM, string Battery, string texpoint, byte[] PDF, byte[] Photo)
         {
+            Task[] tasks = new Task[Convert.ToInt32(texpoint)];
             for (int i = 0; i < Convert.ToInt32(texpoint); i++)
             {
-                phoneServerData.PhonesSet(Firm, Model, Quantity, Cost, Processor, RAM, Battery, PDF, Photo);
+                Task task = new Task(() => TaskPhoneSet(Firm, Model, Quantity, Cost, Processor, RAM, Battery, PDF, Photo, Convert.ToInt32(texpoint)));
+                task.Start();
+                Trace.WriteLine(task + "start");
+                tasks[i] = task;
             }
+            Task.WaitAll(tasks);
+            //Task.Run(()=>phoneServerData.PhonesSetAllData());
+            phoneServerData.PhonesSetAllData();
+        }
+
+        private async void TaskPhoneSet(string firm, string model, string quantity, string cost, string processor, string rAM, string battery, byte[] pDF, byte[] photo, int count)
+        {
+              phoneServerData.PhonesSet(firm, model, quantity, cost, processor, rAM, battery, pDF, photo, count);
+              Trace.WriteLine("PHONES SET");
         }
 
         public void RemovePhones(int start, int stop)

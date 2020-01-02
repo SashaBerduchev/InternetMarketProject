@@ -150,7 +150,7 @@ namespace InternetMarket
         {
             Dispatcher.Invoke(() =>
                 {
-                    DataGrid.ItemsSource = interMarketService.LoadPhones();
+                    DataGrid.ItemsSource = interMarketService.LoadPhones().GetAwaiter().GetResult();
                     GetCount();
                 }
             );
