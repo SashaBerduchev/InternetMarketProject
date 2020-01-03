@@ -83,7 +83,6 @@ namespace InternetMarket.SERVER
 
         }
 
-        
         public void PhonesSetAllData()
         {
             Thread.Sleep(1000);
@@ -124,7 +123,6 @@ namespace InternetMarket.SERVER
                     MessageBox.Show("Элемент уже удален", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
-
         }
 
         public List<PhonesSet> GetPhonesCollection()

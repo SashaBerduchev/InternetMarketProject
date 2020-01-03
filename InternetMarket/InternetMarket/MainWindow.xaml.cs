@@ -508,6 +508,10 @@ namespace InternetMarket
                     {
                         interMarketService.RemoveTivis(Convert.ToInt32(countStartDelete.Text), Convert.ToInt32(countFinishDelete.Text));
                     }
+                    else if (combobox.SelectedItem.ToString() == "Tablets")
+                    {
+                        interMarketService.RemoveTablets(Convert.ToInt32(countStartDelete.Text), Convert.ToInt32(countFinishDelete.Text));
+                    }
                     MessageBox.Show("Удалено", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
                 catch (NullReferenceException nullexp)

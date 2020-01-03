@@ -11,6 +11,8 @@ namespace InternetMarket.SERVER
     {
         private List<TabletSet> tablets;
         private InternetMarketDateEntities internetMarket;
+        private int start;
+        private int stop;
         public TabletServer()
         {
             internetMarket = new InternetMarketDateEntities();
@@ -52,6 +54,31 @@ namespace InternetMarket.SERVER
                 MessageBox.Show(exp.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             return null;
+        }
+
+        public void Remove(int start, int stop)
+        {
+            this.start = start;
+            this.stop = stop;
+            for (int i = this.start; i < this.stop; i++)
+            {
+                try
+                {
+                    Trace.WriteLine(tablets[i]);
+                    internetMarket.TabletSetSet.Remove(tablets[i]);
+                    internetMarket.SaveChanges();
+                }
+                catch (NullReferenceException nullexp)
+                {
+                    Trace.WriteLine(nullexp.ToString());
+                    MessageBox.Show("Загрузите данные", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+                catch (InvalidOperationException invalidoper)
+                {
+                    Trace.WriteLine(invalidoper.ToString());
+                    MessageBox.Show("Элемент уже удален", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
         }
 
         public void Disable()

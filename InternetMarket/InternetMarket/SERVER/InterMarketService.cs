@@ -160,6 +160,11 @@ namespace InternetMarket
             return tabletServer.LoadTablets();
         }
 
+        public void RemoveTablets(int start, int end)
+        {
+            tabletServer.Remove(start, end);
+        }
+
         public void OrganizationSet(string organization)
         {
             InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
