@@ -54,5 +54,13 @@ namespace InternetMarketClient
         List<string> GetBoilersData();
         [OperationContract]
         void SetBoiler(string Name, string Model, string Volume, string Voltage, string Power, string Cost);
+        [OperationContract]
+        void RemoveTivis(int start, int end);
+        [OperationContract]
+        void RemovePhones(int start, int stop);
+        [OperationContract]
+        void RemoveComputers(int start, int stop);
+        [OperationContract]
+        void RemoveTablets(int start, int end);
     }
 }

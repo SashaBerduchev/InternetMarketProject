@@ -93,10 +93,7 @@ namespace InternetMarket
               Trace.WriteLine("PHONES SET");
         }
 
-        public void RemovePhones(int start, int stop)
-        {
-            phoneServerData.Remove(start, stop);
-        }
+       
         public List<string> LoadComputers()
         {
             DisableData();
@@ -125,10 +122,7 @@ namespace InternetMarket
 
         }
 
-        public void RemoveTivis(int start, int end)
-        {
-            tiviServer.RemoveTivis(start, end);
-        }
+        
 
         public void ComputerSet(string Firm, string Model, string Quantity, string Cost, string Processor, string RAM, string VRAM, string Graphics, string textpoint)
         {
@@ -140,10 +134,6 @@ namespace InternetMarket
             }
         }
 
-        public void RemoveComputers(int start, int stop)
-        {
-            computersData.Remove(start, stop);
-        }
         public void TabletsSet(string name, string model, string proc, string ram, string gpu, string resolution, string battery, string textpoint)
         {
             ClearContent();
@@ -160,10 +150,6 @@ namespace InternetMarket
             return tabletServer.LoadTablets();
         }
 
-        public void RemoveTablets(int start, int end)
-        {
-            tabletServer.Remove(start, end);
-        }
 
         public void OrganizationSet(string organization)
         {
@@ -264,10 +250,6 @@ namespace InternetMarket
 
         public List<string> LoadCPU()
         {
-
-            
-            //cpulist = cpu.AsParallel().Select(x => x.Name + " " + x.Architecture + " " + x.Chastota + " " + x.Cores + " " + x.GPU + " " + x.KESHL1 + " " + x.KESHL2 + " " + x.KESHL3 + " " + x.RAM + " " + x.TDP).ToList();
-            //return cpulist;
             return CPU.GetCpu();
         }
 
@@ -307,6 +289,26 @@ namespace InternetMarket
         public List<string> GetBoilersData()
         {
             return boilerServer.GetBoilers();
+        }
+
+        public void RemoveTivis(int start, int end)
+        {
+            tiviServer.RemoveTivis(start, end);
+        }
+
+        public void RemovePhones(int start, int stop)
+        {
+            phoneServerData.Remove(start, stop);
+        }
+
+        public void RemoveComputers(int start, int stop)
+        {
+            computersData.Remove(start, stop);
+        }
+
+        public void RemoveTablets(int start, int end)
+        {
+            tabletServer.Remove(start, end);
         }
 
         private void DisableData()
