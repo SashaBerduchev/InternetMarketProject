@@ -28,9 +28,10 @@ namespace InternetMarketClient
     public partial class MainWindow : Window
     {
         private IContract contract;
-        public MainWindow()
+        private LoginUser loginUser;
+        public MainWindow(LoginUser loginUser)
         {
-            
+            this.loginUser = loginUser;
             InitializeComponent();
             //ServicePointManager.DefaultConnectionLimit = 999999999;
             //Uri uri = new Uri("net.tcp://localhost:7000/IContract");
@@ -187,6 +188,12 @@ namespace InternetMarketClient
             administrationWindow.Show();
         }
 
-      
+        private void DeleteBttn_Click(object sender, RoutedEventArgs e)
+        {
+            if (combobox.SelectedItem.ToString() == "Phones")
+            {
+                contract.RemovePhones(Convert.ToInt32(countStartDelete.Text),Convert.ToInt32(countFinishDelete.Text));
+            }
+        }
     }
 }

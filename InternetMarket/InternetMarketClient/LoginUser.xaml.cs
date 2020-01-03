@@ -13,15 +13,15 @@ namespace InternetMarketClient
     /// </summary>
     public partial class LoginUser : Window, IDisposable
     {
-        
+
         //List<UsersSet> usery;
-        IContract contract;
+        private IContract contract;
         ChannelFactory<IContract> _factory;
         public LoginUser()
         {
             InitializeComponent();
             StartConnetion();
-            Trace.WriteLine(this);    
+            Trace.WriteLine(this);
         }
 
         private void StartConnetion()
@@ -52,17 +52,17 @@ namespace InternetMarketClient
             {
                 if (contract.SetUserLogin(User.SelectedItem.ToString(), Password.Password))
                 {
-                    new MainWindow().Show();
+                    new MainWindow(this).Show();
                     this.Close();
                 }
                 else
                 {
                     MessageBox.Show("Неверный пароль", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
                 }
-            }catch(NullReferenceException )
+            } catch (NullReferenceException)
             {
                 MessageBoxResult result = MessageBox.Show("Выберите пользователя", "Warning", MessageBoxButton.YesNo, MessageBoxImage.Warning);
-                if( result == MessageBoxResult.Yes)
+                if (result == MessageBoxResult.Yes)
                 {
                     new LoginUser().Show();
                     this.Close();
@@ -71,7 +71,7 @@ namespace InternetMarketClient
                 {
                     this.Close();
                 }
-            }catch(CommunicationException)
+            } catch (CommunicationException)
             {
                 MessageBoxResult result = MessageBox.Show("Ошибка подключения к серверу", "Warning", MessageBoxButton.YesNo, MessageBoxImage.Error);
                 if (result == MessageBoxResult.Yes)
@@ -86,6 +86,7 @@ namespace InternetMarketClient
             }
         }
 
+            
         private void Password_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
@@ -94,7 +95,7 @@ namespace InternetMarketClient
                 {
                     if (contract.SetUserLogin(User.SelectedItem.ToString(), Password.Password))
                     {
-                        new MainWindow().Show();
+                        new MainWindow(this).Show();
                         this.Close();
                     }
                     else
