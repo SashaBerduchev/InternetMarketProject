@@ -27,11 +27,10 @@ namespace InternetMarketClient
     /// </summary>
     public partial class MainWindow : Window
     {
-        private IContract contract;
-        private LoginUser loginUser;
-        public MainWindow(LoginUser loginUser)
+        IContract contract;
+        public MainWindow(IContract contract)
         {
-            this.loginUser = loginUser;
+            this.contract = contract;
             InitializeComponent();
             //ServicePointManager.DefaultConnectionLimit = 999999999;
             //Uri uri = new Uri("net.tcp://localhost:7000/IContract");
