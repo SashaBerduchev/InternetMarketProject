@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace InternetMarketClient
 {
     [ServiceContract]
-    interface IContract
+    public interface IContract
     {
         [OperationContract]
         List<string> GetUsers();

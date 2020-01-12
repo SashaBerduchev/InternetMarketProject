@@ -15,7 +15,7 @@ namespace InternetMarketClient
     {
 
         //List<UsersSet> usery;
-        private IContract contract;
+        protected IContract contract;
         ChannelFactory<IContract> _factory;
         public LoginUser()
         {
@@ -52,7 +52,7 @@ namespace InternetMarketClient
             {
                 if (contract.SetUserLogin(User.SelectedItem.ToString(), Password.Password))
                 {
-                    new MainWindow(this).Show();
+                    new MainWindow(contract).Show();
                     this.Close();
                 }
                 else
@@ -95,7 +95,7 @@ namespace InternetMarketClient
                 {
                     if (contract.SetUserLogin(User.SelectedItem.ToString(), Password.Password))
                     {
-                        new MainWindow(this).Show();
+                        new MainWindow(contract).Show();
                         this.Close();
                     }
                     else
