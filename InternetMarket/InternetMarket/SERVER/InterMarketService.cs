@@ -27,6 +27,7 @@ namespace InternetMarket
         private List<GraphicsCard> graphics;
         private CPUData CPU;
         private GPUData graphicsCard;
+        private LaptopData laptopData;
         public InterMarketService()
         {
             internetMarketDateEntities = new InternetMarketDateEntities();
@@ -38,6 +39,7 @@ namespace InternetMarket
             computersData = new ComputersData();
             CPU = new CPUData();
             graphicsCard = new GPUData();
+            laptopData = new LaptopData();
             Trace.WriteLine(this);
             Trace.WriteLine("Server INITIALIZE");
         }
@@ -231,20 +233,7 @@ namespace InternetMarket
         {
             for (int i = 0; i < point; i++)
             {
-                Laptops laptops = new Laptops
-                {
-                    Name = name,
-                    Battery = battery,
-                    GPU = gpu,
-                    Model = model,
-                    Procc = proc,
-                    RAM = ram,
-                    Resolution = resolution,
-                    SCREEN = screen,
-                    VRAM = vram
-                };
-                internetMarketDateEntities.LaptopsSet.Add(laptops);
-                internetMarketDateEntities.SaveChanges();
+                laptopData.LeptopSet(name, model, proc, ram, vram, gpu, screen, resolution, battery);
             }
         }
 
@@ -317,6 +306,7 @@ namespace InternetMarket
             if (computersData != null)computersData.Disable();
             if (tiviServer != null) tiviServer.Disable();
             if (tabletServer != null) tabletServer.Disable();
+            if (laptopData != null) laptopData.Dispose();
             Trace.WriteLine("------->Disable<------");
         }
         public void Dispose()
@@ -325,8 +315,6 @@ namespace InternetMarket
             internetMarketDateEntities = null;
             if (users != null) users.Clear();
             users = null;
-            if (cpulist != null) cpulist.Clear();
-            if (cpu != null) cpu.Clear();
             cpulist = null;
             cpu = null;
             phoneServerData.Dispose();

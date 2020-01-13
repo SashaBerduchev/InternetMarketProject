@@ -236,7 +236,6 @@ namespace InternetMarket
         {
             try//1
             {
-
                 Dispatcher.Invoke(() =>//2
                 {
                     List<Laptops> laptops;//3

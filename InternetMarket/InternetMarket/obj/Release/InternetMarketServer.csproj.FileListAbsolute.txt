@@ -1206,7 +1206,6 @@ C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\Inter
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\DataSave.g.cs
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\Spravochniki\Directors.g.cs
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\MainWindow.g.cs
-C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\InternetMarketData\GPUData.g.cs
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\InternetMarketData\Laptop.g.cs
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\Spravochniki\LoadDocument.g.cs
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\Spravochniki\Oblast.g.cs
@@ -1245,7 +1244,6 @@ C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\Inter
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\DataSave.baml
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\Spravochniki\Directors.baml
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\MainWindow.baml
-C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\InternetMarketData\GPUData.baml
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\InternetMarketData\Laptop.baml
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\Spravochniki\LoadDocument.baml
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\Spravochniki\Oblast.baml
@@ -1281,3 +1279,5 @@ C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\Inter
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\InternetMarketData\AddCpuWindow.baml
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\InternetMarketData\GraphicsCardWindow.g.cs
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\InternetMarketData\GraphicsCardWindow.baml
+C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\InternetMarketData\GraphicsCardWindow.g.cs
+C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\InternetMarketData\GraphicsCardWindow.baml

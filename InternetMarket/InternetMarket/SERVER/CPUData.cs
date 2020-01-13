@@ -39,8 +39,8 @@ namespace InternetMarket.SERVER
                 Trace.WriteLine(internetMarketDateEntities);
             }catch(Exception exp)
             {
-                Trace.WriteLine(exp.ToString());
-                MessageBox.Show(exp.ToString(), "Error", MessageBoxButton.OK);
+                Trace.WriteLine(exp.StackTrace);
+                MessageBox.Show(exp.StackTrace, "Error", MessageBoxButton.OK);
             }
 
         }

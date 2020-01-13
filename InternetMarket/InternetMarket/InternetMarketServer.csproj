@@ -255,6 +255,7 @@
     <Compile Include="SERVER\ComputersData.cs" />
     <Compile Include="SERVER\CPUData.cs" />
     <Compile Include="SERVER\GPUData.cs" />
+    <Compile Include="SERVER\LaptopData.cs" />
     <Compile Include="SERVER\PhoneServerData.cs" />
     <Compile Include="SERVER\TabletServer.cs" />
     <Compile Include="SERVER\TiviServerData.cs" />

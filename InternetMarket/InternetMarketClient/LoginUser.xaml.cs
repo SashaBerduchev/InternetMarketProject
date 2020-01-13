@@ -41,7 +41,7 @@ namespace InternetMarketClient
             }
             catch (Exception e)
             {
-                Trace.WriteLine(e.ToString());
+                Trace.WriteLine(e.StackTrace);
                 MessageBox.Show("Ошибка подкчения к севреру", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
@@ -73,6 +73,7 @@ namespace InternetMarketClient
                 }
             } catch (CommunicationException)
             {
+
                 MessageBoxResult result = MessageBox.Show("Ошибка подключения к серверу", "Warning", MessageBoxButton.YesNo, MessageBoxImage.Error);
                 if (result == MessageBoxResult.Yes)
                 {

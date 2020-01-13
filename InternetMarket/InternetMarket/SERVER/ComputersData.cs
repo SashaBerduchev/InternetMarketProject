@@ -50,8 +50,8 @@ namespace InternetMarket.SERVER
                 return computerslist;
             }catch(Exception exp)
             {
-                Trace.WriteLine(exp.ToString());
-                MessageBox.Show(exp.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                Trace.WriteLine(exp.StackTrace);
+                MessageBox.Show(exp.StackTrace, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             return null;
         }
@@ -72,12 +72,12 @@ namespace InternetMarket.SERVER
                 }
                 catch (NullReferenceException nullexp)
                 {
-                    Trace.WriteLine(nullexp.ToString());
+                    Trace.WriteLine(nullexp.StackTrace);
                     MessageBox.Show("Загрузите данные", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
                 catch (InvalidOperationException invalidoper)
                 {
-                    Trace.WriteLine(invalidoper.ToString());
+                    Trace.WriteLine(invalidoper.StackTrace);
                     MessageBox.Show("Элемент уже удален", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }

@@ -43,7 +43,7 @@ namespace InternetMarket
             catch (Exception exp)
             {
                 MessageBox.Show("Нет подключентя к базе данных", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                Trace.WriteLine(exp.ToString());
+                Trace.WriteLine(exp.StackTrace);
             }
         }
 
@@ -66,7 +66,7 @@ namespace InternetMarket
                 Trace.WriteLine(serviceHost);
             }catch(Exception exp)
             {
-                Trace.WriteLine(exp.ToString());
+                Trace.WriteLine(exp.StackTrace);
                 MessageBoxResult res = MessageBox.Show("Ошибка подключения к серверу, неверный ip, port, попробовать снова?", "Error", MessageBoxButton.YesNo, MessageBoxImage.Error);
                 if (res == MessageBoxResult.Yes)
                 {
