@@ -62,5 +62,7 @@ namespace InternetMarketClient
         void RemoveComputers(int start, int stop);
         [OperationContract]
         void RemoveTablets(int start, int end);
+        [OperationContract]
+        List<string> GetLaptop();
     }
 }

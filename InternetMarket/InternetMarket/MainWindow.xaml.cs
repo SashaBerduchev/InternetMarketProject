@@ -234,14 +234,11 @@ namespace InternetMarket
 
         public void GetLaptop()
         {
-            try//1
+            try
             {
-                Dispatcher.Invoke(() =>//2
+                Dispatcher.Invoke(() =>
                 {
-                    List<Laptops> laptops;//3
-                    InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();//4
-                    laptops = internetMarketDateEntities.LaptopsSet.ToList();//5
-                    DataGrid.ItemsSource = laptops.Select(x => new { x.Name, x.Model, x.Procc, x.RAM, x.VRAM, x.GPU, x.SCREEN, x.Resolution, x.Battery });//6
+                    DataGrid.ItemsSource = interMarketService.GetLaptop();
                     GetCount();
                 });
             }

@@ -228,7 +228,10 @@ namespace InternetMarket
             }
         }
 
-
+        public List<string> GetLaptop()
+        {
+            return laptopData.GetLaptop();
+        }
         public void LaptopSet(string name, string model, string proc, string ram, string vram, string gpu, string screen, string resolution, string battery, int point)
         {
             for (int i = 0; i < point; i++)

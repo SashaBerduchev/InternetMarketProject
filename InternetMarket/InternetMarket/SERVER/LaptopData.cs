@@ -11,6 +11,7 @@ namespace InternetMarket.SERVER
     class LaptopData : IDisposable
     {
         private InternetMarketDateEntities internetMarket;
+        private List<Laptops> laptops;
         public LaptopData()
         {
             internetMarket = new InternetMarketDateEntities();
@@ -44,6 +45,14 @@ namespace InternetMarket.SERVER
             }
         }
 
+        public List<string> GetLaptop()
+        {
+
+            InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();//4
+            laptops = internetMarketDateEntities.LaptopsSet.ToList();
+            List<string> laptopslist = laptops.Select(x => x.Name + " " + x.Model + " " + x.Procc + " " + x.RAM + " " + x.Resolution + " " + x.SCREEN + " " + x.VRAM + " " + x.Battery).ToList();
+            return laptopslist;
+        }
         public void Dispose()
         {
             internetMarket.Dispose();

@@ -70,9 +70,13 @@ namespace InternetMarketClient
                 {
                     listbox.ItemsSource = contract.LoadGPU();
                 }
-                else if (combobox.SelectedItem.ToString() == "Boilers")
+                else if (combobox.SelectedItem.ToString() == "Laptop")
                 {
                     listbox.ItemsSource = contract.GetBoilersData();
+                }
+                else if (combobox.SelectedItem.ToString() == "Boilers")
+                {
+                    listbox.ItemsSource = contract.GetLaptop();
                 }
             }
             catch(Exception exp)

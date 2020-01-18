@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.ServiceModel;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace InternetMarket
@@ -62,6 +59,7 @@ namespace InternetMarket
         void RemoveComputers(int start, int stop);
         [OperationContract]
         void RemoveTablets(int start, int end);
-
+        [OperationContract]
+        List<string> GetLaptop();
     };
 }
