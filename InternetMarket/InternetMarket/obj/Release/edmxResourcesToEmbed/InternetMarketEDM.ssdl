@@ -148,6 +148,13 @@
     <Property Name="Resolution" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Battery" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
+  <EntityType Name="MailSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
   <EntityType Name="OblastDataSetSet">
     <Key>
       <PropertyRef Name="Id" />
@@ -276,6 +283,7 @@
     <EntitySet Name="GraphicsCardSet" EntityType="Self.GraphicsCardSet" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="KassaSetSet" EntityType="Self.KassaSetSet" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="LaptopsSet" EntityType="Self.LaptopsSet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MailSet" EntityType="Self.MailSet" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="OblastDataSetSet" EntityType="Self.OblastDataSetSet" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="OrganizationPositionSetSet" EntityType="Self.OrganizationPositionSetSet" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="OrganizationSetSet" EntityType="Self.OrganizationSetSet" Schema="dbo" store:Type="Tables" />

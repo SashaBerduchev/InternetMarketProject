@@ -30,6 +30,7 @@
         <Button Name="LoadBtn" Grid.Column="0" Margin="30,51,30,10" Content="Load" Click="LoadBtn_Click"/>
         <Button Name="OpenBtn" Grid.Column="2" Grid.Row="1" Margin="30,33,30,28" Content="OpenPhone" Click="OpenBtn_Click"/>
         <Button Name="OpenBtnTivi" Grid.Column="5" Grid.Row="1" Margin="15,33,45,28" Content="OpenTivi" Click="OpenBtnTivi_Click"/>
+        <Button Name="OpenMail" Grid.Column="5" Grid.Row="0" Margin="15,33,45,28" Content="Mail" Click="OpenMail_Click"/>
         <Button Name="OpenBtnComputers" Grid.Column="3" Grid.Row="1" Margin="30,33,30,28" Content="OpenComp" Click="OpenBtnComputers_Click"/>
         <Button Name="OpenBtnTablets" Grid.Column="4" Grid.Row="1" Margin="30,33,30,28" Content="OpenTablets" Click="OpenBtnTablets_Click" />
         <Button Name="OpenBtnCPU" Grid.Column="1" Grid.Row="1" Margin="25,33,35,28" Content="CPU" Click="OpenBtnCPU_Click"  />

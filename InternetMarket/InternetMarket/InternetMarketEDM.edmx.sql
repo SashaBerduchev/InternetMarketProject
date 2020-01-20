@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 12/15/2019 00:08:30
+-- Date Created: 01/20/2020 15:55:09
 -- Generated from EDMX file: C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\InternetMarketEDM.edmx
 -- --------------------------------------------------
 
@@ -276,22 +276,6 @@ CREATE TABLE [dbo].[DocForPainSet] (
 );
 GO
 
--- Creating table 'CPUSet'
-CREATE TABLE [dbo].[CPUSet] (
-    [Id] int IDENTITY(1,1) NOT NULL,
-    [Name] nvarchar(max)  NOT NULL,
-    [Architecture] nvarchar(max)  NOT NULL,
-    [Cores] nvarchar(max)  NOT NULL,
-    [Chastota] nvarchar(max)  NOT NULL,
-    [KESHL1] nvarchar(max)  NOT NULL,
-    [KESHL2] nvarchar(max)  NOT NULL,
-    [KESHL3] nvarchar(max)  NOT NULL,
-    [GPU] nvarchar(max)  NOT NULL,
-    [RAM] nvarchar(max)  NOT NULL,
-    [TDP] nvarchar(max)  NOT NULL
-);
-GO
-
 -- Creating table 'GraphicsCardSet'
 CREATE TABLE [dbo].[GraphicsCardSet] (
     [Id] int IDENTITY(1,1) NOT NULL,
@@ -358,6 +342,29 @@ CREATE TABLE [dbo].[BoilersSet] (
     [Cost] nvarchar(max)  NOT NULL,
     [Name] nvarchar(max)  NOT NULL,
     [Model] nvarchar(max)  NOT NULL
+);
+GO
+
+-- Creating table 'CPUSet'
+CREATE TABLE [dbo].[CPUSet] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [Name] nvarchar(max)  NOT NULL,
+    [Architecture] nvarchar(max)  NOT NULL,
+    [Cores] nvarchar(max)  NOT NULL,
+    [Chastota] nvarchar(max)  NOT NULL,
+    [KESHL1] nvarchar(max)  NOT NULL,
+    [KESHL2] nvarchar(max)  NOT NULL,
+    [KESHL3] nvarchar(max)  NOT NULL,
+    [GPU] nvarchar(max)  NOT NULL,
+    [RAM] nvarchar(max)  NOT NULL,
+    [TDP] nvarchar(max)  NOT NULL
+);
+GO
+
+-- Creating table 'MailSet'
+CREATE TABLE [dbo].[MailSet] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [Email] nvarchar(max)  NOT NULL
 );
 GO
 
@@ -467,12 +474,6 @@ ADD CONSTRAINT [PK_DocForPainSet]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
--- Creating primary key on [Id] in table 'CPUSet'
-ALTER TABLE [dbo].[CPUSet]
-ADD CONSTRAINT [PK_CPUSet]
-    PRIMARY KEY CLUSTERED ([Id] ASC);
-GO
-
 -- Creating primary key on [Id] in table 'GraphicsCardSet'
 ALTER TABLE [dbo].[GraphicsCardSet]
 ADD CONSTRAINT [PK_GraphicsCardSet]
@@ -506,6 +507,18 @@ GO
 -- Creating primary key on [Id] in table 'BoilersSet'
 ALTER TABLE [dbo].[BoilersSet]
 ADD CONSTRAINT [PK_BoilersSet]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'CPUSet'
+ALTER TABLE [dbo].[CPUSet]
+ADD CONSTRAINT [PK_CPUSet]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'MailSet'
+ALTER TABLE [dbo].[MailSet]
+ADD CONSTRAINT [PK_MailSet]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 

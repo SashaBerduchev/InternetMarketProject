@@ -74,6 +74,7 @@
     <EntitySet Name="PrintersSet" EntityType="InternetMarketDateModel.Printers" />
     <EntitySet Name="BoilersSet" EntityType="InternetMarketDateModel.Boilers" />
     <EntitySet Name="CPUSet" EntityType="InternetMarketDateModel.CPUSet" />
+    <EntitySet Name="MailSet" EntityType="InternetMarketDateModel.Mail" />
   </EntityContainer>
   <EntityType Name="Director">
     <Key>
@@ -287,5 +288,12 @@
     <Property Name="GPU" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="RAM" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="TDP" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Mail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
   </EntityType>
 </Schema>

@@ -528,5 +528,10 @@ namespace InternetMarket
                 }
             });
         }
+
+        private void OpenMail_Click(object sender, RoutedEventArgs e)
+        {
+            new MailWindow().Show();
+        }
     }
 }

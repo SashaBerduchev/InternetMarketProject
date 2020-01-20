@@ -49,5 +49,6 @@ namespace InternetMarket
         public virtual DbSet<Printers> PrintersSet { get; set; }
         public virtual DbSet<Boilers> BoilersSet { get; set; }
         public virtual DbSet<CPUSet> CPUSet { get; set; }
+        public virtual DbSet<Mail> MailSet { get; set; }
     }
 }

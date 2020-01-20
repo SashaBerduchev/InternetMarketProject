@@ -223,6 +223,9 @@
     <Compile Include="LoginUserWindow.xaml.cs">
       <DependentUpon>LoginUserWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Mail.cs">
+      <DependentUpon>InternetMarketEDM.tt</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="OblastDataSet.cs">
       <DependentUpon>InternetMarketEDM.tt</DependentUpon>
@@ -256,6 +259,7 @@
     <Compile Include="SERVER\CPUData.cs" />
     <Compile Include="SERVER\GPUData.cs" />
     <Compile Include="SERVER\LaptopData.cs" />
+    <Compile Include="SERVER\MailData.cs" />
     <Compile Include="SERVER\PhoneServerData.cs" />
     <Compile Include="SERVER\TabletServer.cs" />
     <Compile Include="SERVER\TiviServerData.cs" />
@@ -265,6 +269,9 @@
     </Compile>
     <Compile Include="TabletSet.cs">
       <DependentUpon>InternetMarketEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\AddEmailWindow.xaml.cs">
+      <DependentUpon>AddEmailWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\Administration\AdministrationWindow.xaml.cs">
       <DependentUpon>AdministrationWindow.xaml</DependentUpon>
@@ -283,6 +290,9 @@
     </Compile>
     <Compile Include="Windows\InternetMarketData\PrinterWindow.xaml.cs">
       <DependentUpon>PrinterWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\MailWindow.xaml.cs">
+      <DependentUpon>MailWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\Spravochniki\CitiData.xaml.cs">
       <DependentUpon>CitiData.xaml</DependentUpon>
@@ -415,6 +425,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Windows\AddEmailWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\Administration\AdministrationWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -436,6 +450,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\InternetMarketData\PrinterWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\MailWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

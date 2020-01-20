@@ -28,6 +28,7 @@ namespace InternetMarket
         private CPUData CPU;
         private GPUData graphicsCard;
         private LaptopData laptopData;
+        private MailData mailData;
         public InterMarketService()
         {
             internetMarketDateEntities = new InternetMarketDateEntities();
@@ -40,6 +41,7 @@ namespace InternetMarket
             CPU = new CPUData();
             graphicsCard = new GPUData();
             laptopData = new LaptopData();
+            mailData = new MailData();
             Trace.WriteLine(this);
             Trace.WriteLine("Server INITIALIZE");
         }
@@ -273,6 +275,15 @@ namespace InternetMarket
             cpu = null;
         }
 
+        public void SetMail(string mail)
+        {
+            mailData.SetMail(mail);
+        }
+
+        public List<string> GetMail()
+        {
+            return mailData.GetMails();
+        }
         public void SetBoiler(string Name, string Model, string Volume, string Voltage, string Power, string Cost)
         {
             boilerServer.BoilersSet(Name, Model, Volume, Voltage, Power, Cost);

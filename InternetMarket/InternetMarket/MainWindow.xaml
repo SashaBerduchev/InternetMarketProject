@@ -27,6 +27,7 @@
         <TextBox x:Name="countElem" Grid.Column="4" Grid.Row="3" Margin="20" />
         <Button Name="btnPrint" Grid.Column="4" Margin="30" Content="Печать" Click="BtnPrint_Click"/>
         <ComboBox Name="combobox" Grid.Column="2" Grid.Row="0" Margin="40,40,30,30" />
+        <Button Name="OpenMail" Grid.Column="5" Grid.Row="0" Margin="15,33,45,28" Content="Mail" Click="OpenMail_Click"/>
         <ListBox Name="DataGrid" Grid.Column="0" Grid.Row="2" Grid.RowSpan="5" Grid.ColumnSpan="4" Margin="10,72,-10,15"  />
         <Button Name="LoadBtn" Grid.Column="0" Margin="30,51,30,10" Content="Load" Click="LoadBtn_Click"/>
         <Button Name="OpenBtn" Grid.Column="2" Grid.Row="1" Margin="30,33,30,28" Content="OpenPhone" Click="OpenBtn_Click"/>

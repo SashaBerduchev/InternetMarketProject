@@ -1,24 +1,18 @@
-﻿using InternetMarketClient.Windows;
+﻿using InternetMarket;
+using InternetMarketClient.Windows;
 using InternetMarketClient.Windows.Administration;
 using InternetMarketClient.Windows.ClientData;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
-using System.Net;
-using System.ServiceModel;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using CityData = InternetMarket.CityData;
+using CountrysData = InternetMarket.CountrysData;
+using GraphicsCard = InternetMarketClient.Windows.ClientData.GraphicsCard;
+using OblastData = InternetMarket.Windows.OblastData;
+using OpenComputers = InternetMarket.Windows.OpenComputers;
+using OpenTablets = InternetMarket.Windows.OpenTablets;
 
 namespace InternetMarketClient
 {
@@ -84,7 +78,6 @@ namespace InternetMarketClient
                 MessageBox.Show(exp.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
-
         }
 
         private void OpenBtnTivi_Click(object sender, RoutedEventArgs e)
@@ -130,12 +123,12 @@ namespace InternetMarketClient
         private void MenuItem_Click_4(object sender, RoutedEventArgs e)
         {
             CityData cityData = new CityData();
-            cityData.Show();
+            //cityData.Show();
         }
 
         private void MenuItem_Click_5(object sender, RoutedEventArgs e)
         {
-            OblastData oblastData = new OblastData();
+            InternetMarket.Windows.OblastData oblastData = new OblastData();
             oblastData.Show();
 
         }
@@ -148,13 +141,12 @@ namespace InternetMarketClient
 
         private void OpenBtnGraphics_Click(object sender, RoutedEventArgs e)
         {
-            GraphicsCard graphicsCard = new GraphicsCard();
-            graphicsCard.Show();
+            new GraphicsCard().Show();
         }
 
         private void OpenBtnlaptop_Click(object sender, RoutedEventArgs e)
         {
-            Laptop laptop = new Laptop();
+            InternetMarket.Windows.Laptop laptop = new InternetMarket.Windows.Laptop();
             laptop.Show();
         }
 
@@ -190,6 +182,11 @@ namespace InternetMarketClient
             {
                 contract.RemovePhones(Convert.ToInt32(countStartDelete.Text),Convert.ToInt32(countFinishDelete.Text));
             }
+        }
+
+        private void OpenMail_Click(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }
