@@ -18,7 +18,7 @@ namespace InternetMarket.SERVER
         }
 
 
-        public void LeptopSet(string name, string battery, string  gpu, string model, string proc, string ram, string resolution, string screen, string vram)
+        public void LeptopSet(string name, string battery, string gpu, string model, string proc, string ram, string resolution, string screen, string vram)
         {
             try
             {
@@ -38,7 +38,7 @@ namespace InternetMarket.SERVER
                 internetMarket.LaptopsSet.Add(laptops);
                 Trace.WriteLine(internetMarket);
                 internetMarket.SaveChanges();
-            }catch(Exception exp)
+            } catch (Exception exp)
             {
                 Trace.WriteLine(exp.StackTrace);
                 MessageBox.Show(exp.StackTrace, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
@@ -55,8 +55,10 @@ namespace InternetMarket.SERVER
         }
         public void Dispose()
         {
-            internetMarket.Dispose();
+            if (internetMarket != null) internetMarket.Dispose();
             internetMarket = null;
+            if (laptops != null) laptops.Clear();
+            laptops = null;
         }
     }
 }

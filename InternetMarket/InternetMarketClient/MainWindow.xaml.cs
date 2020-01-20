@@ -75,6 +75,7 @@ namespace InternetMarketClient
             }
             catch(Exception exp)
             {
+                Trace.WriteLine(exp.StackTrace);
                 MessageBox.Show(exp.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 

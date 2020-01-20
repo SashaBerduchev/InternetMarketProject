@@ -27,11 +27,13 @@ namespace InternetMarket.Windows
     {
         InterMarketService interMarketService;
         string file;
-        public MailWindow()
+        List<string> strings;
+        public MailWindow(List<string>strings)
         {
+            this.strings = strings;
             InitializeComponent();
             interMarketService = new InterMarketService();
-
+            listbox.ItemsSource = this.strings;
             mailfrom.ItemsSource = interMarketService.GetMail();
             mailto.ItemsSource = interMarketService.GetMail();
 
@@ -57,7 +59,7 @@ namespace InternetMarket.Windows
                 disposition.CreationDate = File.GetCreationTime(file);
                 disposition.ModificationDate = File.GetLastWriteTime(file);
                 disposition.ReadDate = File.GetLastAccessTime(file);
-                m.Body = datagrid.SelectedItem.ToString();
+                m.Body = listbox.SelectedItem.ToString();
                 m.Attachments.Add(attachment);
 
                 // письмо представляет код html

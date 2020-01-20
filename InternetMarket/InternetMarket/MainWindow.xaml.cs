@@ -26,6 +26,7 @@ namespace InternetMarket
         private List<string> printers;
         private LoginUserWindow loginUserServer;
         private InterMarketService interMarketService;
+        private List<string> strings;
         public MainWindow(LoginUserWindow login)
         {
             interMarketService = new InterMarketService();
@@ -142,6 +143,7 @@ namespace InternetMarket
             {
                 boilers = interMarketService.GetBoilersData();
                 DataGrid.ItemsSource = boilers;
+                strings = boilers;
                 GetCount();
             });
         }
@@ -170,7 +172,8 @@ namespace InternetMarket
             {
                 Dispatcher.Invoke(() =>
                 {
-                    DataGrid.ItemsSource = interMarketService.LoadTablets();
+                    strings = interMarketService.LoadTablets();
+                    DataGrid.ItemsSource = strings;
                     GetCount();
                 });
             }
@@ -186,7 +189,8 @@ namespace InternetMarket
             {
                 Dispatcher.Invoke(() =>
                 {
-                    DataGrid.ItemsSource = interMarketService.LoadComputers();
+                    strings = interMarketService.LoadComputers();
+                    DataGrid.ItemsSource = strings;
                     GetCount();
                 });
             }
@@ -203,7 +207,8 @@ namespace InternetMarket
             {
                 Dispatcher.Invoke(() =>
                 {
-                    DataGrid.ItemsSource = interMarketService.LoadCPU();
+                    strings = interMarketService.LoadCPU();
+                    DataGrid.ItemsSource = strings;
                     GetCount();
                 });
             }
@@ -531,7 +536,7 @@ namespace InternetMarket
 
         private void OpenMail_Click(object sender, RoutedEventArgs e)
         {
-            new MailWindow().Show();
+            new MailWindow(strings).Show();
         }
     }
 }

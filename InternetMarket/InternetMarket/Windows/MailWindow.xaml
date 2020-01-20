@@ -33,7 +33,7 @@
         <TextBox Name="port" Grid.Column="3" Grid.Row="1" Margin="20"/>
         <CheckBox Name="checkbox" Grid.Column="3" Grid.Row="2" Margin="20" Content="SSL-соединение"/>
         <TextBox Name="subject" Grid.Column="0" Grid.Row="2" Margin="20" Grid.ColumnSpan="2"/>
-        <DataGrid Name="datagrid"  Grid.Column="0" Grid.Row="3" Grid.RowSpan="3" Grid.ColumnSpan="4"/>
+        <ListBox Name="listbox"  Grid.Column="0" Grid.Row="3" Grid.RowSpan="3" Grid.ColumnSpan="4"/>
         <TextBlock HorizontalAlignment="Left" Margin="89,-1,0,0" TextWrapping="Wrap" Text="Электронная почта" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="155"/>
         <TextBlock HorizontalAlignment="Left" Margin="56,2,0,0" TextWrapping="Wrap" Text="Пароль" VerticalAlignment="Top" Width="66" Grid.Column="2"/>
         <TextBlock HorizontalAlignment="Left" Margin="47,2,0,0" TextWrapping="Wrap" Text="Сервер почты" VerticalAlignment="Top" Width="91" Grid.Column="3"/>
