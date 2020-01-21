@@ -59,6 +59,11 @@ namespace InternetMarket
 
         private void LoadBtn_Click(object sender, RoutedEventArgs e)
         {
+            LoadInfo();
+        }
+
+        private void LoadInfo()
+        {
             try
             {
                 if (combobox.SelectedItem.ToString() == "Phones")
@@ -133,7 +138,6 @@ namespace InternetMarket
                     Trace.WriteLine(exp.ToString());
                 }
             }
-
         }
 
         private void GetBoilers()
@@ -428,17 +432,18 @@ namespace InternetMarket
             {
                 FileStream file = new FileStream("Information.txt", FileMode.Append); //1
                 string savestr; //2
-                savestr = DataGrid.SelectedItem.ToString();//3
-                for (int i = 0; i < savestr.Length; i++)//4
+                savestr = DataGrid.SelectedItem.ToString();
+                for (int i = 0; i < savestr.Length; i++)
                 {
                     byte[] array = Encoding.Default.GetBytes(savestr.ToString());//1
-                    file.Write(array, 0, array.Length);//2
+                    file.Write(array, 0, array.Length);
                 }
                 file.Close();//5
                 MessageBox.Show("Готово", "Предупреждение", MessageBoxButton.OK, MessageBoxImage.Information);//6
             }
             catch (Exception exp)
             {
+                Trace.WriteLine(exp.StackTrace);
                 MessageBox.Show(exp.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);//7
             }
         }
@@ -537,6 +542,11 @@ namespace InternetMarket
         private void OpenMail_Click(object sender, RoutedEventArgs e)
         {
             new MailWindow(strings).Show();
+        }
+
+        private void combobox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            LoadInfo();
         }
     }
 }

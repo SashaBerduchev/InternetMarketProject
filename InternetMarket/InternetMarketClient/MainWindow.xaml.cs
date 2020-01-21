@@ -46,6 +46,11 @@ namespace InternetMarketClient
 
         private void LoadBtn_Click(object sender, RoutedEventArgs e)
         {
+            LoadInfo();
+        }
+
+        private void LoadInfo()
+        {
             try
             {
                 if (combobox.SelectedItem.ToString() == "Phones")
@@ -73,12 +78,11 @@ namespace InternetMarketClient
                     listbox.ItemsSource = contract.GetLaptop();
                 }
             }
-            catch(Exception exp)
+            catch (Exception exp)
             {
                 Trace.WriteLine(exp.StackTrace);
                 MessageBox.Show(exp.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-
         }
 
         private void OpenBtnTivi_Click(object sender, RoutedEventArgs e)
@@ -188,6 +192,11 @@ namespace InternetMarketClient
         private void OpenMail_Click(object sender, RoutedEventArgs e)
         {
             
+        }
+
+        private void combobox_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            LoadInfo();
         }
     }
 }
