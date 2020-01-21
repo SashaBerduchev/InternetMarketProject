@@ -1283,3 +1283,5 @@ C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\Inter
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\InternetMarketData\GraphicsCardWindow.baml
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\MailWindow.g.cs
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\MailWindow.baml
+C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\AddEmailWindow.g.cs
+C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\AddEmailWindow.baml

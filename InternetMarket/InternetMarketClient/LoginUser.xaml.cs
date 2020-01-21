@@ -141,7 +141,7 @@ namespace InternetMarketClient
             if (_factory != null)
                 try
                 {
-                    _factory.Close();
+                    //_factory.Close();
                 }catch(Exception exp)
                 {
                     Trace.WriteLine(exp.ToString());
