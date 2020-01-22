@@ -295,5 +295,20 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Entity1Set">
+      <EntityTypeMapping TypeName="IsTypeOf(InternetMarketDateModel.Entity1)">
+        <MappingFragment StoreEntitySet="Entity1Set">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SmtpServersSet">
+      <EntityTypeMapping TypeName="IsTypeOf(InternetMarketDateModel.SmtpServers)">
+        <MappingFragment StoreEntitySet="SmtpServersSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Smtp" ColumnName="Smtp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

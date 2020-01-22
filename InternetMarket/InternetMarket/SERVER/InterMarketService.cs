@@ -9,7 +9,7 @@ using System.Windows.Threading;
 
 namespace InternetMarket
 {
-    class InterMarketService : IContract , IDisposable
+    public class InterMarketService : IContract , IDisposable
     {
         private PhoneServerData phoneServerData;
         private TiviServerData tiviServer;
@@ -19,7 +19,6 @@ namespace InternetMarket
         private ComputersData computersData;
         private InternetMarketDateEntities internetMarketDateEntities;
         private List<string> users;
-        private List<string> cpulist;
         private List<CPUSet> cpu;
         private List<Country> countries;
         private List<CityData> cities;
@@ -29,19 +28,21 @@ namespace InternetMarket
         private GPUData graphicsCard;
         private LaptopData laptopData;
         private MailData mailData;
+        private CountryData countryData;
         public InterMarketService()
         {
             internetMarketDateEntities = new InternetMarketDateEntities();
-            phoneServerData = new PhoneServerData();
-            tiviServer = new TiviServerData();
+            phoneServerData = new PhoneServerData(internetMarketDateEntities);
+            tiviServer = new TiviServerData(internetMarketDateEntities);
             userServer = new UserServerData();
             tabletServer = new TabletServer();
-            boilerServer = new BoilerServerData();
-            computersData = new ComputersData();
+            boilerServer = new BoilerServerData(internetMarketDateEntities);
+            computersData = new ComputersData(internetMarketDateEntities);
             CPU = new CPUData();
             graphicsCard = new GPUData();
             laptopData = new LaptopData();
             mailData = new MailData();
+            countryData = new CountryData(internetMarketDateEntities);
             Trace.WriteLine(this);
             Trace.WriteLine("Server INITIALIZE");
         }
@@ -168,13 +169,7 @@ namespace InternetMarket
 
         public void CountrySet(string country)
         {
-            InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
-            var countrydata = new Country
-            {
-                NameCountry = country
-            };
-            internetMarketDateEntities.CountrySet.Add(countrydata);
-            internetMarketDateEntities.SaveChanges();
+            countryData.CountrySet(country);
         }
 
         public void City(string name, string countryname)
@@ -188,10 +183,9 @@ namespace InternetMarket
             internetMarketDateEntities.SaveChanges();
         }
 
-        public string[] GetCountry()
+        public List<string> GetCountry()
         {
-            countries = internetMarketDateEntities.CountrySet.ToList();
-            return countries.Select(x =>x.NameCountry ).ToArray();
+            return countryData.GetCountry();
         }
 
         public string[] GetCity()
@@ -269,9 +263,7 @@ namespace InternetMarket
         {
             if (users != null) users.Clear();
             users = null;
-            if (cpulist != null) cpulist.Clear();
             if (cpu != null) cpu.Clear();
-            cpulist = null;
             cpu = null;
         }
 
@@ -283,6 +275,16 @@ namespace InternetMarket
         public List<string> GetMail()
         {
             return mailData.GetMails();
+        }
+
+        public void SetServer(string server)
+        {
+            mailData.SetMailServer(server);
+        }
+
+        public List<string> GetServers()
+        {
+            return mailData.GetServers();
         }
         public void SetBoiler(string Name, string Model, string Volume, string Voltage, string Power, string Cost)
         {
@@ -321,6 +323,7 @@ namespace InternetMarket
             if (tiviServer != null) tiviServer.Disable();
             if (tabletServer != null) tabletServer.Disable();
             if (laptopData != null) laptopData.Dispose();
+            if (mailData != null) mailData.Dispose();
             Trace.WriteLine("------->Disable<------");
         }
         public void Dispose()
@@ -329,7 +332,6 @@ namespace InternetMarket
             internetMarketDateEntities = null;
             if (users != null) users.Clear();
             users = null;
-            cpulist = null;
             cpu = null;
             phoneServerData.Dispose();
             userServer.Dispose();

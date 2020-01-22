@@ -27,7 +27,7 @@ namespace InternetMarketClient
         [OperationContract]
         void City(string name, string countryname);
         [OperationContract]
-        string[] GetCountry();
+        List<string> GetCountry();
         [OperationContract]
         string[] GetCity();
         [OperationContract]

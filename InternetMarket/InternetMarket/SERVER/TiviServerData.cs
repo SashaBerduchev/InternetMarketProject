@@ -14,9 +14,9 @@ namespace InternetMarket.SERVER
     {
         private List<TivisetSet> tivis;
         private InternetMarketDateEntities internetMarket;
-        public TiviServerData()
+        public TiviServerData(InternetMarketDateEntities internetMarket)
         {
-            internetMarket = new InternetMarketDateEntities();
+            this.internetMarket = internetMarket;
         }
 
         public void TiviSet(string Firm, string Model, string Quantity, string Cost)

@@ -14,9 +14,9 @@ namespace InternetMarket.SERVER
         private InternetMarketDateEntities internetMarketDateEntities;
         private List<ComputersSet> computers;
         private List<string> computerslist;
-        public ComputersData()
+        public ComputersData(InternetMarketDateEntities internetMarket)
         {
-            internetMarketDateEntities = new InternetMarketDateEntities();
+            this.internetMarketDateEntities = internetMarket;
         }
 
         public void ComputerSet(string Firm, string Model, string Quantity, string Cost, string Processor, string RAM, string VRAM, string Graphics)
@@ -101,8 +101,6 @@ namespace InternetMarket.SERVER
         {
             if (computers != null) computers.Clear();
             computers = null;
-            if (internetMarketDateEntities != null)internetMarketDateEntities.Dispose();
-            internetMarketDateEntities = null;
         }
     }
 }

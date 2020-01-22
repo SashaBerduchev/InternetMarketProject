@@ -1285,3 +1285,8 @@ C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\Inter
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\MailWindow.baml
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\AddEmailWindow.g.cs
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\AddEmailWindow.baml
+C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\bin\Debug\Microsoft.Bcl.HashCode.dll
+C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\bin\Debug\Microsoft.Bcl.HashCode.xml
+C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\bin\Debug\System.Text.Encoding.CodePages.xml
+C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\AddMailServerWindow.g.cs
+C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\AddMailServerWindow.baml

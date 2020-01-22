@@ -12,9 +12,9 @@ namespace InternetMarket.SERVER
     class BoilerServerData
     {
         private InternetMarketDateEntities internetMarket;
-        public BoilerServerData()
+        public BoilerServerData(InternetMarketDateEntities internetMarket)
         {
-            internetMarket = new InternetMarketDateEntities();
+            this.internetMarket = internetMarket;
         }
 
         public void BoilersSet(string Name, string Model, string Volume, string Voltage, string Power, string Cost)

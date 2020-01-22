@@ -115,6 +115,12 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
+        <EntityType Name="Entity1Set">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
         <EntityType Name="GraphicsCardSet">
           <Key>
             <PropertyRef Name="Id" />
@@ -220,6 +226,13 @@
           <Property Name="Oblast" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Country" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
+        <EntityType Name="SmtpServersSet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Smtp" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
         <EntityType Name="StreetSetSet">
           <Key>
             <PropertyRef Name="Id" />
@@ -285,6 +298,7 @@
           <EntitySet Name="DirectorSet" EntityType="Self.DirectorSet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DocForPainSet" EntityType="Self.DocForPainSet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DogovorSet" EntityType="Self.DogovorSet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Entity1Set" EntityType="Self.Entity1Set" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="GraphicsCardSet" EntityType="Self.GraphicsCardSet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="KassaSetSet" EntityType="Self.KassaSetSet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LaptopsSet" EntityType="Self.LaptopsSet" Schema="dbo" store:Type="Tables" />
@@ -295,6 +309,7 @@
           <EntitySet Name="PhonesSet" EntityType="Self.PhonesSet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PrintersSet" EntityType="Self.PrintersSet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="RegionDataSet" EntityType="Self.RegionDataSet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SmtpServersSet" EntityType="Self.SmtpServersSet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="StreetSetSet" EntityType="Self.StreetSetSet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TabletSetSet" EntityType="Self.TabletSetSet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TivisetSet" EntityType="Self.TivisetSet" Schema="dbo" store:Type="Tables" />
@@ -380,6 +395,8 @@
           <EntitySet Name="BoilersSet" EntityType="InternetMarketDateModel.Boilers" />
           <EntitySet Name="CPUSet" EntityType="InternetMarketDateModel.CPUSet" />
           <EntitySet Name="MailSet" EntityType="InternetMarketDateModel.Mail" />
+          <EntitySet Name="Entity1Set" EntityType="InternetMarketDateModel.Entity1" />
+          <EntitySet Name="SmtpServersSet" EntityType="InternetMarketDateModel.SmtpServers" />
         </EntityContainer>
         <EntityType Name="Director">
           <Key>
@@ -600,6 +617,19 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Email" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Entity1">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="SmtpServers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Smtp" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -898,6 +928,21 @@
         <MappingFragment StoreEntitySet="MailSet">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Entity1Set">
+      <EntityTypeMapping TypeName="IsTypeOf(InternetMarketDateModel.Entity1)">
+        <MappingFragment StoreEntitySet="Entity1Set">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SmtpServersSet">
+      <EntityTypeMapping TypeName="IsTypeOf(InternetMarketDateModel.SmtpServers)">
+        <MappingFragment StoreEntitySet="SmtpServersSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Smtp" ColumnName="Smtp" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
