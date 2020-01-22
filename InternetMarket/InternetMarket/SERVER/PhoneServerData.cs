@@ -18,9 +18,9 @@ namespace InternetMarket.SERVER
         private int stop;
         private int _count;
         private List<PhonesSet> phoneses;
-        public PhoneServerData()
+        public PhoneServerData(InternetMarketDateEntities internetMarketDateEntities)
         {
-            internetMarketDateEntities = new InternetMarketDateEntities();
+            this.internetMarketDateEntities = internetMarketDateEntities;
             phoneses = new List<PhonesSet>();
 
         }
@@ -140,8 +140,6 @@ namespace InternetMarket.SERVER
         public void Dispose()
         {
             phonesdat = null;
-            if (internetMarketDateEntities != null) internetMarketDateEntities.Dispose();
-            internetMarketDateEntities = null;
             if (phones != null) phones.Clear();
             phones = null;
         }

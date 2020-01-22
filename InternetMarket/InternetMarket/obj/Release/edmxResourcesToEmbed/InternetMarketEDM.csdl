@@ -75,6 +75,8 @@
     <EntitySet Name="BoilersSet" EntityType="InternetMarketDateModel.Boilers" />
     <EntitySet Name="CPUSet" EntityType="InternetMarketDateModel.CPUSet" />
     <EntitySet Name="MailSet" EntityType="InternetMarketDateModel.Mail" />
+    <EntitySet Name="Entity1Set" EntityType="InternetMarketDateModel.Entity1" />
+    <EntitySet Name="SmtpServersSet" EntityType="InternetMarketDateModel.SmtpServers" />
   </EntityContainer>
   <EntityType Name="Director">
     <Key>
@@ -295,5 +297,18 @@
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Email" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Entity1">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="SmtpServers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Smtp" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
   </EntityType>
 </Schema>

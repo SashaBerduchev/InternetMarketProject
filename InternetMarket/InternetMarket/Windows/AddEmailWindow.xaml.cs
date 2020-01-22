@@ -21,9 +21,9 @@ namespace InternetMarket.Windows
     public partial class AddEmailWindow : Window
     {
         private InterMarketService interMarket;
-        public AddEmailWindow()
+        public AddEmailWindow(InterMarketService interMarket)
         {
-            interMarket = new InterMarketService();
+            this.interMarket = interMarket;
             InitializeComponent();
             Trace.WriteLine(this);
         }

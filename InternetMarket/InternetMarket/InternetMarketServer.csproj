@@ -212,6 +212,9 @@
     <Compile Include="Dogovor.cs">
       <DependentUpon>InternetMarketEDM.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entity1.cs">
+      <DependentUpon>InternetMarketEDM.tt</DependentUpon>
+    </Compile>
     <Compile Include="GraphicsCard.cs">
       <DependentUpon>InternetMarketEDM.tt</DependentUpon>
     </Compile>
@@ -260,6 +263,7 @@
     </Compile>
     <Compile Include="SERVER\BoilerServerData.cs" />
     <Compile Include="SERVER\ComputersData.cs" />
+    <Compile Include="SERVER\CountryData.cs" />
     <Compile Include="SERVER\CPUData.cs" />
     <Compile Include="SERVER\GPUData.cs" />
     <Compile Include="SERVER\LaptopData.cs" />
@@ -268,6 +272,9 @@
     <Compile Include="SERVER\TabletServer.cs" />
     <Compile Include="SERVER\TiviServerData.cs" />
     <Compile Include="SERVER\UserServerData.cs" />
+    <Compile Include="SmtpServers.cs">
+      <DependentUpon>InternetMarketEDM.tt</DependentUpon>
+    </Compile>
     <Compile Include="StreetSet.cs">
       <DependentUpon>InternetMarketEDM.tt</DependentUpon>
     </Compile>
@@ -276,6 +283,9 @@
     </Compile>
     <Compile Include="Windows\AddEmailWindow.xaml.cs">
       <DependentUpon>AddEmailWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\AddMailServerWindow.xaml.cs">
+      <DependentUpon>AddMailServerWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\Administration\AdministrationWindow.xaml.cs">
       <DependentUpon>AdministrationWindow.xaml</DependentUpon>
@@ -430,6 +440,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\AddEmailWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\AddMailServerWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -36,7 +36,7 @@ namespace InternetMarket.Windows
             listbox.ItemsSource = this.strings;
             mailfrom.ItemsSource = interMarketService.GetMail();
             mailto.ItemsSource = interMarketService.GetMail();
-
+            server.ItemsSource = interMarketService.GetServers();
             Trace.WriteLine(this);
         }
 
@@ -66,7 +66,7 @@ namespace InternetMarket.Windows
                 m.IsBodyHtml = true;
 
 
-                SmtpClient smtp = new SmtpClient(server.Text, Convert.ToInt32(port.Text));
+                SmtpClient smtp = new SmtpClient(server.SelectedItem.ToString(), Convert.ToInt32(port.Text));
                 // логин и пароль
                 smtp.Credentials = new NetworkCredential(mailfrom.SelectedItem.ToString(), passfrom.Password);
                 smtp.EnableSsl = checkbox.IsChecked.Value;
@@ -75,6 +75,7 @@ namespace InternetMarket.Windows
             }
             catch (Exception exp)
             {
+                Trace.WriteLine(exp.StackTrace);
                 MessageBox.Show(exp.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 string expstr = exp.ToString();
                 FileStream fileStreamLog = new FileStream(@"Mail.log", FileMode.Append);
@@ -90,7 +91,12 @@ namespace InternetMarket.Windows
 
         private void AddEmail_Click(object sender, RoutedEventArgs e)
         {
-            new AddEmailWindow().Show();
+            new AddEmailWindow(interMarketService).Show();
+        }
+
+        private void addServerBttn_Click(object sender, RoutedEventArgs e)
+        {
+            new AddMailServerWindow(interMarketService).Show();
         }
     }
 }

@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 01/20/2020 15:55:09
+-- Date Created: 01/22/2020 16:57:12
 -- Generated from EDMX file: C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\InternetMarketEDM.edmx
 -- --------------------------------------------------
 
@@ -60,6 +60,9 @@ IF OBJECT_ID(N'[dbo].[KassaSetSet]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[LaptopsSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[LaptopsSet];
+GO
+IF OBJECT_ID(N'[dbo].[MailSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[MailSet];
 GO
 IF OBJECT_ID(N'[dbo].[OblastDataSetSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[OblastDataSetSet];
@@ -368,6 +371,19 @@ CREATE TABLE [dbo].[MailSet] (
 );
 GO
 
+-- Creating table 'Entity1Set'
+CREATE TABLE [dbo].[Entity1Set] (
+    [Id] int IDENTITY(1,1) NOT NULL
+);
+GO
+
+-- Creating table 'SmtpServersSet'
+CREATE TABLE [dbo].[SmtpServersSet] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [Smtp] nvarchar(max)  NOT NULL
+);
+GO
+
 -- --------------------------------------------------
 -- Creating all PRIMARY KEY constraints
 -- --------------------------------------------------
@@ -519,6 +535,18 @@ GO
 -- Creating primary key on [Id] in table 'MailSet'
 ALTER TABLE [dbo].[MailSet]
 ADD CONSTRAINT [PK_MailSet]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'Entity1Set'
+ALTER TABLE [dbo].[Entity1Set]
+ADD CONSTRAINT [PK_Entity1Set]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'SmtpServersSet'
+ALTER TABLE [dbo].[SmtpServersSet]
+ADD CONSTRAINT [PK_SmtpServersSet]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
