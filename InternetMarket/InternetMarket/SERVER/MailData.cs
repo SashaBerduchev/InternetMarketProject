@@ -33,13 +33,19 @@ namespace InternetMarket.SERVER
             return list;
         }
 
-        public void SetMailServer(string server)
+        public void SetMailServer(string[] server)
         {
-            SmtpServers servers = new SmtpServers
+            List<SmtpServers> smtpservers = new List<SmtpServers>();
+            for (int i = 0; i < server.Length; i++)
             {
-                Smtp = server
-            };
-            internetMarket.SmtpServersSet.Add(servers);
+                SmtpServers smtp = new SmtpServers
+                {
+                    Smtp = server[i]
+                };
+                smtpservers.Insert(i, smtp);
+
+            }
+            internetMarket.SmtpServersSet.AddRange(smtpservers);
             internetMarket.SaveChanges();
         }
 

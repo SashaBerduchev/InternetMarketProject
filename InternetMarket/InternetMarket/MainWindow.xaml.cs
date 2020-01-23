@@ -542,7 +542,7 @@ namespace InternetMarket
 
         private void OpenMail_Click(object sender, RoutedEventArgs e)
         {
-            new MailWindow(strings).Show();
+            new MailWindow(strings, interMarketService).Show();
         }
 
         private void combobox_SelectionChanged(object sender, SelectionChangedEventArgs e)

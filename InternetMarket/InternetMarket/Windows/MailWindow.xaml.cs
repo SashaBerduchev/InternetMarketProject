@@ -25,19 +25,28 @@ namespace InternetMarket.Windows
     /// </summary>
     public partial class MailWindow : Window
     {
-        InterMarketService interMarketService;
-        string file;
-        List<string> strings;
-        public MailWindow(List<string>strings)
+        private InterMarketService interMarketService;
+        private string file;
+        private List<string> strings;
+        private List<string> servers;
+        public MailWindow(List<string>strings, InterMarketService interMarketService)
         {
             this.strings = strings;
             InitializeComponent();
-            interMarketService = new InterMarketService();
+            this.interMarketService = interMarketService;
             listbox.ItemsSource = this.strings;
             mailfrom.ItemsSource = interMarketService.GetMail();
             mailto.ItemsSource = interMarketService.GetMail();
-            server.ItemsSource = interMarketService.GetServers();
+            servers = interMarketService.GetServers();
+            server.ItemsSource = servers;
             Trace.WriteLine(this);
+            if(servers.Count <= 0)
+            {
+                string[] servers = new string[2];
+                servers[0] = "smtp.gmail.com";
+                servers[1] = "smtp.ukr.net";
+                interMarketService.SetServer(servers);
+            }
         }
 
         private void BtnAttach_Click(object sender, RoutedEventArgs e)

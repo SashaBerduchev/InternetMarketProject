@@ -20,6 +20,7 @@ namespace InternetMarket.Windows
     public partial class AddMailServerWindow : Window
     {
         private InterMarketService interMarket;
+        private string[] servers = new string[10];
         public AddMailServerWindow(InterMarketService interMarket)
         {
             this.interMarket = interMarket;
@@ -28,7 +29,8 @@ namespace InternetMarket.Windows
 
         private void smtpset_Click(object sender, RoutedEventArgs e)
         {
-            interMarket.SetServer(smtpstring.Text);
+            servers[0] = smtpstring.Text;
+            interMarket.SetServer(servers);
         }
     }
 }
