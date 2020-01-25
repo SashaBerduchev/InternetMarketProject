@@ -11,5 +11,6 @@
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("internetmarketedm.context.tt")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("internetmarketedm.edmx.sql")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("internetmarketedm.tt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("mongocrypt.dll")]
 
 

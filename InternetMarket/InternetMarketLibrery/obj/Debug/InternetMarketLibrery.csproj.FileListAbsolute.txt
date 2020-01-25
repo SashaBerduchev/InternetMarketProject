@@ -89,3 +89,4 @@ C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\Inter
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketLibrery\obj\Debug\InternetMarketLibrery.csproj.CopyComplete
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketLibrery\obj\Debug\InternetMarketLibrery.dll
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketLibrery\obj\Debug\InternetMarketLibrery.pdb
+C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Debug\mongocrypt.dll

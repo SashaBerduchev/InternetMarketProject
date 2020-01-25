@@ -1,48 +1,34 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="InternetMarketDateModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityType Name="BankSetSet">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="NameBank" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Country" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="City" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Region" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Street" Type="nvarchar(max)" Nullable="false" />
-  </EntityType>
-  <EntityType Name="BoilersSet">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Volume" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Power" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Voltage" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Cost" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Model" Type="nvarchar(max)" Nullable="false" />
-  </EntityType>
-  <EntityType Name="CityDataSet">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="CountryName" Type="nvarchar(max)" Nullable="false" />
-  </EntityType>
-  <EntityType Name="CkladSetSet">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Type" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Organisation" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Oblast" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="City" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Street" Type="nvarchar(max)" Nullable="false" />
-  </EntityType>
+<Schema Namespace="InternetMarketDateModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="InternetMarketDateModelStoreContainer">
+    <EntitySet Name="ComputersSet" EntityType="InternetMarketDateModel.Store.ComputersSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PhonesSet" EntityType="InternetMarketDateModel.Store.PhonesSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TivisetSet" EntityType="InternetMarketDateModel.Store.TivisetSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserSet" EntityType="InternetMarketDateModel.Store.UserSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DirectorSet" EntityType="InternetMarketDateModel.Store.DirectorSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CountrySet" EntityType="InternetMarketDateModel.Store.CountrySet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="OblastDataSetSet" EntityType="InternetMarketDateModel.Store.OblastDataSetSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RegionDataSet" EntityType="InternetMarketDateModel.Store.RegionDataSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CityDataSet" EntityType="InternetMarketDateModel.Store.CityDataSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="OrganizationSetSet" EntityType="InternetMarketDateModel.Store.OrganizationSetSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="OrganizationPositionSetSet" EntityType="InternetMarketDateModel.Store.OrganizationPositionSetSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CkladSetSet" EntityType="InternetMarketDateModel.Store.CkladSetSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="StreetSetSet" EntityType="InternetMarketDateModel.Store.StreetSetSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="KassaSetSet" EntityType="InternetMarketDateModel.Store.KassaSetSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BankSetSet" EntityType="InternetMarketDateModel.Store.BankSetSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TabletSetSet" EntityType="InternetMarketDateModel.Store.TabletSetSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DocForPainSet" EntityType="InternetMarketDateModel.Store.DocForPainSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="GraphicsCardSet" EntityType="InternetMarketDateModel.Store.GraphicsCardSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LaptopsSet" EntityType="InternetMarketDateModel.Store.LaptopsSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DogovorSet" EntityType="InternetMarketDateModel.Store.DogovorSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ZakazPokupatelyaSet" EntityType="InternetMarketDateModel.Store.ZakazPokupatelyaSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PrintersSet" EntityType="InternetMarketDateModel.Store.PrintersSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BoilersSet" EntityType="InternetMarketDateModel.Store.BoilersSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CPUSet" EntityType="InternetMarketDateModel.Store.CPUSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MailSet" EntityType="InternetMarketDateModel.Store.MailSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Entity1Set" EntityType="InternetMarketDateModel.Store.Entity1Set" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SmtpServersSet" EntityType="InternetMarketDateModel.Store.SmtpServersSet" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
   <EntityType Name="ComputersSet">
     <Key>
       <PropertyRef Name="Id" />
@@ -56,135 +42,6 @@
     <Property Name="RAM" Type="nvarchar(max)" Nullable="false" />
     <Property Name="VRAM" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Graphics" Type="nvarchar(max)" Nullable="false" />
-  </EntityType>
-  <EntityType Name="CountrySet">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="NameCountry" Type="nvarchar(max)" Nullable="false" />
-  </EntityType>
-  <EntityType Name="CPUSet">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Architecture" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Cores" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Chastota" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="KESHL1" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="KESHL2" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="KESHL3" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="GPU" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="RAM" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="TDP" Type="nvarchar(max)" Nullable="false" />
-  </EntityType>
-  <EntityType Name="DirectorSet">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Country" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="City" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Oblast" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Region" Type="nvarchar(max)" Nullable="false" />
-  </EntityType>
-  <EntityType Name="DocForPainSet">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Organization" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Contragent" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="DataLoad" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="DataLoad1" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Dataload2" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Dataload3" Type="nvarchar(max)" Nullable="false" />
-  </EntityType>
-  <EntityType Name="DogovorSet">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Entity1Set">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-  </EntityType>
-  <EntityType Name="GraphicsCardSet">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="GraphicsCore" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Cores" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Herts" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="VRAM" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Voltage" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Photo" Type="varbinary(max)" Nullable="false" />
-    <Property Name="PDF" Type="varbinary(max)" Nullable="false" />
-  </EntityType>
-  <EntityType Name="KassaSetSet">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Bank" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Organization" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Valuta" Type="nvarchar(max)" Nullable="false" />
-  </EntityType>
-  <EntityType Name="LaptopsSet">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Model" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Procc" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="RAM" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="VRAM" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="GPU" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="SCREEN" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Resolution" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Battery" Type="nvarchar(max)" Nullable="false" />
-  </EntityType>
-  <EntityType Name="MailSet">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
-  </EntityType>
-  <EntityType Name="OblastDataSetSet">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="City" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Country" Type="nvarchar(max)" Nullable="false" />
-  </EntityType>
-  <EntityType Name="OrganizationPositionSetSet">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="CodeKP" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Organization" Type="nvarchar(max)" Nullable="false" />
-  </EntityType>
-  <EntityType Name="OrganizationSetSet">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="PhonesSet">
     <Key>
@@ -200,56 +57,6 @@
     <Property Name="Battery" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Photo" Type="varbinary(max)" Nullable="false" />
     <Property Name="PDF" Type="varbinary(max)" Nullable="false" />
-  </EntityType>
-  <EntityType Name="PrintersSet">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Colors" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Speed" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Cost" Type="nvarchar(max)" Nullable="false" />
-  </EntityType>
-  <EntityType Name="RegionDataSet">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="City" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Oblast" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Country" Type="nvarchar(max)" Nullable="false" />
-  </EntityType>
-  <EntityType Name="SmtpServersSet">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Smtp" Type="nvarchar(max)" Nullable="false" />
-  </EntityType>
-  <EntityType Name="StreetSetSet">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Country" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="City" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Region" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="NameStreen" Type="nvarchar(max)" Nullable="false" />
-  </EntityType>
-  <EntityType Name="TabletSetSet">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Model" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Processor" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="RAM" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="GPU" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Resolution" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Battery" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="TivisetSet">
     <Key>
@@ -271,6 +78,170 @@
     <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
+  <EntityType Name="DirectorSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Country" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="City" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Oblast" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Region" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CountrySet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NameCountry" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OblastDataSetSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="City" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Country" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RegionDataSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="City" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Oblast" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Country" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CityDataSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CountryName" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OrganizationSetSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OrganizationPositionSetSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CodeKP" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Organization" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CkladSetSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Type" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Organisation" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Oblast" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="City" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Street" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="StreetSetSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Country" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="City" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Region" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="NameStreen" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="KassaSetSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Bank" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Organization" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Valuta" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BankSetSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NameBank" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Country" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="City" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Region" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Street" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TabletSetSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Model" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Processor" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="RAM" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="GPU" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Resolution" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Battery" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DocForPainSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Organization" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Contragent" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DataLoad" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DataLoad1" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Dataload2" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Dataload3" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="GraphicsCardSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="GraphicsCore" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Cores" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Herts" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="VRAM" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Voltage" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Photo" Type="varbinary(max)" Nullable="false" />
+    <Property Name="PDF" Type="varbinary(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LaptopsSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Model" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Procc" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="RAM" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="VRAM" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="GPU" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="SCREEN" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Resolution" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Battery" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DogovorSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
   <EntityType Name="ZakazPokupatelyaSet">
     <Key>
       <PropertyRef Name="Id" />
@@ -282,33 +253,62 @@
     <Property Name="Ysluga" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Data" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
-  <EntityContainer Name="InternetMarketDateModelStoreContainer">
-    <EntitySet Name="BankSetSet" EntityType="Self.BankSetSet" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="BoilersSet" EntityType="Self.BoilersSet" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="CityDataSet" EntityType="Self.CityDataSet" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="CkladSetSet" EntityType="Self.CkladSetSet" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="ComputersSet" EntityType="Self.ComputersSet" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="CountrySet" EntityType="Self.CountrySet" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="CPUSet" EntityType="Self.CPUSet" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="DirectorSet" EntityType="Self.DirectorSet" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="DocForPainSet" EntityType="Self.DocForPainSet" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="DogovorSet" EntityType="Self.DogovorSet" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Entity1Set" EntityType="Self.Entity1Set" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="GraphicsCardSet" EntityType="Self.GraphicsCardSet" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="KassaSetSet" EntityType="Self.KassaSetSet" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="LaptopsSet" EntityType="Self.LaptopsSet" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="MailSet" EntityType="Self.MailSet" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="OblastDataSetSet" EntityType="Self.OblastDataSetSet" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="OrganizationPositionSetSet" EntityType="Self.OrganizationPositionSetSet" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="OrganizationSetSet" EntityType="Self.OrganizationSetSet" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="PhonesSet" EntityType="Self.PhonesSet" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="PrintersSet" EntityType="Self.PrintersSet" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="RegionDataSet" EntityType="Self.RegionDataSet" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="SmtpServersSet" EntityType="Self.SmtpServersSet" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="StreetSetSet" EntityType="Self.StreetSetSet" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="TabletSetSet" EntityType="Self.TabletSetSet" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="TivisetSet" EntityType="Self.TivisetSet" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="UserSet" EntityType="Self.UserSet" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="ZakazPokupatelyaSet" EntityType="Self.ZakazPokupatelyaSet" Schema="dbo" store:Type="Tables" />
-  </EntityContainer>
+  <EntityType Name="PrintersSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Colors" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Speed" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Cost" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BoilersSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Volume" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Power" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Voltage" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Cost" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Model" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CPUSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Architecture" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Cores" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Chastota" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="KESHL1" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="KESHL2" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="KESHL3" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="GPU" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="RAM" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TDP" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MailSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Entity1Set">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SmtpServersSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Smtp" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
 </Schema>
