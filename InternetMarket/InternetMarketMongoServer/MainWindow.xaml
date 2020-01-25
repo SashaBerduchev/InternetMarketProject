@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:InternetMarketMongoServer"
         mc:Ignorable="d"
-        Title="MainWindow" Height="550" Width="800">
+        Title="MainWindow" Height="580" Width="700">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -25,12 +25,12 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <TextBox x:Name="countElem" Grid.Column="4" Grid.Row="3" Margin="20" />
-        <Button Name="btnPrint" Grid.Column="4" Margin="30" Content="Печать" />
+        <Button Name="btnPrint" Grid.Column="4" Margin="20" Content="Печать" />
         <ComboBox Name="combobox" Grid.Column="2" Grid.Row="0" Margin="20,20,30,30" SelectionChanged="combobox_SelectionChanged"/>
         <Button Name="OpenMail" Grid.Column="5" Grid.Row="0" Margin="15,33,45,28" Content="Mail" />
         <ListBox Name="listbox" Grid.Column="0" Grid.Row="2" Grid.RowSpan="5" Grid.ColumnSpan="4" Margin="10,72,-10,15"  />
-        <Button Name="LoadBtn" Grid.Column="0" Margin="30,51,30,10" Content="Load"/>
-        <Button Name="OpenBtn" Grid.Column="2" Grid.Row="1" Margin="30,33,30,28" Content="OpenPhone"/>
+        <Button Name="LoadBtn" Grid.Column="0" Margin="20,48,30,10" Content="Load" Click="LoadBtn_Click"/>
+        <Button Name="OpenBtn" Grid.Column="2" Grid.Row="1" Margin="30,33,30,28" Content="OpenPhone" Click="OpenBtn_Click"/>
         <Button Name="OpenBtnTivi" Grid.Column="5" Grid.Row="1" Margin="15,33,45,28" Content="OpenTivi"/>
         <Button Name="OpenBtnComputers" Grid.Column="3" Grid.Row="1" Margin="30,33,30,28" Content="OpenComp"/>
         <Button Name="OpenBtnTablets" Grid.Column="4" Grid.Row="1" Margin="30,33,30,28" Content="OpenTablets" />
