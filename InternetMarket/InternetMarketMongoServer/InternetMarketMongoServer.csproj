@@ -100,6 +100,7 @@
     </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -118,6 +119,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="IContract.cs" />
     <Compile Include="SERVER\InternetMarketMongoService.cs" />
     <Compile Include="SERVER\PhonesData.cs" />
     <Compile Include="Windows\AddPhoneWindow.xaml.cs">

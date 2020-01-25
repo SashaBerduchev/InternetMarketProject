@@ -4,6 +4,7 @@ using MongoDB.Bson;
 using MongoDB.Driver;
 using System;
 using System.Diagnostics;
+using System.ServiceModel;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
@@ -30,6 +31,25 @@ namespace InternetMarketMongoServer
             combobox.Items.Add("Boilers");
             mongoServer = new InternetMarketMongoService();
             Trace.WriteLine(this);
+            try
+            {
+                string uriAddress = "net.tcp://localhost:5000/IContract";
+                Uri addres = new Uri(uriAddress);//5
+                NetTcpBinding binding = new NetTcpBinding();//6
+                binding.ListenBacklog = 2000;//7
+                binding.MaxConnections = 2000;//8
+                binding.TransferMode = TransferMode.Buffered;//9
+                binding.MaxReceivedMessageSize = 104857600;//10
+                Type type = typeof(IContract);//11
+                ServiceHost serviceHost = new ServiceHost(typeof(InternetMarketMongoService));//12
+                serviceHost.AddServiceEndpoint(type, binding, addres);//13
+                serviceHost.Open();//14
+                Trace.WriteLine(serviceHost);
+            }catch(Exception exp)
+            {
+                Trace.WriteLine(exp.StackTrace);
+                MessageBox.Show(exp.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         

@@ -12,7 +12,7 @@ using System.Windows;
 
 namespace InternetMarketMongoServer.SERVER
 {
-    public class InternetMarketMongoService
+    public class InternetMarketMongoService : IContract
     {
         private MongoClient client;
         private string con;
