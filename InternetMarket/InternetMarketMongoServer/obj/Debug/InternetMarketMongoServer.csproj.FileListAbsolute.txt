@@ -47,3 +47,5 @@ C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\Inter
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketMongoServer\bin\Debug\Polly.xml
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketMongoServer\obj\Debug\Windows\AddPhoneWindow.g.cs
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketMongoServer\obj\Debug\Windows\AddPhoneWindow.baml
+C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketMongoServer\obj\Debug\Windows\AddComputerWindow.g.cs
+C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketMongoServer\obj\Debug\Windows\AddComputerWindow.baml

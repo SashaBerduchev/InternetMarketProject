@@ -18,6 +18,6 @@ namespace InternetMarketMongoServer
         
         [OperationContract]
 
-        List<string> GetList();
+        List<string> GetListPhones();
     }
 }

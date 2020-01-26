@@ -75,7 +75,14 @@ namespace InternetMarketMongoServer
             {
                 Thread.Sleep(50);
                 mongoServer.GetPhones();
-                listbox.ItemsSource = mongoServer.GetList();
+                listbox.ItemsSource = mongoServer.GetListPhones();
+                GetCount();
+            }
+            else if (combobox.SelectedItem.ToString() == "Computers")
+            {
+                Thread.Sleep(50);
+                mongoServer.GetComputers();
+                listbox.ItemsSource = mongoServer.GetCompList();
                 GetCount();
             }
         }
@@ -83,6 +90,11 @@ namespace InternetMarketMongoServer
         private void OpenBtn_Click(object sender, RoutedEventArgs e)
         {
             new AddPhoneWindow(mongoServer).Show();
+        }
+
+        private void OpenBtnComputers_Click(object sender, RoutedEventArgs e)
+        {
+            new AddComputerWindow(mongoServer).Show();
         }
     }
 }

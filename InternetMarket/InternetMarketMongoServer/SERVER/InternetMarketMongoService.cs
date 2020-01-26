@@ -18,6 +18,7 @@ namespace InternetMarketMongoServer.SERVER
         private string con;
         private IMongoDatabase database;
         private PhonesData phones;
+        private ComputersData computers;
         public InternetMarketMongoService()
         {
             try
@@ -51,6 +52,7 @@ namespace InternetMarketMongoServer.SERVER
         private void StartServer()
         {
             phones = new PhonesData(database);
+            computers = new ComputersData(database);
         }
 
         private static async Task GetDatabaseNames(MongoClient client)
@@ -74,9 +76,23 @@ namespace InternetMarketMongoServer.SERVER
         {
             phones.SetPhones(name, model, cost, processor, battery, point);
         }
-        public List<string> GetList()
+        public List<string> GetListPhones()
         {
             return phones.GetList();
+        }
+
+        public async void GetComputers()
+        {
+            computers.GetComputers();
+        }
+
+        public async void SetComputers(string name, string model, int cost, string processor, int RAM, string GPU, int pointer)
+        {
+            computers.SetComputers(name, model, cost, processor, RAM, GPU, pointer);
+        }
+        public List<string> GetCompList()
+        {
+            return computers.GetList();
         }
     }
 }

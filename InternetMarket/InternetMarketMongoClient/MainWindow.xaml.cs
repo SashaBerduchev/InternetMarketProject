@@ -73,7 +73,7 @@ namespace InternetMarketMongoClient
             if (combobox.SelectedItem.ToString() == "Phones")
             {
                 contract.GetPhones();
-                listbox.ItemsSource = contract.GetList();
+                listbox.ItemsSource = contract.GetListPhones();
             }
         }
         

@@ -11,3 +11,4 @@ C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\Inter
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketMongoClient\obj\Debug\InternetMarketMongoClient.csproj.GenerateResource.cache
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketMongoClient\obj\Debug\InternetMarketMongoClient.exe
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketMongoClient\obj\Debug\InternetMarketMongoClient.pdb
+C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketMongoClient\obj\Debug\InternetMarketMongoClient.csprojAssemblyReference.cache

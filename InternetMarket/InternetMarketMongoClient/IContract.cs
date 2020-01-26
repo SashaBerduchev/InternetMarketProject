@@ -18,6 +18,6 @@ namespace InternetMarketMongoClient
 
         [OperationContract]
 
-        List<string> GetList();
+        List<string> GetListPhones();
     }
 }
