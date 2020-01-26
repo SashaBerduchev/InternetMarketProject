@@ -16,7 +16,7 @@ namespace InternetMarketClient
 
         //List<UsersSet> usery;
         protected IContract contract;
-        ChannelFactory<IContract> _factory;
+        private ChannelFactory<IContract> _factory;
         public LoginUser()
         {
             InitializeComponent();

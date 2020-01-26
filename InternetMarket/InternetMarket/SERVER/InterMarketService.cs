@@ -277,8 +277,9 @@ namespace InternetMarket
             return mailData.GetMails();
         }
 
-        public void SetServer(string server)
+        public void SetServer(string[] server)
         {
+            if (server == null) return;
             mailData.SetMailServer(server);
         }
 

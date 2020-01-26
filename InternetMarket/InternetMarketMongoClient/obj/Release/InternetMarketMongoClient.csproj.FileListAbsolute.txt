@@ -1,0 +1,14 @@
+C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketMongoClient\obj\Release\InternetMarketMongoClient.csprojAssemblyReference.cache
+C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketMongoClient\obj\Release\MainWindow.g.cs
+C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketMongoClient\obj\Release\App.g.cs
+C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketMongoClient\obj\Release\InternetMarketMongoClient_MarkupCompile.cache
+C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketMongoClient\obj\Release\InternetMarketMongoClient_MarkupCompile.lref
+C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketMongoClient\bin\Release\InternetMarketMongoClient.exe.config
+C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketMongoClient\bin\Release\InternetMarketMongoClient.exe
+C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketMongoClient\bin\Release\InternetMarketMongoClient.pdb
+C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketMongoClient\obj\Release\MainWindow.baml
+C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketMongoClient\obj\Release\InternetMarketMongoClient.g.resources
+C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketMongoClient\obj\Release\InternetMarketMongoClient.Properties.Resources.resources
+C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketMongoClient\obj\Release\InternetMarketMongoClient.csproj.GenerateResource.cache
+C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketMongoClient\obj\Release\InternetMarketMongoClient.exe
+C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketMongoClient\obj\Release\InternetMarketMongoClient.pdb

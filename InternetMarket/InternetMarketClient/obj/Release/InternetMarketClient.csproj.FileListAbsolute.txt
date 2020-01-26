@@ -274,3 +274,4 @@ C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\Inter
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketClient\obj\Release\InternetMarketClient.csproj.CopyComplete
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketClient\obj\Release\InternetMarketClient.exe
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketClient\obj\Release\InternetMarketClient.pdb
+C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketClient\bin\Release\mongocrypt.dll

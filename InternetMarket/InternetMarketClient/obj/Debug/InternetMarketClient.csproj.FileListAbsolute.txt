@@ -321,3 +321,4 @@ C:\Users\RedlineAlexander\Source\Repos\SashaBerduchev\InternetMarketProject\Inte
 C:\Users\RedlineAlexander\Source\Repos\SashaBerduchev\InternetMarketProject\InternetMarket\InternetMarketClient\obj\Debug\InternetMarketClient.csproj.CopyComplete
 C:\Users\RedlineAlexander\Source\Repos\SashaBerduchev\InternetMarketProject\InternetMarket\InternetMarketClient\obj\Debug\InternetMarketClient.exe
 C:\Users\RedlineAlexander\Source\Repos\SashaBerduchev\InternetMarketProject\InternetMarket\InternetMarketClient\obj\Debug\InternetMarketClient.pdb
+C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketClient\bin\Debug\mongocrypt.dll

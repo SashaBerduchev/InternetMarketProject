@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 01/22/2020 16:57:12
+-- Date Created: 01/24/2020 20:25:27
 -- Generated from EDMX file: C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\InternetMarketEDM.edmx
 -- --------------------------------------------------
 
@@ -52,6 +52,9 @@ GO
 IF OBJECT_ID(N'[dbo].[DogovorSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[DogovorSet];
 GO
+IF OBJECT_ID(N'[dbo].[Entity1Set]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Entity1Set];
+GO
 IF OBJECT_ID(N'[dbo].[GraphicsCardSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[GraphicsCardSet];
 GO
@@ -81,6 +84,9 @@ IF OBJECT_ID(N'[dbo].[PrintersSet]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[RegionDataSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[RegionDataSet];
+GO
+IF OBJECT_ID(N'[dbo].[SmtpServersSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[SmtpServersSet];
 GO
 IF OBJECT_ID(N'[dbo].[StreetSetSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[StreetSetSet];
