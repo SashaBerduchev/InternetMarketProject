@@ -31,15 +31,15 @@ namespace InternetMarketMongoServer.SERVER
         public async void GetComputers()
         {
             var filter = new BsonDocument();
-
             using (var cursor = await coll.FindAsync(filter))
             {
                 while (await cursor.MoveNextAsync())
                 {
                     var comp = cursor.Current;
+                    Trace.WriteLine("GET" + "{");
                     foreach (var doc in comp)
                     {
-                        Trace.WriteLine("GET" + doc);
+                        Trace.WriteLine(doc);
                         strings.Add(doc.ToString());
                     }
                 }
@@ -49,6 +49,7 @@ namespace InternetMarketMongoServer.SERVER
         public async void SetComputers(string name, string model, int cost, string processor, int RAM, string GPU, int pointer)
         {
             List<BsonDocument> documents = new List<BsonDocument>();
+            Trace.WriteLine("SEND" + "{");
             for (int i = 0; i < pointer; i++)
             {
                 BsonDocument doc = new BsonDocument();
@@ -59,7 +60,8 @@ namespace InternetMarketMongoServer.SERVER
                 doc.Add(new BsonElement("RAM", RAM));
                 doc.Add(new BsonElement("GPU", GPU));
                 documents.Add(doc);
-                Trace.WriteLine("SEND" + doc);
+                Trace.WriteLine(doc);
+                
             }
             await coll.InsertManyAsync(documents);
         }

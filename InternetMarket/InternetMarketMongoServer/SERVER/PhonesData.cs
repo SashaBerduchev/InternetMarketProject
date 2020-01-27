@@ -35,6 +35,8 @@ namespace InternetMarketMongoServer.SERVER
                 while (await cursor.MoveNextAsync())
                 {
                     var phone = cursor.Current;
+                    Trace.WriteLine(phone);
+                    Trace.WriteLine("GET" + "{");
                     foreach (var doc in phone)
                     {
                         Trace.WriteLine("GET" + doc);
@@ -47,6 +49,7 @@ namespace InternetMarketMongoServer.SERVER
         public async void SetPhones(string name, string model, int cost, string processor, string battery, int pointer)
         {
             List<BsonDocument> documents = new List<BsonDocument>();
+            Trace.WriteLine("SEND" + "{");
             for (int i = 0; i < pointer; i++)
             {
                 BsonDocument doc = new BsonDocument();
@@ -56,7 +59,7 @@ namespace InternetMarketMongoServer.SERVER
                 doc.Add(new BsonElement("Processor", processor));
                 doc.Add(new BsonElement("Battery", battery));
                 documents.Add(doc);
-                Trace.WriteLine("SEND" + doc);
+                Trace.WriteLine(doc);
             }
             await coll.InsertManyAsync(documents);
         }

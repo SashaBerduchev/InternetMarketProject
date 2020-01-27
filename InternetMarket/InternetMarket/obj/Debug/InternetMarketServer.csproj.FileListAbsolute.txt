@@ -1229,41 +1229,6 @@ C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\Inter
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\InternetMarket_Content.g.cs
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\InternetMarket_MarkupCompile.cache
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\InternetMarket_MarkupCompile.lref
-C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\LoginUserWindow.baml
-C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\Administration\AdministrationWindow.baml
-C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\Documents\ZakazPokupatyaData.baml
-C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\InternetMarketData\BoilerWindow.baml
-C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\InternetMarketData\PrinterWindow.baml
-C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\Spravochniki\CitiData.baml
-C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\Spravochniki\City.baml
-C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\InternetMarketData\ComputerWindow.baml
-C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\Spravochniki\Contragent.baml
-C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\Spravochniki\ContragentData.baml
-C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\Spravochniki\Country.baml
-C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\Spravochniki\CountrysData.baml
-C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\DataSave.baml
-C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\Spravochniki\Directors.baml
-C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\MainWindow.baml
-C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\InternetMarketData\Laptop.baml
-C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\Spravochniki\LoadDocument.baml
-C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\Spravochniki\Oblast.baml
-C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\Spravochniki\OblastData.baml
-C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\InternetMarketData\OpenComputers.baml
-C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\Spravochniki\OpenDocument.baml
-C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\InternetMarketData\OpenPhones.baml
-C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\InternetMarketData\OpenTablets.baml
-C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\Spravochniki\OrganisationAdd.baml
-C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\Spravochniki\OrganisationData.baml
-C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\Spravochniki\Region.baml
-C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\Spravochniki\RegionDat.baml
-C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\Spravochniki\SkladAdd.baml
-C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\Spravochniki\SkladData.baml
-C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\Spravochniki\StreetDat.baml
-C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\Spravochniki\Streets.baml
-C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\TiviWindow.baml
-C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\Users\AddUserWindowServer.baml
-C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\ZakazPokupatelyaDoc.baml
-C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\InternetMarket.g.resources
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\InternetMarket.Properties.Resources.resources
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\InternetMarketServer.csproj.GenerateResource.cache
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\InternetMarketServer.csproj.CopyComplete
@@ -1272,24 +1237,18 @@ C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\Inter
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Loaders\LoadingWindow.g.cs
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Loaders\LoadingWindow.baml
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Loaders\LoadingWindow.g.cs
-C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Loaders\LoadingWindow.baml
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\InternetMarketData\AddCpuWindow.g.cs
-C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\InternetMarketData\AddCpuWindow.baml
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\InternetMarketData\AddCpuWindow.g.cs
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\InternetMarketData\AddCpuWindow.baml
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\InternetMarketData\GraphicsCardWindow.g.cs
 F:\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\InternetMarketData\GraphicsCardWindow.baml
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\InternetMarketData\GraphicsCardWindow.g.cs
-C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\InternetMarketData\GraphicsCardWindow.baml
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\MailWindow.g.cs
-C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\MailWindow.baml
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\AddEmailWindow.g.cs
-C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\AddEmailWindow.baml
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\bin\Debug\Microsoft.Bcl.HashCode.dll
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\bin\Debug\Microsoft.Bcl.HashCode.xml
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\bin\Debug\System.Text.Encoding.CodePages.xml
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\AddMailServerWindow.g.cs
-C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\AddMailServerWindow.baml
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\bin\Debug\mongocrypt.dll
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\bin\Debug\Crc32C.NET.dll
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\bin\Debug\DnsClient.dll
