@@ -23,7 +23,7 @@ namespace InternetMarketClient
             StartConnetion();
             Trace.WriteLine(this);
         }
-
+        
         private void StartConnetion()
         {
             //string uriAddress ("net.tcp://192.168.1.104:7000/IContract");

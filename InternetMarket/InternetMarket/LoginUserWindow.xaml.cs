@@ -14,6 +14,7 @@ namespace InternetMarket
     public partial class LoginUserWindow : Window
     {
         private InterMarketService interMarketService;
+        private static string pass = "";
         public LoginUserWindow()
         {
             InitializeComponent();
@@ -90,6 +91,19 @@ namespace InternetMarket
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             //Dispose();
+        }
+
+        public static string PasswordText
+        {
+            get
+            {
+                return pass;
+            }
+        }
+
+        private void Password_KeyUp(object sender, KeyEventArgs e)
+        {
+            pass = Password.Password;
         }
     }
 }

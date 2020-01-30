@@ -46,6 +46,27 @@ namespace InternetMarket.SERVER
             }
         }
 
+        public bool CheckUser(string login, string pass)
+        {
+            try
+            {
+                passstr = internetMarket.UserSet.Where(x => x.Name.Contains(login)).Select(p => p.Password).ToList();
+                if (passstr.Contains(pass))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception exp)
+            {
+                MessageBox.Show(exp.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                Trace.WriteLine(exp);
+            }
+            return false;
+        }
         public bool SetUser(string login, string pass)
         {
             try

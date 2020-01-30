@@ -51,7 +51,7 @@ namespace InternetMarket
             try
             {
                 List<string> pass = marketService.GetUsers();
-                if (pass.Contains(Password))
+                if (marketService.CheckUser(User, LoginUserWindow.PasswordText))
                 {
                     new MainWindow(marketService).Show();
                 }

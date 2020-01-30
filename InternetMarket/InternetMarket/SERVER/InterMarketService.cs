@@ -68,6 +68,11 @@ namespace InternetMarket
             }
             return null;
         }
+        
+        public bool CheckUser(string login, string pass)
+        {
+            return userServer.CheckUser(login, pass);
+        }
         public  Task<List<string>> LoadPhones()
         {
             return  phoneServerData.GetPhones();
