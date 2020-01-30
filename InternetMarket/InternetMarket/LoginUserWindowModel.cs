@@ -17,7 +17,7 @@ namespace InternetMarket
 
         private bool RegisterCommandCanExecute(object obj)
         {
-            if (!string.IsNullOrEmpty(User) && !string.IsNullOrEmpty(Password))
+            if (!string.IsNullOrEmpty(User))
                 return true;
             return false;
         }

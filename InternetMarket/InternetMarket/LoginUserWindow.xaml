@@ -16,7 +16,7 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <ComboBox Name="User" Grid.Row="0" Margin="102,30,20,30" SelectedValuePath="{Binding User, UpdateSourceTrigger=LostFocus}" />
+            <ComboBox Name="User" Grid.Row="0" Margin="102,30,20,30" SelectedValue="{Binding User, UpdateSourceTrigger=LostFocus}" />
             <PasswordBox  Name="Password" Grid.Row="1" Margin="102,20,20,35" KeyDown="Password_KeyDown" />
             <Button Name="btlLogin" Grid.Row="2" Margin="20,20,20,39" Content="Вход" Command="{Binding RegisterCommand}"/>
             <TextBlock HorizontalAlignment="Left" Margin="49,36,0,0" TextWrapping="Wrap" Text="Логин" VerticalAlignment="Top" Height="17" Width="68"/>
