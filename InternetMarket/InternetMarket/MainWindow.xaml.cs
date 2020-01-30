@@ -24,13 +24,13 @@ namespace InternetMarket
     {
         private InternetMarketDateEntities internetMarketDateEntities;
         private List<string> printers;
-        private LoginUserWindow loginUserServer;
+        private InterMarketService marketService;
         private InterMarketService interMarketService;
         private List<string> strings;
-        public MainWindow(LoginUserWindow login)
+        public MainWindow(InterMarketService marketService)
         {
             interMarketService = new InterMarketService();
-            loginUserServer = login;
+            this.marketService = marketService;
             InitializeComponent();
 
             combobox.Items.Add("Phones");
@@ -475,7 +475,8 @@ namespace InternetMarket
 
         private void Window_Closed(object sender, EventArgs e)
         {
-            loginUserServer.StopServer();
+            marketService.Dispose();
+            marketService = null;
         }
 
         public void Dispose()

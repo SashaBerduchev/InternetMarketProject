@@ -290,6 +290,7 @@
     <Compile Include="RegionData.cs">
       <DependentUpon>InternetMarketEDM.tt</DependentUpon>
     </Compile>
+    <Compile Include="RelayCommand.cs" />
     <Compile Include="SERVER\BoilerServerData.cs" />
     <Compile Include="SERVER\ComputersData.cs" />
     <Compile Include="SERVER\CountryData.cs" />
@@ -310,6 +311,8 @@
     <Compile Include="TabletSet.cs">
       <DependentUpon>InternetMarketEDM.tt</DependentUpon>
     </Compile>
+    <Compile Include="ViewModelBase.cs" />
+    <Compile Include="LoginUserWindowModel.cs" />
     <Compile Include="Windows\AddEmailWindow.xaml.cs">
       <DependentUpon>AddEmailWindow.xaml</DependentUpon>
     </Compile>
