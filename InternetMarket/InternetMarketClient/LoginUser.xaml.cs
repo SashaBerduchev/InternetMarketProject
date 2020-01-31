@@ -52,7 +52,7 @@ namespace InternetMarketClient
         {
             try
             {
-                if (contract.SetUserLogin(User.SelectedItem.ToString(), Password.Password))
+                if (contract.CheckUser(User.SelectedItem.ToString(), Password.Password))
                 {
                     new MainWindow(contract).Show();
                     this.Close();
@@ -96,7 +96,7 @@ namespace InternetMarketClient
             {
                 try
                 {
-                    if (contract.SetUserLogin(User.SelectedItem.ToString(), Password.Password))
+                    if (contract.CheckUser(User.SelectedItem.ToString(), Password.Password))
                     {
                         new MainWindow(contract).Show();
                         this.Close();

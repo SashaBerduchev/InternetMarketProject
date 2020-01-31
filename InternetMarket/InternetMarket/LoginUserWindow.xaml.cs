@@ -71,10 +71,10 @@ namespace InternetMarket
         {
             if (e.Key == Key.Enter)
             {
-                List<string> pass = interMarketService.GetUsers();
-                if (pass.Contains(Password.Password))
+                List<string> Users = interMarketService.GetUsers();
+                if (interMarketService.CheckUser(User.SelectedItem.ToString(), LoginUserWindow.PasswordText))
                 {
-                    this.Close();
+                    new MainWindow(interMarketService).Show();
                 }
                 else
                 {
