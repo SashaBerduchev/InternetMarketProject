@@ -17,6 +17,8 @@ namespace InternetMarketClient
         //List<UsersSet> usery;
         protected IContract contract;
         private ChannelFactory<IContract> _factory;
+        private static string pass = "";
+
         public LoginUser()
         {
             InitializeComponent();
@@ -151,6 +153,18 @@ namespace InternetMarketClient
                         new LoginUser().Show();
                     }
                 }
+        }
+        public static string PasswordText
+        {
+            get
+            {
+                return pass;
+            }
+        }
+        private void Password_PreviewKeyUp(object sender, KeyEventArgs e)
+        {
+            pass = Password.Password;
+            
         }
     }
 }

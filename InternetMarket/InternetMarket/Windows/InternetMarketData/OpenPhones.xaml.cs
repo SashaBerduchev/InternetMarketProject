@@ -36,7 +36,7 @@ namespace InternetMarket
         
         private void btnset_Click(object sender, RoutedEventArgs e)
         {
-            for (int i = 0; i < Convert.ToInt32(textpointer.Text); i++)
+            for (int i = 0; i < Convert.ToInt32(textpoint.Text); i++)
             {
                 Thread thread = new Thread(PhonesInsert);
                 thread.Start();
@@ -84,9 +84,9 @@ namespace InternetMarket
                     byte[] photo = photoload;
                     //InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
 
-                    for (int i = 0; i < Convert.ToInt32(textpointer.Text); i++)
+                    for (int i = 0; i < Convert.ToInt32(textpoint.Text); i++)
                     {
-                        interMarketService.PhonesSet(firm, model, quantity, cost, proc, ram, battery, textpointer.Text, PDF, photo);
+                        interMarketService.PhonesSet(firm, model, quantity, cost, proc, ram, battery, textpoint.Text, PDF, photo);
                     }
                 }catch(Exception exp)
                 {

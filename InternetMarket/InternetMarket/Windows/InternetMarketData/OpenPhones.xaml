@@ -20,14 +20,14 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBox Name="firmsettext" Grid.Column="0" Grid.Row="0" Margin="30" />
-        <TextBox Name="modelsettext" Grid.Column="1" Grid.Row="0" Margin="30" />
-        <TextBox Name="quantitysettext" Grid.Column="2" Grid.Row="0" Margin="30" />
-        <TextBox Name="costsettext" Grid.Column="3" Grid.Row="0" Margin="30" />
-        <TextBox Name="procsettext" Grid.Column="4" Grid.Row="0" Margin="30" />
-        <TextBox Name="ramsettext" Grid.Column="0" Grid.Row="1" Margin="30" />
-        <TextBox Name="batterysettext" Grid.Column="1" Grid.Row="1" Margin="30" />
-        <TextBox Name="textpointer" Grid.Column="4" Grid.Row="1" Margin="30" />
+        <TextBox Name="firmsettext" Grid.Column="0" Grid.Row="0" Margin="30" Text="{Binding Firm, UpdateSourceTrigger=LostFocus}" />
+        <TextBox Name="modelsettext" Grid.Column="1" Grid.Row="0" Margin="30" Text="{Binding Model, UpdateSourceTrigger=LostFocus}" />
+        <TextBox Name="quantitysettext" Grid.Column="2" Grid.Row="0" Margin="30" Text="{Binding Quantity, UpdateSourceTrigger=LostFocus}"/>
+        <TextBox Name="costsettext" Grid.Column="3" Grid.Row="0" Margin="30" Text="{Binding Cost, UpdateSourceTrigger=LostFocus}"/>
+        <TextBox Name="procsettext" Grid.Column="4" Grid.Row="0" Margin="30" Text="{Binding Proc, UpdateSourceTrigger=LostFocus}"/>
+        <TextBox Name="ramsettext" Grid.Column="0" Grid.Row="1" Margin="30" Text="{Binding Ram, UpdateSourceTrigger=LostFocus}"/>
+        <TextBox Name="batterysettext" Grid.Column="4" Grid.Row="1" Margin="30" Text="{Binding Battery, UpdateSourceTrigger=LostFocus}"/>
+        <TextBox Name="textpoint" Grid.Column="1" Grid.Row="1" Margin="30" Text="{Binding TextPoint, UpdateSourceTrigger=LostFocus}"/>
         <Button Name="PhotoLoad" Grid.Column="2" Grid.Row="1" Margin="30" Content="Открыть фото" Click="PhotoLoad_Click" />
         <Button Name="PhotoPDF" Grid.Column="3" Grid.Row="1" Margin="30" Content="Открыть ПДФ" Click="PhotoPDF_Click" />
         <Button Name="btnset" Grid.Column="2" Grid.Row="2" Margin="30" Content="set" Click="btnset_Click"/>
