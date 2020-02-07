@@ -11,6 +11,7 @@ namespace InternetMarket
 {
     public class InterMarketService : IContract , IDisposable
     {
+        private IException exception = new MainException();
         private PhoneServerData phoneServerData;
         private TiviServerData tiviServer;
         private UserServerData userServer;
@@ -32,8 +33,8 @@ namespace InternetMarket
         public InterMarketService()
         {
             internetMarketDateEntities = new InternetMarketDateEntities();
-            phoneServerData = new PhoneServerData(internetMarketDateEntities);
-            tiviServer = new TiviServerData(internetMarketDateEntities);
+            phoneServerData = new PhoneServerData(internetMarketDateEntities, exception);
+            tiviServer = new TiviServerData(internetMarketDateEntities, exception);
             userServer = new UserServerData();
             tabletServer = new TabletServer();
             boilerServer = new BoilerServerData(internetMarketDateEntities);

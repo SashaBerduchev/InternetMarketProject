@@ -18,8 +18,10 @@ namespace InternetMarket.SERVER
         private int stop;
         private int _count;
         private List<PhonesSet> phoneses;
-        public PhoneServerData(InternetMarketDateEntities internetMarketDateEntities)
+        private IException exception;
+        public PhoneServerData(InternetMarketDateEntities internetMarketDateEntities, IException exception)
         {
+            this.exception = exception;
             this.internetMarketDateEntities = internetMarketDateEntities;
             phoneses = new List<PhonesSet>();
 
@@ -41,7 +43,7 @@ namespace InternetMarket.SERVER
             catch (Exception e)
             {
                 Trace.WriteLine(e.ToString());
-                MessageBox.Show(e.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                exception.ExceptionWriter(e.ToString());
             }
             return null;
         }
@@ -58,9 +60,8 @@ namespace InternetMarket.SERVER
         {
             Trace.WriteLine("TASK RUn");
             phones = internetMarketDateEntities.PhonesSet.ToList();
-            Trace.WriteLine(phones.Select(x => new { x.Firm, x.Model, x.Quantity, x.Cost, x.Processor, x.RAM, x.Battery, x.Photo, x.PDF }));
             Trace.WriteLine("TASK STOP!!");
-            return phones.Select(x => x.Firm + ' ' + x.Model + ' ' + x.Quantity + ' ' + x.Cost + ' ' + x.Processor + ' ' + x.RAM + ' ' + x.Battery + ' ' + x.Photo + ' ' + x.PDF).ToList();
+            return phones.Select(x => x.Firm + ' ' + x.Model + ' ' + x.Quantity + ' ' + x.Cost + ' ' + x.Processor + ' ' + x.RAM + ' ' + x.Battery).ToList();
         }
 
         public async void PhonesSet(string Firm, string Model, string Quantity, string Cost, string Processor, string RAM, string Battery, byte[] PDF, byte[] Photo, int count)

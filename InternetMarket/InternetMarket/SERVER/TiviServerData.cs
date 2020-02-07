@@ -14,8 +14,10 @@ namespace InternetMarket.SERVER
     {
         private List<TivisetSet> tivis;
         private InternetMarketDateEntities internetMarket;
-        public TiviServerData(InternetMarketDateEntities internetMarket)
+        private IException exception;
+        public TiviServerData(InternetMarketDateEntities internetMarket, IException exception)
         {
+            this.exception = exception;
             this.internetMarket = internetMarket;
         }
 
@@ -54,7 +56,7 @@ namespace InternetMarket.SERVER
             catch (Exception e)
             {
                 Trace.WriteLine(e.ToString());
-                MessageBox.Show(e.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                exception.ExceptionWriter(e.ToString());
             }
             return null;
         }

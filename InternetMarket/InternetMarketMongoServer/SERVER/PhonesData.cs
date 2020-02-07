@@ -23,7 +23,15 @@ namespace InternetMarketMongoServer.SERVER
 
         private void GetColumnPhone()
         {
-            coll = database.GetCollection<BsonDocument>("PhonesSet");
+            try
+            {
+                coll = database.GetCollection<BsonDocument>("PhonesSet");
+            }catch(Exception exp)
+            {
+                Trace.WriteLine(exp.StackTrace);
+                IException exception = new MainException();
+                exception.ExceptionWriter(exp.ToString());
+            }
         }
 
         public async void GetPhones()

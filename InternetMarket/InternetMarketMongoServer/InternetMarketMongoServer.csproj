@@ -120,6 +120,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="IContract.cs" />
+    <Compile Include="IException.cs" />
+    <Compile Include="MainException.cs" />
     <Compile Include="SERVER\ComputersData.cs" />
     <Compile Include="SERVER\InternetMarketMongoService.cs" />
     <Compile Include="SERVER\PhonesData.cs" />

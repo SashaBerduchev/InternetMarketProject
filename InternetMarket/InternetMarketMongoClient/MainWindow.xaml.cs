@@ -60,7 +60,6 @@ namespace InternetMarketMongoClient
         private void LoadBtn_Click(object sender, RoutedEventArgs e)
         {
             LoadData();
-            
         }
 
         private void combobox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -70,14 +69,21 @@ namespace InternetMarketMongoClient
 
         private void LoadData()
         {
-            if (combobox.SelectedItem.ToString() == "Phones")
+            try
             {
-                contract.GetPhones();
-                listbox.ItemsSource = contract.GetListPhones();
+                if (combobox.SelectedItem.ToString() == "Phones")
+                {
+                    contract.GetPhones();
+                    listbox.ItemsSource = contract.GetListPhones();
+                }
+            }catch(Exception exp)
+            {
+                Trace.WriteLine(exp.StackTrace);
+                MessageBox.Show("Соединение прервано", "Error");
             }
         }
         
-
+        
         private void OpenBtn_Click(object sender, RoutedEventArgs e)
         {
 

@@ -96,5 +96,10 @@ namespace InternetMarketMongoServer
         {
             new AddComputerWindow(mongoServer).Show();
         }
+
+        public static void MessageExp(string exp)
+        {
+            MessageBox.Show(exp, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+        }
     }
 }
