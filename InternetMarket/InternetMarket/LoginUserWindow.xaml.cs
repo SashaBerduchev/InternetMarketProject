@@ -105,5 +105,46 @@ namespace InternetMarket
         {
             pass = Password.Password;
         }
+
+        private void btlLogin_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                List<string> pass = interMarketService.GetUsers();
+                if (interMarketService.CheckUser(User.SelectedItem.ToString(), LoginUserWindow.PasswordText))
+                {
+                    new MainWindow(interMarketService).Show();
+                }
+                else
+                {
+                    MessageBox.Show("Неверный пароль", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
+            }
+            catch (NotSupportedException)
+            {
+                MessageBoxResult result = MessageBox.Show("Выберите пользователя", "Error", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                if (result == MessageBoxResult.No)
+                {
+                    this.Close();
+                }
+
+            }
+            catch (NullReferenceException)
+            {
+                MessageBoxResult result = MessageBox.Show("Ведите пароль", "Warning", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                if (result == MessageBoxResult.No)
+                {
+                    this.Close();
+                }
+            }
+            catch (Exception)
+            {
+                MessageBoxResult result = MessageBox.Show("Не удалось войти в систему", "Warning", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                if (result == MessageBoxResult.No)
+                {
+                    this.Close();
+                }
+            }
+        }
     }
 }

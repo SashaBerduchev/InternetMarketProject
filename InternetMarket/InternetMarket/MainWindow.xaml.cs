@@ -45,7 +45,7 @@ namespace InternetMarket
             combobox.Items.Add("Laptop");
             combobox.Items.Add("Printers");
             combobox.Items.Add("Boilers");
-            loading = new Loading(interMarketService);
+            loading = new Loading(interMarketService, this);
             Trace.WriteLine(this);
         }
 
@@ -63,7 +63,12 @@ namespace InternetMarket
 
         private void LoadBtn_Click(object sender, RoutedEventArgs e)
         {
-            DataGrid.ItemsSource = loading.LoadInfo(combobox.SelectedItem.ToString());
+            loading.LoadInfo(combobox.SelectedItem.ToString());
+        }
+
+        public void ReturnData(List<string> strings)
+        {
+            DataGrid.ItemsSource = strings;
         }
 
         private void GetCount()
@@ -343,7 +348,7 @@ namespace InternetMarket
 
         private void combobox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            DataGrid.ItemsSource = loading.LoadInfo(combobox.SelectedItem.ToString());
+            loading.LoadInfo(combobox.SelectedItem.ToString());
         }
 
         private void ExpPDF_Click(object sender, RoutedEventArgs e)

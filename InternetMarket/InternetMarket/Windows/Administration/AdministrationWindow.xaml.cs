@@ -38,7 +38,7 @@ namespace InternetMarket.Windows.Administration
 
         private void combobox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            mssqlviev.ItemsSource = loading.LoadInfo(combobox.SelectedItem.ToString());
+            loading.LoadInfo(combobox.SelectedItem.ToString());
         }
         private void btnRebaseMongo_Click(object sender, RoutedEventArgs e)
         {

@@ -13,12 +13,16 @@ namespace InternetMarket
     {
         private List<string> strings;
         private InterMarketService interMarketService;
-        public Loading(InterMarketService interMarketService)
+        private IException exception;
+        private Window window;
+        public Loading(InterMarketService interMarketService, Window window)
         {
+            this.window = window;
             this.interMarketService = interMarketService;
+            exception = new MainException();
         }
 
-        public List<string> LoadInfo(string type)
+        public async void LoadInfo(string type)
         {
             try
             {
@@ -63,7 +67,6 @@ namespace InternetMarket
                 {
                     GetBoilers();
                 }
-                return strings;
             }
             catch (Exception exp)
             {
@@ -74,32 +77,38 @@ namespace InternetMarket
                 }
                 else
                 {
-                    MessageBox.Show(exp.ToString(), "NotIdentityError", MessageBoxButton.OK, MessageBoxImage.Error);
+                    exception.ExceptionWriter(exp.ToString());
                     Trace.WriteLine(exp.ToString());
                 }
             }
-            return null;
+            finally
+            {
+                ReturnInfo();
+            }
         }
 
-        private void GetBoilers()
+        private void ReturnInfo()
         {
-            List<string> boilers = new List<string>();
-            boilers = interMarketService.GetBoilersData();
-
+            (window as MainWindow).ReturnData(strings);
         }
 
-        public void GetPhones()
+        private async void GetBoilers()
+        {
+           strings = interMarketService.GetBoilersData();
+        }
+
+        public async void GetPhones()
         {
             strings = interMarketService.LoadPhones().GetAwaiter().GetResult();
         }
 
-        public void GetTivis()
+        public async void GetTivis()
         {
             strings = interMarketService.LoadTivis();
             
 
         }
-        public void GetTablets()
+        public async void GetTablets()
         {
             try
             {
@@ -111,7 +120,7 @@ namespace InternetMarket
                 MessageBox.Show(e.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
-        public void GetComputers()
+        public async void GetComputers()
         {
             try
             {
