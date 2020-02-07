@@ -29,6 +29,7 @@ namespace InternetMarket
         private InterMarketService marketService;
         private InterMarketService interMarketService;
         private List<string> strings;
+        private Loading loading;
         public MainWindow(InterMarketService marketService)
         {
             interMarketService = new InterMarketService();
@@ -44,6 +45,7 @@ namespace InternetMarket
             combobox.Items.Add("Laptop");
             combobox.Items.Add("Printers");
             combobox.Items.Add("Boilers");
+            loading = new Loading(interMarketService);
             Trace.WriteLine(this);
         }
 
@@ -61,216 +63,7 @@ namespace InternetMarket
 
         private void LoadBtn_Click(object sender, RoutedEventArgs e)
         {
-            LoadInfo();
-        }
-
-        private void LoadInfo()
-        {
-            try
-            {
-                if (combobox.SelectedItem.ToString() == "Phones")
-                {
-                    Thread thread = new Thread(GetPhones);
-                    thread.Start();
-                    thread.IsBackground = true;
-
-                }
-                else if (combobox.SelectedItem.ToString() == "Tivis")
-                {
-                    Thread thread = new Thread(GetTivis);
-                    thread.Start();
-                    thread.IsBackground = true;
-                }
-                else if (combobox.SelectedItem.ToString() == "Computers")
-                {
-                    Thread thread = new Thread(GetComputers);
-                    thread.Start();
-                    thread.IsBackground = true;
-                }
-
-                else if (combobox.SelectedItem.ToString() == "Tablets")
-                {
-                    Thread thread = new Thread(GetTablets);
-                    thread.Start();
-                    thread.IsBackground = true;
-                }
-
-                else if (combobox.SelectedItem.ToString() == "CPU")
-                {
-                    Thread thread = new Thread(GetCPUInform);
-                    thread.Start();
-                    thread.IsBackground = true;
-                }
-                else if (combobox.SelectedItem.ToString() == "Graphics")
-                {
-                    Thread thread = new Thread(GetGraphicsCardInform);
-                    thread.Start();
-                    thread.IsBackground = true;
-                }
-
-                else if (combobox.SelectedItem.ToString() == "Laptop")
-                {
-                    Thread thread = new Thread(GetLaptop);
-                    thread.Start();
-                    thread.IsBackground = true;
-                }
-                else if (combobox.SelectedItem.ToString() == "Printers")
-                {
-                    Thread thread = new Thread(GetPrinters);
-                    thread.Start();
-                    thread.IsBackground = true;
-                }
-                else if (combobox.SelectedItem.ToString() == "Boilers")
-                {
-                    Thread thread = new Thread(GetBoilers);
-                    thread.Start();
-                    thread.IsBackground = true;
-                }
-            }
-            catch (Exception exp)
-            {
-                if (exp is NullReferenceException)
-                {
-                    MessageBox.Show("Выбирите нужный параметр загрузки", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                    Trace.WriteLine(exp.ToString());
-                }
-                else
-                {
-                    MessageBox.Show(exp.ToString(), "NotIdentityError", MessageBoxButton.OK, MessageBoxImage.Error);
-                    Trace.WriteLine(exp.ToString());
-                }
-            }
-        }
-
-        private void GetBoilers()
-        {
-            List<string> boilers = new List<string>();
-            Dispatcher.Invoke(() =>
-            {
-                boilers = interMarketService.GetBoilersData();
-                DataGrid.ItemsSource = boilers;
-                strings = boilers;
-                GetCount();
-            });
-        }
-
-        public void GetPhones()
-        {
-            Dispatcher.Invoke(() =>
-                {
-                    strings = interMarketService.LoadPhones().GetAwaiter().GetResult();
-                    DataGrid.ItemsSource = strings;
-                    GetCount();
-                }
-            );
-        }
-
-        public void GetTivis()
-        {
-            Dispatcher.Invoke(() =>
-            {
-                DataGrid.ItemsSource = interMarketService.LoadTivis();
-                GetCount();
-            });
-        }
-        public void GetTablets()
-        {
-            try
-            {
-                Dispatcher.Invoke(() =>
-                {
-                    strings = interMarketService.LoadTablets();
-                    DataGrid.ItemsSource = strings;
-                    GetCount();
-                });
-            }
-            catch (Exception e)
-            {
-                Trace.WriteLine(e.ToString());
-                MessageBox.Show(e.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-        }
-        public void GetComputers()
-        {
-            try
-            {
-                Dispatcher.Invoke(() =>
-                {
-                    strings = interMarketService.LoadComputers();
-                    DataGrid.ItemsSource = strings;
-                    GetCount();
-                });
-            }
-            catch (Exception e)
-            {
-                Trace.WriteLine(e.ToString());
-                MessageBox.Show(e.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-        }
-
-        public void GetCPUInform()
-        {
-            try
-            {
-                Dispatcher.Invoke(() =>
-                {
-                    strings = interMarketService.LoadCPU();
-                    DataGrid.ItemsSource = strings;
-                    GetCount();
-                });
-            }
-            catch (Exception e)
-            {
-                Trace.WriteLine(e.ToString());
-                MessageBox.Show(e.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-        }
-
-        public void GetGraphicsCardInform()
-        {
-            try
-            {
-                Dispatcher.Invoke(() =>//2
-                {
-                    DataGrid.ItemsSource = interMarketService.LoadGPU();
-                    GetCount();
-                });//5
-            }
-            catch (Exception e)
-            {
-                Trace.WriteLine(e.ToString());
-                MessageBox.Show(e.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);//6
-            }
-        }
-
-
-        public void GetLaptop()
-        {
-            try
-            {
-                Dispatcher.Invoke(() =>
-                {
-                    DataGrid.ItemsSource = interMarketService.GetLaptop();
-                    GetCount();
-                });
-            }
-            catch (Exception e)
-            {
-                Trace.WriteLine(e.ToString());
-                MessageBox.Show(e.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);//7
-            }
-        }
-
-        private void GetPrinters()
-        {
-            Dispatcher.Invoke(() =>
-            {
-                printers = new List<string>();
-                internetMarketDateEntities = new InternetMarketDateEntities();
-                printers = internetMarketDateEntities.PrintersSet.Select(x => x.Name + "" + x.Speed + "" + x.Colors + "" + x.Cost).ToList();
-                DataGrid.ItemsSource = printers;
-                GetCount();
-            });
+            DataGrid.ItemsSource = loading.LoadInfo(combobox.SelectedItem.ToString());
         }
 
         private void GetCount()
@@ -454,7 +247,7 @@ namespace InternetMarket
 
         private void MenuItem_ClickAdministration(object sender, RoutedEventArgs e)
         {
-            AdministrationWindow administrationWindow = new AdministrationWindow();
+            AdministrationWindow administrationWindow = new AdministrationWindow(loading);
             administrationWindow.Show();
         }
 
@@ -550,7 +343,7 @@ namespace InternetMarket
 
         private void combobox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            LoadInfo();
+            DataGrid.ItemsSource = loading.LoadInfo(combobox.SelectedItem.ToString());
         }
 
         private void ExpPDF_Click(object sender, RoutedEventArgs e)

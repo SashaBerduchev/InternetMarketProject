@@ -11,7 +11,7 @@ namespace InternetMarket
 {
     public class InterMarketService : IContract , IDisposable
     {
-        private IException exception = new MainException();
+        private IException exception;
         private PhoneServerData phoneServerData;
         private TiviServerData tiviServer;
         private UserServerData userServer;
@@ -44,6 +44,7 @@ namespace InternetMarket
             laptopData = new LaptopData();
             mailData = new MailData();
             countryData = new CountryData(internetMarketDateEntities);
+            exception = new MainException();
             Trace.WriteLine(this);
             Trace.WriteLine("Server INITIALIZE");
         }

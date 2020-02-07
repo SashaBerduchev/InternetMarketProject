@@ -1,17 +1,9 @@
 ﻿using InternetMarket.Windows.Users;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Diagnostics;
+using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace InternetMarket.Windows.Administration
 {
@@ -20,9 +12,22 @@ namespace InternetMarket.Windows.Administration
     /// </summary>
     public partial class AdministrationWindow : Window
     {
-        public AdministrationWindow()
+        private Loading loading;
+        public AdministrationWindow(Loading loading)
         {
+            this.loading = loading;
+           
             InitializeComponent();
+            combobox.Items.Add("Phones");
+            combobox.Items.Add("Tivis");
+            combobox.Items.Add("Computers");
+            combobox.Items.Add("Tablets");
+            combobox.Items.Add("CPU");
+            combobox.Items.Add("Graphics");
+            combobox.Items.Add("Laptop");
+            combobox.Items.Add("Printers");
+            combobox.Items.Add("Boilers");
+            Trace.WriteLine(this);
         }
 
         private void AddUserClick(object sender, RoutedEventArgs e)
@@ -30,5 +35,15 @@ namespace InternetMarket.Windows.Administration
             AddUserWindowServer addUserWindowServer = new AddUserWindowServer();
             addUserWindowServer.Show();
         }
+
+        private void combobox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            mssqlviev.ItemsSource = loading.LoadInfo(combobox.SelectedItem.ToString());
+        }
+        private void btnRebaseMongo_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
     }
 }

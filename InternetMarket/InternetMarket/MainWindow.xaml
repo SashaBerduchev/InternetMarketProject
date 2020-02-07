@@ -43,7 +43,7 @@
         <TextBox Name="countStartDelete" Grid.Column="5" Grid.Row="5" Margin="30,30,104,30" />
         <TextBox Name="countFinishDelete" Grid.Column="5" Grid.Row="5" Margin="116,30,19,30" />
         <Button Name="DeleteBttn" Grid.Column="5" Grid.Row="6" Margin="30,21,0,10" Content="Удалить" Click="DeleteBttn_Click"/>
-        <Menu Height="25" VerticalAlignment="Top" Grid.ColumnSpan="2" Margin="0,0,135,0">
+        <Menu Height="28" VerticalAlignment="Top" Grid.ColumnSpan="2" Margin="0,0,25,0">
             <MenuItem Header="Directory">
                 <MenuItem Header="Organisation" Click="MenuItem_Click_10" />
                 <MenuItem Header="Profecion"/>
