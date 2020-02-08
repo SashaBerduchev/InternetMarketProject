@@ -7,10 +7,28 @@
         mc:Ignorable="d"
         Title="AdministrationWindow" Height="450" Width="800">
     <Grid>
-        <Button Content="Add User" HorizontalAlignment="Left" Margin="460,103,0,0" VerticalAlignment="Top" Width="75" Click="AddUserClick"/>
-        <Button Content="Edit User" HorizontalAlignment="Left" Margin="460,177,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button Content="Delete User" HorizontalAlignment="Left" Margin="460,252,0,0" VerticalAlignment="Top" Width="75"/>
-        <ListBox HorizontalAlignment="Left" Height="227" Margin="99,103,0,0" VerticalAlignment="Top" Width="176"/>
+        <Button Content="Add User" HorizontalAlignment="Left" Margin="312,33,0,0" VerticalAlignment="Top" Width="75" Click="AddUserClick"/>
+        <Button Content="Edit User" HorizontalAlignment="Left" Margin="312,104,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Delete User" HorizontalAlignment="Left" Margin="312,182,0,0" VerticalAlignment="Top" Width="75"/>
+        <ListBox HorizontalAlignment="Left" Height="248" Margin="10,24,0,0" VerticalAlignment="Top" Width="297"/>
+        <ComboBox Name="combobox" HorizontalAlignment="Left" Margin="546,33,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="combobox_SelectionChanged"/>
+        <ListView x:Name="mssqlviev" HorizontalAlignment="Left" Height="258" Margin="450,77,0,0" VerticalAlignment="Top" Width="145">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <ListView x:Name="monoview" HorizontalAlignment="Left" Height="258" Margin="619,77,0,0" VerticalAlignment="Top" Width="144" >
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button x:Name="btnRebaseMongo" Content="Запуск переноса" HorizontalAlignment="Left" Margin="450,361,0,0" VerticalAlignment="Top" Width="313" Height="35" Click="btnRebaseMongo_Click"/>
+        <TextBlock HorizontalAlignment="Left" Margin="492,52,0,0" TextWrapping="Wrap" Text="MSSQLDBB" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="670,56,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.974,0.251" Text="MongoDB" Width="64"/>
 
     </Grid>
 </Window>

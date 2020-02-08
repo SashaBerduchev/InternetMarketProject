@@ -3,35 +3,48 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
-using System.Windows;
+using System.Windows.Threading;
 
 namespace InternetMarket
 {
-    class InterMarketService : IContract , IDisposable
+    public class InterMarketService : IContract , IDisposable
     {
+        private IException exception;
         private PhoneServerData phoneServerData;
         private TiviServerData tiviServer;
         private UserServerData userServer;
         private TabletServer tabletServer;
+        private BoilerServerData boilerServer;
+        private ComputersData computersData;
         private InternetMarketDateEntities internetMarketDateEntities;
         private List<string> users;
-        private List<string> cpulist;
-        private List<CPU> cpu;
-        private List<string> computerslist;
+        private List<CPUSet> cpu;
         private List<Country> countries;
         private List<CityData> cities;
         private List<string> listgpu;
         private List<GraphicsCard> graphics;
-        private List<ComputersSet> computers;
+        private CPUData CPU;
+        private GPUData graphicsCard;
+        private LaptopData laptopData;
+        private MailData mailData;
+        private CountryData countryData;
         public InterMarketService()
         {
             internetMarketDateEntities = new InternetMarketDateEntities();
-            phoneServerData = new PhoneServerData();
-            tiviServer = new TiviServerData();
+            phoneServerData = new PhoneServerData(internetMarketDateEntities, exception);
+            tiviServer = new TiviServerData(internetMarketDateEntities, exception);
             userServer = new UserServerData();
             tabletServer = new TabletServer();
+            boilerServer = new BoilerServerData(internetMarketDateEntities);
+            computersData = new ComputersData(internetMarketDateEntities);
+            CPU = new CPUData();
+            graphicsCard = new GPUData();
+            laptopData = new LaptopData();
+            mailData = new MailData();
+            countryData = new CountryData(internetMarketDateEntities);
+            exception = new MainException();
             Trace.WriteLine(this);
             Trace.WriteLine("Server INITIALIZE");
         }
@@ -45,42 +58,67 @@ namespace InternetMarket
             ClearContent();
             return userServer.SetUser(login, pass);
         }
+
+
         public List<string> GetUsers()
         {
-            ClearContent();
-            users = new List<string>();
-            try
+            DisableData();
+            List<string> users = userServer.GetUsers();
+            if(users != null)
             {
-                users = internetMarketDateEntities.UserSet.Select(x => x.Name).ToList();
-            }catch(Exception exp)
-            {
-                MessageBox.Show(exp.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return users;
             }
-            return users;
+            return null;
         }
-        public List<string> LoadPhones()
+        
+        public bool CheckUser(string login, string pass)
         {
-            return phoneServerData.GetPhones();
+            return userServer.CheckUser(login, pass);
+        }
+        public  Task<List<string>> LoadPhones()
+        {
+            return  phoneServerData.GetPhones();
         }
 
-        
-        public void PhonesSet(string Firm, string Model, string Quantity, string Cost, string Processor, string RAM, string Battery, string texpoint)
+        public List<PhonesSet> GetPhonesCollection()
         {
+            return phoneServerData.GetPhonesCollection();
+        }
+        public void PhonesSet(string Firm, string Model, string Quantity, string Cost, string Processor, string RAM, string Battery, string texpoint, byte[] PDF, byte[] Photo)
+        {
+            Task[] tasks = new Task[Convert.ToInt32(texpoint)];
             for (int i = 0; i < Convert.ToInt32(texpoint); i++)
             {
-                phoneServerData.PhonesSet(Firm, Model, Quantity, Cost, Processor, RAM, Battery);
+                Task task = new Task(() => TaskPhoneSet(Firm, Model, Quantity, Cost, Processor, RAM, Battery, PDF, Photo, Convert.ToInt32(texpoint)));
+                task.Start();
+                Trace.WriteLine(task + "start");
+                tasks[i] = task;
             }
+            Task.WaitAll(tasks);
+            //Task.Run(()=>phoneServerData.PhonesSetAllData());
+            phoneServerData.PhonesSetAllData();
         }
 
+        private async void TaskPhoneSet(string firm, string model, string quantity, string cost, string processor, string rAM, string battery, byte[] pDF, byte[] photo, int count)
+        {
+              phoneServerData.PhonesSet(firm, model, quantity, cost, processor, rAM, battery, pDF, photo, count);
+              Trace.WriteLine("PHONES SET");
+        }
+
+       
         public List<string> LoadComputers()
         {
-            computers = internetMarketDateEntities.ComputersSet.ToList();
-            computerslist = computers.AsParallel().Select(x => x.Firm + " " + x.Model + " " + x.Processor + " " + x.Quantity + " " + x.RAM + " " + x.VRAM).ToList();
-            return computerslist;
+            DisableData();
+            return computersData.LoadComputers();
         }
 
+        public List<ComputersSet> GetCompCollection()
+        {
+            return computersData.GetCompCollections();
+        }
         public List<string> LoadTivis()
         {
+            DisableData();
             return tiviServer.GetTivis();
         }
 
@@ -96,27 +134,15 @@ namespace InternetMarket
 
         }
 
+        
+
         public void ComputerSet(string Firm, string Model, string Quantity, string Cost, string Processor, string RAM, string VRAM, string Graphics, string textpoint)
         {
             ClearContent();
             
             for (int i = 0; i < Convert.ToInt32(textpoint); i++)
             {
-                var computers = new ComputersSet
-                {
-                    Firm = Firm,
-                    Model = Model,
-                    Processor = Processor,
-                    Quantity = Quantity,
-                    Cost = Cost,
-                    RAM = RAM,
-                    Graphics = Graphics,
-                    VRAM = VRAM
-                };
-                Trace.WriteLine(computers);
-                internetMarketDateEntities.ComputersSet.Add(computers);
-                Trace.WriteLine(internetMarketDateEntities);
-                internetMarketDateEntities.SaveChanges();
+                computersData.ComputerSet(Firm, Model, Quantity, Cost, Processor, RAM, VRAM, Graphics);
             }
         }
 
@@ -126,10 +152,16 @@ namespace InternetMarket
             internetMarketDateEntities = new InternetMarketDateEntities();
             for (int i=0; i<Convert.ToInt32(textpoint); i++)
             {
-                tabletServer.SetServer(name, model, proc, ram, gpu, resolution, battery);
-            }
-            
+                tabletServer.SetTablet(name, model, proc, ram, gpu, resolution, battery);
+            } 
         }
+
+        public List<string> LoadTablets()
+        {
+            DisableData();
+            return tabletServer.LoadTablets();
+        }
+
 
         public void OrganizationSet(string organization)
         {
@@ -144,13 +176,7 @@ namespace InternetMarket
 
         public void CountrySet(string country)
         {
-            InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
-            var countrydata = new Country
-            {
-                NameCountry = country
-            };
-            internetMarketDateEntities.CountrySet.Add(countrydata);
-            internetMarketDateEntities.SaveChanges();
+            countryData.CountrySet(country);
         }
 
         public void City(string name, string countryname)
@@ -164,14 +190,14 @@ namespace InternetMarket
             internetMarketDateEntities.SaveChanges();
         }
 
-        public string[] GetCountry()
+        public List<string> GetCountry()
         {
-            countries = internetMarketDateEntities.CountrySet.ToList();
-            return countries.Select(x =>x.NameCountry ).ToArray();
+            return countryData.GetCountry();
         }
 
         public string[] GetCity()
         {
+            DisableData();
             cities = internetMarketDateEntities.CityDataSet.ToList();
             return cities.AsParallel().Select(x => x.Name).ToArray();
         }
@@ -193,78 +219,40 @@ namespace InternetMarket
         {
             for (int i = 0; i < point; i++)
             {
-                InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
-                CPU cpudat = new CPU
-                {
-                    Name = Name,
-                    Architecture = Architecture,
-                    Chastota = Chastota,
-                    Cores = cores,
-                    GPU = gpu,
-                    KESHL1 = keshl1,
-                    KESHL2 = keshl2,
-                    KESHL3 = keshl3,
-                    RAM = ram,
-                    TDP = tdp
-                };
-                internetMarketDateEntities.CPUSet.Add(cpudat);
-                internetMarketDateEntities.SaveChanges();
+                CPU.SetCpu(Name, Architecture, Chastota, cores, keshl1, keshl2, keshl3, gpu, ram, tdp);
             }
         }
 
-        public void GraphicsCardSet(string name, string cores, string GraphicsCore, string Herts, string vram, string voltage, int point)
+        public void GraphicsCardSet(string name, string cores, string GraphicsCore, string Herts, string vram, string voltage, int point, byte[] photoread, byte[] arrayread)
         {
             for (int i = 0; i< point; i++)
             {
-                GraphicsCard graphics = new GraphicsCard
-                {
-                    Name = name,
-                    Cores = cores,
-                    GraphicsCore = GraphicsCore,
-                    Herts = Herts,
-                    Voltage = voltage,
-                    VRAM = vram
-                };
-                internetMarketDateEntities.GraphicsCardSet.Add(graphics);
-                internetMarketDateEntities.SaveChanges();
+                graphicsCard.SetGpu(name, cores, GraphicsCore, Herts, vram, voltage, photoread, arrayread);
             }
         }
 
-
+        public List<string> GetLaptop()
+        {
+            return laptopData.GetLaptop();
+        }
         public void LaptopSet(string name, string model, string proc, string ram, string vram, string gpu, string screen, string resolution, string battery, int point)
         {
             for (int i = 0; i < point; i++)
             {
-                Laptops laptops = new Laptops
-                {
-                    Name = name,
-                    Battery = battery,
-                    GPU = gpu,
-                    Model = model,
-                    Procc = proc,
-                    RAM = ram,
-                    Resolution = resolution,
-                    SCREEN = screen,
-                    VRAM = vram
-                };
-                internetMarketDateEntities.LaptopsSet.Add(laptops);
-                internetMarketDateEntities.SaveChanges();
+                laptopData.LeptopSet(name, model, proc, ram, vram, gpu, screen, resolution, battery);
             }
         }
 
         public List<string> LoadCPU()
         {
-            ClearContent();
-            cpu = internetMarketDateEntities.CPUSet.ToList();
-            cpulist = cpu.AsParallel().Select(x => x.Name + " " + x.Architecture + " " + x.Chastota + " " + x.Cores + " " + x.GPU + " " + x.KESHL1 + " " + x.KESHL2 + " " + x.KESHL3 + " " + x.RAM + " " + x.TDP).ToList();
-            return cpulist;
+            return CPU.GetCpu();
         }
 
         public List<string> LoadGPU()
         {
-            graphics = internetMarketDateEntities.GraphicsCardSet.ToList();
-            listgpu = graphics.AsParallel().Select(x => x.Name + " " + x.Herts + " " + x.Voltage + " " + x.VRAM + " " + x.GraphicsCore + " " + x.Cores).ToList();
-            return listgpu;
+            DisableData();
+
+            return graphicsCard.GetGraphics();
         }
 
         public void setLogin(string name, string password)
@@ -282,10 +270,69 @@ namespace InternetMarket
         {
             if (users != null) users.Clear();
             users = null;
-            if (cpulist != null) cpulist.Clear();
             if (cpu != null) cpu.Clear();
-            cpulist = null;
             cpu = null;
+        }
+
+        public void SetMail(string mail)
+        {
+            mailData.SetMail(mail);
+        }
+
+        public List<string> GetMail()
+        {
+            return mailData.GetMails();
+        }
+
+        public void SetServer(string[] server)
+        {
+            if (server == null) return;
+            mailData.SetMailServer(server);
+        }
+
+        public List<string> GetServers()
+        {
+            return mailData.GetServers();
+        }
+        public void SetBoiler(string Name, string Model, string Volume, string Voltage, string Power, string Cost)
+        {
+            boilerServer.BoilersSet(Name, Model, Volume, Voltage, Power, Cost);
+        }
+
+        public List<string> GetBoilersData()
+        {
+            return boilerServer.GetBoilers();
+        }
+
+        public void RemoveTivis(int start, int end)
+        {
+            tiviServer.RemoveTivis(start, end);
+        }
+
+        public void RemovePhones(int start, int stop)
+        {
+            phoneServerData.Remove(start, stop);
+        }
+
+        public void RemoveComputers(int start, int stop)
+        {
+            computersData.Remove(start, stop);
+        }
+
+        public void RemoveTablets(int start, int end)
+        {
+            tabletServer.Remove(start, end);
+        }
+
+        private void DisableData()
+        {
+            if(phoneServerData != null)phoneServerData.Disable();
+            if (computersData != null)computersData.Disable();
+            if (tiviServer != null) tiviServer.Disable();
+            if (tabletServer != null) tabletServer.Disable();
+            if (laptopData != null) laptopData.Dispose();
+            if (mailData != null) mailData.Dispose();
+            Trace.WriteLine("------->Disable<------");
         }
         public void Dispose()
         {
@@ -293,12 +340,12 @@ namespace InternetMarket
             internetMarketDateEntities = null;
             if (users != null) users.Clear();
             users = null;
-            if (cpulist != null) cpulist.Clear();
-            if (cpu != null) cpu.Clear();
-            cpulist = null;
             cpu = null;
             phoneServerData.Dispose();
             userServer.Dispose();
+            computersData.Dispose();
+            tabletServer.Dispose();
+            Trace.WriteLine("SERVER DISPOSE");
         }
     }
 

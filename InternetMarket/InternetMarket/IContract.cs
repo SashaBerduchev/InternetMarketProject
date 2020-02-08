@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.ServiceModel;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace InternetMarket
@@ -13,11 +10,9 @@ namespace InternetMarket
         [OperationContract]
         List<string> GetUsers();
         [OperationContract]
-        void PhonesSet(string Firm, string Model, string Quantity, string Cost, string Processor, string RAM, string Battery, string textpoint);
-        [OperationContract]
         void TiviSet(string Firm, string Model, string Quantity, string Cost, string textpoint);
         [OperationContract]
-        List<string> LoadPhones();
+        Task<List<string>> LoadPhones();
         [OperationContract]
         void ComputerSet(string Firm, string Model, string Quantity, string Cost, string Processor, string RAM, string VRAM, string Graphics, string textpoint);
         [OperationContract]
@@ -29,7 +24,7 @@ namespace InternetMarket
         [OperationContract]
         void City(string name, string countryname);
         [OperationContract]
-        string[] GetCountry();
+        List<string> GetCountry();
         [OperationContract]
         string[] GetCity();
         [OperationContract]
@@ -37,7 +32,7 @@ namespace InternetMarket
         [OperationContract]
         void CPUSet(string Name, string Architecture, string Chastota, string cores, string keshl1, string keshl2, string keshl3, string gpu, string ram, string tdp, int point);
         [OperationContract]
-        void GraphicsCardSet(string name, string cores, string GraphicsCore, string Herts, string vram, string voltage, int point);
+        void GraphicsCardSet(string name, string cores, string GraphicsCore, string Herts, string vram, string voltage, int point, byte[] photoread, byte[] arrayread);
         [OperationContract]
         void LaptopSet(string name, string model, string proc, string ram, string vram, string gpu, string screen, string resolution, string battery, int point);
         [OperationContract]
@@ -50,5 +45,23 @@ namespace InternetMarket
         void setLogin(string name, string password);
         [OperationContract]
         bool SetUserLogin(string login, string pass);
+        [OperationContract]
+        void PhonesSet(string Firm, string Model, string Quantity, string Cost, string Processor, string RAM, string Battery, string texpoint, byte[] PDF, byte[] Photo);
+        [OperationContract]
+        List<string> GetBoilersData();
+        [OperationContract]
+        void SetBoiler(string Name, string Model, string Volume, string Voltage, string Power, string Cost);
+        [OperationContract]
+        void RemoveTivis(int start, int end);
+        [OperationContract]
+        void RemovePhones(int start, int stop);
+        [OperationContract]
+        void RemoveComputers(int start, int stop);
+        [OperationContract]
+        void RemoveTablets(int start, int end);
+        [OperationContract]
+        List<string> GetLaptop();
+        [OperationContract]
+        bool CheckUser(string login, string pass);
     };
 }

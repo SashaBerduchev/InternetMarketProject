@@ -115,6 +115,12 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
+        <EntityType Name="Entity1Set">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
         <EntityType Name="GraphicsCardSet">
           <Key>
             <PropertyRef Name="Id" />
@@ -152,6 +158,13 @@
           <Property Name="SCREEN" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Resolution" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Battery" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MailSet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
         <EntityType Name="OblastDataSetSet">
           <Key>
@@ -212,6 +225,13 @@
           <Property Name="City" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Oblast" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Country" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SmtpServersSet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Smtp" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
         <EntityType Name="StreetSetSet">
           <Key>
@@ -278,15 +298,18 @@
           <EntitySet Name="DirectorSet" EntityType="Self.DirectorSet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DocForPainSet" EntityType="Self.DocForPainSet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DogovorSet" EntityType="Self.DogovorSet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Entity1Set" EntityType="Self.Entity1Set" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="GraphicsCardSet" EntityType="Self.GraphicsCardSet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="KassaSetSet" EntityType="Self.KassaSetSet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LaptopsSet" EntityType="Self.LaptopsSet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MailSet" EntityType="Self.MailSet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="OblastDataSetSet" EntityType="Self.OblastDataSetSet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="OrganizationPositionSetSet" EntityType="Self.OrganizationPositionSetSet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="OrganizationSetSet" EntityType="Self.OrganizationSetSet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PhonesSet" EntityType="Self.PhonesSet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PrintersSet" EntityType="Self.PrintersSet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="RegionDataSet" EntityType="Self.RegionDataSet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SmtpServersSet" EntityType="Self.SmtpServersSet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="StreetSetSet" EntityType="Self.StreetSetSet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TabletSetSet" EntityType="Self.TabletSetSet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TivisetSet" EntityType="Self.TivisetSet" Schema="dbo" store:Type="Tables" />
@@ -364,13 +387,16 @@
           <EntitySet Name="BankSetSet" EntityType="InternetMarketDateModel.BankSet" />
           <EntitySet Name="TabletSetSet" EntityType="InternetMarketDateModel.TabletSet" />
           <EntitySet Name="DocForPainSet" EntityType="InternetMarketDateModel.DocForPain" />
-          <EntitySet Name="CPUSet" EntityType="InternetMarketDateModel.CPU" />
           <EntitySet Name="GraphicsCardSet" EntityType="InternetMarketDateModel.GraphicsCard" />
           <EntitySet Name="LaptopsSet" EntityType="InternetMarketDateModel.Laptops" />
           <EntitySet Name="DogovorSet" EntityType="InternetMarketDateModel.Dogovor" />
           <EntitySet Name="ZakazPokupatelyaSet" EntityType="InternetMarketDateModel.ZakazPokupatelya" />
           <EntitySet Name="PrintersSet" EntityType="InternetMarketDateModel.Printers" />
           <EntitySet Name="BoilersSet" EntityType="InternetMarketDateModel.Boilers" />
+          <EntitySet Name="CPUSet" EntityType="InternetMarketDateModel.CPUSet" />
+          <EntitySet Name="MailSet" EntityType="InternetMarketDateModel.Mail" />
+          <EntitySet Name="Entity1Set" EntityType="InternetMarketDateModel.Entity1" />
+          <EntitySet Name="SmtpServersSet" EntityType="InternetMarketDateModel.SmtpServers" />
         </EntityContainer>
         <EntityType Name="Director">
           <Key>
@@ -500,22 +526,6 @@
           <Property Name="Dataload2" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="Dataload3" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
         </EntityType>
-        <EntityType Name="CPU">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="Architecture" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="Cores" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="Chastota" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="KESHL1" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="KESHL2" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="KESHL3" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="GPU" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="RAM" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="TDP" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
-        </EntityType>
         <EntityType Name="GraphicsCard">
           <Key>
             <PropertyRef Name="Id" />
@@ -584,6 +594,42 @@
           <Property Name="Cost" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="Model" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="CPUSet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Architecture" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Cores" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Chastota" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="KESHL1" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="KESHL2" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="KESHL3" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="GPU" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RAM" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TDP" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Mail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Entity1">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="SmtpServers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Smtp" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -785,23 +831,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="CPUSet">
-      <EntityTypeMapping TypeName="IsTypeOf(InternetMarketDateModel.CPU)">
-        <MappingFragment StoreEntitySet="CPUSet">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="Architecture" ColumnName="Architecture" />
-          <ScalarProperty Name="Cores" ColumnName="Cores" />
-          <ScalarProperty Name="Chastota" ColumnName="Chastota" />
-          <ScalarProperty Name="KESHL1" ColumnName="KESHL1" />
-          <ScalarProperty Name="KESHL2" ColumnName="KESHL2" />
-          <ScalarProperty Name="KESHL3" ColumnName="KESHL3" />
-          <ScalarProperty Name="GPU" ColumnName="GPU" />
-          <ScalarProperty Name="RAM" ColumnName="RAM" />
-          <ScalarProperty Name="TDP" ColumnName="TDP" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="GraphicsCardSet">
       <EntityTypeMapping TypeName="IsTypeOf(InternetMarketDateModel.GraphicsCard)">
         <MappingFragment StoreEntitySet="GraphicsCardSet">
@@ -874,6 +903,46 @@
           <ScalarProperty Name="Cost" ColumnName="Cost" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Model" ColumnName="Model" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CPUSet">
+      <EntityTypeMapping TypeName="IsTypeOf(InternetMarketDateModel.CPUSet)">
+        <MappingFragment StoreEntitySet="CPUSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Architecture" ColumnName="Architecture" />
+          <ScalarProperty Name="Cores" ColumnName="Cores" />
+          <ScalarProperty Name="Chastota" ColumnName="Chastota" />
+          <ScalarProperty Name="KESHL1" ColumnName="KESHL1" />
+          <ScalarProperty Name="KESHL2" ColumnName="KESHL2" />
+          <ScalarProperty Name="KESHL3" ColumnName="KESHL3" />
+          <ScalarProperty Name="GPU" ColumnName="GPU" />
+          <ScalarProperty Name="RAM" ColumnName="RAM" />
+          <ScalarProperty Name="TDP" ColumnName="TDP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MailSet">
+      <EntityTypeMapping TypeName="IsTypeOf(InternetMarketDateModel.Mail)">
+        <MappingFragment StoreEntitySet="MailSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Entity1Set">
+      <EntityTypeMapping TypeName="IsTypeOf(InternetMarketDateModel.Entity1)">
+        <MappingFragment StoreEntitySet="Entity1Set">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SmtpServersSet">
+      <EntityTypeMapping TypeName="IsTypeOf(InternetMarketDateModel.SmtpServers)">
+        <MappingFragment StoreEntitySet="SmtpServersSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Smtp" ColumnName="Smtp" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

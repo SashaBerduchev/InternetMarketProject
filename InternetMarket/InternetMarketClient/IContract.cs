@@ -8,12 +8,10 @@ using System.Threading.Tasks;
 namespace InternetMarketClient
 {
     [ServiceContract]
-    interface IContract
+    public interface IContract
     {
         [OperationContract]
         List<string> GetUsers();
-        [OperationContract]
-        void PhonesSet(string Firm, string Model, string Quantity, string Cost, string Processor, string RAM, string Battery, string textpoint);
         [OperationContract]
         void TiviSet(string Firm, string Model, string Quantity, string Cost, string textpoint);
         [OperationContract]
@@ -29,7 +27,7 @@ namespace InternetMarketClient
         [OperationContract]
         void City(string name, string countryname);
         [OperationContract]
-        string[] GetCountry();
+        List<string> GetCountry();
         [OperationContract]
         string[] GetCity();
         [OperationContract]
@@ -50,5 +48,23 @@ namespace InternetMarketClient
         void setLogin(string name, string password);
         [OperationContract]
         bool SetUserLogin(string login, string pass);
+        [OperationContract]
+        void PhonesSet(string Firm, string Model, string Quantity, string Cost, string Processor, string RAM, string Battery, string texpoint, byte[] PDF, byte[] Photo);
+        [OperationContract]
+        List<string> GetBoilersData();
+        [OperationContract]
+        void SetBoiler(string Name, string Model, string Volume, string Voltage, string Power, string Cost);
+        [OperationContract]
+        void RemoveTivis(int start, int end);
+        [OperationContract]
+        void RemovePhones(int start, int stop);
+        [OperationContract]
+        void RemoveComputers(int start, int stop);
+        [OperationContract]
+        void RemoveTablets(int start, int end);
+        [OperationContract]
+        List<string> GetLaptop();
+        [OperationContract]
+        bool CheckUser(string login, string pass);
     }
 }

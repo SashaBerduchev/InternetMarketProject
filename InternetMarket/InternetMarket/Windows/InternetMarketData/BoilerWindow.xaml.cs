@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,32 +20,18 @@ namespace InternetMarket.Windows.InternetMarketData
     /// </summary>
     public partial class BoilerWindow : Window
     {
-        InternetMarketDateEntities internetMarketDateEntities;
+        private InternetMarketDateEntities internetMarketDateEntities;
+        private InterMarketService interMarket;
         public BoilerWindow()
         {
             InitializeComponent();
+            Trace.WriteLine(this);
+            interMarket = new InterMarketService();
         }
-
 
         private void BtnSet_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                internetMarketDateEntities = new InternetMarketDateEntities();
-                Boilers boilers = new Boilers
-                {
-                    Name = Name.Text,
-                    Model = Model.Text,
-                    Volume = Volume.Text,
-                    Voltage = Voltage.Text,
-                    Power = Power.Text,
-                    Cost = Cost.Text
-                };
-                internetMarketDateEntities.BoilersSet.Add(boilers);
-            }catch(Exception exp)
-            {
-                MessageBox.Show(exp.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
+            interMarket.SetBoiler(Name.Text, Model.Text, Volume.Text, Voltage.Text, Power.Text, Cost.Text);
         }
     }
 }

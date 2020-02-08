@@ -70,3 +70,25 @@ F:\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Debug\System.D
 F:\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
 F:\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Debug\EntityFramework.SqlServerCompact.xml
 F:\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Debug\InternetMarketLibrery.dll.config
+C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Debug\InternetMarketLibrery.dll
+C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Debug\InternetMarketLibrery.pdb
+C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Debug\EntityFramework.dll
+C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Debug\EntityFramework.SqlServer.dll
+C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Debug\EntityFramework.SqlServerCompact.dll
+C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Debug\InternetMarket.exe
+C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Debug\System.Data.SqlServerCe.dll
+C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Debug\InternetMarket.pdb
+C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Debug\InternetMarket.exe.config
+C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Debug\EntityFramework.xml
+C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Debug\EntityFramework.SqlServer.xml
+C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Debug\EntityFramework.SqlServerCompact.xml
+C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketLibrery\obj\Debug\InternetMarketLibrery.csprojAssemblyReference.cache
+C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketLibrery\obj\Debug\InternetMarketLibrery.csproj.CopyComplete
+C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketLibrery\obj\Debug\InternetMarketLibrery.dll
+C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketLibrery\obj\Debug\InternetMarketLibrery.pdb
+C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Debug\mongocrypt.dll
+C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Debug\itextsharp.dll
+C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Debug\itextsharp.xml

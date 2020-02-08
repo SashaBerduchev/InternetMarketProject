@@ -28,6 +28,8 @@
         <TextBox Name="ramsettext" Grid.Column="0" Grid.Row="1" Margin="30" />
         <TextBox Name="batterysettext" Grid.Column="1" Grid.Row="1" Margin="30" />
         <TextBox Name="textpoint" Grid.Column="4" Grid.Row="1" Margin="30" />
+        <Button Name ="AddPdfFileBttn" Grid.Column="2" Grid.Row="1" Margin="30" Content="ПДФ" Click="AddPdfFileBttn_Click"/>
+        <Button Name ="AddPhotoFileBttn" Grid.Column="3" Grid.Row="1" Margin="30" Content="Фото" Click="AddPhotoFileBttn_Click"/>
         <Button Name="btnset" Grid.Column="2" Grid.Row="2" Margin="30" Content="set" Click="btnset_Click" />
     </Grid>
 </Window>

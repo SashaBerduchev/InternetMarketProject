@@ -23,18 +23,20 @@ namespace InternetMarket
     /// </summary>
     public partial class OpenPhones : Window
     {
+        private byte[] photoload;
+        private byte[] arrayread;
         private InterMarketService interMarketService;
         public OpenPhones()
         {
             InitializeComponent();
+            interMarketService = new InterMarketService();
             Trace.WriteLine(this);
         }
 
-        byte[] photoload;
-        byte[] arrayread;
+        
         private void btnset_Click(object sender, RoutedEventArgs e)
         {
-            for (int i = 0; i < Convert.ToInt32(textpointer.Text); i++)
+            for (int i = 0; i < Convert.ToInt32(textpoint.Text); i++)
             {
                 Thread thread = new Thread(PhonesInsert);
                 thread.Start();
@@ -69,19 +71,26 @@ namespace InternetMarket
         {
             Dispatcher.Invoke(() =>
             {
-                string firm = firmsettext.Text;
-                string model = modelsettext.Text;
-                string quantity = quantitysettext.Text;
-                string cost = costsettext.Text;
-                string proc = procsettext.Text;
-                string ram = ramsettext.Text;
-                string battery = batterysettext.Text;
-
-                InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
-
-                for (int i = 0; i < Convert.ToInt32(textpointer.Text); i++)
+                try
                 {
-                    interMarketService.PhonesSet(firm, model, quantity, cost, proc, ram, battery, textpointer.Text);
+                    string firm = firmsettext.Text;
+                    string model = modelsettext.Text;
+                    string quantity = quantitysettext.Text;
+                    string cost = costsettext.Text;
+                    string proc = procsettext.Text;
+                    string ram = ramsettext.Text;
+                    string battery = batterysettext.Text;
+                    byte[] PDF = arrayread;
+                    byte[] photo = photoload;
+                    //InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
+
+                    for (int i = 0; i < Convert.ToInt32(textpoint.Text); i++)
+                    {
+                        interMarketService.PhonesSet(firm, model, quantity, cost, proc, ram, battery, textpoint.Text, PDF, photo);
+                    }
+                }catch(Exception exp)
+                {
+                    Trace.WriteLine(exp.ToString());
                 }
             });
         }

@@ -1,8 +1,9 @@
-﻿using System;
+﻿using InternetMarket.Loaders;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 
@@ -10,33 +11,62 @@ namespace InternetMarket.SERVER
 {
     class PhoneServerData : IDisposable
     {
-        private List<PhonesSet> phones;
+        private static List<PhonesSet> phones;
+        private static Task<List<string>> phonesdat;
         private InternetMarketDateEntities internetMarketDateEntities;
-        public PhoneServerData()
+        private int start;
+        private int stop;
+        private int _count;
+        private List<PhonesSet> phoneses;
+        private IException exception;
+        public PhoneServerData(InternetMarketDateEntities internetMarketDateEntities, IException exception)
         {
-            internetMarketDateEntities = new InternetMarketDateEntities();
+            this.exception = exception;
+            this.internetMarketDateEntities = internetMarketDateEntities;
+            phoneses = new List<PhonesSet>();
+
         }
 
-        public List<string> GetPhones()
+        public Task<List<string>> GetPhones()
         {
-            if(phones != null) phones.Clear();
             try
             {
-                   phones = internetMarketDateEntities.PhonesSet.ToList();
-                   Trace.WriteLine(phones);
-                   Trace.WriteLine(phones.Select(x => new { x.Firm, x.Model, x.Quantity, x.Cost, x.Processor, x.RAM, x.Battery, x.Photo, x.PDF }));
-                   return phones.Select(x => x.Firm + " " + x.Model + " "+ x.Quantity + " " + x.Cost + " " + x.Processor + " " +x.RAM + " " +x.Battery + " " + x.Photo + " " + x.PDF ).ToList();
+                LoadingWindow loadingWindow = new LoadingWindow();
+                loadingWindow.Show();
+                Task<Task<List<string>>> task = new Task<Task<List<string>>>(() => PhonesLoading());
+                task.Start();
+                task.Wait();
+                phonesdat = task.GetAwaiter().GetResult();;
+                loadingWindow.Close();
+                return phonesdat;
             }
             catch (Exception e)
             {
                 Trace.WriteLine(e.ToString());
-                MessageBox.Show(e.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                exception.ExceptionWriter(e.ToString());
             }
             return null;
         }
 
-        public void PhonesSet(string Firm, string Model, string Quantity, string Cost, string Processor, string RAM, string Battery)
+        async Task<List<string>> PhonesLoading()
         {
+            List<string> phones;
+            Trace.WriteLine("TASK START!!");
+            phones = Phone();
+            return phones;
+        }
+
+        private List<string> Phone()
+        {
+            Trace.WriteLine("TASK RUn");
+            phones = internetMarketDateEntities.PhonesSet.ToList();
+            Trace.WriteLine("TASK STOP!!");
+            return phones.Select(x => x.Firm + ' ' + x.Model + ' ' + x.Quantity + ' ' + x.Cost + ' ' + x.Processor + ' ' + x.RAM + ' ' + x.Battery).ToList();
+        }
+
+        public async void PhonesSet(string Firm, string Model, string Quantity, string Cost, string Processor, string RAM, string Battery, byte[] PDF, byte[] Photo, int count)
+        {
+            _count = count;   
             var phonedat = new PhonesSet
             {
                 Battery = Battery,
@@ -45,20 +75,73 @@ namespace InternetMarket.SERVER
                 Model = Model,
                 Processor = Processor,
                 Quantity = Quantity,
-                RAM = RAM
+                RAM = RAM,
+                PDF = PDF,
+                Photo = Photo
             };
+            phoneses.Add(phonedat);
             Trace.WriteLine(phonedat);
-            internetMarketDateEntities.PhonesSet.Add(phonedat);
-            Trace.WriteLine(internetMarketDateEntities);
-            internetMarketDateEntities.SaveChanges();
+
         }
 
+        public void PhonesSetAllData()
+        {
+            Thread.Sleep(1000);
+            if (Check() == false) return;
+            internetMarketDateEntities.PhonesSet.AddRange(phoneses);
+            Trace.WriteLine(internetMarketDateEntities);
+            internetMarketDateEntities.SaveChanges();
+            if (phoneses != null) phoneses.Clear();
+        }
 
+        private bool Check()
+        {
+            if (phoneses.Count >= _count)
+                return true;
+            return false;
+        }
+
+        public void Remove(int start, int stop)
+        {
+            this.start = start;
+            this.stop = stop;
+            for (int i = this.start; i < this.stop; i++)
+            {
+                try
+                {
+                    Trace.WriteLine(phones[i]);
+                    internetMarketDateEntities.PhonesSet.Remove(phones[i]);
+                    internetMarketDateEntities.SaveChanges();
+                }
+                catch (NullReferenceException nullexp)
+                {
+                    Trace.WriteLine(nullexp.ToString());
+                    MessageBox.Show("Загрузите данные", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+                catch (InvalidOperationException invalidoper)
+                {
+                    Trace.WriteLine(invalidoper.ToString());
+                    MessageBox.Show("Элемент уже удален", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+        }
+
+        public List<PhonesSet> GetPhonesCollection()
+        {
+            return phones;
+        }
+        public void Disable()
+        {
+            if (phones != null)
+            {
+                phones.Clear();
+                phones = null;
+            }
+        }
         public void Dispose()
         {
-            if(internetMarketDateEntities != null) internetMarketDateEntities.Dispose();
-            internetMarketDateEntities = null;
-            phones.Clear();
+            phonesdat = null;
+            if (phones != null) phones.Clear();
             phones = null;
         }
     }

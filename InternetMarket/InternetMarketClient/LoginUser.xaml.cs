@@ -13,47 +13,58 @@ namespace InternetMarketClient
     /// </summary>
     public partial class LoginUser : Window, IDisposable
     {
-        
+
         //List<UsersSet> usery;
-        IContract contract;
-        ChannelFactory<IContract> _factory;
+        protected IContract contract;
+        private ChannelFactory<IContract> _factory;
+        private static string pass = "";
+
         public LoginUser()
         {
             InitializeComponent();
-            Uri uri = new Uri("net.tcp://localhost:7000/IContract");
+            StartConnetion();
+            Trace.WriteLine(this);
+        }
+        
+        private void StartConnetion()
+        {
+            //string uriAddress ("net.tcp://192.168.1.104:7000/IContract");
+            string uriAddress = "net.tcp://localhost:4000/IContract";
+            Uri uri = new Uri(uriAddress);
+
             NetTcpBinding netTcpBinding = new NetTcpBinding();
-            EndpointAddress endpoint = new EndpointAddress(uri);
+            EndpointAddress endpoint = new EndpointAddress(uriAddress);
             _factory = new ChannelFactory<IContract>(netTcpBinding, endpoint);
             Trace.WriteLine(this);
             contract = _factory.CreateChannel();
             try
             {
                 User.ItemsSource = contract.GetUsers();
-            } catch(Exception e)
+            }
+            catch (Exception e)
             {
+                Trace.WriteLine(e.StackTrace);
                 MessageBox.Show("Ошибка подкчения к севреру", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-                
         }
-
 
         private void BtlLogin_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                if (contract.SetUserLogin(User.SelectedItem.ToString(), Password.Password))
+                if (contract.CheckUser(User.SelectedItem.ToString(), Password.Password))
                 {
-                    new MainWindow().Show();
+                    new MainWindow(contract).Show();
                     this.Close();
                 }
                 else
                 {
                     MessageBox.Show("Неверный пароль", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
                 }
-            }catch(NullReferenceException )
+            } catch (NullReferenceException)
             {
                 MessageBoxResult result = MessageBox.Show("Выберите пользователя", "Warning", MessageBoxButton.YesNo, MessageBoxImage.Warning);
-                if( result == MessageBoxResult.Yes)
+                if (result == MessageBoxResult.Yes)
                 {
                     new LoginUser().Show();
                     this.Close();
@@ -62,8 +73,9 @@ namespace InternetMarketClient
                 {
                     this.Close();
                 }
-            }catch(CommunicationException)
+            } catch (CommunicationException)
             {
+
                 MessageBoxResult result = MessageBox.Show("Ошибка подключения к серверу", "Warning", MessageBoxButton.YesNo, MessageBoxImage.Error);
                 if (result == MessageBoxResult.Yes)
                 {
@@ -77,15 +89,16 @@ namespace InternetMarketClient
             }
         }
 
+            
         private void Password_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
             {
                 try
                 {
-                    if (contract.SetUserLogin(User.SelectedItem.ToString(), Password.Password))
+                    if (contract.CheckUser(User.SelectedItem.ToString(), Password.Password))
                     {
-                        new MainWindow().Show();
+                        new MainWindow(contract).Show();
                         this.Close();
                     }
                     else
@@ -127,7 +140,31 @@ namespace InternetMarketClient
         }
         public void Dispose()
         {
-            _factory.Close();
+            if (_factory != null)
+                try
+                {
+                    //_factory.Close();
+                }catch(Exception exp)
+                {
+                    Trace.WriteLine(exp.ToString());
+                    MessageBoxResult result = MessageBox.Show(exp.ToString(), "Error", MessageBoxButton.YesNo, MessageBoxImage.Error);
+                    if (result == MessageBoxResult.Yes)
+                    {
+                        new LoginUser().Show();
+                    }
+                }
+        }
+        public static string PasswordText
+        {
+            get
+            {
+                return pass;
+            }
+        }
+        private void Password_PreviewKeyUp(object sender, KeyEventArgs e)
+        {
+            pass = Password.Password;
+            
         }
     }
 }

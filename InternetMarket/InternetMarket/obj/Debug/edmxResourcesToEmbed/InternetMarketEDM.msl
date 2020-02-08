@@ -195,23 +195,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="CPUSet">
-      <EntityTypeMapping TypeName="IsTypeOf(InternetMarketDateModel.CPU)">
-        <MappingFragment StoreEntitySet="CPUSet">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="Architecture" ColumnName="Architecture" />
-          <ScalarProperty Name="Cores" ColumnName="Cores" />
-          <ScalarProperty Name="Chastota" ColumnName="Chastota" />
-          <ScalarProperty Name="KESHL1" ColumnName="KESHL1" />
-          <ScalarProperty Name="KESHL2" ColumnName="KESHL2" />
-          <ScalarProperty Name="KESHL3" ColumnName="KESHL3" />
-          <ScalarProperty Name="GPU" ColumnName="GPU" />
-          <ScalarProperty Name="RAM" ColumnName="RAM" />
-          <ScalarProperty Name="TDP" ColumnName="TDP" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="GraphicsCardSet">
       <EntityTypeMapping TypeName="IsTypeOf(InternetMarketDateModel.GraphicsCard)">
         <MappingFragment StoreEntitySet="GraphicsCardSet">
@@ -284,6 +267,46 @@
           <ScalarProperty Name="Cost" ColumnName="Cost" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Model" ColumnName="Model" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CPUSet">
+      <EntityTypeMapping TypeName="IsTypeOf(InternetMarketDateModel.CPUSet)">
+        <MappingFragment StoreEntitySet="CPUSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Architecture" ColumnName="Architecture" />
+          <ScalarProperty Name="Cores" ColumnName="Cores" />
+          <ScalarProperty Name="Chastota" ColumnName="Chastota" />
+          <ScalarProperty Name="KESHL1" ColumnName="KESHL1" />
+          <ScalarProperty Name="KESHL2" ColumnName="KESHL2" />
+          <ScalarProperty Name="KESHL3" ColumnName="KESHL3" />
+          <ScalarProperty Name="GPU" ColumnName="GPU" />
+          <ScalarProperty Name="RAM" ColumnName="RAM" />
+          <ScalarProperty Name="TDP" ColumnName="TDP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MailSet">
+      <EntityTypeMapping TypeName="IsTypeOf(InternetMarketDateModel.Mail)">
+        <MappingFragment StoreEntitySet="MailSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Entity1Set">
+      <EntityTypeMapping TypeName="IsTypeOf(InternetMarketDateModel.Entity1)">
+        <MappingFragment StoreEntitySet="Entity1Set">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SmtpServersSet">
+      <EntityTypeMapping TypeName="IsTypeOf(InternetMarketDateModel.SmtpServers)">
+        <MappingFragment StoreEntitySet="SmtpServersSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Smtp" ColumnName="Smtp" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

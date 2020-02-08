@@ -5,13 +5,13 @@ using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace InternetMarketLibrery
+namespace InternetMarket
 {
     [ServiceContract]
     public interface IContract
     {
         [OperationContract]
-        void PhonesSet(string Firm, string Model, string Quantity, string Cost, string Processor, string RAM, string Battery, string textpoint);
+        List<string> GetUsers();
         [OperationContract]
         void TiviSet(string Firm, string Model, string Quantity, string Cost, string textpoint);
         [OperationContract]
@@ -45,6 +45,14 @@ namespace InternetMarketLibrery
         [OperationContract]
         List<string> LoadGPU();
         [OperationContract]
-        bool SetUserLogin(string name, string password);
-    }
+        void setLogin(string name, string password);
+        [OperationContract]
+        bool SetUserLogin(string login, string pass);
+        [OperationContract]
+        void PhonesSet(string Firm, string Model, string Quantity, string Cost, string Processor, string RAM, string Battery, string texpoint, byte[] PDF, byte[] Photo);
+        [OperationContract]
+        List<string> GetBoilersData();
+        [OperationContract]
+        void SetBoiler(string Name, string Model, string Volume, string Voltage, string Power, string Cost);
+    };
 }

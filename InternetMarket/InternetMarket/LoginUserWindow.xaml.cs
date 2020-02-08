@@ -3,44 +3,24 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.ServiceModel;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace InternetMarket
 {
     /// <summary>
     /// Логика взаимодействия для LoginUserWindow.xaml
     /// </summary>
-    public partial class LoginUserWindow : Window, IDisposable
+    public partial class LoginUserWindow : Window
     {
-        private InternetMarketDateEntities internetMarketDateEntities;
         private InterMarketService interMarketService;
+        private static string pass = "";
         public LoginUserWindow()
         {
             InitializeComponent();
-            string uriAddress = "net.tcp://localhost:7000/IContract";//4
-            //Uri addres = new Uri("net.tcp://localhost:4000/IContract");
-            Uri addres = new Uri(uriAddress);//5
-            NetTcpBinding binding = new NetTcpBinding();//6
-            binding.ListenBacklog = 2000;//7
-            binding.MaxConnections = 2000;//8
-            binding.TransferMode = TransferMode.Buffered;//9
-            binding.MaxReceivedMessageSize = 104857600;//10
-            Type type = typeof(IContract);//11
-            ServiceHost serviceHost = new ServiceHost(typeof(InterMarketService));//12
-            serviceHost.AddServiceEndpoint(type, binding, uriAddress);//13
-            serviceHost.Open();//14
-            Trace.WriteLine(serviceHost);
-            Trace.WriteLine(this);
+            StartConnection();
 
+            Trace.WriteLine(this);
             interMarketService = new InterMarketService();
             //Костыль, если нету юзеров
             interMarketService.SetUserIfApsent();
@@ -48,34 +28,92 @@ namespace InternetMarket
 
             try
             {
-                if (internetMarketDateEntities != null) internetMarketDateEntities = null; //обнулить есл существует
-                internetMarketDateEntities = new InternetMarketDateEntities();
-                User.ItemsSource = internetMarketDateEntities.UserSet.Select(x => x.Name).ToList();
+                User.ItemsSource = interMarketService.GetUsers();
             }
             catch (Exception exp)
             {
                 MessageBox.Show("Нет подключентя к базе данных", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                Trace.WriteLine(exp.ToString());
+                Trace.WriteLine(exp.StackTrace);
             }
         }
 
-        private void BtlLogin_Click(object sender, RoutedEventArgs e)
+        private void StartConnection()
         {
-            internetMarketDateEntities = new InternetMarketDateEntities();
             try
             {
-                List<string> pass = internetMarketDateEntities.UserSet.Where(x => x.Name.Contains(User.SelectedItem.ToString())).Select(p => p.Password).ToList();
-                if (pass.Contains(Password.Password))
+                //string uriAddress = "net.tcp://192.168.1.104:7000/IContract";//4
+                string uriAddress = "net.tcp://localhost:4000/IContract"; 
+                Uri addres = new Uri(uriAddress);//5
+                NetTcpBinding binding = new NetTcpBinding();//6
+                binding.ListenBacklog = 2000;//7
+                binding.MaxConnections = 2000;//8
+                binding.TransferMode = TransferMode.Buffered;//9
+                binding.MaxReceivedMessageSize = 104857600;//10
+                Type type = typeof(IContract);//11
+                ServiceHost serviceHost = new ServiceHost(typeof(InterMarketService));//12
+                serviceHost.AddServiceEndpoint(type, binding, uriAddress);//13
+                serviceHost.Open();//14
+                Trace.WriteLine(serviceHost);
+            }catch(Exception exp)
+            {
+                Trace.WriteLine(exp.StackTrace);
+                MessageBoxResult res = MessageBox.Show("Ошибка подключения к серверу, неверный ip, port, попробовать снова?", "Error", MessageBoxButton.YesNo, MessageBoxImage.Error);
+                if (res == MessageBoxResult.Yes)
                 {
-                    UserSet user = new UserSet
-                    {
-                        Name = User.SelectedItem.ToString(),
-                        Password = Password.Password
-                    };
-                    internetMarketDateEntities.UserSet.Add(user);
-                    internetMarketDateEntities.SaveChanges();
-                    new MainWindow(this).Show();
+                    new LoginUserWindow().Show();
                     this.Close();
+                }
+            }
+        }
+
+
+        private void Password_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                List<string> Users = interMarketService.GetUsers();
+                if (interMarketService.CheckUser(User.SelectedItem.ToString(), LoginUserWindow.PasswordText))
+                {
+                    new MainWindow(interMarketService).Show();
+                }
+                else
+                {
+                    MessageBox.Show("Неверный пароль", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
+
+            }
+        }
+
+        public void StopServer()
+        {
+            interMarketService.Dispose();
+        }
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            //Dispose();
+        }
+
+        public static string PasswordText
+        {
+            get
+            {
+                return pass;
+            }
+        }
+
+        private void Password_KeyUp(object sender, KeyEventArgs e)
+        {
+            pass = Password.Password;
+        }
+
+        private void btlLogin_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                List<string> pass = interMarketService.GetUsers();
+                if (interMarketService.CheckUser(User.SelectedItem.ToString(), LoginUserWindow.PasswordText))
+                {
+                    new MainWindow(interMarketService).Show();
                 }
                 else
                 {
@@ -106,50 +144,6 @@ namespace InternetMarket
                 {
                     this.Close();
                 }
-            }
-            Dispose();
-        }
-
-        private void Password_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.Key == Key.Enter)
-            {
-                internetMarketDateEntities = new InternetMarketDateEntities();
-                List<string> pass = internetMarketDateEntities.UserSet.Where(x => x.Name.Contains(User.SelectedItem.ToString())).Select(p => p.Password).ToList();
-                if (pass.Contains(Password.Password))
-                {
-                    UserSet user = new UserSet
-                    {
-                        Name = User.SelectedItem.ToString(),
-                        Password = Password.Password
-                    };
-                    internetMarketDateEntities.UserSet.Add(user);
-                    internetMarketDateEntities.SaveChanges();
-                    new MainWindow(this).Show();
-                    this.Close();
-                }
-                else
-                {
-                    MessageBox.Show("Неверный пароль", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
-                }
-
-            }
-        }
-
-        public void StopServer()
-        {
-            interMarketService.Dispose();
-        }
-        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            Dispose();
-        }
-        public void Dispose()
-        {
-            if (internetMarketDateEntities != null)
-            {
-                internetMarketDateEntities.Dispose();
-                internetMarketDateEntities = null;
             }
         }
     }

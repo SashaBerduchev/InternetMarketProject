@@ -24,9 +24,11 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
+        <TextBox x:Name="countElem" Grid.Column="4" Grid.Row="3" Margin="20" />
         <Button Name="btnPrint" Grid.Column="4" Margin="30" Content="Печать" Click="BtnPrint_Click"/>
-        <ComboBox Name="combobox" Grid.Column="2" Grid.Row="0" Margin="40,40,30,30" />
-        <ListBox Name="DataGrid" Grid.Column="0" Grid.Row="2" Grid.RowSpan="5" Grid.ColumnSpan="4" Margin="10,72,-10,15"  />
+        <ComboBox Name="combobox" Grid.Column="2" Grid.Row="0" Margin="40,40,30,30" SelectionChanged="combobox_SelectionChanged" />
+        <Button Name="OpenMail" Grid.Column="5" Grid.Row="0" Margin="15,33,45,28" Content="Mail" Click="OpenMail_Click"/>
+        <ListView Name="DataGrid" Grid.Column="0" Grid.Row="2" Grid.RowSpan="5" Grid.ColumnSpan="4" Margin="10,72,-10,15"  />
         <Button Name="LoadBtn" Grid.Column="0" Margin="30,51,30,10" Content="Load" Click="LoadBtn_Click"/>
         <Button Name="OpenBtn" Grid.Column="2" Grid.Row="1" Margin="30,33,30,28" Content="OpenPhone" Click="OpenBtn_Click"/>
         <Button Name="OpenBtnTivi" Grid.Column="5" Grid.Row="1" Margin="15,33,45,28" Content="OpenTivi" Click="OpenBtnTivi_Click"/>
@@ -38,7 +40,10 @@
         <Button Name="OpenBtnPrinter" Grid.Column="3" Grid.Row="2" Margin="35,20,25,40" Content="Printers" Click="OpenBtnPrinter_Click"  />
         <Button Name="OpenBtnBoiler" Grid.Column="4" Grid.Row="2" Margin="30,39,30,21" Content="Boilers" Click="OpenBtnBoiler_Click"  />
         <Button Name="Print" Grid.Column="4" Grid.Row="4" Margin="30,21,0,10" Content="Сохранить" Click="Print_Click" />
-        <Menu Height="25" VerticalAlignment="Top" Grid.ColumnSpan="2" Margin="0,0,135,0">
+        <TextBox Name="countStartDelete" Grid.Column="5" Grid.Row="5" Margin="30,30,104,30" />
+        <TextBox Name="countFinishDelete" Grid.Column="5" Grid.Row="5" Margin="116,30,19,30" />
+        <Button Name="DeleteBttn" Grid.Column="5" Grid.Row="6" Margin="30,21,0,10" Content="Удалить" Click="DeleteBttn_Click"/>
+        <Menu Height="28" VerticalAlignment="Top" Grid.ColumnSpan="2" Margin="0,0,25,0">
             <MenuItem Header="Directory">
                 <MenuItem Header="Organisation" Click="MenuItem_Click_10" />
                 <MenuItem Header="Profecion"/>
@@ -64,5 +69,7 @@
                 <MenuItem Header="Administration" Click="MenuItem_ClickAdministration"/>
             </MenuItem>
         </Menu>
+        <Button x:Name="ExpPDF" Content="Экспорт в PDF" Grid.Column="5" HorizontalAlignment="Left" Margin="15,10,0,0" Grid.Row="2" VerticalAlignment="Top" Width="148" Click="ExpPDF_Click"/>
+        <Button x:Name="ExpExcel" Content="Экспорт в Excel" Grid.Column="5" HorizontalAlignment="Left" Margin="15,57,0,0" Grid.Row="2" VerticalAlignment="Top" Width="148" Click="ExpExcel_Click"/>
     </Grid>
 </Window>

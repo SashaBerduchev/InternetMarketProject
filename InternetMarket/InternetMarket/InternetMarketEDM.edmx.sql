@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 10/16/2019 21:37:22
--- Generated from EDMX file: D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\InternetMarketEDM.edmx
+-- Date Created: 01/24/2020 20:25:27
+-- Generated from EDMX file: C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\InternetMarketEDM.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -52,6 +52,9 @@ GO
 IF OBJECT_ID(N'[dbo].[DogovorSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[DogovorSet];
 GO
+IF OBJECT_ID(N'[dbo].[Entity1Set]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Entity1Set];
+GO
 IF OBJECT_ID(N'[dbo].[GraphicsCardSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[GraphicsCardSet];
 GO
@@ -60,6 +63,9 @@ IF OBJECT_ID(N'[dbo].[KassaSetSet]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[LaptopsSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[LaptopsSet];
+GO
+IF OBJECT_ID(N'[dbo].[MailSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[MailSet];
 GO
 IF OBJECT_ID(N'[dbo].[OblastDataSetSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[OblastDataSetSet];
@@ -78,6 +84,9 @@ IF OBJECT_ID(N'[dbo].[PrintersSet]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[RegionDataSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[RegionDataSet];
+GO
+IF OBJECT_ID(N'[dbo].[SmtpServersSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[SmtpServersSet];
 GO
 IF OBJECT_ID(N'[dbo].[StreetSetSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[StreetSetSet];
@@ -276,22 +285,6 @@ CREATE TABLE [dbo].[DocForPainSet] (
 );
 GO
 
--- Creating table 'CPUSet'
-CREATE TABLE [dbo].[CPUSet] (
-    [Id] int IDENTITY(1,1) NOT NULL,
-    [Name] nvarchar(max)  NOT NULL,
-    [Architecture] nvarchar(max)  NOT NULL,
-    [Cores] nvarchar(max)  NOT NULL,
-    [Chastota] nvarchar(max)  NOT NULL,
-    [KESHL1] nvarchar(max)  NOT NULL,
-    [KESHL2] nvarchar(max)  NOT NULL,
-    [KESHL3] nvarchar(max)  NOT NULL,
-    [GPU] nvarchar(max)  NOT NULL,
-    [RAM] nvarchar(max)  NOT NULL,
-    [TDP] nvarchar(max)  NOT NULL
-);
-GO
-
 -- Creating table 'GraphicsCardSet'
 CREATE TABLE [dbo].[GraphicsCardSet] (
     [Id] int IDENTITY(1,1) NOT NULL,
@@ -358,6 +351,42 @@ CREATE TABLE [dbo].[BoilersSet] (
     [Cost] nvarchar(max)  NOT NULL,
     [Name] nvarchar(max)  NOT NULL,
     [Model] nvarchar(max)  NOT NULL
+);
+GO
+
+-- Creating table 'CPUSet'
+CREATE TABLE [dbo].[CPUSet] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [Name] nvarchar(max)  NOT NULL,
+    [Architecture] nvarchar(max)  NOT NULL,
+    [Cores] nvarchar(max)  NOT NULL,
+    [Chastota] nvarchar(max)  NOT NULL,
+    [KESHL1] nvarchar(max)  NOT NULL,
+    [KESHL2] nvarchar(max)  NOT NULL,
+    [KESHL3] nvarchar(max)  NOT NULL,
+    [GPU] nvarchar(max)  NOT NULL,
+    [RAM] nvarchar(max)  NOT NULL,
+    [TDP] nvarchar(max)  NOT NULL
+);
+GO
+
+-- Creating table 'MailSet'
+CREATE TABLE [dbo].[MailSet] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [Email] nvarchar(max)  NOT NULL
+);
+GO
+
+-- Creating table 'Entity1Set'
+CREATE TABLE [dbo].[Entity1Set] (
+    [Id] int IDENTITY(1,1) NOT NULL
+);
+GO
+
+-- Creating table 'SmtpServersSet'
+CREATE TABLE [dbo].[SmtpServersSet] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [Smtp] nvarchar(max)  NOT NULL
 );
 GO
 
@@ -467,12 +496,6 @@ ADD CONSTRAINT [PK_DocForPainSet]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
--- Creating primary key on [Id] in table 'CPUSet'
-ALTER TABLE [dbo].[CPUSet]
-ADD CONSTRAINT [PK_CPUSet]
-    PRIMARY KEY CLUSTERED ([Id] ASC);
-GO
-
 -- Creating primary key on [Id] in table 'GraphicsCardSet'
 ALTER TABLE [dbo].[GraphicsCardSet]
 ADD CONSTRAINT [PK_GraphicsCardSet]
@@ -506,6 +529,30 @@ GO
 -- Creating primary key on [Id] in table 'BoilersSet'
 ALTER TABLE [dbo].[BoilersSet]
 ADD CONSTRAINT [PK_BoilersSet]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'CPUSet'
+ALTER TABLE [dbo].[CPUSet]
+ADD CONSTRAINT [PK_CPUSet]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'MailSet'
+ALTER TABLE [dbo].[MailSet]
+ADD CONSTRAINT [PK_MailSet]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'Entity1Set'
+ALTER TABLE [dbo].[Entity1Set]
+ADD CONSTRAINT [PK_Entity1Set]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'SmtpServersSet'
+ALTER TABLE [dbo].[SmtpServersSet]
+ADD CONSTRAINT [PK_SmtpServersSet]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 

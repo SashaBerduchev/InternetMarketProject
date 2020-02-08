@@ -10,9 +10,11 @@ namespace InternetMarket
     /// </summary>
     public partial class ComputerWindow : Window
     {
+        InterMarketService marketService;
         public ComputerWindow()
         {
             InitializeComponent();
+            marketService = new InterMarketService();
             Trace.WriteLine(this);
         }
 
@@ -25,11 +27,8 @@ namespace InternetMarket
                 Trace.WriteLine(threads);
                 threads.Start();
             }
-
-          
-
-            ComputerWindow computerWindow = new ComputerWindow();
-            computerWindow.Close();
+            
+            this.Close();
         }
         public void CompSet()
         {
@@ -43,25 +42,10 @@ namespace InternetMarket
                 string ram = ramsettext.Text;
                 string vram = vramsettext.Text;
                 string graphics = graphicsettext.Text;
-                InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
 
                 for (int i = 0; i < Convert.ToInt32(textpoin.Text); i++)
                 {
-                    var comp = new ComputersSet
-                    {
-                        Cost = cost,
-                        Firm = firm,
-                        Model = model,
-                        Processor = proc,
-                        Graphics = graphics,
-                        Quantity = quantity,
-                        RAM = ram,
-                        VRAM = vram
-                    };
-                    Trace.WriteLine(comp);
-                    internetMarketDateEntities.ComputersSet.Add(comp);
-                    Trace.WriteLine(internetMarketDateEntities);
-                    internetMarketDateEntities.SaveChanges();
+                    marketService.ComputerSet(firm, model, quantity, cost, proc, ram, vram, graphics, textpoin.Text);
                 }
             });
         }
