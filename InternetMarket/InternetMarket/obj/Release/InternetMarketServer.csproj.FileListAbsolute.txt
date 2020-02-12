@@ -379,11 +379,9 @@ D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\W
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\Spravochniki\ContragentData.g.cs
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\Spravochniki\Country.g.cs
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\Spravochniki\CountrysData.g.cs
-D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\InternetMarketData\CPUData.g.cs
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\DataSave.g.cs
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\Spravochniki\Directors.g.cs
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\MainWindow.g.cs
-D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\InternetMarketData\GPUData.g.cs
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\InternetMarketData\Laptop.g.cs
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\Spravochniki\LoadDocument.g.cs
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\Spravochniki\Oblast.g.cs
@@ -414,11 +412,9 @@ D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\W
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\Spravochniki\ContragentData.baml
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\Spravochniki\Country.baml
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\Spravochniki\CountrysData.baml
-D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\InternetMarketData\CPUData.baml
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\DataSave.baml
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\Spravochniki\Directors.baml
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\MainWindow.baml
-D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\InternetMarketData\GPUData.baml
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\InternetMarketData\Laptop.baml
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\Spravochniki\LoadDocument.baml
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\Spravochniki\Oblast.baml
@@ -1308,3 +1304,35 @@ C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\Inter
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\GeneratedInternalTypeHelper.g.cs
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\bin\Release\itextsharp.dll
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\bin\Release\itextsharp.xml
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\bin\Release\mongocrypt.dll
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\bin\Release\Crc32C.NET.dll
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\bin\Release\DnsClient.dll
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\bin\Release\itextsharp.dll
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\bin\Release\Microsoft.Bcl.HashCode.dll
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\bin\Release\MongoDB.Bson.dll
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\bin\Release\MongoDB.Driver.Core.dll
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\bin\Release\MongoDB.Driver.dll
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\bin\Release\MongoDB.Libmongocrypt.dll
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\bin\Release\SharpCompress.dll
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\bin\Release\Snappy.NET.dll
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\bin\Release\Crc32C.NET.xml
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\bin\Release\DnsClient.xml
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\bin\Release\itextsharp.xml
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\bin\Release\Microsoft.Bcl.HashCode.xml
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\bin\Release\MongoDB.Bson.xml
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\bin\Release\MongoDB.Driver.xml
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\bin\Release\MongoDB.Driver.Core.xml
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\bin\Release\Snappy.NET.xml
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\bin\Release\System.Text.Encoding.CodePages.xml
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Loaders\LoadingWindow.g.cs
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\AddEmailWindow.g.cs
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\AddMailServerWindow.g.cs
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\InternetMarketData\AddCpuWindow.g.cs
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\InternetMarketData\GraphicsCardWindow.g.cs
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\MailWindow.g.cs
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Loaders\LoadingWindow.baml
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\AddEmailWindow.baml
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\AddMailServerWindow.baml
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\InternetMarketData\AddCpuWindow.baml
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\InternetMarketData\GraphicsCardWindow.baml
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\MailWindow.baml

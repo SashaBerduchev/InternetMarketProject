@@ -12,3 +12,17 @@ C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\Inter
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketMongoClient\obj\Debug\InternetMarketMongoClient.exe
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketMongoClient\obj\Debug\InternetMarketMongoClient.pdb
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketMongoClient\obj\Debug\InternetMarketMongoClient.csprojAssemblyReference.cache
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketMongoClient\bin\Debug\InternetMarketMongoClient.exe.config
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketMongoClient\bin\Debug\InternetMarketMongoClient.exe
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketMongoClient\bin\Debug\InternetMarketMongoClient.pdb
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketMongoClient\obj\Debug\InternetMarketMongoClient.csprojAssemblyReference.cache
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketMongoClient\obj\Debug\MainWindow.g.cs
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketMongoClient\obj\Debug\App.g.cs
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketMongoClient\obj\Debug\InternetMarketMongoClient_MarkupCompile.cache
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketMongoClient\obj\Debug\InternetMarketMongoClient_MarkupCompile.lref
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketMongoClient\obj\Debug\MainWindow.baml
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketMongoClient\obj\Debug\InternetMarketMongoClient.g.resources
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketMongoClient\obj\Debug\InternetMarketMongoClient.Properties.Resources.resources
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketMongoClient\obj\Debug\InternetMarketMongoClient.csproj.GenerateResource.cache
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketMongoClient\obj\Debug\InternetMarketMongoClient.exe
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketMongoClient\obj\Debug\InternetMarketMongoClient.pdb

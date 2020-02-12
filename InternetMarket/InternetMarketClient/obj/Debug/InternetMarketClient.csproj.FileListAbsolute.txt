@@ -324,3 +324,6 @@ C:\Users\RedlineAlexander\Source\Repos\SashaBerduchev\InternetMarketProject\Inte
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketClient\bin\Debug\mongocrypt.dll
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketClient\bin\Debug\itextsharp.dll
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketClient\bin\Debug\itextsharp.xml
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketClient\bin\Debug\mongocrypt.dll
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketClient\bin\Debug\itextsharp.dll
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketClient\bin\Debug\itextsharp.xml
