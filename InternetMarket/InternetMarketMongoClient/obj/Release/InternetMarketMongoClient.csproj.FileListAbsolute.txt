@@ -12,3 +12,17 @@ C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\Inter
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketMongoClient\obj\Release\InternetMarketMongoClient.csproj.GenerateResource.cache
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketMongoClient\obj\Release\InternetMarketMongoClient.exe
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketMongoClient\obj\Release\InternetMarketMongoClient.pdb
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketMongoClient\bin\Release\InternetMarketMongoClient.exe.config
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketMongoClient\bin\Release\InternetMarketMongoClient.exe
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketMongoClient\bin\Release\InternetMarketMongoClient.pdb
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketMongoClient\obj\Release\InternetMarketMongoClient.csprojAssemblyReference.cache
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketMongoClient\obj\Release\MainWindow.g.cs
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketMongoClient\obj\Release\App.g.cs
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketMongoClient\obj\Release\InternetMarketMongoClient_MarkupCompile.cache
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketMongoClient\obj\Release\InternetMarketMongoClient_MarkupCompile.lref
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketMongoClient\obj\Release\MainWindow.baml
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketMongoClient\obj\Release\InternetMarketMongoClient.g.resources
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketMongoClient\obj\Release\InternetMarketMongoClient.Properties.Resources.resources
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketMongoClient\obj\Release\InternetMarketMongoClient.csproj.GenerateResource.cache
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketMongoClient\obj\Release\InternetMarketMongoClient.exe
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketMongoClient\obj\Release\InternetMarketMongoClient.pdb
