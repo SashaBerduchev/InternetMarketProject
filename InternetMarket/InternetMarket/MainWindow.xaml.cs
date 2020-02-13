@@ -252,7 +252,7 @@ namespace InternetMarket
 
         private void MenuItem_ClickAdministration(object sender, RoutedEventArgs e)
         {
-            AdministrationWindow administrationWindow = new AdministrationWindow(loading);
+            AdministrationWindow administrationWindow = new AdministrationWindow(loading, interMarketService);
             administrationWindow.Show();
         }
 

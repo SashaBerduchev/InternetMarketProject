@@ -1,5 +1,7 @@
 ﻿using InternetMarket.Windows.Users;
+using InternetMarketMongoServer.SERVER;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading;
 using System.Windows;
@@ -13,10 +15,13 @@ namespace InternetMarket.Windows.Administration
     public partial class AdministrationWindow : Window
     {
         private Loading loading;
-        public AdministrationWindow(Loading loading)
+        private InternetMarketMongoService mongoService;
+        private InterMarketService marketService;
+        public AdministrationWindow(Loading loading, InterMarketService marketService)
         {
             this.loading = loading;
-           
+            mongoService = new InternetMarketMongoService();
+            this.marketService = marketService;
             InitializeComponent();
             combobox.Items.Add("Phones");
             combobox.Items.Add("Tivis");
@@ -42,7 +47,21 @@ namespace InternetMarket.Windows.Administration
         }
         private void btnRebaseMongo_Click(object sender, RoutedEventArgs e)
         {
+            if(combobox.SelectedItem.ToString() == "Phones")
+            {
+                List<PhonesSet> phones = marketService.GetPhonesCollection();
+                try
+                {
+                    for (int i = 0; i < phones.Count; i++)
+                    {
+                        mongoService.SetPhones(phones[i].Firm, phones[i].Model, Convert.ToInt32(phones[i].Cost), phones[i].Processor, phones[i].Battery, 1);
+                    }
+                }catch(Exception exp)
+                {
+                    Trace.WriteLine(exp);
+                }
 
+            }
         }
 
     }
