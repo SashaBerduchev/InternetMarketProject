@@ -287,6 +287,7 @@ namespace InternetMarket
             interMarketService = null;
             if (internetMarketDateEntities != null) internetMarketDateEntities.Dispose();
             internetMarketDateEntities = null;
+            if (loading != null) loading = null;
 
         }
 

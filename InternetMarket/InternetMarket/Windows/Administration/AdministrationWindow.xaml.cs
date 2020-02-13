@@ -1,9 +1,7 @@
 ﻿using InternetMarket.Windows.Users;
-using InternetMarketMongoServer.SERVER;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -15,13 +13,9 @@ namespace InternetMarket.Windows.Administration
     public partial class AdministrationWindow : Window
     {
         private Loading loading;
-        private InternetMarketMongoService mongoService;
         private InterMarketService marketService;
         public AdministrationWindow(Loading loading, InterMarketService marketService)
         {
-            this.loading = loading;
-            mongoService = new InternetMarketMongoService();
-            this.marketService = marketService;
             InitializeComponent();
             combobox.Items.Add("Phones");
             combobox.Items.Add("Tivis");
@@ -32,6 +26,9 @@ namespace InternetMarket.Windows.Administration
             combobox.Items.Add("Laptop");
             combobox.Items.Add("Printers");
             combobox.Items.Add("Boilers");
+            this.marketService = marketService;
+            this.loading = new Loading(marketService, this);
+            marketService.StartMongoConnection();
             Trace.WriteLine(this);
         }
 
@@ -45,6 +42,11 @@ namespace InternetMarket.Windows.Administration
         {
             loading.LoadInfo(combobox.SelectedItem.ToString());
         }
+
+        public void ReturnData(List<string> strings)
+        {
+            mssqlviev.ItemsSource = strings;
+        }
         private void btnRebaseMongo_Click(object sender, RoutedEventArgs e)
         {
             if(combobox.SelectedItem.ToString() == "Phones")
@@ -54,7 +56,7 @@ namespace InternetMarket.Windows.Administration
                 {
                     for (int i = 0; i < phones.Count; i++)
                     {
-                        mongoService.SetPhones(phones[i].Firm, phones[i].Model, Convert.ToInt32(phones[i].Cost), phones[i].Processor, phones[i].Battery, 1);
+                        marketService.SetPhonesMongo(phones[i].Firm, phones[i].Model, Convert.ToInt32(phones[i].Cost), phones[i].Processor, phones[i].Battery, 1);
                     }
                 }catch(Exception exp)
                 {

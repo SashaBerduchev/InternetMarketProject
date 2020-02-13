@@ -1,4 +1,5 @@
-﻿using System;
+﻿using InternetMarket.Windows.Administration;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -90,6 +91,7 @@ namespace InternetMarket
         private void ReturnInfo()
         {
             (window as MainWindow).ReturnData(strings);
+            (window as AdministrationWindow).ReturnData(strings);
         }
 
         private async void GetBoilers()

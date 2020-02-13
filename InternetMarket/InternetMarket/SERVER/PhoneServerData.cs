@@ -1,4 +1,6 @@
 ﻿using InternetMarket.Loaders;
+using MongoDB.Bson;
+using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -19,6 +21,8 @@ namespace InternetMarket.SERVER
         private int _count;
         private List<PhonesSet> phoneses;
         private IException exception;
+        private List<string> strings;
+        private IMongoCollection<BsonDocument> coll;
         public PhoneServerData(InternetMarketDateEntities internetMarketDateEntities, IException exception)
         {
             this.exception = exception;
@@ -58,7 +62,7 @@ namespace InternetMarket.SERVER
 
         private List<string> Phone()
         {
-            Trace.WriteLine("TASK RUn");
+            Trace.WriteLine("TASK RUN");
             phones = internetMarketDateEntities.PhonesSet.ToList();
             Trace.WriteLine("TASK STOP!!");
             return phones.Select(x => x.Firm + ' ' + x.Model + ' ' + x.Quantity + ' ' + x.Cost + ' ' + x.Processor + ' ' + x.RAM + ' ' + x.Battery).ToList();
@@ -143,6 +147,60 @@ namespace InternetMarket.SERVER
             phonesdat = null;
             if (phones != null) phones.Clear();
             phones = null;
+        }
+
+        public void GetMongoCollection(IMongoCollection<BsonDocument> coll)
+        {
+            this.coll = coll;
+        }
+        public async void GetPhonesMongo()
+        {
+            var filter = new BsonDocument();
+
+            using (var cursor = await coll.FindAsync(filter))
+            {
+                while (await cursor.MoveNextAsync())
+                {
+                    var phone = cursor.Current;
+                    Trace.WriteLine(phone);
+                    Trace.WriteLine("GET" + "{");
+                    foreach (var doc in phone)
+                    {
+                        Trace.WriteLine("GET" + doc);
+                        strings.Add(doc.ToString());
+                    }
+                }
+            }
+        }
+
+        public async void SetPhonesMongo(string name, string model, int cost, string processor, string battery, int pointer)
+        {
+            List<BsonDocument> documents = new List<BsonDocument>();
+            Trace.WriteLine("SEND" + "{");
+            for (int i = 0; i < pointer; i++)
+            {
+                BsonDocument doc = new BsonDocument();
+                doc.Add(new BsonElement("Name", name));
+                doc.Add(new BsonElement("Model", model));
+                doc.Add(new BsonElement("Cost", cost));
+                doc.Add(new BsonElement("Processor", processor));
+                doc.Add(new BsonElement("Battery", battery));
+                documents.Add(doc);
+                Trace.WriteLine(doc);
+            }
+            await coll.InsertManyAsync(documents);
+        }
+
+        public List<string> GetListMongo()
+        {
+            return strings;
+        }
+
+        public void DisposeMongo()
+        {
+            coll = null;
+            if(strings != null)strings.Clear();
+            strings = null;
         }
     }
 }

@@ -1,6 +1,9 @@
 ﻿using InternetMarket.SERVER;
+using MongoDB.Bson;
+using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading;
@@ -12,6 +15,9 @@ namespace InternetMarket
     public class InterMarketService : IContract , IDisposable
     {
         private IException exception;
+        private string con;
+        private IMongoDatabase database;
+        private MongoClient client;
         private PhoneServerData phoneServerData;
         private TiviServerData tiviServer;
         private UserServerData userServer;
@@ -47,6 +53,51 @@ namespace InternetMarket
             exception = new MainException();
             Trace.WriteLine(this);
             Trace.WriteLine("Server INITIALIZE");
+        }
+
+        public void StartMongoConnection()
+        {
+            try
+            {
+                con = ConfigurationManager.ConnectionStrings["MongoDb"].ConnectionString;
+                client = new MongoClient(con);
+                GetDatabaseNames(client).GetAwaiter();
+                StartConnection();
+                Trace.WriteLine("----->MONGO SERVER START<------");
+            }
+            catch (Exception exp)
+            {
+                Trace.WriteLine(exp.StackTrace);
+            }
+        }
+
+        private void StartConnection()
+        {
+            try
+            {
+                database = client.GetDatabase("InternetMarket");
+                phoneServerData.GetMongoCollection(database.GetCollection<BsonDocument>("PhoneSet"));
+            }
+            catch (Exception exp)
+            {
+                Trace.WriteLine(exp.StackTrace);
+            }
+        }
+        private static async Task GetDatabaseNames(MongoClient client)
+        {
+            using (var cursor = await client.ListDatabasesAsync())
+            {
+                var databaseDocuments = await cursor.ToListAsync();
+                foreach (var databaseDocument in databaseDocuments)
+                {
+                    Trace.WriteLine(databaseDocument["name"]);
+                }
+            }
+        }
+
+        public void SetPhonesMongo(string name, string model, int cost, string processor, string battery, int pointer)
+        {
+            phoneServerData.SetPhonesMongo(name, model, cost, processor, battery, pointer);
         }
 
         public void SetUserIfApsent()

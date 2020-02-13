@@ -1,12 +1,8 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Driver;
-using MongoDbFramework.Abstractions;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace InternetMarketMongoServer.SERVER
 {

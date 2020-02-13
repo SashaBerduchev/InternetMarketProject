@@ -327,3 +327,21 @@ C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\Inter
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketClient\bin\Debug\mongocrypt.dll
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketClient\bin\Debug\itextsharp.dll
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketClient\bin\Debug\itextsharp.xml
+C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketClient\bin\Debug\MongoDB.Driver.dll
+C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketClient\bin\Debug\MongoDB.Driver.Core.dll
+C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketClient\bin\Debug\MongoDB.Bson.dll
+C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketClient\bin\Debug\MongoDB.Libmongocrypt.dll
+C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketClient\bin\Debug\DnsClient.dll
+C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketClient\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketClient\bin\Debug\SharpCompress.dll
+C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketClient\bin\Debug\Snappy.NET.dll
+C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketClient\bin\Debug\System.Buffers.dll
+C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketClient\bin\Debug\Crc32C.NET.dll
+C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketClient\bin\Debug\netstandard.dll
+C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketClient\bin\Debug\MongoDB.Driver.xml
+C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketClient\bin\Debug\MongoDB.Driver.Core.xml
+C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketClient\bin\Debug\MongoDB.Bson.xml
+C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketClient\bin\Debug\DnsClient.xml
+C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketClient\bin\Debug\Snappy.NET.xml
+C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketClient\bin\Debug\System.Buffers.xml
+C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketClient\bin\Debug\Crc32C.NET.xml
