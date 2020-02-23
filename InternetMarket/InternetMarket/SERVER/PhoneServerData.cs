@@ -191,6 +191,8 @@ namespace InternetMarket.SERVER
             await coll.InsertManyAsync(documents);
         }
 
+
+
         public List<string> GetListMongo()
         {
             return strings;

@@ -100,6 +100,15 @@ namespace InternetMarket
             phoneServerData.SetPhonesMongo(name, model, cost, processor, battery, pointer);
         }
 
+        public void GetPhonesMongo()
+        {
+            phoneServerData.GetPhonesMongo();
+        }
+
+        public List<String> GetListMongo()
+        {
+            return phoneServerData.GetListMongo();
+        }
         public void SetUserIfApsent()
         {
             userServer.SetUserIfApsent();
