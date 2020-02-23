@@ -19,7 +19,7 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <ListView x:Name="monoview" HorizontalAlignment="Left" Height="258" Margin="619,77,0,0" VerticalAlignment="Top" Width="144" >
+        <ListView x:Name="mongoview" HorizontalAlignment="Left" Height="258" Margin="619,77,0,0" VerticalAlignment="Top" Width="144" >
             <ListView.View>
                 <GridView>
                     <GridViewColumn/>

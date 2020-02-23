@@ -252,7 +252,7 @@ namespace InternetMarket
 
         private void MenuItem_ClickAdministration(object sender, RoutedEventArgs e)
         {
-            AdministrationWindow administrationWindow = new AdministrationWindow(loading);
+            AdministrationWindow administrationWindow = new AdministrationWindow(loading, interMarketService);
             administrationWindow.Show();
         }
 
@@ -287,6 +287,7 @@ namespace InternetMarket
             interMarketService = null;
             if (internetMarketDateEntities != null) internetMarketDateEntities.Dispose();
             internetMarketDateEntities = null;
+            if (loading != null) loading = null;
 
         }
 
