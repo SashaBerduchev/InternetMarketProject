@@ -58,6 +58,7 @@ namespace InternetMarket.Windows.Administration
                     {
                         marketService.SetPhonesMongo(phones[i].Firm, phones[i].Model, Convert.ToInt32(phones[i].Cost), phones[i].Processor, phones[i].Battery, 1);
                     }
+                    mongoview.ItemsSource = marketService.GetListMongo();
                 }catch(Exception exp)
                 {
                     Trace.WriteLine(exp);
