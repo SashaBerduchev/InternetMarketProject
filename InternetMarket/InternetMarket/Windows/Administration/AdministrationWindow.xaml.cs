@@ -29,6 +29,7 @@ namespace InternetMarket.Windows.Administration
             this.marketService = marketService;
             this.loading = new Loading(marketService, this);
             marketService.StartMongoConnection();
+            Userslist.ItemsSource = marketService.GetUsers();
             Trace.WriteLine(this);
         }
 

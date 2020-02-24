@@ -95,20 +95,7 @@ namespace InternetMarket
             }
         }
 
-        public void SetPhonesMongo(string name, string model, int cost, string processor, string battery, int pointer)
-        {
-            phoneServerData.SetPhonesMongo(name, model, cost, processor, battery, pointer);
-        }
-
-        public void GetPhonesMongo()
-        {
-            phoneServerData.GetPhonesMongo();
-        }
-
-        public List<String> GetListMongo()
-        {
-            return phoneServerData.GetListMongo();
-        }
+        
         public void SetUserIfApsent()
         {
             userServer.SetUserIfApsent();
@@ -394,6 +381,22 @@ namespace InternetMarket
             if (mailData != null) mailData.Dispose();
             Trace.WriteLine("------->Disable<------");
         }
+
+        public void SetPhonesMongo(string name, string model, int cost, string processor, string battery, int pointer)
+        {
+            phoneServerData.SetPhonesMongo(name, model, cost, processor, battery, pointer);
+        }
+
+        public void GetPhonesMongo()
+        {
+            phoneServerData.GetPhonesMongo();
+        }
+
+        public List<String> GetListMongo()
+        {
+            return phoneServerData.GetListMongo();
+        }
+
         public void Dispose()
         {
             if (internetMarketDateEntities != null) internetMarketDateEntities.Dispose();

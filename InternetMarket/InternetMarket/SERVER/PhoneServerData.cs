@@ -155,6 +155,7 @@ namespace InternetMarket.SERVER
         }
         public async void GetPhonesMongo()
         {
+            strings = new List<string>();
             var filter = new BsonDocument();
 
             using (var cursor = await coll.FindAsync(filter))

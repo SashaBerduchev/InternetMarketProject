@@ -75,6 +75,7 @@ namespace InternetMarket
                 if (interMarketService.CheckUser(User.SelectedItem.ToString(), LoginUserWindow.PasswordText))
                 {
                     new MainWindow(interMarketService).Show();
+                    this.Close();
                 }
                 else
                 {
@@ -114,6 +115,7 @@ namespace InternetMarket
                 if (interMarketService.CheckUser(User.SelectedItem.ToString(), LoginUserWindow.PasswordText))
                 {
                     new MainWindow(interMarketService).Show();
+                    this.Close();
                 }
                 else
                 {
