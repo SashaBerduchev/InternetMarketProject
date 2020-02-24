@@ -90,8 +90,14 @@ namespace InternetMarket
 
         private void ReturnInfo()
         {
-            (window as MainWindow).ReturnData(strings);
-            (window as AdministrationWindow).ReturnData(strings);
+            if (window is MainWindow)
+            {
+                (window as MainWindow).ReturnData(strings);
+            }
+            else
+            {
+                (window as AdministrationWindow).ReturnData(strings);
+            }
         }
 
         private async void GetBoilers()
