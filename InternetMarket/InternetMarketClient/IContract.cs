@@ -66,5 +66,11 @@ namespace InternetMarketClient
         List<string> GetLaptop();
         [OperationContract]
         bool CheckUser(string login, string pass);
+        [OperationContract]
+        void SetPhonesMongo(string name, string model, int cost, string processor, string battery, int pointer);
+        [OperationContract]
+        void GetPhonesMongo();
+        [OperationContract]
+        List<string> GetListMongo();
     }
 }

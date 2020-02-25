@@ -29,6 +29,7 @@ namespace InternetMarket.Windows.Administration
             this.marketService = marketService;
             this.loading = new Loading(marketService, this);
             marketService.StartMongoConnection();
+            Userslist.ItemsSource = marketService.GetUsers();
             Trace.WriteLine(this);
         }
 
@@ -58,6 +59,7 @@ namespace InternetMarket.Windows.Administration
                     {
                         marketService.SetPhonesMongo(phones[i].Firm, phones[i].Model, Convert.ToInt32(phones[i].Cost), phones[i].Processor, phones[i].Battery, 1);
                     }
+                    marketService.GetPhonesMongo();
                     mongoview.ItemsSource = marketService.GetListMongo();
                 }catch(Exception exp)
                 {
