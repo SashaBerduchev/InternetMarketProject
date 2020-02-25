@@ -16,11 +16,11 @@ namespace InternetMarket
         private InterMarketService interMarketService;
         private IException exception;
         private Window window;
-        public Loading(InterMarketService interMarketService, Window window)
+        public Loading(InterMarketService interMarketService, Window window, IException exception)
         {
             this.window = window;
+            this.exception = exception;
             this.interMarketService = interMarketService;
-            exception = new MainException();
         }
 
         public async void LoadInfo(string type)

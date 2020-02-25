@@ -255,7 +255,7 @@
     <Compile Include="GraphicsCard.cs">
       <DependentUpon>InternetMarketEDM.tt</DependentUpon>
     </Compile>
-    <Compile Include="IException.cs" />
+    <Compile Include="Excaption\IException.cs" />
     <Compile Include="KassaSet.cs">
       <DependentUpon>InternetMarketEDM.tt</DependentUpon>
     </Compile>
@@ -272,7 +272,7 @@
     <Compile Include="Mail.cs">
       <DependentUpon>InternetMarketEDM.tt</DependentUpon>
     </Compile>
-    <Compile Include="MainException.cs" />
+    <Compile Include="Excaption\MainException.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="OblastDataSet.cs">
       <DependentUpon>InternetMarketEDM.tt</DependentUpon>

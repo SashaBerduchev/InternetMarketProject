@@ -298,3 +298,21 @@ C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\Inter
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketClient\bin\Release\Snappy.NET.xml
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketClient\bin\Release\System.Buffers.xml
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketClient\bin\Release\Crc32C.NET.xml
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketClient\bin\Release\MongoDB.Driver.dll
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketClient\bin\Release\MongoDB.Driver.Core.dll
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketClient\bin\Release\MongoDB.Bson.dll
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketClient\bin\Release\MongoDB.Libmongocrypt.dll
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketClient\bin\Release\DnsClient.dll
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketClient\bin\Release\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketClient\bin\Release\SharpCompress.dll
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketClient\bin\Release\Snappy.NET.dll
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketClient\bin\Release\System.Buffers.dll
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketClient\bin\Release\Crc32C.NET.dll
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketClient\bin\Release\netstandard.dll
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketClient\bin\Release\MongoDB.Driver.xml
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketClient\bin\Release\MongoDB.Driver.Core.xml
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketClient\bin\Release\MongoDB.Bson.xml
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketClient\bin\Release\DnsClient.xml
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketClient\bin\Release\Snappy.NET.xml
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketClient\bin\Release\System.Buffers.xml
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketClient\bin\Release\Crc32C.NET.xml

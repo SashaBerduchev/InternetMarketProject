@@ -14,7 +14,8 @@ namespace InternetMarket.Windows.Administration
     {
         private Loading loading;
         private InterMarketService marketService;
-        public AdministrationWindow(Loading loading, InterMarketService marketService)
+        private IException exception;
+        public AdministrationWindow(Loading loading, InterMarketService marketService, IException exception)
         {
             InitializeComponent();
             combobox.Items.Add("Phones");
@@ -26,8 +27,9 @@ namespace InternetMarket.Windows.Administration
             combobox.Items.Add("Laptop");
             combobox.Items.Add("Printers");
             combobox.Items.Add("Boilers");
+            this.exception = exception;
             this.marketService = marketService;
-            this.loading = new Loading(marketService, this);
+            this.loading = new Loading(marketService, this, exception);
             marketService.StartMongoConnection();
             Userslist.ItemsSource = marketService.GetUsers();
             Trace.WriteLine(this);
@@ -60,12 +62,31 @@ namespace InternetMarket.Windows.Administration
                         marketService.SetPhonesMongo(phones[i].Firm, phones[i].Model, Convert.ToInt32(phones[i].Cost), phones[i].Processor, phones[i].Battery, 1);
                     }
                     marketService.GetPhonesMongo();
-                    mongoview.ItemsSource = marketService.GetListMongo();
+                    mongoview.ItemsSource = marketService.GetListPhoneMongo();
                 }catch(Exception exp)
                 {
                     Trace.WriteLine(exp);
+                    exception.ExceptionWriter(exp.ToString());
                 }
+            }
 
+            if (combobox.SelectedItem.ToString() == "Computers")
+            {
+                List<ComputersSet> phones = marketService.GetCompCollection();
+                try
+                {
+                    for (int i = 0; i < phones.Count; i++)
+                    {
+                        marketService.SetComputersMongo(phones[i].Firm, phones[i].Model, Convert.ToInt32(phones[i].Cost), phones[i].Processor,Convert.ToInt32(phones[i].RAM),phones[i].Graphics, 1);
+                    }
+                    marketService.GetPhonesMongo();
+                    mongoview.ItemsSource = marketService.GetListPhoneMongo();
+                }
+                catch (Exception exp)
+                {
+                    Trace.WriteLine(exp);
+                    exception.ExceptionWriter(exp.ToString());
+                }
             }
         }
 

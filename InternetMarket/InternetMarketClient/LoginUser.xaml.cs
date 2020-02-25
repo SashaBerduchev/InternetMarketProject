@@ -29,7 +29,7 @@ namespace InternetMarketClient
         private void StartConnetion()
         {
             //string uriAddress ("net.tcp://192.168.1.104:7000/IContract");
-            string uriAddress = "net.tcp://localhost:4000/IContract";
+            string uriAddress = "net.tcp://localhost:6000/IContract";
             Uri uri = new Uri(uriAddress);
 
             NetTcpBinding netTcpBinding = new NetTcpBinding();
