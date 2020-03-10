@@ -40,9 +40,6 @@
         <Button Name="OpenBtnPrinter" Grid.Column="3" Grid.Row="2" Margin="35,20,25,40" Content="Printers" Click="OpenBtnPrinter_Click"  />
         <Button Name="OpenBtnBoiler" Grid.Column="4" Grid.Row="2" Margin="30,39,30,21" Content="Boilers" Click="OpenBtnBoiler_Click"  />
         <Button Name="Print" Grid.Column="4" Grid.Row="4" Margin="30,21,0,10" Content="Сохранить" Click="Print_Click" />
-        <TextBox Name="countStartDelete" Grid.Column="5" Grid.Row="5" Margin="30,30,104,30" />
-        <TextBox Name="countFinishDelete" Grid.Column="5" Grid.Row="5" Margin="116,30,19,30" />
-        <Button Name="DeleteBttn" Grid.Column="5" Grid.Row="6" Margin="30,21,0,10" Content="Удалить" Click="DeleteBttn_Click"/>
         <Menu Height="28" VerticalAlignment="Top" Grid.ColumnSpan="2" Margin="0,0,25,0">
             <MenuItem Header="Directory">
                 <MenuItem Header="Organisation" Click="MenuItem_Click_10" />
@@ -71,5 +68,9 @@
         </Menu>
         <Button x:Name="ExpPDF" Content="Экспорт в PDF" Grid.Column="5" HorizontalAlignment="Left" Margin="15,10,0,0" Grid.Row="2" VerticalAlignment="Top" Width="148" Click="ExpPDF_Click"/>
         <Button x:Name="ExpExcel" Content="Экспорт в Excel" Grid.Column="5" HorizontalAlignment="Left" Margin="15,57,0,0" Grid.Row="2" VerticalAlignment="Top" Width="148" Click="ExpExcel_Click"/>
+        <TextBox x:Name="countStartDelete" Grid.Column="5" Grid.Row="3" Margin="33,31,101,29" />
+        <TextBox x:Name="countFinishDelete" Grid.Column="5" Grid.Row="3" Margin="116,31,19,29" RenderTransformOrigin="0.532,0.5" />
+        <Button x:Name="DeleteBttn" Grid.Column="5" Grid.Row="4" Margin="33,21,16,11" Content="Удалить" Click="DeleteBttn_Click"/>
+        <TextBox Name="LogText" Grid.Column="4" HorizontalAlignment="Left" Height="156" Margin="15,8,0,0" Grid.Row="5" Grid.RowSpan="2" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="289" Grid.ColumnSpan="2"/>
     </Grid>
 </Window>

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace InternetMarket
 {
-    interface IException
+    public interface IException
     {
         void ExceptionWriter(string exp);
 

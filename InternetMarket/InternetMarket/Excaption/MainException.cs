@@ -6,16 +6,18 @@ using System.Threading.Tasks;
 
 namespace InternetMarket
 {
-    class MainException : IException
+    public class MainException : IException
     {
-        public MainException()
+        private MainWindow mainWindow;
+        public MainException(MainWindow win)
         {
-              
+              mainWindow = win;
         }
         public void ExceptionWriter(string exp)
         {
             MainWindow.MessageExp(exp);
-
+            mainWindow.OutExp(exp);
         }
+
     }
 }

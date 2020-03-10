@@ -42,7 +42,7 @@ namespace InternetMarket
             try
             {
                 //string uriAddress = "net.tcp://192.168.1.104:7000/IContract";//4
-                string uriAddress = "net.tcp://localhost:4000/IContract"; 
+                string uriAddress = "net.tcp://localhost:6000/IContract"; 
                 Uri addres = new Uri(uriAddress);//5
                 NetTcpBinding binding = new NetTcpBinding();//6
                 binding.ListenBacklog = 2000;//7

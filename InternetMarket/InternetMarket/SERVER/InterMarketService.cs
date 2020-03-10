@@ -36,7 +36,7 @@ namespace InternetMarket
         private LaptopData laptopData;
         private MailData mailData;
         private CountryData countryData;
-        public InterMarketService()
+        public InterMarketService(MainWindow window = null)
         {
             internetMarketDateEntities = new InternetMarketDateEntities();
             phoneServerData = new PhoneServerData(internetMarketDateEntities, exception);
@@ -50,7 +50,7 @@ namespace InternetMarket
             laptopData = new LaptopData();
             mailData = new MailData();
             countryData = new CountryData(internetMarketDateEntities);
-            exception = new MainException();
+            exception = new MainException(window);
             Trace.WriteLine(this);
             Trace.WriteLine("Server INITIALIZE");
         }
@@ -77,6 +77,7 @@ namespace InternetMarket
             {
                 database = client.GetDatabase("InternetMarket");
                 phoneServerData.GetMongoCollection(database.GetCollection<BsonDocument>("PhoneSet"));
+                computersData.GetMongoCollection(database.GetCollection<BsonDocument>("ComputersSet"));
             }
             catch (Exception exp)
             {
@@ -392,10 +393,26 @@ namespace InternetMarket
             phoneServerData.GetPhonesMongo();
         }
 
-        public List<String> GetListMongo()
+        public List<String> GetListPhoneMongo()
         {
             return phoneServerData.GetListMongo();
         }
+
+        public void SetComputersMongo(string name, string model, int cost, string processor, int RAM, string GPU, int pointer)
+        {
+            computersData.SetComputersMongo(name, model, cost, processor, RAM, GPU, pointer);
+        }
+
+        public void GetComputersMongo()
+        {
+            computersData.GetComputersMongo();
+        }
+
+        public List<String> GetListCompMongo()
+        {
+            return computersData.GetListMongo();
+        }
+
 
         public void Dispose()
         {

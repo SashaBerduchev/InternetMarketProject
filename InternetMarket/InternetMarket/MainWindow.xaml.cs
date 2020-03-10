@@ -30,9 +30,10 @@ namespace InternetMarket
         private InterMarketService interMarketService;
         private List<string> strings;
         private Loading loading;
+        private IException exception;
         public MainWindow(InterMarketService marketService)
         {
-            interMarketService = new InterMarketService();
+            interMarketService = new InterMarketService(this);
             this.marketService = marketService;
             InitializeComponent();
 
@@ -45,7 +46,8 @@ namespace InternetMarket
             combobox.Items.Add("Laptop");
             combobox.Items.Add("Printers");
             combobox.Items.Add("Boilers");
-            loading = new Loading(interMarketService, this);
+            exception = new MainException(this);
+            loading = new Loading(interMarketService, this, exception);
             Trace.WriteLine(this);
         }
 
@@ -252,7 +254,7 @@ namespace InternetMarket
 
         private void MenuItem_ClickAdministration(object sender, RoutedEventArgs e)
         {
-            AdministrationWindow administrationWindow = new AdministrationWindow(loading, interMarketService);
+            AdministrationWindow administrationWindow = new AdministrationWindow(loading, interMarketService, exception);
             administrationWindow.Show();
         }
 
@@ -481,6 +483,10 @@ namespace InternetMarket
         internal static void MessageExp(string exp)
         {
             MessageBox.Show(exp, "Error", MessageBoxButton.OK);
+        }
+        internal void OutExp(string exp)
+        {
+            LogText.Text += exp + "\r\n";
         }
     }
 }

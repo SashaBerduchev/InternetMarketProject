@@ -71,6 +71,6 @@ namespace InternetMarketClient
         [OperationContract]
         void GetPhonesMongo();
         [OperationContract]
-        List<string> GetListMongo();
+        List<string> GetListPhoneMongo();
     }
 }
