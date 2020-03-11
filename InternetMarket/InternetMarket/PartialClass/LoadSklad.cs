@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace InternetMarket
 {
-    public partial class CkladSet
+    public partial class CkladSetSet
     {
         public override string ToString()
         {

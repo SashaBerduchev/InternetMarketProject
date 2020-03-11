@@ -23,12 +23,12 @@ namespace InternetMarket
         {
             InitializeComponent();
 
-            InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
-            List<Country> countries;
-            List<CityData> cityDatas;
+            InternetMarketEntities internetMarketDateEntities = new InternetMarketEntities();
+            List<CountrySet> countries;
+            List<CityDataSet> cityDatas;
 
             countries = internetMarketDateEntities.CountrySet.ToList();
-            Country.ItemsSource = countries.Select(x => new { x.Name, x.NameCountry }).ToArray();
+            Country.ItemsSource = countries.Select(x => new { x.NameCountry }).ToArray();
 
             cityDatas = internetMarketDateEntities.CityDataSet.ToList();
             City.ItemsSource = cityDatas.Select(x => new { x.Name, x.CountryName });

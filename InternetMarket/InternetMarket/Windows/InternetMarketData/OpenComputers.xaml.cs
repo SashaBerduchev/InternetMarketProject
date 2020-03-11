@@ -35,7 +35,7 @@ namespace InternetMarket.Windows
 
         public void CompSet()
         {
-            InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
+            InternetMarketEntities internetMarketDateEntities = new InternetMarketEntities();
 
             for (int i = 0; i < Convert.ToInt32(textpoin.Text); i++)
             {

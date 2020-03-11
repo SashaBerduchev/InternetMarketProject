@@ -22,11 +22,11 @@ namespace InternetMarket.Windows
         public Region()
         {
             InitializeComponent();
-            List<Country> countries;
-            List<CityData> cities;
-            List<OblastDataSet> oblasts;
+            List<CountrySet> countries;
+            List<CityDataSet> cities;
+            List<OblastDataSetSet> oblasts;
 
-            InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
+            InternetMarketEntities internetMarketDateEntities = new InternetMarketEntities();
             countries = internetMarketDateEntities.CountrySet.ToList();
             cities = internetMarketDateEntities.CityDataSet.ToList();
             oblasts = internetMarketDateEntities.OblastDataSetSet.ToList();
@@ -37,8 +37,8 @@ namespace InternetMarket.Windows
 
         private void btnSet_Click(object sender, RoutedEventArgs e)
         {
-            InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
-            var regdata = new RegionData
+            InternetMarketEntities internetMarketDateEntities = new InternetMarketEntities();
+            var regdata = new RegionDataSet
             {
                 Name = regname.Text,
                 Country = countrycombo.SelectedItem.ToString(),

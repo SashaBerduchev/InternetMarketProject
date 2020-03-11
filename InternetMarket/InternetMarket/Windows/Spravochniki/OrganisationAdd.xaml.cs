@@ -26,8 +26,8 @@ namespace InternetMarket.Windows
 
         private void BtnSet_Click(object sender, RoutedEventArgs e)
         {
-            InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
-            OrganizationSet organization = new OrganizationSet
+            InternetMarketEntities internetMarketDateEntities = new InternetMarketEntities();
+            OrganizationSetSet organization = new OrganizationSetSet
             {
                 Name = orgname.Text
             };

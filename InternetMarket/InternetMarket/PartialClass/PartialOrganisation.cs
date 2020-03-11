@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace InternetMarket
 {
-    public partial class OrganizationSet
+    public partial class OrganizationSetSet
     {
         public override string ToString()
         {

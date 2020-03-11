@@ -10,13 +10,13 @@ namespace InternetMarket.SERVER
 {
     class UserServerData : IDisposable
     {
-        private InternetMarketDateEntities internetMarket;
+        private InternetMarketEntities internetMarket;
         private List<string> passstr;
         private List<string> users;
         public UserServerData()
         {
             users = new List<string>();
-            internetMarket = new InternetMarketDateEntities();
+            internetMarket = new InternetMarketEntities();
         }
         public void SetUserIfApsent()
         {
@@ -118,6 +118,7 @@ namespace InternetMarket.SERVER
         {
             List<UserSet> users = internetMarket.UserSet.Where(x => x.Name == User).ToList();
             internetMarket.UserSet.Remove(users[1]);
+            internetMarket.SaveChanges();
         }
         public void Dispose()
         {

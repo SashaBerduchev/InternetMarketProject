@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace InternetMarket
 {
-    public partial class Dogovor
+    public partial class DogovorSet
     {
         public override string ToString()
         {

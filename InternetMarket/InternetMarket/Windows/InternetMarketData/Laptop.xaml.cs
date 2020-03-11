@@ -43,8 +43,8 @@ namespace InternetMarket.Windows
             {
                 for (int i=0; i<Convert.ToInt32(pointertext.Text); i++)
                 {
-                    InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
-                    var laptopedat = new Laptops
+                    InternetMarketEntities internetMarketDateEntities = new InternetMarketEntities();
+                    var laptopedat = new LaptopsSet
                     {
                         Name = namelaptom.Text,
                         Model = modellaptom.Text,

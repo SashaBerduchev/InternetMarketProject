@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace InternetMarket
 {
-    public partial class RegionData
+    public partial class RegionDataSet
     {
         public override string ToString()
         {

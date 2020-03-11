@@ -32,8 +32,8 @@ namespace InternetMarket.Windows
 
         private void RegionLoad_Click(object sender, RoutedEventArgs e)
         {
-            List<RegionData> regions;
-            InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
+            List<RegionDataSet> regions;
+            InternetMarketEntities internetMarketDateEntities = new InternetMarketEntities();
             regions = internetMarketDateEntities.RegionDataSet.ToList();
             regoinDataGrid.ItemsSource = regions.Select(x => new { x.Name, x.Country, x.City, x.Oblast });
 

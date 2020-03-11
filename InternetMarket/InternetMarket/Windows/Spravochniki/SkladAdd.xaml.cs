@@ -1,16 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace InternetMarket.Windows.Spravochniki
 {
@@ -23,11 +13,11 @@ namespace InternetMarket.Windows.Spravochniki
         {
             InitializeComponent();
 
-            List<OrganizationSet> organizations;
-            List<OblastDataSet> oblasts;
-            List<CityData> cities;
-            List<StreetSet> streets;
-            InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
+            List<OrganizationSetSet> organizations;
+            List<OblastDataSetSet> oblasts;
+            List<CityDataSet> cities;
+            List<StreetSetSet> streets;
+            InternetMarketEntities internetMarketDateEntities = new InternetMarketEntities();
             organizations = internetMarketDateEntities.OrganizationSetSet.ToList();
             oblasts = internetMarketDateEntities.OblastDataSetSet.ToList();
             cities = internetMarketDateEntities.CityDataSet.ToList();
@@ -40,8 +30,8 @@ namespace InternetMarket.Windows.Spravochniki
 
         private void SetBtn_Click(object sender, RoutedEventArgs e)
         {
-            InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
-            CkladSet ckladdata = new CkladSet
+            InternetMarketEntities internetMarketDateEntities = new InternetMarketEntities();
+            CkladSetSet ckladdata = new CkladSetSet
             {
                 Name = nametext.Text,
                 Type = typetext.Text,

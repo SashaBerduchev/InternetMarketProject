@@ -10,7 +10,7 @@ namespace InternetMarket.Windows.InternetMarketData
     /// </summary>
     public partial class PrinterWindow : Window, IDisposable
     {
-        private InternetMarketDateEntities internetMarketDateEntities;
+        private InternetMarketEntities internetMarketDateEntities;
         
         public PrinterWindow()
         {
@@ -31,8 +31,8 @@ namespace InternetMarket.Windows.InternetMarketData
             {
                 try
                 {
-                    internetMarketDateEntities = new InternetMarketDateEntities();
-                    Printers printers = new Printers
+                    internetMarketDateEntities = new InternetMarketEntities();
+                    PrintersSet printers = new PrintersSet
                     {
                         Name = Name.Text,
                         Colors = Color.Text,

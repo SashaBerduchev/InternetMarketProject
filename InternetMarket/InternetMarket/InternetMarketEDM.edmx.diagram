@@ -4,35 +4,36 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="4979ccbb2e3e4893b127e6116e5934e8" Name="Diagram1" ZoomLevel="46">
-        <EntityTypeShape EntityType="InternetMarketDateModel.ComputersSet" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="InternetMarketDateModel.PhonesSet" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="InternetMarketDateModel.TivisetSet" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="InternetMarketDateModel.UserSet" Width="1.5" PointX="1" PointY="4.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="InternetMarketDateModel.Director" Width="1.5" PointX="3" PointY="4.625" />
-        <EntityTypeShape EntityType="InternetMarketDateModel.Country" Width="1.5" PointX="4.75" PointY="4.75" />
-        <EntityTypeShape EntityType="InternetMarketDateModel.OblastDataSet" Width="1.5" PointX="8.5" PointY="4.75" />
-        <EntityTypeShape EntityType="InternetMarketDateModel.RegionData" Width="1.5" PointX="10.5" PointY="4.75" />
-        <EntityTypeShape EntityType="InternetMarketDateModel.CityData" Width="1.5" PointX="6.625" PointY="4.875" />
-        <EntityTypeShape EntityType="InternetMarketDateModel.OrganizationPositionSet" Width="1.5" PointX="6" PointY="7.375" />
-        <EntityTypeShape EntityType="InternetMarketDateModel.OrganizationSet" Width="1.5" PointX="4.25" PointY="7.375" />
-        <EntityTypeShape EntityType="InternetMarketDateModel.CkladSet" Width="1.5" PointX="8.125" PointY="7.5" />
-        <EntityTypeShape EntityType="InternetMarketDateModel.StreetSet" Width="1.5" PointX="12.375" PointY="4.875" />
-        <EntityTypeShape EntityType="InternetMarketDateModel.KassaSet" Width="1.5" PointX="3.5" PointY="10" />
-        <EntityTypeShape EntityType="InternetMarketDateModel.BankSet" Width="1.5" PointX="5.375" PointY="9.75" />
-        <EntityTypeShape EntityType="InternetMarketDateModel.TabletSet" Width="1.5" PointX="6.5" PointY="0.75" />
-        <EntityTypeShape EntityType="InternetMarketDateModel.DocForPain" Width="1.5" PointX="7.875" PointY="10.5" />
-        <EntityTypeShape EntityType="InternetMarketDateModel.GraphicsCard" Width="1.5" PointX="10.125" PointY="0.875" />
-        <EntityTypeShape EntityType="InternetMarketDateModel.Laptops" Width="1.5" PointX="12.25" PointY="0.875" />
-        <EntityTypeShape EntityType="InternetMarketDateModel.Dogovor" Width="1.5" PointX="11.375" PointY="8.5" />
-        <EntityTypeShape EntityType="InternetMarketDateModel.ZakazPokupatelya" Width="1.5" PointX="11.25" PointY="11.125" />
-        <EntityTypeShape EntityType="InternetMarketDateModel.Printers" Width="1.5" PointX="2.5" PointY="13.25" />
-        <EntityTypeShape EntityType="InternetMarketDateModel.Boilers" Width="1.5" PointX="5.25" PointY="13.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="InternetMarketDateModel.CPUSet" Width="1.5" PointX="13.375" PointY="7.75" />
-        <EntityTypeShape EntityType="InternetMarketDateModel.Mail" Width="1.5" PointX="0.875" PointY="7.5" />
-        <EntityTypeShape EntityType="InternetMarketDateModel.Entity1" Width="1.5" PointX="0.75" PointY="9.75" />
-        <EntityTypeShape EntityType="InternetMarketDateModel.SmtpServers" Width="1.5" PointX="2.5" PointY="7.625" />
-        </Diagram>
+      <Diagram DiagramId="c253f701b40345f48910e7b89a376b3e" Name="Diagram1">
+        <EntityTypeShape EntityType="InternetMarketModel.BankSetSet" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="InternetMarketModel.BoilersSet" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="InternetMarketModel.CityDataSet" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="InternetMarketModel.CkladSetSet" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="InternetMarketModel.ComputersSet" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="InternetMarketModel.CountrySet" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="InternetMarketModel.CPUSet" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="InternetMarketModel.DirectorSet" Width="1.5" PointX="6.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="InternetMarketModel.DocForPainSet" Width="1.5" PointX="4.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="InternetMarketModel.DogovorSet" Width="1.5" PointX="6.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="InternetMarketModel.Entity1Set" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="InternetMarketModel.GraphicsCardSet" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="InternetMarketModel.KassaSetSet" Width="1.5" PointX="8.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="InternetMarketModel.LaptopsSet" Width="1.5" PointX="8.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="InternetMarketModel.MailSet" Width="1.5" PointX="8.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="InternetMarketModel.OblastDataSetSet" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="InternetMarketModel.OrganizationPositionSetSet" Width="1.5" PointX="10.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="InternetMarketModel.OrganizationSetSet" Width="1.5" PointX="10.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="InternetMarketModel.PhonesSet" Width="1.5" PointX="10.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="InternetMarketModel.PrintersSet" Width="1.5" PointX="2.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="InternetMarketModel.RegionDataSet" Width="1.5" PointX="4.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="InternetMarketModel.SmtpServersSet" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="InternetMarketModel.StreetSetSet" Width="1.5" PointX="12.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="InternetMarketModel.sysdiagrams" Width="1.5" PointX="12.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="InternetMarketModel.TabletSetSet" Width="1.5" PointX="6.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="InternetMarketModel.TivisetSet" Width="1.5" PointX="12.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="InternetMarketModel.UserSet" Width="1.5" PointX="8.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="InternetMarketModel.ZakazPokupatelyaSet" Width="1.5" PointX="10.75" PointY="13.75" IsExpanded="true" />
+      </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

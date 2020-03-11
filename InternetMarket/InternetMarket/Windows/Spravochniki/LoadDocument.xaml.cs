@@ -32,8 +32,8 @@ namespace InternetMarket.Windows
 
         private void LoadBtn_Click(object sender, RoutedEventArgs e)
         {
-            List<Dogovor> dogovors;
-            InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
+            List<DogovorSet> dogovors;
+            InternetMarketEntities internetMarketDateEntities = new InternetMarketEntities();
             dogovors = internetMarketDateEntities.DogovorSet.ToList();
             datagrid.ItemsSource = dogovors.Select(x => new { x.Name });
         }

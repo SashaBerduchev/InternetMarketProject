@@ -32,8 +32,8 @@ namespace InternetMarket.Windows
 
         private void OnlastLoad_Click(object sender, RoutedEventArgs e)
         {
-            InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
-            List<OblastDataSet> oblastDataSets;
+            InternetMarketEntities internetMarketDateEntities = new InternetMarketEntities();
+            List<OblastDataSetSet> oblastDataSets;
             oblastDataSets = internetMarketDateEntities.OblastDataSetSet.ToList();
             oblastDataGrid.ItemsSource = oblastDataSets.Select(x => new { x.Name, x.City, x.Country });
         }

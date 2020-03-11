@@ -41,7 +41,7 @@ namespace InternetMarket.Windows
         {
             Dispatcher.Invoke(() =>
             {
-                InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
+                InternetMarketEntities internetMarketDateEntities = new InternetMarketEntities();
                 for (int i = 0; i < Convert.ToInt32(pointtext.Text); i++)
                 {
                     interMarket.TabletsSet(tabletname.Text, tabletmodel.Text, tabletproc.Text, tabletRAM.Text, tabletGPU.Text, tabletreolution.Text, tabletbattery.Text, pointtext.Text);

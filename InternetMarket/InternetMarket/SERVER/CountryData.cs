@@ -9,16 +9,16 @@ namespace InternetMarket.SERVER
 {
     class CountryData
     {
-        private List<Country> countries;
-        private InternetMarketDateEntities internetMarket;
-        public CountryData(InternetMarketDateEntities internetMarket)
+        private List<CountrySet> countries;
+        private InternetMarketEntities internetMarket;
+        public CountryData(InternetMarketEntities internetMarket)
         {
             this.internetMarket = internetMarket;
         }
 
         public void CountrySet(string country)
         {
-            var countrydata = new Country
+            CountrySet countrydata = new CountrySet
             {
                 NameCountry = country
             };

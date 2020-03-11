@@ -13,13 +13,13 @@ namespace InternetMarket.SERVER
 {
     class ComputersData : IDisposable
     {
-        private InternetMarketDateEntities internetMarketDateEntities;
+        private InternetMarketEntities internetMarketDateEntities;
         private List<ComputersSet> computers;
         private List<string> computerslist;
         private IMongoCollection<BsonDocument> coll;
         private List<string> strings;
 
-        public ComputersData(InternetMarketDateEntities internetMarket)
+        public ComputersData(InternetMarketEntities internetMarket)
         {
             this.internetMarketDateEntities = internetMarket;
         }

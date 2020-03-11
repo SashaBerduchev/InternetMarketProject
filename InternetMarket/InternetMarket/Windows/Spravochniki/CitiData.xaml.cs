@@ -32,8 +32,8 @@ namespace InternetMarket.Windows
 
         private void CityLoad_Click(object sender, RoutedEventArgs e)
         {
-            List<CityData> cityDatas;
-            InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
+            List<CityDataSet> cityDatas;
+            InternetMarketEntities internetMarketDateEntities = new InternetMarketEntities();
             cityDatas = internetMarketDateEntities.CityDataSet.ToList();
             cityDataGrid.ItemsSource = cityDatas.Select(x => new { x.Name, x.CountryName});
         }

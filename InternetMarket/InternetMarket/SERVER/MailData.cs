@@ -9,17 +9,17 @@ namespace InternetMarket.SERVER
 {
     class MailData : IDisposable
     {
-        private InternetMarketDateEntities internetMarket;
-        private List<Mail> mails;
-        private List<SmtpServers> servers;
+        private InternetMarketEntities internetMarket;
+        private List<MailSet> mails;
+        private List<SmtpServersSet> servers;
         public MailData()
         {
-            internetMarket = new InternetMarketDateEntities();
+            internetMarket = new InternetMarketEntities();
         }
 
         public void SetMail(string email)
         {
-            Mail mail = new Mail
+            MailSet mail = new MailSet
             { Email = email};
             Trace.WriteLine(mail);
             internetMarket.MailSet.Add(mail);
@@ -35,10 +35,10 @@ namespace InternetMarket.SERVER
 
         public void SetMailServer(string[] server)
         {
-            List<SmtpServers> smtpservers = new List<SmtpServers>();
+            List<SmtpServersSet> smtpservers = new List<SmtpServersSet>();
             for (int i = 0; i < server.Length; i++)
             {
-                SmtpServers smtp = new SmtpServers
+                SmtpServersSet smtp = new SmtpServersSet
                 {
                     Smtp = server[i]
                 };

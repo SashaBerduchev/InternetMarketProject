@@ -12,11 +12,13 @@ namespace InternetMarket
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
-    public partial class InternetMarketDateEntities : DbContext
+    public partial class InternetMarketEntities : DbContext
     {
-        public InternetMarketDateEntities()
-            : base("name=InternetMarketDateEntities")
+        public InternetMarketEntities()
+            : base("name=InternetMarketEntities")
         {
         }
     
@@ -25,32 +27,136 @@ namespace InternetMarket
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<BankSetSet> BankSetSet { get; set; }
+        public virtual DbSet<BoilersSet> BoilersSet { get; set; }
+        public virtual DbSet<CityDataSet> CityDataSet { get; set; }
+        public virtual DbSet<CkladSetSet> CkladSetSet { get; set; }
         public virtual DbSet<ComputersSet> ComputersSet { get; set; }
+        public virtual DbSet<CountrySet> CountrySet { get; set; }
+        public virtual DbSet<CPUSet> CPUSet { get; set; }
+        public virtual DbSet<DirectorSet> DirectorSet { get; set; }
+        public virtual DbSet<DocForPainSet> DocForPainSet { get; set; }
+        public virtual DbSet<DogovorSet> DogovorSet { get; set; }
+        public virtual DbSet<Entity1Set> Entity1Set { get; set; }
+        public virtual DbSet<GraphicsCardSet> GraphicsCardSet { get; set; }
+        public virtual DbSet<KassaSetSet> KassaSetSet { get; set; }
+        public virtual DbSet<LaptopsSet> LaptopsSet { get; set; }
+        public virtual DbSet<MailSet> MailSet { get; set; }
+        public virtual DbSet<OblastDataSetSet> OblastDataSetSet { get; set; }
+        public virtual DbSet<OrganizationPositionSetSet> OrganizationPositionSetSet { get; set; }
+        public virtual DbSet<OrganizationSetSet> OrganizationSetSet { get; set; }
         public virtual DbSet<PhonesSet> PhonesSet { get; set; }
+        public virtual DbSet<PrintersSet> PrintersSet { get; set; }
+        public virtual DbSet<RegionDataSet> RegionDataSet { get; set; }
+        public virtual DbSet<SmtpServersSet> SmtpServersSet { get; set; }
+        public virtual DbSet<StreetSetSet> StreetSetSet { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
+        public virtual DbSet<TabletSetSet> TabletSetSet { get; set; }
         public virtual DbSet<TivisetSet> TivisetSet { get; set; }
         public virtual DbSet<UserSet> UserSet { get; set; }
-        public virtual DbSet<Director> DirectorSet { get; set; }
-        public virtual DbSet<Country> CountrySet { get; set; }
-        public virtual DbSet<OblastDataSet> OblastDataSetSet { get; set; }
-        public virtual DbSet<RegionData> RegionDataSet { get; set; }
-        public virtual DbSet<CityData> CityDataSet { get; set; }
-        public virtual DbSet<OrganizationSet> OrganizationSetSet { get; set; }
-        public virtual DbSet<OrganizationPositionSet> OrganizationPositionSetSet { get; set; }
-        public virtual DbSet<CkladSet> CkladSetSet { get; set; }
-        public virtual DbSet<StreetSet> StreetSetSet { get; set; }
-        public virtual DbSet<KassaSet> KassaSetSet { get; set; }
-        public virtual DbSet<BankSet> BankSetSet { get; set; }
-        public virtual DbSet<TabletSet> TabletSetSet { get; set; }
-        public virtual DbSet<DocForPain> DocForPainSet { get; set; }
-        public virtual DbSet<GraphicsCard> GraphicsCardSet { get; set; }
-        public virtual DbSet<Laptops> LaptopsSet { get; set; }
-        public virtual DbSet<Dogovor> DogovorSet { get; set; }
-        public virtual DbSet<ZakazPokupatelya> ZakazPokupatelyaSet { get; set; }
-        public virtual DbSet<Printers> PrintersSet { get; set; }
-        public virtual DbSet<Boilers> BoilersSet { get; set; }
-        public virtual DbSet<CPUSet> CPUSet { get; set; }
-        public virtual DbSet<Mail> MailSet { get; set; }
-        public virtual DbSet<Entity1> Entity1Set { get; set; }
-        public virtual DbSet<SmtpServers> SmtpServersSet { get; set; }
+        public virtual DbSet<ZakazPokupatelyaSet> ZakazPokupatelyaSet { get; set; }
+    
+        public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
+        {
+            var diagramnameParameter = diagramname != null ?
+                new ObjectParameter("diagramname", diagramname) :
+                new ObjectParameter("diagramname", typeof(string));
+    
+            var owner_idParameter = owner_id.HasValue ?
+                new ObjectParameter("owner_id", owner_id) :
+                new ObjectParameter("owner_id", typeof(int));
+    
+            var versionParameter = version.HasValue ?
+                new ObjectParameter("version", version) :
+                new ObjectParameter("version", typeof(int));
+    
+            var definitionParameter = definition != null ?
+                new ObjectParameter("definition", definition) :
+                new ObjectParameter("definition", typeof(byte[]));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_alterdiagram", diagramnameParameter, owner_idParameter, versionParameter, definitionParameter);
+        }
+    
+        public virtual int sp_creatediagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
+        {
+            var diagramnameParameter = diagramname != null ?
+                new ObjectParameter("diagramname", diagramname) :
+                new ObjectParameter("diagramname", typeof(string));
+    
+            var owner_idParameter = owner_id.HasValue ?
+                new ObjectParameter("owner_id", owner_id) :
+                new ObjectParameter("owner_id", typeof(int));
+    
+            var versionParameter = version.HasValue ?
+                new ObjectParameter("version", version) :
+                new ObjectParameter("version", typeof(int));
+    
+            var definitionParameter = definition != null ?
+                new ObjectParameter("definition", definition) :
+                new ObjectParameter("definition", typeof(byte[]));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_creatediagram", diagramnameParameter, owner_idParameter, versionParameter, definitionParameter);
+        }
+    
+        public virtual int sp_dropdiagram(string diagramname, Nullable<int> owner_id)
+        {
+            var diagramnameParameter = diagramname != null ?
+                new ObjectParameter("diagramname", diagramname) :
+                new ObjectParameter("diagramname", typeof(string));
+    
+            var owner_idParameter = owner_id.HasValue ?
+                new ObjectParameter("owner_id", owner_id) :
+                new ObjectParameter("owner_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_dropdiagram", diagramnameParameter, owner_idParameter);
+        }
+    
+        public virtual ObjectResult<sp_helpdiagramdefinition_Result> sp_helpdiagramdefinition(string diagramname, Nullable<int> owner_id)
+        {
+            var diagramnameParameter = diagramname != null ?
+                new ObjectParameter("diagramname", diagramname) :
+                new ObjectParameter("diagramname", typeof(string));
+    
+            var owner_idParameter = owner_id.HasValue ?
+                new ObjectParameter("owner_id", owner_id) :
+                new ObjectParameter("owner_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_helpdiagramdefinition_Result>("sp_helpdiagramdefinition", diagramnameParameter, owner_idParameter);
+        }
+    
+        public virtual ObjectResult<sp_helpdiagrams_Result> sp_helpdiagrams(string diagramname, Nullable<int> owner_id)
+        {
+            var diagramnameParameter = diagramname != null ?
+                new ObjectParameter("diagramname", diagramname) :
+                new ObjectParameter("diagramname", typeof(string));
+    
+            var owner_idParameter = owner_id.HasValue ?
+                new ObjectParameter("owner_id", owner_id) :
+                new ObjectParameter("owner_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_helpdiagrams_Result>("sp_helpdiagrams", diagramnameParameter, owner_idParameter);
+        }
+    
+        public virtual int sp_renamediagram(string diagramname, Nullable<int> owner_id, string new_diagramname)
+        {
+            var diagramnameParameter = diagramname != null ?
+                new ObjectParameter("diagramname", diagramname) :
+                new ObjectParameter("diagramname", typeof(string));
+    
+            var owner_idParameter = owner_id.HasValue ?
+                new ObjectParameter("owner_id", owner_id) :
+                new ObjectParameter("owner_id", typeof(int));
+    
+            var new_diagramnameParameter = new_diagramname != null ?
+                new ObjectParameter("new_diagramname", new_diagramname) :
+                new ObjectParameter("new_diagramname", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_renamediagram", diagramnameParameter, owner_idParameter, new_diagramnameParameter);
+        }
+    
+        public virtual int sp_upgraddiagrams()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_upgraddiagrams");
+        }
     }
 }

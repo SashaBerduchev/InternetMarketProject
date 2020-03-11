@@ -22,19 +22,19 @@ namespace InternetMarket.Windows
         public Contragent()
         {
             InitializeComponent();
-            List<Country> countries;
-            List<CityData> cities;
-            List<OblastDataSet> oblasts;
-            List<RegionData> regions;
-            List<StreetSet> streets;
-            InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
+            List<CountrySet> countries;
+            List<CityDataSet> cities;
+            List<OblastDataSetSet> oblasts;
+            List<RegionDataSet> regions;
+            List<StreetSetSet> streets;
+            InternetMarketEntities internetMarketDateEntities = new InternetMarketEntities();
             countries = internetMarketDateEntities.CountrySet.ToList();
             cities = internetMarketDateEntities.CityDataSet.ToList();
             oblasts = internetMarketDateEntities.OblastDataSetSet.ToList();
             regions = internetMarketDateEntities.RegionDataSet.ToList();
             streets = internetMarketDateEntities.StreetSetSet.ToList();
 
-            countrycombo.ItemsSource = countries.Select(x => new { x.Name });
+            countrycombo.ItemsSource = countries.Select(x => new { x.NameCountry });
             citycombo.ItemsSource = cities.Select(x => new { x.Name });
             oblastcombo.ItemsSource = oblasts.Select(x => new { x.Name });
             regioncombo.ItemsSource = regions.Select(x => new { x.Name });
@@ -43,16 +43,15 @@ namespace InternetMarket.Windows
 
         private void BtnSet_Click(object sender, RoutedEventArgs e)
         {
-            InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
+            InternetMarketEntities internetMarketDateEntities = new InternetMarketEntities();
 
-            var contragents = new Director
+            var contragents = new DirectorSet
             {
                 Country = countrycombo.SelectedItem.ToString(),
                 City = citycombo.ItemsSource.ToString(),
                 Oblast = oblastcombo.SelectedItem.ToString(),
                 Region = regioncombo.ItemsSource.ToString(),
                 Name = contragentname.Text
-
             };
 
             internetMarketDateEntities.DirectorSet.Add(contragents);

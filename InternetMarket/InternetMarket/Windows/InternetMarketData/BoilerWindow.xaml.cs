@@ -20,7 +20,7 @@ namespace InternetMarket.Windows.InternetMarketData
     /// </summary>
     public partial class BoilerWindow : Window
     {
-        private InternetMarketDateEntities internetMarketDateEntities;
+        private InternetMarketEntities internetMarketDateEntities;
         private InterMarketService interMarket;
         public BoilerWindow()
         {

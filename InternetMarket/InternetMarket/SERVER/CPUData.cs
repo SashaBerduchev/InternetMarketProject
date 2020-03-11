@@ -10,10 +10,10 @@ namespace InternetMarket.SERVER
     class CPUData : IDisposable
     {
         private List<CPUSet> cPUs;
-        private InternetMarketDateEntities internetMarketDateEntities;
+        private InternetMarketEntities internetMarketDateEntities;
         public CPUData()
         {
-            internetMarketDateEntities = new InternetMarketDateEntities();
+            internetMarketDateEntities = new InternetMarketEntities();
         }
 
         public void SetCpu(string name, string architecture, string chastotatext, string corestext, string K1, string K2, string K3, string gpu, string ram, string tdp)
@@ -49,7 +49,7 @@ namespace InternetMarket.SERVER
         {
             LoadingWindow loadingWindow = new LoadingWindow();
             loadingWindow.Show();
-            InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
+            InternetMarketEntities internetMarketDateEntities = new InternetMarketEntities();
             cPUs = internetMarketDateEntities.CPUSet.ToList();
             loadingWindow.Close();
             return cPUs.Select(x => x.Name + ' ' + x.Architecture + ' ' + x.Cores + ' ' + x.Chastota + ' ' + x.KESHL1 + ' ' + x.KESHL2 + ' ' + x.KESHL3 + ' ' + x.GPU + ' ' + x.RAM + ' ' + x.TDP).ToList(); ;

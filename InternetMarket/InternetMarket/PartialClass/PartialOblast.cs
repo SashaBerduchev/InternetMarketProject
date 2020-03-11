@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace InternetMarket
 {
-    public partial class OblastDataSet
+    public partial class OblastDataSetSet
     {
         public override string ToString()
         {

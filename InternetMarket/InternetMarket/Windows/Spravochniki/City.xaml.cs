@@ -23,17 +23,17 @@ namespace InternetMarket.Windows
         {
             InitializeComponent();
 
-            List<Country> countries;
-            InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
+            List<CountrySet> countries;
+            InternetMarketEntities internetMarketDateEntities = new InternetMarketEntities();
             countries = internetMarketDateEntities.CountrySet.ToList();
             citycombo.ItemsSource = countries.Select(x => new { x.NameCountry });
         }
 
         private void btnSet_Click(object sender, RoutedEventArgs e)
         {
-            
-            InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
-            var citydata = new CityData
+
+            InternetMarketEntities internetMarketDateEntities = new InternetMarketEntities();
+            var citydata = new CityDataSet
             {
                 Name = cityname.Text,
                 CountryName = citycombo.SelectedItem.ToString()
