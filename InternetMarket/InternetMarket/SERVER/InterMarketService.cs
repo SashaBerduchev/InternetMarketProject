@@ -107,6 +107,10 @@ namespace InternetMarket
             return userServer.SetUser(login, pass);
         }
 
+        public void RemoveUsers(string User)
+        {
+            userServer.Remove(User);
+        }
 
         public List<string> GetUsers()
         {
@@ -276,6 +280,8 @@ namespace InternetMarket
             for (int i = 0; i< point; i++)
             {
                 graphicsCard.SetGpu(name, cores, GraphicsCore, Herts, vram, voltage, photoread, arrayread);
+                Console.WriteLine($"Number f element :{point}");
+                Console.WriteLine($"Element @{point} : {i}");
             }
         }
 
