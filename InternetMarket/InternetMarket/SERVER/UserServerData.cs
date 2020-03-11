@@ -113,6 +113,12 @@ namespace InternetMarket.SERVER
             }
             return null;
         }
+        
+        public void Remove(string User)
+        {
+            List<UserSet> users = internetMarket.UserSet.Where(x => x.Name == User).ToList();
+            internetMarket.UserSet.Remove(users[1]);
+        }
         public void Dispose()
         {
             if(users!=null)users.Clear();

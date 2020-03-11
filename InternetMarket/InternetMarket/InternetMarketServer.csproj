@@ -330,6 +330,9 @@
     <Compile Include="Windows\Administration\AdministrationWindow.xaml.cs">
       <DependentUpon>AdministrationWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\Administration\UserChangedWindow.xaml.cs">
+      <DependentUpon>UserChangedWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\Documents\ZakazPokupatyaData.xaml.cs">
       <DependentUpon>ZakazPokupatyaData.xaml</DependentUpon>
     </Compile>
@@ -488,6 +491,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\Administration\AdministrationWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Administration\UserChangedWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
