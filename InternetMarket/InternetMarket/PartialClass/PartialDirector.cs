@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace InternetMarket  
 {
-    public partial class Director
+    public partial class DirectorSet
     {
         public override string ToString()
         {

@@ -98,6 +98,7 @@ namespace InternetMarket.Windows.Administration
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             marketService.RemoveUsers(Userslist.SelectedItem.ToString());
+            Userslist.ItemsSource = marketService.GetUsers();
         }
     }
 }

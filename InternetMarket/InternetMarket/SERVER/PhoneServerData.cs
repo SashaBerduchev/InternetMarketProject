@@ -15,7 +15,7 @@ namespace InternetMarket.SERVER
     {
         private static List<PhonesSet> phones;
         private static Task<List<string>> phonesdat;
-        private InternetMarketDateEntities internetMarketDateEntities;
+        private InternetMarketEntities internetMarketDateEntities;
         private int start;
         private int stop;
         private int _count;
@@ -23,7 +23,7 @@ namespace InternetMarket.SERVER
         private IException exception;
         private List<string> strings;
         private IMongoCollection<BsonDocument> coll;
-        public PhoneServerData(InternetMarketDateEntities internetMarketDateEntities, IException exception)
+        public PhoneServerData(InternetMarketEntities internetMarketDateEntities, IException exception)
         {
             this.exception = exception;
             this.internetMarketDateEntities = internetMarketDateEntities;

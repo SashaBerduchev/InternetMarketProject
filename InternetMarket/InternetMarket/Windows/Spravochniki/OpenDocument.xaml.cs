@@ -26,8 +26,8 @@ namespace InternetMarket.Windows
 
         private void BtnSet_Click(object sender, RoutedEventArgs e)
         {
-            InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
-            var dogdata = new Dogovor
+            InternetMarketEntities internetMarketDateEntities = new InternetMarketEntities();
+            var dogdata = new DogovorSet
             {
                 Name = namedoc.Text
             };

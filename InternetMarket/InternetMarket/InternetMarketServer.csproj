@@ -225,41 +225,62 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="BankSet.cs">
+    <Compile Include="BankSetSet.cs">
       <DependentUpon>InternetMarketEDM.tt</DependentUpon>
     </Compile>
-    <Compile Include="Boilers.cs">
+    <Compile Include="BoilersSet.cs">
       <DependentUpon>InternetMarketEDM.tt</DependentUpon>
     </Compile>
-    <Compile Include="CityData.cs">
+    <Compile Include="CityDataSet.cs">
       <DependentUpon>InternetMarketEDM.tt</DependentUpon>
     </Compile>
-    <Compile Include="CkladSet.cs">
+    <Compile Include="CkladSetSet.cs">
       <DependentUpon>InternetMarketEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="ComputersSet.cs">
       <DependentUpon>InternetMarketEDM.tt</DependentUpon>
     </Compile>
+    <Compile Include="CountrySet.cs">
+      <DependentUpon>InternetMarketEDM.tt</DependentUpon>
+    </Compile>
     <Compile Include="CPUSet.cs">
       <DependentUpon>InternetMarketEDM.tt</DependentUpon>
     </Compile>
-    <Compile Include="DocForPain.cs">
+    <Compile Include="DirectorSet.cs">
       <DependentUpon>InternetMarketEDM.tt</DependentUpon>
     </Compile>
-    <Compile Include="Dogovor.cs">
+    <Compile Include="DocForPainSet.cs">
       <DependentUpon>InternetMarketEDM.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entity1.cs">
+    <Compile Include="DogovorSet.cs">
       <DependentUpon>InternetMarketEDM.tt</DependentUpon>
     </Compile>
-    <Compile Include="GraphicsCard.cs">
+    <Compile Include="Entity1Set.cs">
       <DependentUpon>InternetMarketEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Excaption\IException.cs" />
-    <Compile Include="KassaSet.cs">
+    <Compile Include="GraphicsCardSet.cs">
       <DependentUpon>InternetMarketEDM.tt</DependentUpon>
     </Compile>
-    <Compile Include="Laptops.cs">
+    <Compile Include="InternetMarketEDM.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InternetMarketEDM.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InternetMarketEDM.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InternetMarketEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InternetMarketEDM.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InternetMarketEDM.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="KassaSetSet.cs">
+      <DependentUpon>InternetMarketEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LaptopsSet.cs">
       <DependentUpon>InternetMarketEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Loaders\LoadingWindow.xaml.cs">
@@ -269,18 +290,18 @@
     <Compile Include="LoginUserWindow.xaml.cs">
       <DependentUpon>LoginUserWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Mail.cs">
-      <DependentUpon>InternetMarketEDM.tt</DependentUpon>
-    </Compile>
     <Compile Include="Excaption\MainException.cs" />
+    <Compile Include="MailSet.cs">
+      <DependentUpon>InternetMarketEDM.tt</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="OblastDataSet.cs">
+    <Compile Include="OblastDataSetSet.cs">
       <DependentUpon>InternetMarketEDM.tt</DependentUpon>
     </Compile>
-    <Compile Include="OrganizationPositionSet.cs">
+    <Compile Include="OrganizationPositionSetSet.cs">
       <DependentUpon>InternetMarketEDM.tt</DependentUpon>
     </Compile>
-    <Compile Include="OrganizationSet.cs">
+    <Compile Include="OrganizationSetSet.cs">
       <DependentUpon>InternetMarketEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="PartialClass\LoadSklad.cs" />
@@ -295,10 +316,13 @@
     <Compile Include="PartialClass\PartialTablets.cs" />
     <Compile Include="PartialClass\Partiallaptop.cs" />
     <Compile Include="PartialClass\PartialDocument.cs" />
-    <Compile Include="Printers.cs">
+    <Compile Include="PhonesSet.cs">
       <DependentUpon>InternetMarketEDM.tt</DependentUpon>
     </Compile>
-    <Compile Include="RegionData.cs">
+    <Compile Include="PrintersSet.cs">
+      <DependentUpon>InternetMarketEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RegionDataSet.cs">
       <DependentUpon>InternetMarketEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="SERVER\BoilerServerData.cs" />
@@ -312,13 +336,28 @@
     <Compile Include="SERVER\TabletServer.cs" />
     <Compile Include="SERVER\TiviServerData.cs" />
     <Compile Include="SERVER\UserServerData.cs" />
-    <Compile Include="SmtpServers.cs">
+    <Compile Include="SmtpServersSet.cs">
       <DependentUpon>InternetMarketEDM.tt</DependentUpon>
     </Compile>
-    <Compile Include="StreetSet.cs">
+    <Compile Include="sp_helpdiagramdefinition_Result.cs">
       <DependentUpon>InternetMarketEDM.tt</DependentUpon>
     </Compile>
-    <Compile Include="TabletSet.cs">
+    <Compile Include="sp_helpdiagrams_Result.cs">
+      <DependentUpon>InternetMarketEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StreetSetSet.cs">
+      <DependentUpon>InternetMarketEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>InternetMarketEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TabletSetSet.cs">
+      <DependentUpon>InternetMarketEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TivisetSet.cs">
+      <DependentUpon>InternetMarketEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserSet.cs">
       <DependentUpon>InternetMarketEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Windows\AddEmailWindow.xaml.cs">
@@ -360,9 +399,6 @@
     <Compile Include="Windows\InternetMarketData\ComputerWindow.xaml.cs">
       <DependentUpon>ComputerWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Country.cs">
-      <DependentUpon>InternetMarketEDM.tt</DependentUpon>
-    </Compile>
     <Compile Include="Windows\Spravochniki\Contragent.xaml.cs">
       <DependentUpon>Contragent.xaml</DependentUpon>
     </Compile>
@@ -376,9 +412,6 @@
     <Compile Include="Windows\Spravochniki\CountrysData.xaml.cs">
       <DependentUpon>CountrysData.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Director.cs">
-      <DependentUpon>InternetMarketEDM.tt</DependentUpon>
-    </Compile>
     <Compile Include="Windows\DataSave.xaml.cs">
       <DependentUpon>DataSave.xaml</DependentUpon>
     </Compile>
@@ -387,21 +420,6 @@
     </Compile>
     <Compile Include="IContract.cs" />
     <Compile Include="SERVER\InterMarketService.cs" />
-    <Compile Include="InternetMarketEDM.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>InternetMarketEDM.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="InternetMarketEDM.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>InternetMarketEDM.tt</DependentUpon>
-    </Compile>
-    <Compile Include="InternetMarketEDM.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>InternetMarketEDM.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Windows\InternetMarketData\Laptop.xaml.cs">
       <DependentUpon>Laptop.xaml</DependentUpon>
     </Compile>
@@ -425,12 +443,6 @@
     </Compile>
     <Compile Include="PartialClass\PartialPhones.cs" />
     <Compile Include="PartialClass\PartialTiviSet.cs" />
-    <Compile Include="PhonesSet.cs">
-      <DependentUpon>InternetMarketEDM.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TivisetSet.cs">
-      <DependentUpon>InternetMarketEDM.tt</DependentUpon>
-    </Compile>
     <Compile Include="Windows\InternetMarketData\OpenTablets.xaml.cs">
       <DependentUpon>OpenTablets.xaml</DependentUpon>
     </Compile>
@@ -462,16 +474,13 @@
     <Compile Include="Windows\TiviWindow.xaml.cs">
       <DependentUpon>TiviWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserSet.cs">
-      <DependentUpon>InternetMarketEDM.tt</DependentUpon>
-    </Compile>
     <Compile Include="Windows\Users\AddUserWindowServer.xaml.cs">
       <DependentUpon>AddUserWindowServer.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\ZakazPokupatelyaDoc.xaml.cs">
       <DependentUpon>ZakazPokupatelyaDoc.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ZakazPokupatelya.cs">
+    <Compile Include="ZakazPokupatelyaSet.cs">
       <DependentUpon>InternetMarketEDM.tt</DependentUpon>
     </Compile>
     <Page Include="Loaders\LoadingWindow.xaml">
@@ -665,11 +674,11 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include=".editorconfig" />
     <EntityDeploy Include="InternetMarketEDM.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>InternetMarketEDM.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include=".editorconfig" />
     <None Include="InternetMarketEDM.edmx.diagram">
       <DependentUpon>InternetMarketEDM.edmx</DependentUpon>
     </None>
@@ -687,8 +696,8 @@
   <ItemGroup>
     <Content Include="InternetMarketEDM.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>InternetMarketEDM.edmx</DependentUpon>
       <LastGenOutput>InternetMarketEDM.Context.cs</LastGenOutput>
+      <DependentUpon>InternetMarketEDM.edmx</DependentUpon>
     </Content>
     <Content Include="InternetMarketEDM.edmx.sql" />
     <Content Include="InternetMarketEDM.tt">

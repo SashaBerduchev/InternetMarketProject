@@ -24,10 +24,10 @@ namespace InternetMarket.Windows
         {
             //try
             //{
-                List<Director> directors;
-                List<Dogovor> dogovors;
-                List<CkladSet> cklads;
-                InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
+                List<DirectorSet> directors;
+                List<DogovorSet> dogovors;
+                List<CkladSetSet> cklads;
+                InternetMarketEntities internetMarketDateEntities = new InternetMarketEntities();
                 directors = internetMarketDateEntities.DirectorSet.ToList();
                 contragent.ItemsSource = directors.Select(x => new { x.Name });
                 dogovors = internetMarketDateEntities.DogovorSet.ToList();
@@ -52,7 +52,7 @@ namespace InternetMarket.Windows
 
         public void SelectData()
         {
-            InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
+            InternetMarketEntities internetMarketDateEntities = new InternetMarketEntities();
             List<PhonesSet> phones;
             phones = internetMarketDateEntities.PhonesSet.ToList();
             listbox.ItemsSource = phones.Select(x=> new { x.Firm, x.Model, x.Quantity, x.Processor, x.RAM, x.Cost, x.Battery});

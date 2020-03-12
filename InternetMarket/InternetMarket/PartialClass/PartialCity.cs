@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace InternetMarket
 {
-    public partial class CityData
+    public partial class CityDataSet
     {
         public override string ToString()
         {

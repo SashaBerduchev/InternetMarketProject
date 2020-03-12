@@ -10,11 +10,11 @@ namespace InternetMarket.SERVER
 {
     class LaptopData : IDisposable
     {
-        private InternetMarketDateEntities internetMarket;
-        private List<Laptops> laptops;
+        private InternetMarketEntities internetMarket;
+        private List<LaptopsSet> laptops;
         public LaptopData()
         {
-            internetMarket = new InternetMarketDateEntities();
+            internetMarket = new InternetMarketEntities();
         }
 
 
@@ -22,7 +22,7 @@ namespace InternetMarket.SERVER
         {
             try
             {
-                Laptops laptops = new Laptops
+                LaptopsSet laptops = new LaptopsSet
                 {
                     Name = name,
                     Battery = battery,
@@ -48,7 +48,7 @@ namespace InternetMarket.SERVER
         public List<string> GetLaptop()
         {
 
-            InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();//4
+            InternetMarketEntities internetMarketDateEntities = new InternetMarketEntities();//4
             laptops = internetMarketDateEntities.LaptopsSet.ToList();
             List<string> laptopslist = laptops.Select(x => x.Name + " " + x.Model + " " + x.Procc + " " + x.RAM + " " + x.Resolution + " " + x.SCREEN + " " + x.VRAM + " " + x.Battery).ToList();
             return laptopslist;

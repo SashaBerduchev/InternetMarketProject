@@ -24,7 +24,7 @@ namespace InternetMarket
     /// </summary>
     public partial class MainWindow : Window, IDisposable
     {
-        private InternetMarketDateEntities internetMarketDateEntities;
+        private InternetMarketEntities internetMarketDateEntities;
         private List<string> printers;
         private InterMarketService marketService;
         private InterMarketService interMarketService;

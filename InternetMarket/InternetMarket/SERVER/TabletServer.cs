@@ -9,18 +9,18 @@ namespace InternetMarket.SERVER
 {
     class TabletServer : IDisposable
     {
-        private List<TabletSet> tablets;
-        private InternetMarketDateEntities internetMarket;
+        private List<TabletSetSet> tablets;
+        private InternetMarketEntities internetMarket;
         private int start;
         private int stop;
         public TabletServer()
         {
-            internetMarket = new InternetMarketDateEntities();
+            internetMarket = new InternetMarketEntities();
         }
 
         public void SetTablet(string name, string model, string proc, string ram, string gpu, string resolution, string battery)
         {
-            var tabletsdata = new TabletSet
+            var tabletsdata = new TabletSetSet
             {
                 Name = name,
                 Model = model,
@@ -42,7 +42,7 @@ namespace InternetMarket.SERVER
             {
                 LoadingWindow loadingWindow = new LoadingWindow();
                 loadingWindow.Show();
-                InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
+                InternetMarketEntities internetMarketDateEntities = new InternetMarketEntities();
                 tablets = internetMarketDateEntities.TabletSetSet.ToList();
                 Trace.WriteLine(tablets);
                 Trace.WriteLine(tablets.Select(x => new { x.Name, x.Model, x.Processor, x.RAM, x.GPU, x.Battery, x.Resolution }));

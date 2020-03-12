@@ -6,9 +6,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Diagnostics;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
-using System.Windows.Threading;
 
 namespace InternetMarket
 {
@@ -24,13 +22,13 @@ namespace InternetMarket
         private TabletServer tabletServer;
         private BoilerServerData boilerServer;
         private ComputersData computersData;
-        private InternetMarketDateEntities internetMarketDateEntities;
+        private InternetMarketEntities internetMarketDateEntities;
         private List<string> users;
         private List<CPUSet> cpu;
-        private List<Country> countries;
-        private List<CityData> cities;
+        private List<CountrySet> countries;
+        private List<CityDataSet> cities;
         private List<string> listgpu;
-        private List<GraphicsCard> graphics;
+        private List<GraphicsCardSet> graphics;
         private CPUData CPU;
         private GPUData graphicsCard;
         private LaptopData laptopData;
@@ -38,7 +36,7 @@ namespace InternetMarket
         private CountryData countryData;
         public InterMarketService(MainWindow window = null)
         {
-            internetMarketDateEntities = new InternetMarketDateEntities();
+            internetMarketDateEntities = new InternetMarketEntities();
             phoneServerData = new PhoneServerData(internetMarketDateEntities, exception);
             tiviServer = new TiviServerData(internetMarketDateEntities, exception);
             userServer = new UserServerData();
@@ -177,7 +175,7 @@ namespace InternetMarket
         public void TiviSet(string Firm, string Model, string Quantity, string Cost, string textpoint)
         {
             ClearContent();
-            internetMarketDateEntities = new InternetMarketDateEntities();
+            internetMarketDateEntities = new InternetMarketEntities();
 
             for (int i = 0; i < Convert.ToInt32(textpoint); i++)
             {
@@ -201,7 +199,7 @@ namespace InternetMarket
         public void TabletsSet(string name, string model, string proc, string ram, string gpu, string resolution, string battery, string textpoint)
         {
             ClearContent();
-            internetMarketDateEntities = new InternetMarketDateEntities();
+            internetMarketDateEntities = new InternetMarketEntities();
             for (int i=0; i<Convert.ToInt32(textpoint); i++)
             {
                 tabletServer.SetTablet(name, model, proc, ram, gpu, resolution, battery);
@@ -217,8 +215,8 @@ namespace InternetMarket
 
         public void OrganizationSet(string organization)
         {
-            InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
-            var orgdata = new OrganizationSet
+            InternetMarketEntities internetMarketDateEntities = new InternetMarketEntities();
+            var orgdata = new OrganizationSetSet
             {
                 Name = organization
             };
@@ -233,7 +231,7 @@ namespace InternetMarket
 
         public void City(string name, string countryname)
         {
-            var citydata = new CityData
+            var citydata = new CityDataSet
             {
                 CountryName = countryname,
                 Name = name
@@ -256,8 +254,8 @@ namespace InternetMarket
 
         public void Oblast(string name, string countryname, string cityname)
         {
-            InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
-            var obastdata = new OblastDataSet
+            InternetMarketEntities internetMarketDateEntities = new InternetMarketEntities();
+            var obastdata = new OblastDataSetSet
             {
                 Country = countryname,
                 City = cityname,

@@ -23,9 +23,9 @@ namespace InternetMarket.Windows
         {
             InitializeComponent();
 
-            InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
+            InternetMarketEntities internetMarketDateEntities = new InternetMarketEntities();
 
-            List<OrganizationSet> organizations;
+            List<OrganizationSetSet> organizations;
             organizations = internetMarketDateEntities.OrganizationSetSet.ToList();
             organization.ItemsSource = organizations.Select(x => new { x.Name });
         }
@@ -34,7 +34,7 @@ namespace InternetMarket.Windows
         {
             List<PhonesSet> phones;
             List<ComputersSet> computers;
-            InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
+            InternetMarketEntities internetMarketDateEntities = new InternetMarketEntities();
 
             phones = internetMarketDateEntities.PhonesSet.ToList();
             computers = internetMarketDateEntities.ComputersSet.ToList();

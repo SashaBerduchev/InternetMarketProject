@@ -32,8 +32,8 @@ namespace InternetMarket.Windows.Spravochniki
 
         private void SkladLoad_Click(object sender, RoutedEventArgs e)
         {
-            List<CkladSet> cklads;
-            InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
+            List<CkladSetSet> cklads;
+            InternetMarketEntities internetMarketDateEntities = new InternetMarketEntities();
             cklads = internetMarketDateEntities.CkladSetSet.ToList();
             skladDataGrid.ItemsSource = cklads.Select(x => new { x.Name, x.Type, x.Organisation, x.City, x.Oblast, x.Street });
         }

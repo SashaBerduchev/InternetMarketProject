@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace InternetMarket
 {
-    public partial class GraphicsCard
+    public partial class GraphicsCardSet
     {
         public override string ToString()
         {

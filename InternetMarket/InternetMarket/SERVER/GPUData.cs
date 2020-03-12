@@ -9,17 +9,17 @@ namespace InternetMarket.SERVER
 {
     class GPUData
     {
-        private InternetMarketDateEntities internetMarket;
-        private List<GraphicsCard> graphics;
+        private InternetMarketEntities internetMarket;
+        private List<GraphicsCardSet> graphics;
         public GPUData()
         {
-            internetMarket = new InternetMarketDateEntities();
+            internetMarket = new InternetMarketEntities();
         }
 
 
         public void SetGpu(string namegpu, string cores, string gpucores, string herts, string vram, string voltage, byte[] photoload, byte[] arrayread)
         {
-            var gpudata = new GraphicsCard
+            GraphicsCardSet gpudata = new GraphicsCardSet
             {
                 Name = namegpu,
                 Cores = cores,
@@ -38,7 +38,7 @@ namespace InternetMarket.SERVER
         {
             LoadingWindow loading = new LoadingWindow();
             loading.Show();
-            internetMarket = new InternetMarketDateEntities();
+            internetMarket = new InternetMarketEntities();
             graphics = internetMarket.GraphicsCardSet.ToList();
             loading.Close();
             return graphics.Select(x => x.Name + ' ' + x.GraphicsCore + ' ' + x.Herts + ' ' + x.Cores + ' ' + x.VRAM + ' ' + x.Voltage + ' ' + x.Photo).ToList();

@@ -5,14 +5,14 @@ namespace InternetMarket.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<InternetMarket.InternetMarketDateEntities>
+    internal sealed class Configuration : DbMigrationsConfiguration<InternetMarket.InternetMarketEntities>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(InternetMarket.InternetMarketDateEntities context)
+        protected override void Seed(InternetMarket.InternetMarketEntities context)
         {
             //  This method will be called after migrating to the latest version.
 

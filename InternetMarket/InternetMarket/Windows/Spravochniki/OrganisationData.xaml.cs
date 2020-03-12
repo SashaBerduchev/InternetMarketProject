@@ -32,8 +32,8 @@ namespace InternetMarket.Windows
 
         private void OrgaanisationLoad_Click(object sender, RoutedEventArgs e)
         {
-            InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
-            List<OrganizationSet> organizations;
+            InternetMarketEntities internetMarketDateEntities = new InternetMarketEntities();
+            List<OrganizationSetSet> organizations;
 
             organizations = internetMarketDateEntities.OrganizationSetSet.ToList();
             organisationDataGrid.ItemsSource = organizations.Select(x => new { x.Name });

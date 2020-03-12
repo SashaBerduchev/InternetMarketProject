@@ -32,8 +32,8 @@ namespace InternetMarket.Windows
 
         private void StreetLoad_Click(object sender, RoutedEventArgs e)
         {
-            List<StreetSet> streets;
-            InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
+            List<StreetSetSet> streets;
+            InternetMarketEntities internetMarketDateEntities = new InternetMarketEntities();
             streets = internetMarketDateEntities.StreetSetSet.ToList();
             streetDataGrid.ItemsSource = streets.Select(x => new { x.Country, x.City, x.Region, x.NameStreen });
         }

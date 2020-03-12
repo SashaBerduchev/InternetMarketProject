@@ -13,9 +13,9 @@ namespace InternetMarket.SERVER
     class TiviServerData : IDisposable
     {
         private List<TivisetSet> tivis;
-        private InternetMarketDateEntities internetMarket;
+        private InternetMarketEntities internetMarket;
         private IException exception;
-        public TiviServerData(InternetMarketDateEntities internetMarket, IException exception)
+        public TiviServerData(InternetMarketEntities internetMarket, IException exception)
         {
             this.exception = exception;
             this.internetMarket = internetMarket;

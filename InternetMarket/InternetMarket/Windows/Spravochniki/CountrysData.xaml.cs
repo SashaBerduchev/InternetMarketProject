@@ -32,8 +32,8 @@ namespace InternetMarket
 
         private void ContryLoad_Click(object sender, RoutedEventArgs e)
         {
-            List<Country> countries;
-            InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
+            List<CountrySet> countries;
+            InternetMarketEntities internetMarketDateEntities = new InternetMarketEntities();
             countries = internetMarketDateEntities.CountrySet.ToList();
             countryDataGrid.ItemsSource = countries.Select(x => new { x.NameCountry });
             

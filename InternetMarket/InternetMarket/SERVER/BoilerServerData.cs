@@ -11,8 +11,8 @@ namespace InternetMarket.SERVER
     
     class BoilerServerData
     {
-        private InternetMarketDateEntities internetMarket;
-        public BoilerServerData(InternetMarketDateEntities internetMarket)
+        private InternetMarketEntities internetMarket;
+        public BoilerServerData(InternetMarketEntities internetMarket)
         {
             this.internetMarket = internetMarket;
         }
@@ -21,8 +21,8 @@ namespace InternetMarket.SERVER
         {
             try
             {
-                internetMarket = new InternetMarketDateEntities();
-                Boilers boilers = new Boilers
+                internetMarket = new InternetMarketEntities();
+                BoilersSet boilers = new BoilersSet
                 {
                     Name = Name,
                     Model = Model,

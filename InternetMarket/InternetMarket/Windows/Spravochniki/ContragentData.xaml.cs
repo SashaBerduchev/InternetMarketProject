@@ -35,8 +35,8 @@ namespace InternetMarket.Windows
 
         private void ContragentLoad_Click(object sender, RoutedEventArgs e)
         {
-            List<Director> directors;
-            InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
+            List<DirectorSet> directors;
+            InternetMarketEntities internetMarketDateEntities = new InternetMarketEntities();
             directors = internetMarketDateEntities.DirectorSet.ToList();
             contragentDataGrid.ItemsSource = directors.Select(x => new { x.Name, x.Country, x.Oblast, x.City, x.Region });
         }
