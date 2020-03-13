@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,9 +20,12 @@ namespace InternetMarket.Windows.Administration
     /// </summary>
     public partial class UserChangedWindow : Window
     {
-        public UserChangedWindow()
+        string value;
+        public UserChangedWindow(string value)
         {
             InitializeComponent();
+            this.value = value;
+            Trace.WriteLine(this);
         }
     }
 }

@@ -13,10 +13,14 @@ namespace InternetMarket.SERVER
         private InternetMarketEntities internetMarket;
         private List<string> passstr;
         private List<string> users;
-        public UserServerData()
+        private IException exception;
+        public UserServerData(InternetMarketEntities marketEntities, IException exception)
         {
             users = new List<string>();
-            internetMarket = new InternetMarketEntities();
+            internetMarket = marketEntities;
+            this.exception = exception;
+
+
         }
         public void SetUserIfApsent()
         {
@@ -116,9 +120,15 @@ namespace InternetMarket.SERVER
         
         public void Remove(string User)
         {
-            List<UserSet> users = internetMarket.UserSet.Where(x => x.Name == User).ToList();
-            internetMarket.UserSet.Remove(users[1]);
-            internetMarket.SaveChanges();
+            try
+            {
+                List<UserSet> users = internetMarket.UserSet.Where(x => x.Name == User).ToList();
+                internetMarket.UserSet.Remove(users[1]);
+                internetMarket.SaveChanges();
+            }catch(Exception exp)
+            {
+                exception.ExceptionWriter(exp);
+            }
         }
         public void Dispose()
         {

@@ -7,7 +7,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Text;
 using System.Windows;
-using CityData = InternetMarket.CityData;
+using CityData = InternetMarket.CityDataSet;
 using CountrysData = InternetMarket.CountrysData;
 using GraphicsCard = InternetMarketClient.Windows.ClientData.GraphicsCard;
 using OblastData = InternetMarket.Windows.OblastData;

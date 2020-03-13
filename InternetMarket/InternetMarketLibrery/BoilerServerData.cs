@@ -11,7 +11,7 @@ namespace InternetMarket.SERVER
     
     class BoilerServerData
     {
-        private InternetMarketDateEntities internetMarket;
+        private InternetMarketEntities internetMarket;
         public BoilerServerData()
         {
             internetMarket = new InternetMarketDateEntities();

@@ -92,7 +92,7 @@ namespace InternetMarket.Windows.Administration
 
         private void Userslist_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            new UserChangedWindow(Userslist.SelectedItem.ToString()).Show();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

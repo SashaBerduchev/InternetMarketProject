@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,11 @@ namespace InternetMarket
         {
               mainWindow = win;
         }
-        public void ExceptionWriter(string exp)
+        public void ExceptionWriter(Exception exp)
         {
-            MainWindow.MessageExp(exp);
-            mainWindow.OutExp(exp);
+            MainWindow.MessageExp(exp.ToString());
+            mainWindow.OutExp(exp.ToString());
+            Trace.WriteLine(exp.StackTrace);
         }
 
     }
