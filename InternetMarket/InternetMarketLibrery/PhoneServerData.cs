@@ -10,10 +10,10 @@ namespace InternetMarket.SERVER
     class PhoneServerData : IDisposable
     {
         private List<PhonesSet> phones;
-        private InternetMarketDateEntities internetMarketDateEntities;
+        private InternetMarketEntities internetMarketDateEntities;
         public PhoneServerData()
         {
-            internetMarketDateEntities = new InternetMarketDateEntities();
+            internetMarketDateEntities = new InternetMarketEntities();
         }
 
         public List<string> GetPhones()

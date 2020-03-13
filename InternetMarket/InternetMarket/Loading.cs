@@ -78,8 +78,8 @@ namespace InternetMarket
                 }
                 else
                 {
-                    exception.ExceptionWriter(exp.ToString());
-                    Trace.WriteLine(exp.ToString());
+                    exception.ExceptionWriter(exp);
+                    Trace.WriteLine(exp);
                 }
             }
             finally

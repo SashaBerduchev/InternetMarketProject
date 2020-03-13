@@ -53,7 +53,7 @@ namespace InternetMarket
 
         private void OpenBtn_Click(object sender, RoutedEventArgs e)
         {
-            OpenPhones openPhones = new OpenPhones();
+            OpenPhones openPhones = new OpenPhones(exception);
             openPhones.Show();
         }
 

@@ -15,18 +15,18 @@ namespace InternetMarketLibrery
         private TabletServer tabletServer;
         private BoilerServerData boilerServer;
         private ComputersData computers;
-        private InternetMarketDateEntities internetMarketDateEntities;
+        private InternetMarketEntities internetMarketDateEntities;
         private List<string> users;
         private List<string> cpulist;
         private List<CPUSet> cpu;
         private List<Country> countries;
-        private List<CityData> cities;
+        private List<CityDataSet> cities;
         private List<string> listgpu;
-        private List<GraphicsCard> graphics;
+        private List<GraphicsCardSet> graphics;
 
         public InternetMarket()
         {
-            internetMarketDateEntities = new InternetMarketDateEntities();
+            internetMarketDateEntities = new InternetMarketEntities();
             phoneServerData = new PhoneServerData();
             tiviServer = new TiviServerData();
             userServer = new UserServerData();
@@ -84,7 +84,7 @@ namespace InternetMarketLibrery
         public void TiviSet(string Firm, string Model, string Quantity, string Cost, string textpoint)
         {
             ClearContent();
-            internetMarketDateEntities = new InternetMarketDateEntities();
+            internetMarketDateEntities = new InternetMarketEntities();
 
             for (int i = 0; i < Convert.ToInt32(textpoint); i++)
             {
@@ -106,7 +106,7 @@ namespace InternetMarketLibrery
         public void TabletsSet(string name, string model, string proc, string ram, string gpu, string resolution, string battery, string textpoint)
         {
             ClearContent();
-            internetMarketDateEntities = new InternetMarketDateEntities();
+            internetMarketDateEntities = new InternetMarketEntities();
             for (int i = 0; i < Convert.ToInt32(textpoint); i++)
             {
                 tabletServer.SetServer(name, model, proc, ram, gpu, resolution, battery);
@@ -116,8 +116,8 @@ namespace InternetMarketLibrery
 
         public void OrganizationSet(string organization)
         {
-            InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
-            var orgdata = new OrganizationSet
+            InternetMarketEntities internetMarketDateEntities = new InternetMarketEntities();
+            var orgdata = new OrganizationSetSet
             {
                 Name = organization
             };
@@ -127,8 +127,8 @@ namespace InternetMarketLibrery
 
         public void CountrySet(string country)
         {
-            InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
-            var countrydata = new Country
+            InternetMarketEntities internetMarketDateEntities = new InternetMarketEntities();
+            var countrydata = new CountrySet
             {
                 NameCountry = country
             };
@@ -218,7 +218,7 @@ namespace InternetMarketLibrery
         {
             for (int i = 0; i < point; i++)
             {
-                Laptops laptops = new Laptops
+                LaptopsSet laptops = new LaptopsSet
                 {
                     Name = name,
                     Battery = battery,

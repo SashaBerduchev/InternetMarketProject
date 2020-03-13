@@ -65,8 +65,7 @@ namespace InternetMarket.Windows.Administration
                     mongoview.ItemsSource = marketService.GetListPhoneMongo();
                 }catch(Exception exp)
                 {
-                    Trace.WriteLine(exp);
-                    exception.ExceptionWriter(exp.ToString());
+                    exception.ExceptionWriter(exp);
                 }
             }
 
@@ -84,8 +83,7 @@ namespace InternetMarket.Windows.Administration
                 }
                 catch (Exception exp)
                 {
-                    Trace.WriteLine(exp);
-                    exception.ExceptionWriter(exp.ToString());
+                    exception.ExceptionWriter(exp);
                 }
             }
         }

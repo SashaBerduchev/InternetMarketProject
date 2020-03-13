@@ -9,15 +9,15 @@ namespace InternetMarket.SERVER
 {
     class TabletServer
     {
-        private InternetMarketDateEntities internetMarket;
+        private InternetMarketEntities internetMarket;
         public TabletServer()
         {
-            internetMarket = new InternetMarketDateEntities();
+            internetMarket = new InternetMarketEntities();
         }
 
         public void SetServer(string name, string model, string proc, string ram, string gpu, string resolution, string battery)
         {
-            var tabletsdata = new TabletSet
+            var tabletsdata = new TabletSetSet
             {
                 Name = name,
                 Model = model,
