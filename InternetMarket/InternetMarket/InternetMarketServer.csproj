@@ -246,6 +246,9 @@
     <Compile Include="CPUSet.cs">
       <DependentUpon>InternetMarketEDM.tt</DependentUpon>
     </Compile>
+    <Compile Include="DataBaseSupportWindow.xaml.cs">
+      <DependentUpon>DataBaseSupportWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DirectorSet.cs">
       <DependentUpon>InternetMarketEDM.tt</DependentUpon>
     </Compile>
@@ -483,6 +486,10 @@
     <Compile Include="ZakazPokupatelyaSet.cs">
       <DependentUpon>InternetMarketEDM.tt</DependentUpon>
     </Compile>
+    <Page Include="DataBaseSupportWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Loaders\LoadingWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

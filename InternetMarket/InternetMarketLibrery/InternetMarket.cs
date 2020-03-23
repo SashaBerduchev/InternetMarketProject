@@ -19,7 +19,7 @@ namespace InternetMarketLibrery
         private List<string> users;
         private List<string> cpulist;
         private List<CPUSet> cpu;
-        private List<Country> countries;
+        private List<CountrySet> countries;
         private List<CityDataSet> cities;
         private List<string> listgpu;
         private List<GraphicsCardSet> graphics;
@@ -138,7 +138,7 @@ namespace InternetMarketLibrery
 
         public void City(string name, string countryname)
         {
-            var citydata = new CityData
+            var citydata = new CityDataSet
             {
                 CountryName = countryname,
                 Name = name
@@ -161,8 +161,8 @@ namespace InternetMarketLibrery
 
         public void Oblast(string name, string countryname, string cityname)
         {
-            InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
-            var obastdata = new OblastDataSet
+            InternetMarketEntities internetMarketDateEntities = new InternetMarketEntities();
+            var obastdata = new OblastDataSetSet
             {
                 Country = countryname,
                 City = cityname,
@@ -176,7 +176,7 @@ namespace InternetMarketLibrery
         {
             for (int i = 0; i < point; i++)
             {
-                InternetMarketDateEntities internetMarketDateEntities = new InternetMarketDateEntities();
+                InternetMarketEntities internetMarketDateEntities = new InternetMarketEntities();
                 CPUSet cpudat = new CPUSet
                 {
                     Name = Name,
@@ -199,7 +199,7 @@ namespace InternetMarketLibrery
         {
             for (int i = 0; i < point; i++)
             {
-                GraphicsCard graphics = new GraphicsCard
+                GraphicsCardSet graphics = new GraphicsCardSet
                 {
                     Name = name,
                     Cores = cores,

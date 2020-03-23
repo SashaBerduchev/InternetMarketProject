@@ -5,6 +5,7 @@ using System.Linq;
 using System.ServiceModel;
 using System.Windows;
 using System.Windows.Input;
+using System.Xml;
 
 namespace InternetMarket
 {
@@ -18,13 +19,13 @@ namespace InternetMarket
         public LoginUserWindow()
         {
             InitializeComponent();
-            StartConnection();
 
             Trace.WriteLine(this);
             interMarketService = new InterMarketService();
+            StartConnection();
+            Localization();
             //Костыль, если нету юзеров
             interMarketService.SetUserIfApsent();
-            //GetUser data
 
             try
             {
@@ -37,12 +38,31 @@ namespace InternetMarket
             }
         }
 
+        private void Localization()
+        {
+            try
+            {
+                XmlDocument xml = new XmlDocument();
+                xml.Load("https://drive.google.com/open?id=1ndgPsDs4Uhk80ZktRq9_CYT_dKmw0_Jt");
+                XmlElement xRoot = xml.DocumentElement;
+                foreach (XmlNode xnode in xRoot)
+                {
+                    Trace.WriteLine(xnode);
+                }
+            }
+            catch (Exception e)
+            {
+                Trace.WriteLine(e.StackTrace);
+                MessageBox.Show(e.ToString(), "Esception", MessageBoxButton.OK);
+            }
+        }
+
         private void StartConnection()
         {
             try
             {
-                //string uriAddress = "net.tcp://192.168.1.104:7000/IContract";//4
-                string uriAddress = "net.tcp://localhost:6000/IContract"; 
+                string uriAddress = "net.tcp://192.168.1.217:7000/icontract";
+                //string uriAddress = "net.tcp://localhost:8000/kIContract";
                 Uri addres = new Uri(uriAddress);//5
                 NetTcpBinding binding = new NetTcpBinding();//6
                 binding.ListenBacklog = 2000;//7
@@ -54,15 +74,9 @@ namespace InternetMarket
                 serviceHost.AddServiceEndpoint(type, binding, uriAddress);//13
                 serviceHost.Open();//14
                 Trace.WriteLine(serviceHost);
-            }catch(Exception exp)
+            }catch(Exception e)
             {
-                Trace.WriteLine(exp.StackTrace);
-                MessageBoxResult res = MessageBox.Show("Ошибка подключения к серверу, неверный ip, port, попробовать снова?", "Error", MessageBoxButton.YesNo, MessageBoxImage.Error);
-                if (res == MessageBoxResult.Yes)
-                {
-                    new LoginUserWindow().Show();
-                    this.Close();
-                }
+                Trace.WriteLine(e.StackTrace);
             }
         }
 
