@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.ServiceModel;
 using System.Windows;
 using System.Windows.Input;
+using System.Windows.Media;
 using System.Xml;
 
 namespace InternetMarket
@@ -16,14 +19,19 @@ namespace InternetMarket
     {
         private InterMarketService interMarketService;
         private static string pass = "";
+        private XmlNode xpath;
+        
         public LoginUserWindow()
         {
             InitializeComponent();
-
+            LanguageBox.Items.Add("en");
+            LanguageBox.Items.Add("ru");
+            LanguageBox.SelectedItem = "ru";
             Trace.WriteLine(this);
             interMarketService = new InterMarketService();
             StartConnection();
             Localization();
+            LoadImage();
             //Костыль, если нету юзеров
             interMarketService.SetUserIfApsent();
 
@@ -38,16 +46,39 @@ namespace InternetMarket
             }
         }
 
+        private void LoadImage()
+        {
+            try
+            {
+
+                var request = WebRequest.Create("https://www.google.com/url?sa=i&url=https%3A%2F%2Fpagedesignshop.com%2Fcan-you-internet-market-through-emails%2F&psig=AOvVaw3fEk970IOghpoqyjKM8r-Q&ust=1585213810668000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCKCO_-ajtegCFQAAAAAdAAAAABAD");
+                var response = request.GetResponse();
+                Bitmap loadedBitmap = null;
+                using (var responseStream = response.GetResponseStream())
+                {
+                    loadedBitmap = new Bitmap(responseStream);
+                    ImageSourceConverter sourceConverter = new ImageSourceConverter();
+                    Image.Source =  (ImageSource)sourceConverter.ConvertFrom(loadedBitmap);
+                }
+            }
+            catch (System.Net.WebException ex)
+            {
+                Trace.WriteLine(ex);
+            }
+        }
+
         private void Localization()
         {
             try
             {
+                
                 XmlDocument xml = new XmlDocument();
-                xml.Load("https://drive.google.com/open?id=1ndgPsDs4Uhk80ZktRq9_CYT_dKmw0_Jt");
+                xml.Load(@"https://drive.google.com/uc?export=download&id=1ndgPsDs4Uhk80ZktRq9_CYT_dKmw0_Jt");
                 XmlElement xRoot = xml.DocumentElement;
                 foreach (XmlNode xnode in xRoot)
                 {
-                    Trace.WriteLine(xnode);
+                    xpath = xnode;
+
                 }
             }
             catch (Exception e)

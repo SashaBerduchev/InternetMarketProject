@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<METADATA>
+<LANGUAGE>
+    <OBJECT key = "1"  ru = "Логин" en ="Login"/>
+    <OBJECT key = "2"  ru = "Пароль" en ="Password"/>
+</LANGUAGE>
+</METADATA>
