@@ -1339,3 +1339,4 @@ C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\Inter
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\Administration\UserChangedWindow.baml
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\Administration\UserChangedWindow.g.cs
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\Administration\UserChangedWindow.baml
+C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\InternetMarketServer.csproj.CoreCompileInputs.cache
