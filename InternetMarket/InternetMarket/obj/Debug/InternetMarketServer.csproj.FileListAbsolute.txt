@@ -1339,3 +1339,5 @@ D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Win
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\Administration\UserChangedWindow.baml
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\Administration\UserChangedWindow.g.cs
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\Windows\Administration\UserChangedWindow.baml
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\DataBaseSupportWindow.g.cs
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Debug\DataBaseSupportWindow.baml

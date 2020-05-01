@@ -49,9 +49,11 @@ namespace InternetMarket
             mailData = new MailData();
             countryData = new CountryData(internetMarketDateEntities);
             exception = new MainException(window);
+            CheckMSSQLOnStart();
             Trace.WriteLine(this);
             Trace.WriteLine("Server INITIALIZE");
         }
+
 
         public void StartMongoConnection()
         {
@@ -74,6 +76,8 @@ namespace InternetMarket
             try
             {
                 database = client.GetDatabase("InternetMarket");
+                database.CreateCollection("UserDBSet");
+                CheckMongoOnStart(database);
                 phoneServerData.GetMongoCollection(database.GetCollection<BsonDocument>("PhoneSet"));
                 computersData.GetMongoCollection(database.GetCollection<BsonDocument>("ComputersSet"));
             }
@@ -82,6 +86,40 @@ namespace InternetMarket
                 Trace.WriteLine(exp.StackTrace);
             }
         }
+
+        private void CheckMongoOnStart(IMongoDatabase database)
+        {
+            try
+            {
+                IMongoCollection <BsonDocument> coll = database.GetCollection<BsonDocument>("UserDBSet");
+                var strings = new List<string>();
+                var filter = new BsonDocument();
+
+                using (var cursor = coll.FindSync(filter))
+                {
+                    while (cursor.MoveNext())
+                    {
+                        var userdata = cursor.Current;
+                        Trace.WriteLine(userdata);
+                        Trace.WriteLine("GET" + "{");
+                        foreach (var doc in userdata)
+                        {
+                            Trace.WriteLine("GET" + doc);
+                            strings.Add(doc.ToString());
+                        }
+                    }
+                }
+            }catch(Exception exp)
+            {
+                Trace.WriteLine(exp.StackTrace);
+            }
+        }
+
+        private void CheckMSSQLOnStart()
+        {
+            //throw new NotImplementedException();
+        }
+
         private static async Task GetDatabaseNames(MongoClient client)
         {
             using (var cursor = await client.ListDatabasesAsync())

@@ -25,10 +25,7 @@ D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Re
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Release\InternetMarket.exe.config
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Release\EntityFramework.xml
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Release\EntityFramework.SqlServer.xml
-D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Release\ru\EntityFramework.resources.dll
-D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Release\ru\EntityFramework.SqlServer.resources.dll
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketLibrery\obj\Release\InternetMarketLibrery.csprojAssemblyReference.cache
-D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketLibrery\obj\Release\InternetMarketLibrery.csproj.CoreCompileInputs.cache
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketLibrery\obj\Release\InternetMarketLibrery.csproj.CopyComplete
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketLibrery\obj\Release\InternetMarketLibrery.dll
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketLibrery\obj\Release\InternetMarketLibrery.pdb
@@ -93,3 +90,21 @@ C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\Inter
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Release\DnsClient.xml
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Release\Snappy.NET.xml
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Release\Crc32C.NET.xml
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Release\mongocrypt.dll
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Release\MongoDB.Driver.dll
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Release\MongoDB.Driver.Core.dll
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Release\MongoDB.Bson.dll
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Release\itextsharp.dll
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Release\MongoDB.Libmongocrypt.dll
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Release\DnsClient.dll
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Release\SharpCompress.dll
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Release\Snappy.NET.dll
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Release\System.Buffers.dll
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Release\Crc32C.NET.dll
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Release\MongoDB.Driver.xml
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Release\MongoDB.Driver.Core.xml
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Release\MongoDB.Bson.xml
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Release\itextsharp.xml
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Release\DnsClient.xml
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Release\Snappy.NET.xml
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarketLibrery\bin\Release\Crc32C.NET.xml
