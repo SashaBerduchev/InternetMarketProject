@@ -12,10 +12,10 @@ namespace InternetMarket.SERVER
     class TiviServerData
     {
         private List<TivisetSet> tivis;
-        private InternetMarketDateEntities internetMarket;
+        private InternetMarketEntities internetMarket;
         public TiviServerData()
         {
-            internetMarket = new InternetMarketDateEntities();
+            internetMarket = new InternetMarketEntities();
         }
 
         public void TiviSet(string Firm, string Model, string Quantity, string Cost)

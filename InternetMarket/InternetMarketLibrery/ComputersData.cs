@@ -9,12 +9,12 @@ namespace InternetMarket.SERVER
 {
     class ComputersData : IDisposable
     {
-        private InternetMarketDateEntities internetMarketDateEntities;
+        private InternetMarketEntities internetMarketDateEntities;
         private List<ComputersSet> computers;
         private List<string> computerslist;
         public ComputersData()
         {
-            internetMarketDateEntities = new InternetMarketDateEntities();
+            internetMarketDateEntities = new InternetMarketEntities();
         }
 
         public void ComputerSet(string Firm, string Model, string Quantity, string Cost, string Processor, string RAM, string VRAM, string Graphics)

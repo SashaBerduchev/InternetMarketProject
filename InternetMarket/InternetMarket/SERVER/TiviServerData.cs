@@ -3,8 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace InternetMarket.SERVER
@@ -38,7 +36,7 @@ namespace InternetMarket.SERVER
                 internetMarket.SaveChanges();
             }catch(Exception exp)
             {
-                Trace.WriteLine(exp.ToString());
+                exception.ExceptionWriter(exp);
             }
         }
         public List<string> GetTivis()
@@ -55,8 +53,7 @@ namespace InternetMarket.SERVER
             }
             catch (Exception e)
             {
-                Trace.WriteLine(e.ToString());
-                exception.ExceptionWriter(e.ToString());
+                exception.ExceptionWriter(e);
             }
             return null;
         }

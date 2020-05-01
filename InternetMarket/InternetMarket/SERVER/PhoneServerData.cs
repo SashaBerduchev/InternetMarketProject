@@ -46,8 +46,7 @@ namespace InternetMarket.SERVER
             }
             catch (Exception e)
             {
-                Trace.WriteLine(e.ToString());
-                exception.ExceptionWriter(e.ToString());
+                exception.ExceptionWriter(e);
             }
             return null;
         }

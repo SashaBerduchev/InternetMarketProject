@@ -1337,3 +1337,5 @@ D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\W
 D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\MailWindow.baml
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\Administration\UserChangedWindow.g.cs
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\Administration\UserChangedWindow.baml
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\Administration\UserChangedWindow.g.cs
+D:\Projects\C#\InternetMarketProject\InternetMarket\InternetMarket\obj\Release\Windows\Administration\UserChangedWindow.baml

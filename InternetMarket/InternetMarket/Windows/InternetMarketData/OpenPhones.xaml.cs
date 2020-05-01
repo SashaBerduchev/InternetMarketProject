@@ -25,25 +25,33 @@ namespace InternetMarket
     {
         private byte[] photoload;
         private byte[] arrayread;
+        IException exception;
         private InterMarketService interMarketService;
-        public OpenPhones()
+        public OpenPhones(IException exception)
         {
             InitializeComponent();
             interMarketService = new InterMarketService();
+            this.exception = exception;
             Trace.WriteLine(this);
         }
 
         
         private void btnset_Click(object sender, RoutedEventArgs e)
         {
-            for (int i = 0; i < Convert.ToInt32(textpoint.Text); i++)
+            try
             {
-                Thread thread = new Thread(PhonesInsert);
-                thread.Start();
-                Trace.WriteLine(thread);
+                for (int i = 0; i < Convert.ToInt32(textpoint.Text); i++)
+                {
+                    Thread thread = new Thread(PhonesInsert);
+                    thread.Start();
+                    Trace.WriteLine(thread);
+                }
+                this.Close();
             }
-
-            this.Close();
+            catch (Exception exp)
+            {
+                exception.ExceptionWriter(exp);
+            }
         }
 
         
@@ -63,7 +71,7 @@ namespace InternetMarket
             }
             catch (Exception exp)
             {
-                MessageBox.Show(exp.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                exception.ExceptionWriter(exp);
             }
         }
 
@@ -90,7 +98,7 @@ namespace InternetMarket
                     }
                 }catch(Exception exp)
                 {
-                    Trace.WriteLine(exp.ToString());
+                    exception.ExceptionWriter(exp);
                 }
             });
         }
@@ -112,7 +120,7 @@ namespace InternetMarket
             }
             catch(Exception exp)
             {
-                MessageBox.Show(exp.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                exception.ExceptionWriter(exp);
             }
         }
     }

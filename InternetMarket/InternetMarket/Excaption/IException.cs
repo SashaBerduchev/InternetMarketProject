@@ -8,7 +8,7 @@ namespace InternetMarket
 {
     public interface IException
     {
-        void ExceptionWriter(string exp);
+        void ExceptionWriter(Exception exp);
 
     }
 }

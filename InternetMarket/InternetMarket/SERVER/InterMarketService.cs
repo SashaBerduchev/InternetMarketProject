@@ -39,7 +39,7 @@ namespace InternetMarket
             internetMarketDateEntities = new InternetMarketEntities();
             phoneServerData = new PhoneServerData(internetMarketDateEntities, exception);
             tiviServer = new TiviServerData(internetMarketDateEntities, exception);
-            userServer = new UserServerData();
+            userServer = new UserServerData(internetMarketDateEntities, exception);
             tabletServer = new TabletServer();
             boilerServer = new BoilerServerData(internetMarketDateEntities);
             computersData = new ComputersData(internetMarketDateEntities);
