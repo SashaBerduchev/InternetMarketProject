@@ -24,12 +24,13 @@ namespace InternetMarket
         public LoginUserWindow()
         {
             InitializeComponent();
+            StartConnection();
             LanguageBox.Items.Add("en");
             LanguageBox.Items.Add("ru");
             LanguageBox.SelectedItem = "ru";
             Trace.WriteLine(this);
             interMarketService = new InterMarketService();
-            StartConnection();
+            
             Localization();
             LoadImage();
             //Костыль, если нету юзеров
@@ -41,7 +42,7 @@ namespace InternetMarket
             }
             catch (Exception exp)
             {
-                MessageBox.Show("Нет подключентя к базе данных", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(exp.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 Trace.WriteLine(exp.StackTrace);
             }
         }
@@ -51,15 +52,15 @@ namespace InternetMarket
             try
             {
 
-                var request = WebRequest.Create("https://www.google.com/url?sa=i&url=https%3A%2F%2Fpagedesignshop.com%2Fcan-you-internet-market-through-emails%2F&psig=AOvVaw3fEk970IOghpoqyjKM8r-Q&ust=1585213810668000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCKCO_-ajtegCFQAAAAAdAAAAABAD");
-                var response = request.GetResponse();
-                Bitmap loadedBitmap = null;
-                using (var responseStream = response.GetResponseStream())
-                {
-                    loadedBitmap = new Bitmap(responseStream);
-                    ImageSourceConverter sourceConverter = new ImageSourceConverter();
-                    Image.Source =  (ImageSource)sourceConverter.ConvertFrom(loadedBitmap);
-                }
+                //var request = WebRequest.Create("https://www.google.com/url?sa=i&url=https%3A%2F%2Fpagedesignshop.com%2Fcan-you-internet-market-through-emails%2F&psig=AOvVaw3fEk970IOghpoqyjKM8r-Q&ust=1585213810668000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCKCO_-ajtegCFQAAAAAdAAAAABAD");
+                //var response = request.GetResponse();
+                //Bitmap loadedBitmap = null;
+                //using (var responseStream = response.GetResponseStream())
+                //{
+                //    loadedBitmap = new Bitmap(responseStream);
+                //    ImageSourceConverter sourceConverter = new ImageSourceConverter();
+                //    Image.Source =  (ImageSource)sourceConverter.ConvertFrom(loadedBitmap);
+                //}
             }
             catch (System.Net.WebException ex)
             {
@@ -92,14 +93,14 @@ namespace InternetMarket
         {
             try
             {
-                string uriAddress = "net.tcp://192.168.1.217:7000/icontract";
+                string uriAddress = "net.tcp://localhost:8000/icontract";
                 //string uriAddress = "net.tcp://localhost:8000/kIContract";
                 Uri addres = new Uri(uriAddress);//5
                 NetTcpBinding binding = new NetTcpBinding();//6
-                binding.ListenBacklog = 2000;//7
-                binding.MaxConnections = 2000;//8
-                binding.TransferMode = TransferMode.Buffered;//9
-                binding.MaxReceivedMessageSize = 104857600;//10
+                //binding.ListenBacklog = 2000;//7
+                //binding.MaxConnections = 2000;//8
+                //binding.TransferMode = TransferMode.Buffered;//9
+                //binding.MaxReceivedMessageSize = 104857600;//10
                 Type type = typeof(IContract);//11
                 ServiceHost serviceHost = new ServiceHost(typeof(InterMarketService));//12
                 serviceHost.AddServiceEndpoint(type, binding, uriAddress);//13
