@@ -28,15 +28,11 @@ namespace InternetMarketClient
         
         private void StartConnetion()
         {
-            string uriAddress = "net.tcp://localhost:8000/IContract";
-            //string uriAddress = "net.tcp://localhost:6000/IContract";
-            Uri uri = new Uri(uriAddress);
-
+            Uri uri = new Uri("net.tcp://localhost:4000/IContract");
             NetTcpBinding netTcpBinding = new NetTcpBinding();
             EndpointAddress endpoint = new EndpointAddress(uri);
-            _factory = new ChannelFactory<IContract>(netTcpBinding, endpoint);
-            Trace.WriteLine(this);
-            contract = _factory.CreateChannel();
+            ChannelFactory<IContract> factory = new ChannelFactory<IContract>(netTcpBinding, endpoint);
+            contract = factory.CreateChannel();
             try
             {
                 User.ItemsSource = contract.GetUsers();
@@ -45,6 +41,8 @@ namespace InternetMarketClient
             {
                 Trace.WriteLine(e.StackTrace);
                 MessageBox.Show(e.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                this.Close();
+                new LoginUser().Show();
             }
         }
 

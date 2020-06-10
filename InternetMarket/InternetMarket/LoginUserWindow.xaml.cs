@@ -93,20 +93,20 @@ namespace InternetMarket
         {
             try
             {
-                string uriAddress = "net.tcp://localhost:8000/icontract";
-                //string uriAddress = "net.tcp://localhost:8000/kIContract";
-                Uri addres = new Uri(uriAddress);//5
-                NetTcpBinding binding = new NetTcpBinding();//6
-                //binding.ListenBacklog = 2000;//7
-                //binding.MaxConnections = 2000;//8
-                //binding.TransferMode = TransferMode.Buffered;//9
-                //binding.MaxReceivedMessageSize = 104857600;//10
-                Type type = typeof(IContract);//11
-                ServiceHost serviceHost = new ServiceHost(typeof(InterMarketService));//12
-                serviceHost.AddServiceEndpoint(type, binding, uriAddress);//13
-                serviceHost.Open();//14
-                Trace.WriteLine(serviceHost);
-            }catch(Exception e)
+                string uriAddress = "net.tcp://localhost:4000/IContract";
+                //Uri addres = new Uri("net.tcp://localhost:4000/IContract");
+                Uri addres = new Uri(uriAddress);
+                NetTcpBinding binding = new NetTcpBinding();
+                binding.ListenBacklog = 2000;
+                binding.MaxConnections = 2000;
+                binding.TransferMode = TransferMode.Buffered;
+                binding.MaxReceivedMessageSize = 104857600;
+                Type type = typeof(IContract);
+                ServiceHost serviceHost = new ServiceHost(typeof(InterMarketService));
+                serviceHost.AddServiceEndpoint(type, binding, uriAddress);
+                serviceHost.Open();
+            }
+            catch(Exception e)
             {
                 Trace.WriteLine(e.StackTrace);
             }

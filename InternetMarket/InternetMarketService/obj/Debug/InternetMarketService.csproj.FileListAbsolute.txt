@@ -79,3 +79,9 @@ C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\Inter
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketService\obj\Debug\InternetMarketService.csproj.GenerateResource.cache
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketService\obj\Debug\InternetMarketService.exe
 C:\Все Мои данные\Проекты\C-Sharp\InternetMarketProject\InternetMarket\InternetMarketService\obj\Debug\InternetMarketService.pdb
+C:\Users\sasha\Source\Repos\InternetMarketProject\InternetMarket\InternetMarketService\obj\Debug\InternetMarketService.csprojAssemblyReference.cache
+C:\Users\sasha\Source\Repos\InternetMarketProject\InternetMarket\InternetMarketService\obj\Debug\InternetMarketService.ProjectInstaller.resources
+C:\Users\sasha\Source\Repos\InternetMarketProject\InternetMarket\InternetMarketService\obj\Debug\InternetMarketService.csproj.GenerateResource.cache
+C:\Users\sasha\Source\Repos\InternetMarketProject\InternetMarket\InternetMarketService\obj\Debug\InternetMarketService.csproj.CoreCompileInputs.cache
+C:\Users\sasha\Source\Repos\InternetMarketProject\InternetMarket\InternetMarketService\obj\Debug\InternetMarketService.exe
+C:\Users\sasha\Source\Repos\InternetMarketProject\InternetMarket\InternetMarketService\obj\Debug\InternetMarketService.pdb
